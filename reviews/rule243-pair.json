@@ -1,0 +1,11 @@
+{
+  "terms_compared": 1001,
+  "same_state_proved": true,
+  "state_equality_axioms": [
+    "propext"
+  ],
+  "statement_sha256": {
+    "267920": "bd414fdb4120fff7da2dcf0423627b5620cb121348a553d187c5868d2ad4da62",
+    "267921": "60be3d94c9ffc78e86068353b69c50da6af16ed4f279ccaaf2b6d27ca8ec0607"
+  }
+}

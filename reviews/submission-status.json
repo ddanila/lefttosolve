@@ -1,5 +1,5 @@
 {
-  "observed_at_utc": "2026-11-27T14:37:28.274765+00:00",
+  "observed_at_utc": "2026-11-27T15:07:32.000083+00:00",
   "pull_requests": [
     {
       "closedAt": "2026-11-27T13:00:05Z",
@@ -94,6 +94,48 @@
         }
       ],
       "url": "https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242"
+    },
+    {
+      "closedAt": "2026-11-27T14:58:01Z",
+      "mergeCommit": {
+        "oid": "e6ce1e5f69c3b9b2bae4f1bfab4af2a7bcb5aa93"
+      },
+      "mergedAt": "2026-11-27T14:58:01Z",
+      "number": 7472,
+      "state": "MERGED",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-11-27T14:49:42Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/GuillaumeBAUD-coder/open-math-agents/actions/runs/46017748192/job/140569122693",
+          "name": "check",
+          "startedAt": "2026-11-27T14:48:16Z",
+          "status": "COMPLETED",
+          "workflowName": "check-proof"
+        }
+      ],
+      "url": "https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472"
+    },
+    {
+      "closedAt": null,
+      "mergeCommit": null,
+      "mergedAt": null,
+      "number": 7656,
+      "state": "OPEN",
+      "statusCheckRollup": [
+        {
+          "__typename": "CheckRun",
+          "completedAt": "2026-11-27T15:04:42Z",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/GuillaumeBAUD-coder/open-math-agents/actions/runs/46020841281/job/140579792220",
+          "name": "check",
+          "startedAt": "2026-11-27T15:02:29Z",
+          "status": "COMPLETED",
+          "workflowName": "check-proof"
+        }
+      ],
+      "url": "https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7656"
     }
   ]
 }

@@ -29,3 +29,5 @@ Statement CI run 46017748192 completed successfully; downloaded verdict accepted
 Statement merged unchanged at 14:58:01 UTC. The official proof recheck against tracked main f57cd04a accepted the exact target. Catalog still lags, but the official client recognizes the merged statement; proof submission is proceeding. PLAN note #38603 posted under a new lease.
 
 Proof submitted: https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7656 . Exactly one added proof file verified against the checked hash. Client released lease. CI pending.
+
+Proof CI run 46020841281 completed successfully; downloaded verdict accepted the proof. Merge remains pending. Evidence: `reviews/proof-ci-verdict.json`.

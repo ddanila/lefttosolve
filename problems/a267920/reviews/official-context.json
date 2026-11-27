@@ -1,0 +1,17 @@
+{
+  "recorded_at_utc": "2026-11-27T15:05:56.937142+00:00",
+  "platform_commit": "f57cd04aff265ed0d7b263d011cbe1d7a9453864",
+  "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
+  "lean": "leanprover/lean4:v4.33.1",
+  "checker_cwd": ".oma/platform",
+  "lease_taken": false,
+  "submitted": false,
+  "remote_pushed": false,
+  "statement_sha256": "bd414fdb4120fff7da2dcf0423627b5620cb121348a553d187c5868d2ad4da62",
+  "proof_sha256": "f54bdcae0a996d52712f5c45584b1dad54f3174655a346eaf004f9c66a40acfe",
+  "commands": [
+    "OMA_FC=/tmp/lefttosolve-formal-conjectures tools/check.sh statements/oeis-a267920.lean <statement-verdict.json>",
+    "OMA_FC=/tmp/lefttosolve-formal-conjectures tools/check.sh proofs/oeis-a267920.lean <proof-verdict.json>"
+  ],
+  "platform_commit_note": "Local checker checkout; recheck live upstream and pins before any submission."
+}

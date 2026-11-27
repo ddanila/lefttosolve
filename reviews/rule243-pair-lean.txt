@@ -1,0 +1,3 @@
+<isolated-check>/OMAStatements/S_oeis_a267920.lean:46:8: warning: declaration uses `sorry`
+<isolated-check>/OMAStatements/S_oeis_a267921.lean:46:8: warning: declaration uses `sorry`
+'same_state' depends on axioms: [propext]

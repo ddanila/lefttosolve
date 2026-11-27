@@ -1,0 +1,9 @@
+{
+  "root_check_passed": true,
+  "standalone_rerun_passed": true,
+  "stable_reports": [
+    "lean-check.txt",
+    "local-check.json"
+  ],
+  "pair_reports_stable": true
+}

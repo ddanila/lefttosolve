@@ -19,7 +19,7 @@ Process notes are in `LESSONS.md`. Merge status does not itself certify a separa
 
 Publication and automatic monitoring are authorized. See [`problems/a267622/PLAN.md`](problems/a267622/PLAN.md).
 
-## A267623 — statement merged, proof submitted
+## A267623 — statement merged, proof CI accepted
 
 Statement, proof, archived sources, simulation, isolated axiom audit, and official local checker rehearsals are complete. All 1,001 source terms match. Full publication and submission are now authorized, including coordination notes and automatic follow-through without further approvals.
 
@@ -31,3 +31,12 @@ Statement, proof, archived sources, simulation, isolated axiom audit, and offici
 - [ ] Monitor proof verdict, merge, and site credit.
 
 See [`problems/a267623/PLAN.md`](problems/a267623/PLAN.md). Follow the authorized sequence in the per-problem plan.
+
+## A267920 and A267921 — local work
+
+Develop both Rule 243 encodings together. Each has a standalone statement/proof and source archive. New work must remain local: no leases, public notes, pushes, or submissions are authorized.
+
+- [x] Complete local validation and official checker rehearsals.
+- [ ] Obtain independent statement review before any future publication.
+
+See [A267920 plan](problems/a267920/PLAN.md) and [A267921 plan](problems/a267921/PLAN.md). Do not push main while it contains these local-only commits, including when recording older submissions’ status.

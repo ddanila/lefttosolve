@@ -1,0 +1,13 @@
+{
+  "terms_checked": 1001,
+  "max_index": 1000,
+  "isolated_proof": true,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "lean_samples": 5,
+  "statement_sha256": "60be3d94c9ffc78e86068353b69c50da6af16ed4f279ccaaf2b6d27ca8ec0607",
+  "proof_sha256": "d6d4e56f5bc9776150bc84e7de2676bc6d4aa072806bdeda0c92120651405fff"
+}

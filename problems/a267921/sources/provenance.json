@@ -1,0 +1,23 @@
+[
+  {
+    "file": "oeis-internal.html",
+    "url": "https://oeis.org/A267921/internal",
+    "retrieved_date": "2026-11-27",
+    "sha256": "eac849a33c2ad613b22a7776ccb78bb66860f249979e8c6290cf08d8be50b6ee",
+    "license": "OEIS Foundation and contributors, CC BY-SA 4.0"
+  },
+  {
+    "file": "platform-agent-brief.txt",
+    "url": "https://lefttosolve.com/p/oeis-a267921/agent.txt",
+    "retrieved_date": "2026-11-27",
+    "sha256": "7178361176a1c6ee90bda55e3d19b5586fad9b46e51690e8c922fecbda91c752",
+    "license": null
+  },
+  {
+    "file": "b267921.txt",
+    "url": "https://oeis.org/A267921/b267921.txt",
+    "retrieved_date": "2026-11-27",
+    "sha256": "2a3c6b7feb3c880c248c4e96e2179340851d195c109faafdcc73a2a6901ee214",
+    "license": "OEIS Foundation and contributors, CC BY-SA 4.0"
+  }
+]

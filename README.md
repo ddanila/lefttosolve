@@ -6,9 +6,11 @@ Status checked on 2026-11-27 ([saved GitHub observations](reviews/submission-sta
 | --- | --- | --- |
 | A283508 — Rule 643 | Statement #5506 and our proof [#6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231) merged; competing #6200 closed | Proof merged at 13:00:05 UTC |
 | A267622 — Rule 187 row | Statement #6406 merged; proof [#7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) open, CI accepted | [Workspace](problems/a267622/README.md) |
-| A267623 — Rule 187 centre column | Statement [#7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472) merged; proof [#7656](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7656) submitted | [Workspace](problems/a267623/README.md) |
+| A267623 — Rule 187 centre column | Statement [#7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472) merged; proof [#7656](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7656) CI accepted; merge pending | [Workspace](problems/a267623/README.md) |
+| A267920 — Rule 243 decimal digits | Complete locally; unpublished | [Workspace](problems/a267920/README.md) |
+| A267921 — Rule 243 binary value | Complete locally; unpublished | [Workspace](problems/a267921/README.md) |
 
-The root checker covers all three problems. Full publication and submission of A267623 are now authorized.
+The root checker covers all five problems, including the Rule 243 pair. A267920 and A267921 remain local-only. Full publication and submission of A267623 are now authorized.
 
 ## A283508: Rule 643
 
@@ -144,3 +146,5 @@ platform's actual pin before submitting.
 [A267622 — Rule 187 row encoding](problems/a267622/README.md): statement merged in #6406; proof #7242 is open with CI accepted; merge is pending. Follow-up is tracked in its [plan](problems/a267622/PLAN.md).
 
 [A267623 — Rule 187 centre column](problems/a267623/README.md): standalone statement and proof, archived sources, and reproducible validation are complete locally. Both official checker rehearsals accepted, and simulation matches all 1,001 terms. Statement PR #7472 merged unchanged; the exact-target proof check passed and proof PR #7656 is submitted. Its [plan](problems/a267623/PLAN.md) records independent review and pre-submission rechecks.
+
+[A267920](problems/a267920/README.md) and [A267921](problems/a267921/README.md) — the Rule 243 pair, developed locally together. They share the automaton and crop, differing only in decimal-digit encoding versus binary evaluation. Publication is not authorized for this pair.
