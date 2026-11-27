@@ -1,63 +1,74 @@
 # A283508: actionable gap checklist
 
-This backlog stages the work identified by the statement audit. Stage 1 prepares a complete standalone statement; Stage 2 extends local proof coverage; Stage 3 connects the infinite-grid model to the cyclic reference program. All tasks below are pending. Creating this checklist does not implement the gaps.
+This backlog stages the work identified by the statement audit. Stage 1 prepares a complete standalone statement; Stage 2 extends local proof coverage; Stage 3 connects the infinite-grid model to the cyclic reference program. All eleven tasks are complete locally (2026-11-27). The full validation command is `python3 scripts/check.py`; it passed the build, simulations, isolated statement compilation, definition consistency, complete certificate, and allowed-axiom audits. Evidence is saved in `reviews/validation.json`, `reviews/lean-checks.txt`, and `reviews/statement-checks.txt`. Official checker compatibility remains **unverified**.
 
 Priority order: **P0** = statement readiness, **P1** = additional proof coverage, **P2** = reference-program equivalence. Complete dependencies before starting dependent tasks. Publishing, claiming the problem, and upstream submission are outside this backlog's execution scope; work remains local.
 
 ## Stage 1 — Complete and validate the statement
 
-- [ ] **S1 — Archive and audit A267623** · P0 · Dependencies: none.
+- [x] **S1 — Archive and audit A267623** · P0 · Dependencies: none.
+  - **Completed / evidence:** Archived `A267623.html`, `A267623-reference.txt`, and `b267623.txt`; provenance hashes verified by `python3 scripts/check.py`. README audits bit order, time-column encoding, attribution, and the contradictory spatial comment.
   - Deliverable: authoritative entry, reference code, and term table saved under `sources/`, with retrieval dates, source URLs, attribution, and SHA-256 provenance. Use https://oeis.org/A267623/internal and its linked term table.
   - Audit Rule 187's bit ordering and initial state. Its sequence reads the centre cell across times `0…n` and encodes those bits as decimal digits; it is not a spatial row.
   - Acceptance: the reference rule, time indexing, and encoding are documented independently of A283508's formula or conjectured equality. Any conflict between source descriptions and programs is recorded and resolved before S2.
 
-- [ ] **S2 — Define both missing propositions** · P0 · Dependencies: S1.
+- [x] **S2 — Define both missing propositions** · P0 · Dependencies: S1.
+  - **Completed / evidence:** `A283508/Rule187.lean` defines the second automaton independently; `A267623.sequence_eq` states equality. `A283508/GeneratingFunction.lean` defines `series` and states `generating_function`. Build passed; README explains the unit denominator.
   - Deliverable: an independently defined Rule 187 automaton and its sequence, plus `∀ n : ℕ, A283508.a n = A267623.a n`. Do not define A267623 using the desired closed form or A283508 itself.
   - Define `A : PowerSeries ℤ` with coefficient `n` equal to `(A283508.a n : ℤ)`. State `A * ((1 - X) * (1 - 10*X)) = 1 - X + X^2`.
   - Acceptance: definitions and propositions compile with no placeholders. Document why the denominator's constant coefficient of 1 makes the product identity equivalent to the source's formal generating-function quotient. Proving these propositions belongs to Stage 2.
 
-- [ ] **S3 — Package the standalone statement** · P0 · Dependencies: S2.
+- [x] **S3 — Package the standalone statement** · P0 · Dependencies: S2.
+  - **Completed / evidence:** `statements/oeis-a283508.lean` contains the complete `Target` and single `main`, with the four source claims in order. The checker confirms its sole import and sole intentional placeholder.
   - Deliverable: `statements/oeis-a283508.lean`, beginning with `import Mathlib`, using namespace `OMA.S_oeis_a283508`, and containing complete definitions and exactly one `theorem main`.
   - Copy the minimal necessary definitions into this file; do not import local project modules. Include source attribution and explain the observation and encoding conventions.
   - State `main` as the conjunction, in source order, of the generating-function identity, the natural-number closed formula for `n > 0`, the recurrence with values cast to `ℤ` for `n > 2`, and sequence equality for all `n : ℕ`.
   - Acceptance: `main` has an explicit complete proposition and `by sorry` as its body. This is the file's only proof placeholder; no definition contains `sorry` or an added axiom.
 
-- [ ] **S4 — Validate packaging and definition consistency** · P0 · Dependencies: S3.
+- [x] **S4 — Validate packaging and definition consistency** · P0 · Dependencies: S3.
+  - **Completed / evidence:** `python3 scripts/check.py` passed dependency-only compilation in an empty temporary directory and all definition-equivalence lemmas in `scripts/Certificate.lean`; target axiom audit passed. Official checker remains unverified.
   - Deliverable: a reproducible standalone compilation check and Lean equivalence lemmas connecting the packaged definitions to their local counterparts.
   - Compile the statement in an environment exposing Mathlib and its dependencies but no local project modules. Extend validation so the statement's single intentional placeholder is allowed only there; proof modules must remain free of placeholders and forbidden axioms.
   - Acceptance: standalone compilation and definition-equivalence proofs pass. The packaged target's type depends only on complete definitions. Label official checker compatibility **unverified** until the official checker is actually run; compilation alone is not an upstream acceptance claim.
 
 ## Stage 2 — Extend proof coverage
 
-- [ ] **P1 — Prove named initial values and integer recurrence** · P1 · Dependencies: none.
+- [x] **P1 — Prove named initial values and integer recurrence** · P1 · Dependencies: none.
+  - **Completed / evidence:** `A283508.a_zero`, `a_one`, `a_two`, and `recurrence_int` build and pass the axiom audit in `scripts/Checks.lean`; the integer recurrence retains `2 < n`.
   - Deliverable: named theorems for `a 0 = 1`, `a 1 = 10`, and `a 2 = 101`, plus the recurrence in `ℤ` derived from existing results.
   - Acceptance: preserve `n > 2`; no reliance on truncating subtraction in the final integer statement. The build and allowed-axiom audit pass.
 
-- [ ] **P2 — Prove the generating-function identity** · P1 · Dependencies: S2, P1.
+- [x] **P2 — Prove the generating-function identity** · P1 · Dependencies: S2, P1.
+  - **Completed / evidence:** `A283508.generating_function` proves all coefficients using initial values and `recurrence_int`. Build and allowed-axiom audit passed.
   - Deliverable: a proof of the exact power-series proposition selected in S2.
   - Use coefficient extensionality, handle coefficients 0, 1, and 2 explicitly, and use the recurrence for higher coefficients.
   - Acceptance: the theorem compiles with no placeholders and only the allowed axioms; it covers the complete formal power series, not finitely many coefficients.
 
-- [ ] **P3 — Prove equality with A267623** · P1 · Dependencies: S1, S2.
+- [x] **P3 — Prove equality with A267623** · P1 · Dependencies: S1, S2.
+  - **Completed / evidence:** `A267623.rule_readable`, `state_succ`, `center`, and `sequence_eq` prove the independent Rule 187 behaviour and all-index equality. Build and axiom audit passed; 1,001 independent simulated terms match its table.
   - Deliverable: a proof of Rule 187's centre-cell behaviour from its independently defined update rule, followed by equality of the decimal encodings for all natural indices.
   - Acceptance: cover index 0 and the early transient explicitly. Numerical agreement is supporting validation, not the proof. Neither sequence is defined or assumed equal to the other.
 
-- [ ] **P4 — Certify the complete statement locally** · P1 · Dependencies: S4, P1, P2, P3.
+- [x] **P4 — Certify the complete statement locally** · P1 · Dependencies: S4, P1, P2, P3.
+  - **Completed / evidence:** `OMA.S_oeis_a283508.certified : Target` in the assembled verification module proves the same type as `main`, using equivalence lemmas and local proofs. The certificate and target audits pass without `sorryAx`; see `reviews/statement-checks.txt`.
   - Deliverable: a separate verification module proving the exact conjunction and definitions used in the standalone statement, with explicit checks that the target matches `main`'s type.
   - Acceptance: do not use `main` or any theorem depending on its placeholder as evidence. Audit the complete proof for only `propext`, `Classical.choice`, and `Quot.sound`. Keep the statement file's required single placeholder while retaining the full proof separately.
 
 ## Stage 3 — Bridge to the reference program
 
-- [ ] **R1 — Prove initial-state locality** · P2 · Dependencies: none.
+- [x] **R1 — Prove initial-state locality** · P2 · Dependencies: none.
+  - **Completed / evidence:** `A283508.evolve_local` proves arbitrary-grid Manhattan-ball locality, including time zero. Build and allowed-axiom audit passed.
   - Deliverable: a general Lean theorem that two initial grids agreeing on the Manhattan-distance ball of radius `n` around a cell produce the same value at that cell after `n` updates.
   - Acceptance: the result applies to arbitrary initial grids and coordinates, covers `n = 0`, and follows from the existing simultaneous update definition without assumptions about the conjectured pattern.
 
-- [ ] **R2 — Connect torus and infinite evolution** · P2 · Dependencies: R1.
+- [x] **R2 — Connect torus and infinite evolution** · P2 · Dependencies: R1.
+  - **Completed / evidence:** `lift_initial`, `lift_step`, `lift_evolve`, `periodic_agrees`, and `observed_torus_correct` prove the periodic-seed and cyclic-grid bridge for every `m ≤ n ≤ 126`. Build and allowed-axiom audit passed.
   - Deliverable: cyclic evolution on a 257×257 grid and its periodic lift, with a proved correspondence between cyclic updates and infinite-grid updates of the lift.
   - Represent the lifted seed configuration by ON cells at `(257ℤ)²`. Prove that other seeds lie outside every observed cell's initial dependency ball when `0 ≤ m ≤ n ≤ 126`; use `257 - n > n`.
   - Acceptance: for every such `n` and `m`, the cyclic reference model's cell equals `state n m 0`, including `n = 126, m = 126`. Do not substitute the existing frozen-border theorem for this argument.
 
-- [ ] **R3 — Validate and document the reference bridge** · P2 · Dependencies: R2.
+- [x] **R3 — Validate and document the reference bridge** · P2 · Dependencies: R2.
+  - **Completed / evidence:** The 257×257 cyclic simulator in `scripts/validate.py` matches all 127 terms and the infinite sparse simulator. `python3 scripts/check.py` passed; README distinguishes the padded grid, cyclic model, and human Mathematica translation.
   - Deliverable: a cyclic simulator matching the reference rule and 257×257 dimensions, comparisons with all 127 supplied terms, and updated source-audit documentation.
   - Acceptance: cyclic simulation agrees with the table and infinite model through step 126. Audit the new Lean bridge theorems. Distinguish the old padded-border result, the proved cyclic model, and the remaining human translation of the Mathematica program; do not claim formal verification of Mathematica itself.
 
@@ -68,7 +79,9 @@ Priority order: **P0** = statement readiness, **P1** = additional proof coverage
 - Preserve the existing checked formula and recurrence throughout. Local validation and upstream human review remain separate statuses.
 - Treat natural-number arithmetic as a presentation issue, not an established defect. The new packaged recurrence uses `ℤ`; the existing natural-number theorems remain valid.
 
-## Audit findings and task mapping
+## Original audit findings and task mapping (historical)
+
+The paragraphs below preserve the pre-implementation audit, including its then-missing items. The completed checklist above and README describe the current state.
 
 Found by auditing the Lean statement against the saved OEIS entry (`sources/A283508.html`) and the Left to Solve brief (`sources/agent.txt`) on 2026-11-27. The definitions in `A283508/Basic.lean` and the ranges of `formula` (`n > 0`) and `recurrence` (`n > 2`) match the source; the gaps below are about what is missing around them.
 

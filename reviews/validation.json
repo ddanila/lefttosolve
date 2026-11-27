@@ -4,5 +4,22 @@
   "max_step": 126,
   "dense_radius": 253,
   "independent_simulators_agree": true,
-  "fixed_configuration_from_step": 2
+  "fixed_configuration_from_step": 2,
+  "cyclic_size": 257,
+  "cyclic_terms": 127,
+  "cyclic_simulator_agrees": true,
+  "rule187_terms": 1001,
+  "rule187_simulator_agrees": true,
+  "standalone_mathlib_only": true,
+  "definition_consistency": true,
+  "complete_certificate": true,
+  "official_checker": "unverified",
+  "statement_intentional_placeholders": 1,
+  "audited_theorems": 21,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "source_hashes_verified": true
 }

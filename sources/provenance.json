@@ -28,5 +28,23 @@
     "url": "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/9097e2f90e66d2f6244209cb1c07f7120d17ec53/lake-manifest.json",
     "retrieved_at_utc": "2026-11-27T09:44:40.185363+00:00",
     "sha256": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9"
+  },
+  {
+    "file": "A267623.html",
+    "url": "https://oeis.org/A267623/internal",
+    "retrieved_at_utc": "2026-11-27T10:08:16.260485+00:00",
+    "sha256": "7dbf6912a2e7cf404814abd079554d835cf7cd7ed59920f400e91ba994e1e18b"
+  },
+  {
+    "file": "b267623.txt",
+    "url": "https://oeis.org/A267623/b267623.txt",
+    "retrieved_at_utc": "2026-11-27T10:08:16.864785+00:00",
+    "sha256": "19f6c2021f334e217135e9e8714cc98b96b443257a6048c27fb3f53eb4667419"
+  },
+  {
+    "file": "A267623-reference.txt",
+    "url": "https://oeis.org/A267623/internal",
+    "retrieved_at_utc": "2026-11-27T10:08:16.918804+00:00",
+    "sha256": "a192f990490ba27b1733012b78fa4ad6769bc02bbc086be4c363f0913710d47f"
   }
 ]
