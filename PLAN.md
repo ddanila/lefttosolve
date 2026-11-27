@@ -1,100 +1,77 @@
-# A283508: pre-submission plan
+# A283508: submission plan
 
-## Current state
+## Current state (2026-11-27)
 
-Done and verified locally by `python3 scripts/check.py` (see README for details):
+Everything needed to submit the statement is done; the history is in git (`95ef7cc` … `0e14928`).
 
-- `statements/oeis-a283508.lean` states all four source conjectures and compiles with only Mathlib.
-- All four are proved, and `scripts/Certificate.lean` proves the exact target of `main`.
-- The 257×257 cyclic reference grid is proved equivalent to the infinite grid for every published term.
+- **Statement:** `statements/oeis-a283508.lean` states all four source conjectures. The official `tools/oma.sh check` accepted it, and an independent agent review found no mismatch with the two OEIS entries. SHA-256 `41b9b5dd…9285`.
+- **Proof:** `proofs/oeis-a283508.lean` (241 lines) proves `OMA.solution` directly on the statement's definitions. The platform's `tools/check.sh` accepted it in a local rehearsal, on `propext`, `Classical.choice`, `Quot.sound` only.
+- **Lease:** taken under @ddanila at 10:31 UTC, role lead. Nothing has been submitted.
+- **Repo:** published at https://github.com/ddanila/lefttosolve; `python3 scripts/check.py` passes.
 
-The problem lease was acquired under @ddanila on 2026-11-27. Nothing has been submitted. The workspace is published at https://github.com/ddanila/lefttosolve. Publication and clean-checkout validation are tracked below. The earlier gap audit and its eleven completed tasks are in git history (`95ef7cc`, `0688014`, `b17fb73`).
+Nothing below is required for correctness. The order is: submit the statement first (Stage 1), improve the proof while the statement waits for human review (Stage 2), then submit the proof (Stage 3).
 
-Stages A–C are complete. The final statement passed the official checker and an independent formulation review; the follow-up proof passed isolated and official rehearsal checks. D1 is complete; D2 onward remain pending Danila’s per-step confirmations. Upstream human review has not yet occurred.
+Steps that are visible to others (lease, notes, submit, pull requests) need Danila's confirmation each time.
 
-## Stage A — Polish the statement file
+## Stage 1 — Submit the statement
 
-These change `statements/oeis-a283508.lean`. After each one, update `scripts/Certificate.lean` and the assertions in `scripts/check.py` to match, and re-run the check.
+- [ ] **S1 — Confirm the lease is alive.**
+  - The platform expects `tools/oma.sh beat oeis-a283508` every 7 minutes while a lease is held; a 410 response means it expired. No beat has been recorded since the lease was taken.
+  - If it expired, take it again with `tools/oma.sh next --problem oeis-a283508` and re-copy the statement.
+  - Done when: a beat succeeds, or a fresh lease is held.
 
-- [x] **A1 — Inline the proposition into `main`.**
-  - **Evidence (2026-11-27):** Removed Target; main and certified inline the same conjunction. type_of% checks exact agreement. Full check passed after this change.
-  - Today `main : Target` hides the claim behind a `def`. The brief's skeleton and style examples put the proposition directly in the theorem.
-  - Remove `Target` and write the four-part conjunction as the type of `main`.
-  - Done when: the certificate proves the same inlined proposition and `check.py` passes.
+- [ ] **S2 — Final pre-flight.**
+  - Re-fetch the problem page and confirm it is still unformalized and nobody else has stated it.
+  - Confirm `.oma/platform/statements/oeis-a283508.lean` still has SHA-256 `41b9b5dd…9285`.
+  - Run `tools/oma.sh check oeis-a283508` under the lease.
+  - Done when: the check prints "accepted" for that hash.
 
-- [x] **A2 — Use the standard Rule 187 orientation.**
-  - **Evidence (2026-11-27):** Lean and Python now use 4*left + 2*centre + right. rule_readable is centre OFF or right ON; state_succ places the hole at -n. All 1001 terms still match.
-  - The Lean rule indexes the bit as `left + 2*centre + 4*right`, following the Maple program literally. Wolfram's numbering, which the name "Rule 187" and the entry's Mathematica program use, is `4*left + 2*centre + right`. The two are mirror images.
-  - The sequence is unchanged (symmetric seed, centre column), but a reviewer checking against the standard convention would see the wrong rule.
-  - Switch to the Wolfram indexing, adapt `A283508/Rule187.lean` (the OFF cell then travels left instead of right), and say in a comment that the Maple program mirrors it.
-  - Done when: `rule_readable` reads "centre OFF or right ON", `sequence_eq` still holds, and the Python Rule 187 simulator uses the same indexing and still matches all 1001 terms.
+- [ ] **S3 — Submit.**
+  - `tools/oma.sh submit oeis-a283508`. The pull request must contain only the one statement file.
+  - Done when: the pull request URL is recorded in `reviews/`.
 
-- [x] **A3 — Match the skeleton header.**
-  - **Evidence (2026-11-27):** Added the title, Source, and Credit: @ddanila, using the handle confirmed in this session. Full check passed.
-  - Add the skeleton's title line and the `Source:` and `Credit: @<GitHub handle>` lines. **Needs the handle from Danila.**
-  - Done when: the header has the same fields as the skeleton in `sources/agent.txt`.
+- [ ] **S4 — Update the docs.**
+  - Replace the README's "no lease, no submission" wording and update `reviews/lease-acquired.json`.
 
-- [x] **A4 — Record every interpretation choice in the file itself.**
-  - **Evidence (2026-11-27):** Recorded offset, background, crop, bit order, decimal encoding, diagram conflict, cyclic/infinite reading, Rule 187 reflection, primary definition choice, and unit denominator in the statement. Full check passed.
-  - The brief requires ambiguous readings to be stated in a comment citing the source. The reviewer sees only this file, not the README.
-  - Add short comments for: the background is updated like any other cell; "right edge" means position `n` at stage `n`; the digits are bits written in base 10; offset 0; the generating function is stated as a product because the denominator is a unit; A267623 is defined from its primary "middle column" description, not its secondary Rule 643 comment, which conflicts with its own terms.
-  - Done when: each choice in the README's source audit that affects the statement has a one-line counterpart in the file.
+## Stage 2 — Improve the proof while the statement is in review
 
-- [x] **A5 — Trim the file to what the statement needs.**
-  - **Evidence (2026-11-27):** Removed the duplicate bit definition; every remaining definition feeds main. Retained explicit arithmetic/decimal recursion for readability; rationale in reviews/platform-review.md. Full check passed.
-  - Check for duplicated or unused definitions (for example the second `bit` inside `A267623`) and prefer Mathlib where it fits (`Bool.toNat`, `Nat.testBit`, `Nat.ofDigits`), but only where it makes the statement easier to read.
-  - Done when: every definition is used by `main`, and the file reads top to bottom without the README.
+Ranked by value. P1 and P2 are worth doing; P3 and P4 are optional.
 
-## Stage B — Check against the platform's real rules
+- [ ] **P1 — Harden the tactics against a Mathlib bump.**
+  - Human review of the statement may take days, and the platform could move its Mathlib pin in that time. Three places would be the first to break:
+    - `stable_axis` and `step187_initial`: a bare `simp [...]` followed by `omega`.
+    - `generating_function`: a bare `simp` followed by `simpa`, after a long `simp only`.
+  - Replace each non-terminal `simp` with `simp only [...]` using the lemma list from `simp?`, or restructure so `simp` closes the goal.
+  - Done when: no `simp` without `only` is followed by another tactic, and both the local check and `tools/check.sh` still accept the file.
 
-- [x] **B1 — Read the platform instructions.**
-  - **Evidence (2026-11-27):** Archived join.txt with provenance. Recorded real statement/proof rules in reviews/platform-review.md. One conjunctive main is accepted; follow-up proofs import OMAStatements and prove OMA.solution with type_of%.
-  - Read https://lefttosolve.com/join.txt once, as the brief says, and save a copy under `sources/` with provenance.
-  - Note anything that contradicts the assumptions in this plan: file layout, allowed imports, how credit is given, whether one `main` may hold several conjectures, and how proofs are submitted after a statement is merged.
+- [ ] **P2 — Keep one copy of the argument in the repo.**
+  - The same proof now exists three times: `A283508/Proof.lean` + `GeneratingFunction.lean` + `Rule187.lean`, the bridge in `scripts/Certificate.lean`, and the submitted `proofs/oeis-a283508.lean`. A fix in one will not reach the others.
+  - Make the proof file the single source: delete those three modules and the certificate, and let `check.py` rely on the isolated compile of the proof file, which it already runs.
+  - Keep `A283508/Basic.lean`, `Locality.lean` and `Torus.lean`: they hold the reference-program results that the submitted proof does not need. Add one lemma tying `A283508.state` to the statement's `state` so the torus theorem is about the published definitions.
+  - Done when: `check.py` passes, `scripts/Checks.lean` audits only what remains, and the README file list matches.
 
-- [x] **B2 — Match the platform's toolchain.**
-  - **Evidence (2026-11-27):** All Lean and dependency revisions match the real checker pin. Checked against formal-conjectures 9097e2f90e66d2f6244209cb1c07f7120d17ec53; no pin changes needed.
-  - Find the Lean and Mathlib versions the platform's checker uses and compare with `lean-toolchain` and `lake-manifest.json`. The current pin follows a formal-conjectures commit, which is an assumption.
-  - Done when: the statement compiles on the platform's versions, or the pin is changed to them and `check.py` passes.
+- [ ] **P3 — Tidy the generating-function proof.** Optional.
+  - It is the least readable part (20 lines of coefficient bookkeeping). Split out a lemma giving the coefficient of `series * X^k`, so the main proof is a four-way case split with one line per case.
+  - Skip if P1 already leaves it clear enough.
 
-- [x] **B3 — Run the official checker.**
-  - **Evidence (2026-11-27):** Unmodified tools/oma.sh check oeis-a283508 accepted the final file without a lease. reviews/official-check.json pins the verdict to its SHA-256; scripts/platform_check.py reproduces it.
-  - Obtain `tools/oma.sh` and run `tools/oma.sh check oeis-a283508`. Do not run `next` or `submit` yet.
-  - If `check` cannot run without a lease, record that and move this task to Stage D.
-  - Done when: the check passes, and `official_checker` in `reviews/validation.json` is no longer "unverified".
+- [ ] **P4 — Fresh-eyes read of the proof.** Optional.
+  - The kernel settles correctness, so this is only about whether the outline and lemma names let a reader follow the argument. A reviewer with no history reads the file top to bottom and reports what was unclear.
 
-- [x] **B4 — Refresh the live data.**
-  - **Evidence (2026-11-27):** Archived refreshed page, brief, API response, and both OEIS entries with provenance. Still unformalized, zero live agents, no solution; source conjecture lines unchanged. Refresh again on the eventual submission day.
-  - Re-fetch the problem page and the OEIS entry. Confirm the problem is still open, nobody else holds it or has already stated it, and the conjecture lines in the entry are unchanged.
-  - Done when: `sources/` and its hashes reflect the day of submission.
+## Stage 3 — Submit the proof
 
-## Stage C — Final review and housekeeping
+Only after the statement pull request is merged.
 
-- [x] **C1 — Prepare the proof for the follow-up.**
-  - **Evidence (2026-11-27):** proofs/oeis-a283508.lean is in the required import/type_of% format. It was first assembled mechanically from the local modules (372 lines), then rewritten by hand to work directly on the statement's definitions (241 lines, private helpers in namespace A283508Solution, proof outline at the top); the platform's tools/check.sh accepted the rewritten file in a fresh rehearsal. It compiles in isolation against only Mathlib and the proposed statement; OMA.solution uses only the three allowed axioms.
-  - Once the statement is merged it becomes provable by everyone, and we already have the proof. Assemble it into the form B1 says proofs must take (most likely one file importing only Mathlib that proves `main`).
-  - Done when: that file compiles in isolation and its axioms are only `propext`, `Classical.choice`, `Quot.sound`.
+- [ ] **F1 — Re-validate against the merged statement.**
+  - If review changed the statement, its hash differs and the proof must be adapted. Either way, re-run `tools/check.sh proofs/oeis-a283508.lean` against the merged file and against the platform's current pin.
+  - Done when: the verdict is "accepted" with the merged statement's hash.
 
-- [x] **C2 — Independent read of the final statement.**
-  - **Evidence (2026-11-27):** Fresh review agent read only the final statement and two OEIS entries, with no inherited history. Signed off on SHA-256 41b9b5ddced91483eff7ffd2faa972326e0b71f5086d138eea3f91b59b699285; see reviews/independent-statement-review.md. Upstream human review remains separate.
-  - Someone who has not worked on it reads the final file against the two OEIS entries only. **Danila, or a fresh reviewer.**
-  - Done when: the reviewer signs off or their comments are resolved.
+- [ ] **F2 — Take the proof lease and follow the lead-role rules.**
+  - `tools/oma.sh next --problem oeis-a283508` writes `proofs/oeis-a283508.lean` with the exact import line and target; our file must start with that same line.
+  - As lead, post a `PLAN:` note within the first 10 minutes (the outline at the top of the proof is the text), and beat every 7 minutes.
 
-- [x] **C3 — Put the repo on a remote.**
-  - Danila authorized a public repository under ddanila. Created https://github.com/ddanila/lefttosolve and pushed main (implementation commit f81bd08). Official submissions use a separate upstream fork.
-  - Done when: `main` is pushed.
+- [ ] **F3 — Check and submit.**
+  - `tools/oma.sh check oeis-a283508`, then `tools/oma.sh submit oeis-a283508`. One new file in the pull request, nothing else changed.
+  - Describe the result plainly in the pull request: an elementary proof of an OEIS conjecture tagged "easy", not a new hard result.
 
-- [x] **C4 — Bring the docs up to date.**
-  - Updated README for the inline proposition, standard Rule 187 orientation, official acceptance, public remote, and follow-up proof format. `python3 scripts/check.py` passed from clean detached checkout f81bd08, reusing only the dependency cache; tracked files remained unchanged.
-  - Done when: `check.py` passes on a clean checkout and the README matches the files.
-
-## Stage D — Submit (last)
-
-Only after every task above is done or explicitly waived. These steps are visible to others, so Danila confirms before each one.
-
-- [x] **D1** — `tools/oma.sh next --problem oeis-a283508` to take the lease, then put the final statement in place.
-  - **Evidence:** `next --problem oeis-a283508` succeeded under @ddanila; role lead, zero other agents. The final statement is copied byte-for-byte into `.oma/platform/statements/oeis-a283508.lean`. The checkout and private lease state are ignored by git. D2 has not been run after acquiring the lease.
-- [ ] **D2** — `tools/oma.sh check oeis-a283508` once more.
-- [ ] **D3** — `tools/oma.sh submit oeis-a283508`.
-- [ ] **D4** — Update the README's "no lease, no submission" line and record the submission reference.
-- [ ] **D5** — After the statement is merged, submit the proof prepared in C1.
+- [ ] **F4 — Record the outcome.**
+  - Save the pull request URL and the CI verdict in `reviews/`, and update the README.
