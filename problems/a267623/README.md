@@ -1,6 +1,6 @@
 # A267623 — Rule 187 middle column
 
-Local statement and proof of the two conjectures selected by the [platform](https://lefttosolve.com/p/oeis-a267623), from [OEIS A267623](https://oeis.org/A267623). The complete work is published. Statement [PR #7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472) is submitted; proof submission will follow statement merge and exact-target checking. Progress is tracked in PLAN.md.
+Local statement and proof of the two conjectures selected by the [platform](https://lefttosolve.com/p/oeis-a267623), from [OEIS A267623](https://oeis.org/A267623). The complete work is published. Statement [PR #7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472) merged unchanged at 14:58:01 UTC. The official exact-target proof recheck passed; proof [PR #7656](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7656) is submitted. Progress is tracked in PLAN.md.
 
 The row at time 1 is ON everywhere except at the origin. The hole moves left at each later step. Consequently the centre column, read downwards from time 0, is 1,0,1,1,... . Decimal encoding of its first n+1 bits gives 1,10,101,1011,... . For n>=1, a(n+1)=10a(n)+1; this implies both requested identities.
 
