@@ -1,6 +1,6 @@
 # A267623 — Rule 187 middle column
 
-Local statement and proof of the two conjectures selected by the [platform](https://lefttosolve.com/p/oeis-a267623), from [OEIS A267623](https://oeis.org/A267623). Nothing for this problem has been published or submitted.
+Local statement and proof of the two conjectures selected by the [platform](https://lefttosolve.com/p/oeis-a267623), from [OEIS A267623](https://oeis.org/A267623). Publication and the full submission process are now authorized; progress is tracked in PLAN.md.
 
 The row at time 1 is ON everywhere except at the origin. The hole moves left at each later step. Consequently the centre column, read downwards from time 0, is 1,0,1,1,... . Decimal encoding of its first n+1 bits gives 1,10,101,1011,... . For n>=1, a(n+1)=10a(n)+1; this implies both requested identities.
 
@@ -25,7 +25,7 @@ The full OEIS entry also has empirical closed-form observations. These are outsi
 
 Run `python3 problems/a267623/check.py`, or `python3 scripts/check.py` for all three problems. The problem checker builds statement and proof in isolation, audits allowed axioms, evaluates initial Lean terms, and simulates the truth table directly on a shrinking finite window. It compares all available b-file terms and checks the recurrence and generating-function coefficients separately. Temporary paths in saved logs are normalized.
 
-The proof reuses the moving-hole argument from our A267622 proof, itself adapted from A283508. It imports only its own statement and Mathlib. This source comparison is an author review; a fresh independent semantic review remains advisable before submission.
+The proof reuses the moving-hole argument from our A267622 proof, itself adapted from A283508. It imports only its own statement and Mathlib. A fresh independent source-to-statement review found no corrections; see `reviews/independent-statement-review.md`. Its separate simulator matched all 1,001 terms and verified reflected-orientation agreement.
 
 ## Validation result
 

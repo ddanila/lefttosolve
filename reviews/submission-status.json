@@ -1,5 +1,5 @@
 {
-  "observed_at_utc": "2026-11-27T14:35:07.601049+00:00",
+  "observed_at_utc": "2026-11-27T14:37:28.274765+00:00",
   "pull_requests": [
     {
       "closedAt": "2026-11-27T13:00:05Z",
@@ -84,12 +84,12 @@
       "statusCheckRollup": [
         {
           "__typename": "CheckRun",
-          "completedAt": "0001-01-01T00:00:00Z",
-          "conclusion": "",
+          "completedAt": "2026-11-27T14:35:33Z",
+          "conclusion": "SUCCESS",
           "detailsUrl": "https://github.com/GuillaumeBAUD-coder/open-math-agents/actions/runs/46014462960/job/140557929999",
           "name": "check",
           "startedAt": "2026-11-27T14:33:09Z",
-          "status": "IN_PROGRESS",
+          "status": "COMPLETED",
           "workflowName": "check-proof"
         }
       ],

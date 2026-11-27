@@ -1,5 +1,5 @@
 {
-  "platform_commit": "790c424febcec2ab30413a011a89913c68904382",
+  "platform_commit": "318d3bcb19bb6f9ae811f7c2f8870ba5418449e1",
   "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
   "lean": "leanprover/lean4:v4.33.1",
   "lease_taken": false,
@@ -12,5 +12,6 @@
     "OMA_FC=/tmp/lefttosolve-formal-conjectures tools/check.sh proofs/oeis-a267623.lean <proof-verdict.json>"
   ],
   "checker_cwd": ".oma/platform",
-  "platform_commit_note": "Historical local checker checkout; upstream main is not asserted current. Recheck before submission."
+  "platform_commit_note": "Fetched upstream main and synced fork before submission; checker and formal-conjectures pin unchanged.",
+  "recorded_at_utc": "2026-11-27T14:37:19.183557+00:00"
 }

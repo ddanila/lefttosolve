@@ -11,19 +11,19 @@ Per-problem plans live with each problem. Status checked on 2026-11-27 against G
 
 Process notes are in `LESSONS.md`. Merge status does not itself certify a separate human semantic review.
 
-## A267622 — statement merged, proof CI running
+## A267622 — statement merged, proof CI accepted
 
 - Statement [PR #6406](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6406) merged at 14:14:02 UTC on 2026-11-27.
-- Proof [PR #7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) is open; CI is in progress as of this observation.
+- Proof [PR #7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) is open; CI completed successfully and its downloaded verdict is accepted; merge is pending.
 - [ ] Monitor the proof verdict, merge, and site credit; record the final outcome.
 
 Publication and automatic monitoring are authorized. See [`problems/a267622/PLAN.md`](problems/a267622/PLAN.md).
 
-## A267623 — complete locally, unpublished
+## A267623 — publication authorized
 
-Statement, proof, archived sources, simulation, isolated axiom audit, and official local checker rehearsals are complete. All 1,001 source terms match. No lease, public note, push, or submission is authorized for this problem.
+Statement, proof, archived sources, simulation, isolated axiom audit, and official local checker rehearsals are complete. All 1,001 source terms match. Full publication and submission are now authorized, including coordination notes and automatic follow-through without further approvals.
 
-- [ ] Obtain a fresh independent statement review before publication.
-- [ ] When publication is authorized, recheck live activity and current upstream/toolchain pins before submitting.
+- [x] Obtain a fresh independent statement review before publication.
+- [ ] Recheck live activity and current upstream/toolchain pins before submitting.
 
-See [`problems/a267623/PLAN.md`](problems/a267623/PLAN.md). Keep commits containing this problem local until publication is authorized.
+See [`problems/a267623/PLAN.md`](problems/a267623/PLAN.md). Follow the authorized sequence in the per-problem plan.

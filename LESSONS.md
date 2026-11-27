@@ -1,6 +1,6 @@
 # Lessons from the A283508 submission
 
-Recorded 2026-11-27. The proof submissions are still awaiting verdicts; this records the submission process, not a final attribution decision.
+Recorded 2026-11-27. Outcome updated 2026-11-27: our proof PR #6231 merged at 13:00:05 UTC; alternative #6200 closed at 13:04:40 UTC. The lessons below record the submission process.
 
 ## What happened
 

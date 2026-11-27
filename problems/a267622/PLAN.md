@@ -43,3 +43,5 @@ Statement merged unchanged at 14:14:02 UTC (f103df62bbea7a03460e7938aba8b2adfbdf
 Proof submitted: https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242. One added proof file, exact approved hash verified from GitHub. Client released lease; CI queued at 14:16 UTC.
 
 Latest GitHub observation on 2026-11-27: proof PR #7242 remains open; CI started at 14:33:09 UTC and is in progress. See the root `reviews/submission-status.json` for the timestamped snapshot.
+
+CI completed successfully at 14:35:33 UTC; downloaded verdict accepted the exact proof and allowed axioms. Saved in `reviews/proof-ci-verdict.json`. Merge remains pending.
