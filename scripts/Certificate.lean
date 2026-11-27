@@ -40,15 +40,17 @@ theorem sequence187_consistent : A267623.a = _root_.A267623.a := by
 theorem series_consistent : series = _root_.A283508.series := by
   simp only [series, _root_.A283508.series, sequence_consistent]
 
-theorem certified : Target := by
-  unfold Target
+theorem certified :
+  (series * ((1 - PowerSeries.X) * (1 - 10 * PowerSeries.X)) =
+    1 - PowerSeries.X + PowerSeries.X^2) ∧
+  (∀ n : ℕ, 0 < n → a n = (91 * 10^n - 10) / 90) ∧
+  (∀ n : ℕ, 2 < n → (a n : ℤ) = 11 * (a (n-1) : ℤ) - 10 * (a (n-2) : ℤ)) ∧
+  (∀ n : ℕ, a n = A267623.a n) := by
   rw [series_consistent, sequence_consistent, sequence187_consistent]
   exact ⟨_root_.A283508.generating_function, _root_.A283508.formula,
     _root_.A283508.recurrence_int, _root_.A267623.sequence_eq⟩
 
--- These type ascriptions check the identical target; certified never uses main.
-#check (main : Target)
-#check (certified : Target)
-#print axioms Target
+-- Definitional equality of theorem types is checked without using main as evidence.
+example : type_of% main := certified
 #print axioms certified
 end OMA.S_oeis_a283508

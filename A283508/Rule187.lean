@@ -1,7 +1,8 @@
 import A283508.Proof
 
-/-! Independent translation of the Maple program in OEIS A267623.
-The low bit is the cell at x-1, the centre has weight 2, and x+1 has weight 4.
+/-! Standard Wolfram Rule 187 from OEIS A267623.
+The left cell has weight 4, the centre weight 2, and the right cell weight 1.
+The entry’s Maple program mirrors this orientation; the centre sequence is unchanged.
 The sequence reads the centre cell through TIME, encoding the bits in decimal.
 -/
 namespace A267623
@@ -9,7 +10,7 @@ namespace A267623
 abbrev Row := ℤ → Bool
 def bit (b : Bool) : ℕ := if b then 1 else 0
 def rule (l c r : Bool) : Bool :=
-  decide ((187 / 2 ^ (bit l + 2 * bit c + 4 * bit r)) % 2 = 1)
+  decide ((187 / 2 ^ (4 * bit l + 2 * bit c + bit r)) % 2 = 1)
 def step (g : Row) : Row := fun x => rule (g (x-1)) (g x) (g (x+1))
 def initial : Row := fun x => decide (x = 0)
 def state : ℕ → Row
@@ -19,7 +20,7 @@ def a : ℕ → ℕ
   | 0 => bit (state 0 0)
   | n+1 => 10 * a n + bit (state (n+1) 0)
 
-theorem rule_readable (l c r : Bool) : rule l c r = (!c || l) := by
+theorem rule_readable (l c r : Bool) : rule l c r = (!c || r) := by
   cases l <;> cases c <;> cases r <;> decide
 
 def hole (k : ℤ) : Row := fun x => decide (x ≠ k)
@@ -29,18 +30,22 @@ theorem step_initial : step initial = hole 0 := by
   simp [step, rule_readable, initial, hole]
   omega
 
-theorem step_hole (k : ℤ) : step (hole k) = hole (k+1) := by
+theorem step_hole (k : ℤ) : step (hole k) = hole (k-1) := by
   funext x
-  by_cases h : x = k+1 <;> by_cases j : x = k
-  all_goals simp_all [step, rule_readable, hole, show x-1 = k ↔ x = k+1 by omega]
+  by_cases h : x = k-1
+  · simp [step, rule_readable, hole, h]
+  · have h1 : x+1 ≠ k := by omega
+    simp [step, rule_readable, hole, h1, h]
 
-theorem state_succ (n : ℕ) : state (n+1) = hole n := by
+theorem state_succ (n : ℕ) : state (n+1) = hole (-(n : ℤ)) := by
   induction n with
   | zero => exact step_initial
   | succ n ih =>
-    change step (state (n+1)) = hole (↑(n+1 : ℕ))
+    change step (state (n+1)) = hole (-↑(n+1 : ℕ))
     rw [ih, step_hole]
-    simp
+    congr 1
+    push_cast
+    ring
 
 theorem center (n : ℕ) : state n 0 = decide (n ≠ 1) := by
   cases n with

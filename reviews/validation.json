@@ -13,7 +13,8 @@
   "standalone_mathlib_only": true,
   "definition_consistency": true,
   "complete_certificate": true,
-  "official_checker": "unverified",
+  "isolated_followup_proof": true,
+  "official_checker": "accepted",
   "statement_intentional_placeholders": 1,
   "audited_theorems": 21,
   "allowed_axioms": [

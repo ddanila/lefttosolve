@@ -14,7 +14,7 @@ The stronger exact identity `90*a(n)+10 = 91*10^n` also holds, so natural-number
 a(n) = 11*a(n-1) - 10*a(n-2)
 ```
 
-This is local work. No problem lease, submission, remote repository, or claim of a newly discovered mathematical result has been made. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved separately by `scripts/Certificate.lean`. Official checker compatibility remains **unverified**.
+The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). No problem lease or platform submission has been made, and this is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved separately by `scripts/Certificate.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; upstream human review still follows submission.
 
 ## Why the proof is short
 
@@ -32,7 +32,7 @@ lake exe cache get
 python3 scripts/check.py
 ```
 
-The pinned toolchain and dependencies download when needed. A fresh setup needs several GB; this checkout already has the toolchain and cache. `scripts/check.py` runs the build, sparse/padded/cyclic Rule 643 simulations, an independent Rule 187 simulation, Lean computation samples, source hash checks, and axiom audits. It also compiles the standalone statement in an empty directory with only Mathlib dependencies available, then assembles and checks the separate certificate. It writes the latest validation results into `reviews/`.
+The pinned toolchain and dependencies download when needed. A fresh setup needs several GB; this checkout already has the toolchain and cache. `scripts/check.py` runs the build, sparse/padded/cyclic Rule 643 simulations, an independent Rule 187 simulation, Lean computation samples, source hash checks, and axiom audits. It also compiles the standalone statement in an empty directory with only Mathlib dependencies available, then assembles and checks the separate certificate. It also compiles the single-file follow-up proof with only the proposed upstream statement and Mathlib available, and audits `OMA.solution`. It writes the latest validation results into `reviews/`.
 
 The completed run checks all 32 neighbourhoods and all 127 supplied OEIS terms, indexed 0 through 126. Lean additionally checks direct computations at indices 0–3 and evaluates indices 0–6. The proof modules and complete certificate have no `sorry`, added axioms, `native_decide`, or unsafe implementation. The statement has exactly one intentional `sorry` in `main`, as the problem brief requests; the certificate never invokes it. Its only axioms are `propext`, `Classical.choice`, and `Quot.sound`.
 
@@ -46,6 +46,9 @@ The completed run checks all 32 neighbourhoods and all 127 supplied OEIS terms, 
 - `A283508/Torus.lean`: general Manhattan locality, periodic lift, and cyclic observation equivalence.
 - `statements/oeis-a283508.lean`: self-contained statement with the brief's single intentional placeholder.
 - `scripts/Certificate.lean`: definition-equivalence proofs and the complete target certificate, appended to the statement by the checker.
+- `proofs/oeis-a283508.lean`: generated follow-up proof in the platform format, importing the proposed merged statement.
+- `scripts/package_proof.py`: regenerate that file after local proof changes.
+- `scripts/platform_check.py`: run the official statement checker in separate upstream checkouts, without a lease.
 - `scripts/validate.py`: independent sparse, padded, cyclic, and Rule 187 simulations.
 - `scripts/check.py` and `scripts/Checks.lean`: reproducible checks and axiom audit.
 - `sources/`: saved source material and SHA-256 provenance manifest.
@@ -66,13 +69,13 @@ The translation decisions are:
 7. **Cyclic reference grid.** The source's `ListConvolve[...,a,2]` uses a 257×257 cyclic grid. This differs from the padded validator. `lift_step` and `lift_evolve` identify cyclic evolution with the infinite periodic lift, whose initial ON cells lie in `(257ℤ)²`. `evolve_local` proves that only the initial Manhattan ball of radius `n` matters. For an observation `(m,0)`, `m ≤ n ≤ 126`, every other seed is at distance at least `257-m ≥ 257-n > n`. `periodic_agrees` checks this using coordinate bounds and divisibility; `observed_torus_correct` then proves equality of every observed digit, including the endpoint `n=m=126`. The cyclic simulator compares all 127 encodings with the table and sparse infinite model.
 8. **Source inconsistency.** The linked diagrams explicitly say Rule 641 and show an OFF origin at odd steps. The entry, program and sequence table specify Rule 643. We follow the latter three and do not use those diagrams as validation evidence.
 
-The remaining trust boundary is the human translation of the OEIS definitions and Mathematica program. Lean proves the defined cyclic model's correspondence; it does not formally verify Mathematica syntax or its evaluator. Upstream human review and the official checker have not occurred.
+The remaining trust boundary is the human translation of the OEIS definitions and Mathematica program. Lean proves the defined cyclic model's correspondence; it does not formally verify Mathematica syntax or its evaluator. The official local checker passed; upstream human review has not occurred.
 
 ## Independent A267623 audit
 
 The [A267623 entry](https://oeis.org/A267623/internal), reference-code extract, and [term table](https://oeis.org/A267623/b267623.txt) are archived with retrieval times and SHA-256 hashes in `sources/provenance.json`. Attribution and licensing are the same OEIS terms stated above; the entry retains individual contributor credits. The extract is derived from the archived entry.
 
-The primary definition observes the **centre cell across times 0 through n**, starting from a single ON cell at time zero. R. J. Mathar's Maple program assigns weight 1 to the left cell, 2 to the centre, and 4 to the right, and returns OFF only for neighbourhood codes 2 and 6. This is bit rule 187, equivalent to “centre OFF or left ON.” The independently defined Lean rule proves that truth table. At time 1 the only OFF cell is the origin; afterwards that hole moves one cell right per step. Thus the centre is OFF exactly at time 1.
+The primary definition observes the **centre cell across times 0 through n**, starting from a single ON cell at time zero. R. J. Mathar's Maple program assigns weight 1 to the left cell, 2 to the centre, and 4 to the right, and returns OFF only for neighbourhood codes 2 and 6. This is the mirror of Wolfram’s standard orientation. Lean and the Python simulator now use the standard left/centre/right weights 4/2/1, as in the Mathematica program: “centre OFF or right ON.” At time 1 the only OFF cell is the origin; afterwards that hole moves one cell left per step. Reflection preserves the centre observation from the symmetric single-cell seed. Thus the centre is OFF exactly at time 1.
 
 Maple first constructs the binary value from these time-ordered digits, then applies A007088 to display those digits as a decimal integer. Mathematica directly uses `FromDigits` with its default base 10. The initial centre is the most significant digit in either program. The Lean definition appends each new centre value in base 10; it neither uses the closed formula nor refers to A283508. The independent simulator checks every archived A267623 term.
 
@@ -83,4 +86,32 @@ The entry's secondary Rule 643 comment says “from the left edge to the origin.
 `series : PowerSeries ℤ` has coefficient `n` equal to `(a n : ℤ)`. The theorem proves
 `series * ((1-X)*(1-10*X)) = 1-X+X²` by coefficient extensionality: the first three coefficients use the initial values, and every higher coefficient uses the integer recurrence. The denominator has constant coefficient 1, so it is a unit in the formal power-series ring; multiplication by it is equivalent to the source's formal quotient.
 
-The standalone target lists the four conjectures in source order. The certificate proves equivalence of the copied definitions with the local ones, including induction for the recursive definitions, and proves exactly the same `Target` type as `main`. Its axiom audit permits only `propext`, `Classical.choice`, and `Quot.sound`; `sorryAx` would fail validation. The target itself is audited too. See `reviews/statement-checks.txt` for the isolated compilation and certificate result.
+The standalone theorem inlines the four conjectures in source order, without a `Target` alias. Its header gives the source and `Credit: @ddanila`, and comments state every interpretation choice. The two automata share one bit conversion; each definition is used by the claim. The certificate proves equivalence of the copied definitions with the local ones, including induction for the recursive definitions, and proves exactly the inlined type of `main`; `type_of% main` checks that match. Its axiom audit permits only `propext`, `Classical.choice`, and `Quot.sound`; `sorryAx` would fail validation. The separate proof never invokes the statement’s placeholder. See `reviews/statement-checks.txt` for the isolated compilation and certificate result.
+
+## Platform checks and follow-up
+
+The platform pins the same Lean, Mathlib, and dependency revisions as this project;
+see `reviews/platform-review.md`. To repeat the official check, obtain a checkout of
+`GuillaumeBAUD-coder/open-math-agents` and formal-conjectures at the recorded pin,
+with its Mathlib cache, then run:
+
+```sh
+python3 scripts/platform_check.py /path/to/open-math-agents /path/to/formal-conjectures
+python3 scripts/check.py
+```
+
+`reviews/official-check.json` records the checker commit, toolchain, verdict, and
+statement hash. The local validator reports acceptance only while that hash matches.
+The separate upstream checkout is required because the client distinguishes new,
+untracked statements from already tracked ones. No lease is needed for checking.
+
+The follow-up proof begins with `import OMAStatements.S_oeis_a283508` and proves
+`OMA.solution : type_of% @OMA.S_oeis_a283508.main`. It contains its helper proofs in
+one file and is checked against an isolated copy of the proposed statement. If upstream
+review changes the statement, regenerate and revalidate before submitting the proof.
+The official proof checker also accepted a local rehearsal against this proposed statement
+(`reviews/proof-preflight.json`). This preparation does not imply that the statement has merged.
+
+The refreshed live snapshot still lists the problem as unformalized, with zero active
+agents and no solution. Availability must be refreshed before taking a lease. Stage D
+in `PLAN.md` requires Danila’s separate confirmation before each visible submission step.

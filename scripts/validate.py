@@ -61,7 +61,7 @@ def validate():
                 nxt[y][x] = bit_rule(row[x], above[x]+below[x]+
                     row[(x-1)%cyclic_size]+row[(x+1)%cyclic_size])
         cyclic = nxt
-    # Independent elementary automaton: low bit left, centre weight 2, right weight 4.
+    # Independent elementary automaton: left weight 4, centre weight 2, right weight 1.
     second = {int(line.split()[0]): int(line.split()[1])
               for line in Path('sources/b267623.txt').read_text().splitlines()
               if line.strip() and not line.startswith('#')}
@@ -79,7 +79,7 @@ def validate():
         if n == last187: break
         nxt = bytearray(len(row))
         for x in range(1, len(row)-1):
-            nxt[x] = (187 >> (row[x-1]+2*row[x]+4*row[x+1])) & 1
+            nxt[x] = (187 >> (4*row[x-1]+2*row[x]+row[x+1])) & 1
         row = nxt
     result = dict(neighborhoods=32, table_terms=len(table), max_step=horizon,
                   dense_radius=radius, independent_simulators_agree=True,

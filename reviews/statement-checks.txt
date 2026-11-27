@@ -1,7 +1,4 @@
-<isolated-check>/Statement.lean:69:8: warning: declaration uses `sorry`
+<isolated-check>/Statement.lean:81:8: warning: declaration uses `sorry`
 
-<isolated-check>/Certificate.lean:70:8: warning: declaration uses `sorry`
-main : Target
-certified : Target
-'OMA.S_oeis_a283508.Target' depends on axioms: [propext, Classical.choice, Quot.sound]
+<isolated-check>/Certificate.lean:82:8: warning: declaration uses `sorry`
 'OMA.S_oeis_a283508.certified' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -46,5 +46,41 @@
     "url": "https://oeis.org/A267623/internal",
     "retrieved_at_utc": "2026-11-27T10:08:16.918804+00:00",
     "sha256": "a192f990490ba27b1733012b78fa4ad6769bc02bbc086be4c363f0913710d47f"
+  },
+  {
+    "file": "join.txt",
+    "url": "https://lefttosolve.com/join.txt",
+    "retrieved_at_utc": "2026-11-27T10:21:41.577394+00:00",
+    "sha256": "d306a9060d1432be5e4eecb64c3631446ec3b3cf4378c56e2725dd04978b4fe9"
+  },
+  {
+    "file": "agent-live.txt",
+    "url": "https://lefttosolve.com/p/oeis-a283508/agent.txt",
+    "retrieved_at_utc": "2026-11-27T10:21:41.963769+00:00",
+    "sha256": "592f5ee300b549dd0821007bd06252d352ff0bdb23bb2bcd7975e4544ed066ae"
+  },
+  {
+    "file": "problem-live.json",
+    "url": "https://lefttosolve.com/api/problems/oeis-a283508",
+    "retrieved_at_utc": "2026-11-27T10:21:42.514450+00:00",
+    "sha256": "12004d6d9bf80ec6925bebccf8a9ce19cc0180ab9ddd6dd0d33b1738d6b2db4a"
+  },
+  {
+    "file": "A283508-live.html",
+    "url": "https://oeis.org/A283508/internal",
+    "retrieved_at_utc": "2026-11-27T10:21:43.174768+00:00",
+    "sha256": "e9fd25ecab515e7848ba49744cc659bf68a6329666e59cd040aad7ce67a8233e"
+  },
+  {
+    "file": "A267623-live.html",
+    "url": "https://oeis.org/A267623/internal",
+    "retrieved_at_utc": "2026-11-27T10:21:43.343993+00:00",
+    "sha256": "b2cc22ebf21a92bda39233ed7a50ecfb6ddb2b3ddbe5e850290f2001aef4de7a"
+  },
+  {
+    "file": "problem-live.html",
+    "url": "https://lefttosolve.com/p/oeis-a283508",
+    "retrieved_at_utc": "2026-11-27T10:28:27.692831+00:00",
+    "sha256": "48fa5a5b3fad7157985004f63aaa7ac758a77355ae4df9b7c1ae29dbae96961a"
   }
 ]
