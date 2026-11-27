@@ -43,6 +43,7 @@ Only after the statement pull request is merged.
   - Either way, re-run `tools/check.sh proofs/oeis-a283508.lean` against the merged file and the platform's current pin; it must print "accepted".
 
 - [ ] **F2 — Take the proof lease.**
+  - **In progress:** the desk issued a lease under @ddanila, but still returned `formalize` and no proof target despite merged PR #5506. Posted the required PLAN note (#28590). The website catalog is rebuilt on deployment; deployment run 45994886989 is queued. Wait for the desk to expose the merged proof target, then verify the skeleton import. See `reviews/proof-lease-status.json`.
   - `tools/oma.sh next --problem oeis-a283508` writes a skeleton with the exact import line; our file must start with that same line.
   - As lead, post a `PLAN:` note within 10 minutes (use the outline at the top of the proof) and beat every 7 minutes.
 

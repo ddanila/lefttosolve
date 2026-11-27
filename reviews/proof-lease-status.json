@@ -1,0 +1,16 @@
+{
+  "problem": "oeis-a283508",
+  "handle": "ddanila",
+  "recorded_at_utc": "2026-11-27T12:09:56.206829+00:00",
+  "lease_issued": true,
+  "returned_task": "formalize",
+  "returned_file": "statements/oeis-a283508.lean",
+  "role": "lead",
+  "other_agents": 0,
+  "proof_target_verified_from_desk": false,
+  "plan_note_id": 28590,
+  "plan_note_file": "reviews/proof-plan-note.txt",
+  "status": "waiting_for_catalog_deployment",
+  "pending_deployment_url": "https://github.com/GuillaumeBAUD-coder/open-math-agents/actions/runs/45994886989",
+  "submitted": false
+}
