@@ -24,7 +24,8 @@ Every step below is visible to others, so Danila confirms each one before it run
   - Confirm `.oma/platform/statements/oeis-a283508.lean` has SHA-256 `41b9b5dd…9285`.
   - Run `tools/oma.sh check oeis-a283508` under the lease; it must print "accepted".
 
-- [ ] **S3 — Submit.**
+- [x] **S3 — Submit.**
+  - **Result:** https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506. Verified exactly one changed file, `statements/oeis-a283508.lean`, with the approved SHA-256. Local checker accepted; submission client released the lease. See `reviews/statement-submission.json`.
   - `tools/oma.sh submit oeis-a283508`. The pull request must contain only the statement file.
   - Record the pull request URL in `reviews/`.
 

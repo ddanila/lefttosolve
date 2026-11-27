@@ -1,0 +1,48 @@
+{
+  "baseRefName": "main",
+  "files": [
+    {
+      "path": "statements/oeis-a283508.lean",
+      "additions": 88,
+      "deletions": 0,
+      "changeType": "ADDED"
+    }
+  ],
+  "headRefName": "oma/oeis-a283508",
+  "headRefOid": "4a22434dfa26a1d2121bf12aad30f9dfe97b9aab",
+  "isDraft": false,
+  "mergeStateStatus": "UNSTABLE",
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/GuillaumeBAUD-coder/open-math-agents/actions/runs/45986661626/job/140463956371",
+      "name": "check",
+      "startedAt": "2026-11-27T10:59:15Z",
+      "status": "QUEUED",
+      "workflowName": "check-proof"
+    }
+  ],
+  "url": "https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506",
+  "recorded_at_utc": "2026-11-27T10:59:27.507699+00:00",
+  "statement_sha256": "41b9b5ddced91483eff7ffd2faa972326e0b71f5086d138eea3f91b59b699285",
+  "one_file_verified": true,
+  "local_verdict": {
+    "file": "statements/oeis-a283508.lean",
+    "type": "statement",
+    "problem": "oeis-a283508",
+    "module": "OMAStatements.S_oeis_a283508",
+    "ok": true,
+    "kind": "statement",
+    "polarity": "proof",
+    "theorem": "OMA.S_oeis_a283508.main",
+    "imports": "Mathlib",
+    "errors": [],
+    "verdict": "accepted",
+    "reason": "the statement compiles; it now needs a human review of the translation",
+    "log": "OMASubmission_72305.lean:81:8: warning: declaration uses `sorry`\n'OMA.S_oeis_a283508.main' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]"
+  },
+  "local_lease_removed": true
+}
