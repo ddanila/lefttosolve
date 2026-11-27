@@ -1,4 +1,4 @@
-"""Build, simulate, isolate the statement, certify its definitions, and audit axioms."""
+"""Build the reference model, check the sole proof in isolation, and audit axioms."""
 import hashlib
 import json
 import os
@@ -36,7 +36,7 @@ def main():
     for item in json.loads(Path('sources/provenance.json').read_text()):
         assert hashlib.sha256((Path('sources')/item['file']).read_bytes()).hexdigest() == item['sha256']
     for path in [*Path('A283508').glob('*.lean'), Path('A283508.lean'),
-                 Path('scripts/Certificate.lean'), Path('scripts/Checks.lean')]:
+                 Path('scripts/ReferenceBridge.lean'), Path('scripts/Checks.lean')]:
         assert not re.search(FORBIDDEN, path.read_text()), path
     statement = Path('statements/oeis-a283508.lean').read_text()
     assert statement.startswith('import Mathlib\n')
@@ -67,11 +67,6 @@ def main():
         isolated.write_text(statement)
         standalone_output = run([lean, str(isolated)], cwd=tmp, env=env)
         assert 'declaration uses' in standalone_output and 'sorry' in standalone_output
-        certificate = Path(tmp)/'Certificate.lean'
-        certificate.write_text(statement.replace('import Mathlib', 'import Mathlib\nimport A283508', 1)
-                               + '\n' + Path('scripts/Certificate.lean').read_text())
-        cert_output = run([lean, str(certificate)], cwd=tmp,
-                          env=dict(os.environ, LEAN_PATH=full_path))
         # Only the proposed upstream statement and Mathlib are available to the proof.
         module = Path(tmp)/'OMAStatements/S_oeis_a283508.lean'
         module.parent.mkdir()
@@ -81,8 +76,15 @@ def main():
         proof_file.write_text(proof+'\n#print axioms OMA.solution\n')
         proof_output = run([lean, str(proof_file)], cwd=tmp,
                            env=dict(env, LEAN_PATH=tmp+os.pathsep+isolated_path))
+        bridge = Path(tmp)/'ReferenceBridge.lean'
+        bridge.write_text(Path('scripts/ReferenceBridge.lean').read_text() +
+                          '\n#print axioms A283508.state_matches_statement\n' +
+                          '#print axioms A283508.observed_statement_torus_correct\n')
+        bridge_output = run([lean, str(bridge)], cwd=tmp,
+                            env=dict(env, LEAN_PATH=tmp+os.pathsep+full_path))
     audit(proof_output, ['OMA.solution'])
-    audit(cert_output, ['OMA.S_oeis_a283508.certified'])
+    audit(bridge_output, ['A283508.state_matches_statement',
+                          'A283508.observed_statement_torus_correct'])
     checks = Path('scripts/Checks.lean').read_text()
     result = run([lake, 'env', 'lean', 'scripts/Checks.lean'])
     assert '[1, 10, 101, 1011, 10111, 101111, 1011111]' in result
@@ -94,8 +96,8 @@ def main():
         if report['statement_sha256'] == hashlib.sha256(statement.encode()).hexdigest():
             official = report['verdict']['verdict']
     validation = validate()
-    validation.update(standalone_mathlib_only=True, definition_consistency=True,
-                      complete_certificate=True, isolated_followup_proof=True, official_checker=official,
+    validation.update(standalone_mathlib_only=True, reference_state_consistency=True,
+                      isolated_followup_proof=True, official_checker=official,
                       statement_intentional_placeholders=1,
                       audited_theorems=len(re.findall(r'^#print axioms ', checks, re.M)),
                       allowed_axioms=sorted(ALLOWED), source_hashes_verified=True)
@@ -104,10 +106,12 @@ def main():
     Path('reviews/proof-checks.txt').write_text(proof_output.replace(tmp, '<isolated-check>'))
     # Remove temporary directory names to keep the saved report reproducible.
     Path('reviews/statement-checks.txt').write_text(
-        (standalone_output+'\n'+cert_output).replace(tmp, '<isolated-check>'))
+        standalone_output.replace(tmp, '<isolated-check>'))
     print(result)
-    print(cert_output.replace(tmp, '<isolated-check>'))
-    print('PASS: build, isolated statement, complete certificate, simulations, and axiom audit.')
+    Path('reviews/reference-bridge-checks.txt').write_text(bridge_output.replace(tmp, '<isolated-check>'))
+    print(proof_output)
+    print(bridge_output)
+    print('PASS: build, isolated statement, isolated proof, reference bridge, simulations, and axiom audit.')
 
 
 if __name__ == '__main__':

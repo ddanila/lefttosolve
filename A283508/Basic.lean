@@ -33,12 +33,6 @@ def evolve (g : Grid) : ℕ → Grid
 
 def state (n : ℕ) : Grid := evolve initial n
 
-def first : Grid := fun x y => decide
-  (¬ ((x = 0 ∧ (y = -1 ∨ y = 1)) ∨ (y = 0 ∧ (x = -1 ∨ x = 1))))
-
-def stable : Grid := fun x y => decide
-  (x < -1 ∨ 1 < x ∨ y < -1 ∨ 1 < y ∨ (x = 0 ∧ y = 0))
-
 /-- Decimal encoding of positions 0 through m, most significant digit first. -/
 def encode (g : Grid) : ℕ → ℕ
   | 0 => bit (g 0 0)

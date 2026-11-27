@@ -1,0 +1,2 @@
+'A283508.state_matches_statement' depends on axioms: [propext]
+'A283508.observed_statement_torus_correct' depends on axioms: [propext, Classical.choice, Quot.sound]

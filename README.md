@@ -14,7 +14,7 @@ The stronger exact identity `90*a(n)+10 = 91*10^n` also holds, so natural-number
 a(n) = 11*a(n-1) - 10*a(n-2)
 ```
 
-The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). The problem lease was acquired under @ddanila on 2026-11-27; no platform submission has been made. This is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved separately by `scripts/Certificate.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; upstream human review still follows submission.
+The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). The problem lease was acquired under @ddanila on 2026-11-27; no platform submission has been made. This is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved directly by `proofs/oeis-a283508.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; upstream human review still follows submission.
 
 ## Why the proof is short
 
@@ -32,21 +32,18 @@ lake exe cache get
 python3 scripts/check.py
 ```
 
-The pinned toolchain and dependencies download when needed. A fresh setup needs several GB; this checkout already has the toolchain and cache. `scripts/check.py` runs the build, sparse/padded/cyclic Rule 643 simulations, an independent Rule 187 simulation, Lean computation samples, source hash checks, and axiom audits. It also compiles the standalone statement in an empty directory with only Mathlib dependencies available, then assembles and checks the separate certificate. It also compiles the single-file follow-up proof with only the proposed upstream statement and Mathlib available, and audits `OMA.solution`. It writes the latest validation results into `reviews/`.
+The pinned toolchain and dependencies download when needed. A fresh setup needs several GB; this checkout already has the toolchain and cache. `scripts/check.py` runs the build, sparse/padded/cyclic Rule 643 simulations, an independent Rule 187 simulation, Lean computation samples, source hash checks, and axiom audits. It also compiles the standalone statement in an empty directory with only Mathlib dependencies available, and checks the reference-model bridge to its definitions. It also compiles the single-file follow-up proof with only the proposed upstream statement and Mathlib available, and audits `OMA.solution`. It writes the latest validation results into `reviews/`.
 
-The completed run checks all 32 neighbourhoods and all 127 supplied OEIS terms, indexed 0 through 126. Lean additionally checks direct computations at indices 0–3 and evaluates indices 0–6. The proof modules and complete certificate have no `sorry`, added axioms, `native_decide`, or unsafe implementation. The statement has exactly one intentional `sorry` in `main`, as the problem brief requests; the certificate never invokes it. Its only axioms are `propext`, `Classical.choice`, and `Quot.sound`.
+The completed run checks all 32 neighbourhoods and all 127 supplied OEIS terms, indexed 0 through 126. Lean additionally checks direct computations at indices 0–3 and evaluates indices 0–6. The proof file and reference-model lemmas have no `sorry`, added axioms, `native_decide`, or unsafe implementation. The statement has exactly one intentional `sorry` in `main`, as the problem brief requests; the proof never invokes it. Its only axioms are `propext`, `Classical.choice`, and `Quot.sound`.
 
 ## Files
 
 - `A283508/Basic.lean`: rule bits, infinite grid, evolution, observation and decimal encoding.
-- `A283508/Proof.lean`: first two steps, fixed configuration, axis pattern, formula, exact identity and recurrence.
 - `A283508/Locality.lean`: independence from arbitrary, time-varying boundary values when sufficiently padded.
-- `A283508/GeneratingFunction.lean`: initial values, integer recurrence, and all-coefficient power-series proof.
-- `A283508/Rule187.lean`: independent elementary automaton, centre-cell pattern, and sequence equality.
 - `A283508/Torus.lean`: general Manhattan locality, periodic lift, and cyclic observation equivalence.
 - `statements/oeis-a283508.lean`: self-contained statement with the brief's single intentional placeholder.
-- `scripts/Certificate.lean`: definition-equivalence proofs and the complete target certificate, appended to the statement by the checker.
-- `proofs/oeis-a283508.lean`: the follow-up proof in the platform format (241 lines). It is written by hand, imports the proposed merged statement, and proves the four conjectures directly on the statement's definitions, with private helpers in namespace `A283508Solution`. The `A283508/` modules are the original development and also hold the locality and cyclic-grid results, which the submitted proof does not need.
+- `proofs/oeis-a283508.lean`: the single maintained proof of all four conjectures, directly on the statement’s definitions, with private helpers in `A283508Solution`.
+- `scripts/ReferenceBridge.lean`: identifies the reference model’s `state` with the statement’s `state` and connects the torus theorem to it.
 - `scripts/platform_check.py`: run the official statement checker in separate upstream checkouts, without a lease.
 - `scripts/validate.py`: independent sparse, padded, cyclic, and Rule 187 simulations.
 - `scripts/check.py` and `scripts/Checks.lean`: reproducible checks and axiom audit.
@@ -85,7 +82,7 @@ The entry's secondary Rule 643 comment says “from the left edge to the origin.
 `series : PowerSeries ℤ` has coefficient `n` equal to `(a n : ℤ)`. The theorem proves
 `series * ((1-X)*(1-10*X)) = 1-X+X²` by coefficient extensionality: the first three coefficients use the initial values, and every higher coefficient uses the integer recurrence. The denominator has constant coefficient 1, so it is a unit in the formal power-series ring; multiplication by it is equivalent to the source's formal quotient.
 
-The standalone theorem inlines the four conjectures in source order, without a `Target` alias. Its header gives the source and `Credit: @ddanila`, and comments state every interpretation choice. The two automata share one bit conversion; each definition is used by the claim. The certificate proves equivalence of the copied definitions with the local ones, including induction for the recursive definitions, and proves exactly the inlined type of `main`; `type_of% main` checks that match. Its axiom audit permits only `propext`, `Classical.choice`, and `Quot.sound`; `sorryAx` would fail validation. The separate proof never invokes the statement’s placeholder. See `reviews/statement-checks.txt` for the isolated compilation and certificate result.
+The standalone theorem inlines the four conjectures in source order, without a `Target` alias. Its header gives the source and `Credit: @ddanila`, and comments state every interpretation choice. The two automata share one bit conversion; each definition is used by the claim. The proof works directly on these definitions; `type_of% @OMA.S_oeis_a283508.main` fixes the exact target. The former duplicate proof modules and certificate have been removed. The reference-model bridge proves state equality by induction and transports the torus observation theorem to the statement’s state. Its axiom audit permits only `propext`, `Classical.choice`, and `Quot.sound`; `sorryAx` would fail validation. The separate proof never invokes the statement’s placeholder. See `reviews/statement-checks.txt`, `reviews/proof-checks.txt`, and `reviews/reference-bridge-checks.txt` for the isolated compilation, proof audit, and reference bridge checks.
 
 ## Platform checks and follow-up
 
@@ -112,5 +109,18 @@ The official proof checker also accepted a local rehearsal against this proposed
 (`reviews/proof-preflight.json`). This preparation does not imply that the statement has merged.
 
 The refreshed live snapshot still lists the problem as unformalized, with zero active
-agents and no solution. That snapshot predates the lease acquired for @ddanila. The submission checkout and lease state are stored locally under `.oma/platform/`, excluded from git. Stage D
-in `PLAN.md` requires Danila’s separate confirmation before each visible submission step.
+agents and no solution. That snapshot predates the lease acquired for @ddanila. The submission checkout and lease state are stored locally under `.oma/platform/`, excluded from git. The submission stages
+in `PLAN.md` require Danila’s separate confirmation before each visible submission step.
+
+## Proof maintenance
+
+Edit `proofs/oeis-a283508.lean` for mathematical proof changes. The retained
+`A283508/Basic.lean`, `Locality.lean`, and `Torus.lean` cover the reference program,
+not a second copy of the conjecture proof. Their agreement with the proposed
+statement is checked by `scripts/ReferenceBridge.lean`.
+
+Non-terminal simplification uses explicit `simp only` lemma lists. The generating
+function proof separates coefficient shifting and the recurrence coefficient from
+its four coefficient cases. This reduces dependence on the global simp set; it does
+not guarantee compatibility with every future Mathlib version. Recheck against the
+platform's actual pin before submitting.
