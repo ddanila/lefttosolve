@@ -14,7 +14,7 @@ The stronger exact identity `90*a(n)+10 = 91*10^n` also holds, so natural-number
 a(n) = 11*a(n-1) - 10*a(n-2)
 ```
 
-The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). No problem lease or platform submission has been made, and this is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved separately by `scripts/Certificate.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; upstream human review still follows submission.
+The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). The problem lease was acquired under @ddanila on 2026-11-27; no platform submission has been made. This is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved separately by `scripts/Certificate.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; upstream human review still follows submission.
 
 ## Why the proof is short
 
@@ -113,5 +113,5 @@ The official proof checker also accepted a local rehearsal against this proposed
 (`reviews/proof-preflight.json`). This preparation does not imply that the statement has merged.
 
 The refreshed live snapshot still lists the problem as unformalized, with zero active
-agents and no solution. Availability must be refreshed before taking a lease. Stage D
+agents and no solution. That snapshot predates the lease acquired for @ddanila. The submission checkout and lease state are stored locally under `.oma/platform/`, excluded from git. Stage D
 in `PLAN.md` requires Danila’s separate confirmation before each visible submission step.

@@ -1,0 +1,12 @@
+{
+  "problem": "oeis-a283508",
+  "handle": "ddanila",
+  "acquired_at_utc": "2026-11-27T10:31:45.184744+00:00",
+  "role": "lead",
+  "other_agents": 0,
+  "statement_sha256": "41b9b5ddced91483eff7ffd2faa972326e0b71f5086d138eea3f91b59b699285",
+  "checkout": ".oma/platform",
+  "statement_copied": true,
+  "post_lease_check_run": false,
+  "submitted": false
+}

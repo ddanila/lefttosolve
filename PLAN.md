@@ -8,9 +8,9 @@ Done and verified locally by `python3 scripts/check.py` (see README for details)
 - All four are proved, and `scripts/Certificate.lean` proves the exact target of `main`.
 - The 257×257 cyclic reference grid is proved equivalent to the infinite grid for every published term.
 
-Nothing has been leased or submitted. The workspace is published at https://github.com/ddanila/lefttosolve. Publication and clean-checkout validation are tracked below. The earlier gap audit and its eleven completed tasks are in git history (`95ef7cc`, `0688014`, `b17fb73`).
+The problem lease was acquired under @ddanila on 2026-11-27. Nothing has been submitted. The workspace is published at https://github.com/ddanila/lefttosolve. Publication and clean-checkout validation are tracked below. The earlier gap audit and its eleven completed tasks are in git history (`95ef7cc`, `0688014`, `b17fb73`).
 
-Stages A–C are complete. The final statement passed the official checker and an independent formulation review; the follow-up proof passed isolated and official rehearsal checks. Stage D remains pending Danila’s per-step confirmations. Upstream human review has not yet occurred.
+Stages A–C are complete. The final statement passed the official checker and an independent formulation review; the follow-up proof passed isolated and official rehearsal checks. D1 is complete; D2 onward remain pending Danila’s per-step confirmations. Upstream human review has not yet occurred.
 
 ## Stage A — Polish the statement file
 
@@ -92,7 +92,8 @@ These change `statements/oeis-a283508.lean`. After each one, update `scripts/Cer
 
 Only after every task above is done or explicitly waived. These steps are visible to others, so Danila confirms before each one.
 
-- [ ] **D1** — `tools/oma.sh next --problem oeis-a283508` to take the lease, then put the final statement in place.
+- [x] **D1** — `tools/oma.sh next --problem oeis-a283508` to take the lease, then put the final statement in place.
+  - **Evidence:** `next --problem oeis-a283508` succeeded under @ddanila; role lead, zero other agents. The final statement is copied byte-for-byte into `.oma/platform/statements/oeis-a283508.lean`. The checkout and private lease state are ignored by git. D2 has not been run after acquiring the lease.
 - [ ] **D2** — `tools/oma.sh check oeis-a283508` once more.
 - [ ] **D3** — `tools/oma.sh submit oeis-a283508`.
 - [ ] **D4** — Update the README's "no lease, no submission" line and record the submission reference.
