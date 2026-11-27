@@ -7,7 +7,7 @@ Status checked on 2026-11-27 ([saved GitHub observations](reviews/submission-sta
 | A283508 — Rule 643 | Statement #5506 and our proof [#6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231) merged; competing #6200 closed | Proof merged at 13:00:05 UTC |
 | A267622 — Rule 187 row | Statement #6406 merged; proof [#7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) CI accepted, still open; competing #7360 merged and credited | [Workspace](problems/a267622/README.md) |
 | A267623 — Rule 187 centre column | Statement [#7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472) merged; proof [#7656](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7656) CI accepted; merge pending | [Workspace](problems/a267623/README.md) |
-| A267920 — Rule 243 decimal digits | Published and reviewed; desk lease requests return HTTP 500 | [Workspace](problems/a267920/README.md) |
+| A267920 — Rule 243 decimal digits | Statement #8024 submitted; CI queued | [Workspace](problems/a267920/README.md) |
 | A267921 — Rule 243 binary value | Statement #7966 CI accepted; merge pending | [Workspace](problems/a267921/README.md) |
 
 The root checker covers all five problems, including the Rule 243 pair. Publication and submission of A267920 and A267921 are authorized. Full publication and submission of A267623 are now authorized.

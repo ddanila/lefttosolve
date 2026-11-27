@@ -32,12 +32,13 @@ Statement, proof, archived sources, simulation, isolated axiom audit, and offici
 
 See [`problems/a267623/PLAN.md`](problems/a267623/PLAN.md). Follow the authorized sequence in the per-problem plan.
 
-## A267920 and A267921 — publication authorized
+## A267920 and A267921 — statements submitted
 
 Develop both Rule 243 encodings together. Each has a standalone statement/proof and source archive. Full publication, leases, coordination notes, statement/proof submissions and monitoring are authorized without further approvals.
 
 - [x] Complete local validation and official checker rehearsals.
 - [x] Obtain independent statement reviews; both passed without corrections.
-- [ ] Submit both statements, then recheck and submit proofs after merge.
+- [x] Submit statements: A267920 #8024 (CI queued), A267921 #7966 (CI accepted).
+- [ ] Recheck and submit each proof after its statement merges; monitor verdicts.
 
 See [A267920 plan](problems/a267920/PLAN.md) and [A267921 plan](problems/a267921/PLAN.md). Proceed with the authorized per-problem submission sequences.
