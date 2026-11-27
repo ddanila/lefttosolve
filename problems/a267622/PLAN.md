@@ -30,8 +30,10 @@ Follow-up validation: root `python3 scripts/check.py` passes for both problems. 
 
 ## Authorized submission sequence
 
-- [ ] Publish completed research and verify current platform pins.
-- [ ] Take lease, post PLAN note, check and submit statement.
+- [x] Publish completed research and verify current platform pins.
+- [x] Take lease, post PLAN note, check and submit statement.
 - [ ] Monitor statement CI/merge and catalog readiness automatically.
 - [ ] Verify merged statement, recheck and submit proof.
 - [ ] Monitor proof verdict and record final outcome.
+
+Statement submitted: https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6406. Local checker accepted; one added statement file verified. PLAN note #30583 links the already-published complete proof. Submission client released the statement lease. CI queued at 12:44 UTC.
