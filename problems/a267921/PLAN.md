@@ -26,3 +26,5 @@ Validation complete: both official local checker modes accepted; isolated proof 
 Publication commit 5611381 contains both complete checked proofs. Refreshed platform main f9464184 has unchanged checker/dependency pin. Independent reviews are in `reviews/independent-statement-review.md`. Lease acquisition currently receives HTTP 500 from the desk; retrying without bypassing coordination.
 
 Statement submitted: https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7966 . Exactly one added file verified against the reviewed hash. PLAN note #40320; client released lease. CI pending.
+
+Statement CI run 46025852168 completed successfully; downloaded verdict accepted. Merge pending.
