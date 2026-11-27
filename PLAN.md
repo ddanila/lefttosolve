@@ -11,10 +11,10 @@ Per-problem plans live with each problem. Status checked on 2026-11-27 against G
 
 Process notes are in `LESSONS.md`. Merge status does not itself certify a separate human semantic review.
 
-## A267622 — statement merged, proof CI accepted
+## A267622 — proof CI accepted, competing proof merged
 
 - Statement [PR #6406](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6406) merged at 14:14:02 UTC on 2026-11-27.
-- Proof [PR #7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) is open; CI completed successfully and its downloaded verdict is accepted; merge is pending.
+- Proof [PR #7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) is open; CI completed successfully and its downloaded verdict is accepted. Competing proof #7360 merged at 15:07:44 UTC and the site credits caa1982; ours remains open despite earlier submission and CI completion.
 - [ ] Monitor the proof verdict, merge, and site credit; record the final outcome.
 
 Publication and automatic monitoring are authorized. See [`problems/a267622/PLAN.md`](problems/a267622/PLAN.md).
@@ -32,11 +32,11 @@ Statement, proof, archived sources, simulation, isolated axiom audit, and offici
 
 See [`problems/a267623/PLAN.md`](problems/a267623/PLAN.md). Follow the authorized sequence in the per-problem plan.
 
-## A267920 and A267921 — local work
+## A267920 and A267921 — publication authorized
 
-Develop both Rule 243 encodings together. Each has a standalone statement/proof and source archive. New work must remain local: no leases, public notes, pushes, or submissions are authorized.
+Develop both Rule 243 encodings together. Each has a standalone statement/proof and source archive. Full publication, leases, coordination notes, statement/proof submissions and monitoring are authorized without further approvals.
 
 - [x] Complete local validation and official checker rehearsals.
 - [ ] Obtain independent statement review before any future publication.
 
-See [A267920 plan](problems/a267920/PLAN.md) and [A267921 plan](problems/a267921/PLAN.md). Do not push main while it contains these local-only commits, including when recording older submissions’ status.
+See [A267920 plan](problems/a267920/PLAN.md) and [A267921 plan](problems/a267921/PLAN.md). Proceed with the authorized per-problem submission sequences.

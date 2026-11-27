@@ -1,6 +1,6 @@
 # A267921 — Rule 243 row encoding in base 2
 
-Local statement and proof of both conjectures in the [platform brief](https://lefttosolve.com/p/oeis-a267921), from [OEIS A267921](https://oeis.org/A267921). This work is not submitted or published.
+Local statement and proof of both conjectures in the [platform brief](https://lefttosolve.com/p/oeis-a267921), from [OEIS A267921](https://oeis.org/A267921). Full publication and submission are now authorized; progress is tracked in PLAN.md.
 
 Rule 243 outputs ON exactly when the centre is OFF or the left neighbour is ON. From a single ON origin, time 1 is ON everywhere except at 0. The hole then moves right each step. At time n+1, the crop [-(n+1),n+1] is 2n+1 ones followed by 0,1.
 
