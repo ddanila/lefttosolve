@@ -25,5 +25,7 @@
   "recorded_at_utc": "2026-11-27T12:45:04.601601+00:00",
   "statement_sha256": "1efe4669aef297ca4512a4b748f21d8ce3645ee6a39249bf25cb588bd37d4f31",
   "note_id": 30583,
-  "lease_released": true
+  "lease_released": true,
+  "ci_verdict": "accepted",
+  "ci_completed_at": "2026-11-27T13:09:13Z"
 }
