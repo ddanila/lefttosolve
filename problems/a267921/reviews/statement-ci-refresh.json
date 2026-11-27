@@ -1,0 +1,8 @@
+{
+  "pr": 7966,
+  "previous_head": "460ecac57b91f45a9a1bd30fa2bcb5cd91bb0d03",
+  "refreshed_head": "30bc79d992ed7985e248b342294ed0b05eb4fb17",
+  "file_sha256": "60be3d94c9ffc78e86068353b69c50da6af16ed4f279ccaaf2b6d27ca8ec0607",
+  "empty_commit": true,
+  "reason": "Accepted check received no verdict while newer submissions merged; original run aged beyond regular two-hour rescan window. One normal branch update requests fresh CI."
+}

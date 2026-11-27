@@ -23,8 +23,10 @@ Validation complete: both official local checker modes accepted; isolated proof 
 - [ ] Recheck exact merged target and submit proof.
 - [ ] Monitor proof verdict, merge, and site credit.
 
-Publication commit 5611381 contains both complete checked proofs. Refreshed platform main f9464184 has unchanged checker/dependency pin. Independent reviews are in `reviews/independent-statement-review.md`. Lease acquisition currently receives HTTP 500 from the desk; retrying without bypassing coordination.
+Publication commit 5611381 contains both complete checked proofs. Refreshed platform main f9464184 has unchanged checker/dependency pin. Independent reviews are in `reviews/independent-statement-review.md`. The earlier desk HTTP 500 errors recovered before submission.
 
 Desk recovered; statement submitted as https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/8024 . Exactly one added file verified against the reviewed hash. PLAN note #40536; client released lease. CI queued.
 
 Statement CI run 46026708697 completed successfully; downloaded verdict accepted. Merge pending.
+
+2026-11-27 18:17 UTC: after accepted checks waited without verdict while newer submissions merged, added one empty commit to the existing PR branch to request fresh CI. Statement bytes are unchanged; old/new heads are recorded in `reviews/statement-ci-refresh.json`. Direct workflow rerun was unavailable to non-admins. Fresh CI queued; continue watching for merge.
