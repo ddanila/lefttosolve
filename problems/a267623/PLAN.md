@@ -16,8 +16,10 @@ Completed: both official checker rehearsals accepted; the root checker passes fo
 ## Authorized submission sequence
 
 - [x] Complete fresh independent statement review.
-- [ ] Publish research and recheck current platform pins.
-- [ ] Take lease, post PLAN note, check and submit statement.
+- [x] Publish research and recheck current platform pins.
+- [x] Take lease, post PLAN note, check and submit statement.
 - [ ] Monitor statement verdict and merge.
 - [ ] Recheck against the exact merged target and submit proof promptly.
 - [ ] Monitor proof verdict, merge, and site credit; record final outcome.
+
+Statement submitted as https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472 . Exactly one added statement file, remotely verified against the reviewed hash. PLAN note #37424 links the public proof; lease released by client. CI pending.

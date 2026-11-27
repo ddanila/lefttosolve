@@ -19,11 +19,13 @@ Process notes are in `LESSONS.md`. Merge status does not itself certify a separa
 
 Publication and automatic monitoring are authorized. See [`problems/a267622/PLAN.md`](problems/a267622/PLAN.md).
 
-## A267623 — publication authorized
+## A267623 — statement submitted
 
 Statement, proof, archived sources, simulation, isolated axiom audit, and official local checker rehearsals are complete. All 1,001 source terms match. Full publication and submission are now authorized, including coordination notes and automatic follow-through without further approvals.
 
 - [x] Obtain a fresh independent statement review before publication.
-- [ ] Recheck live activity and current upstream/toolchain pins before submitting.
+- [x] Recheck live activity and current upstream/toolchain pins before submitting.
+- [x] Submit statement: [PR #7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472).
+- [ ] Monitor statement merge, submit proof against the exact target, and follow the verdict.
 
 See [`problems/a267623/PLAN.md`](problems/a267623/PLAN.md). Follow the authorized sequence in the per-problem plan.

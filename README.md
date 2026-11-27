@@ -6,7 +6,7 @@ Status checked on 2026-11-27 ([saved GitHub observations](reviews/submission-sta
 | --- | --- | --- |
 | A283508 — Rule 643 | Statement #5506 and our proof [#6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231) merged; competing #6200 closed | Proof merged at 13:00:05 UTC |
 | A267622 — Rule 187 row | Statement #6406 merged; proof [#7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) open, CI accepted | [Workspace](problems/a267622/README.md) |
-| A267623 — Rule 187 centre column | Complete locally; publication authorized | [Workspace](problems/a267623/README.md) |
+| A267623 — Rule 187 centre column | Statement [#7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472) submitted; full proof ready | [Workspace](problems/a267623/README.md) |
 
 The root checker covers all three problems. Full publication and submission of A267623 are now authorized.
 
@@ -143,4 +143,4 @@ platform's actual pin before submitting.
 
 [A267622 — Rule 187 row encoding](problems/a267622/README.md): statement merged in #6406; proof #7242 is open with CI accepted; merge is pending. Follow-up is tracked in its [plan](problems/a267622/PLAN.md).
 
-[A267623 — Rule 187 centre column](problems/a267623/README.md): standalone statement and proof, archived sources, and reproducible validation are complete locally. Both official checker rehearsals accepted, and simulation matches all 1,001 terms. Publication and submission are now authorized; its [plan](problems/a267623/PLAN.md) records independent review and pre-submission rechecks.
+[A267623 — Rule 187 centre column](problems/a267623/README.md): standalone statement and proof, archived sources, and reproducible validation are complete locally. Both official checker rehearsals accepted, and simulation matches all 1,001 terms. Statement PR #7472 is submitted; the proof is ready for rechecking after merge. Its [plan](problems/a267623/PLAN.md) records independent review and pre-submission rechecks.
