@@ -30,3 +30,5 @@ Statement submitted: https://github.com/GuillaumeBAUD-coder/open-math-agents/pul
 Statement CI run 46025852168 completed successfully; downloaded verdict accepted. Merge pending.
 
 2026-11-27 18:17 UTC: after accepted checks waited without verdict while newer submissions merged, added one empty commit to the existing PR branch to request fresh CI. Statement bytes are unchanged; old/new heads are recorded in `reviews/statement-ci-refresh.json`. Direct workflow rerun was unavailable to non-admins. Fresh CI queued; continue watching for merge.
+
+Refreshed CI run 46048365522 completed successfully; downloaded verdict accepted (`reviews/statement-refreshed-ci-verdict.json`). Merge remains pending.
