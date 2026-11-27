@@ -2,7 +2,7 @@
 
 ## Current state (2026-11-27)
 
-Stage 1 is complete: the statement is submitted in PR #5506. The PR remains open, with its GitHub check queued at 2026-11-27T11:00:16.163266+00:00. Stage 2 waits for the statement to merge.
+Stage 1 is complete: PR #5506 merged at 2026-11-27T11:46:06Z. F1 passed against the unchanged merged statement and current checker. F2 onward await confirmation.
 
 - **Statement:** `statements/oeis-a283508.lean`, SHA-256 `41b9b5dd…9285`. Accepted by the official `tools/oma.sh check`; independently reviewed against both OEIS entries.
 - **Proof:** `proofs/oeis-a283508.lean` (257 lines), SHA-256 `94f8bcdc…e0fa`. Accepted by the platform's `tools/check.sh` in a local rehearsal, on `propext`, `Classical.choice`, `Quot.sound` only.
@@ -37,7 +37,8 @@ Every step below is visible to others, so Danila confirms each one before it run
 
 Only after the statement pull request is merged.
 
-- [ ] **F1 — Re-validate against the merged statement.**
+- [x] **F1 — Re-validate against the merged statement.**
+  - **Result:** accepted at 2026-11-27T12:08:29.255924+00:00 against merged statement commit `d7aafc35d87ea8a01ef897545dd19a962231992d` and current platform checkout `f96ff582976e5629766be93e564301dfd51ad708`. Statement, proof, and Lean/Mathlib pins unchanged; only allowed axioms. Evidence: `reviews/merged-proof-check.json`.
   - If review changed the statement, adapt the proof.
   - Either way, re-run `tools/check.sh proofs/oeis-a283508.lean` against the merged file and the platform's current pin; it must print "accepted".
 

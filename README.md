@@ -14,7 +14,7 @@ The stronger exact identity `90*a(n)+10 = 91*10^n` also holds, so natural-number
 a(n) = 11*a(n-1) - 10*a(n-2)
 ```
 
-The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). The statement was submitted under @ddanila in [PR #5506](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506) on 2026-11-27, and the submission client released the lease. The PR is open; the GitHub check is queued as of 2026-11-27T11:00:16.163266+00:00. The proof has not been submitted. This is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved directly by `proofs/oeis-a283508.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; upstream human review is pending.
+The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). The statement was submitted under @ddanila in [PR #5506](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506) on 2026-11-27, and the submission client released the lease. The PR merged at 13:46 Tallinn time on 2026-11-27 after the GitHub check passed. The proof has not been submitted. This is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved directly by `proofs/oeis-a283508.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; upstream human review is pending.
 
 ## Why the proof is short
 
@@ -106,14 +106,13 @@ The follow-up proof begins with `import OMAStatements.S_oeis_a283508` and proves
 one file and is checked against an isolated copy of the proposed statement. If upstream
 review changes the statement, adapt and revalidate the proof before submitting it.
 The official proof checker also accepted a local rehearsal against this proposed statement
-(`reviews/proof-preflight.json`). This preparation does not imply that the statement has merged.
+(`reviews/proof-preflight.json`). The statement has since merged unchanged; F1 also passed with the current checker and merged definitions (`reviews/merged-proof-check.json`).
 
 The pre-submission snapshots in `sources/` are historical. Current submission status
 is recorded in `reviews/statement-status.json`, with an observation timestamp; the
 one-file PR and its approved statement hash are recorded in `reviews/statement-submission.json`.
 The submission checkout is stored locally under `.oma/platform/`, excluded from git.
-The statement lease has been released. Proof submission must wait until the statement
-is merged, then be revalidated against the merged file and the platform's current pin.
+The statement lease has been released. The statement has merged and the proof has been revalidated against the merged file and current pin. Taking the proof lease and submitting it still require confirmation.
 The submission stages in `PLAN.md` require Danila's separate confirmation before each step.
 
 ## Proof maintenance
