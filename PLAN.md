@@ -8,9 +8,9 @@ Done and verified locally by `python3 scripts/check.py` (see README for details)
 - All four are proved, and `scripts/Certificate.lean` proves the exact target of `main`.
 - The 257×257 cyclic reference grid is proved equivalent to the infinite grid for every published term.
 
-Nothing has been leased or submitted. A public workspace repository has been created at https://github.com/ddanila/lefttosolve; publication and clean-checkout validation are tracked below. The earlier gap audit and its eleven completed tasks are in git history (`95ef7cc`, `0688014`, `b17fb73`).
+Nothing has been leased or submitted. The workspace is published at https://github.com/ddanila/lefttosolve. Publication and clean-checkout validation are tracked below. The earlier gap audit and its eleven completed tasks are in git history (`95ef7cc`, `0688014`, `b17fb73`).
 
-What remains is making the statement survive human review and the official checker on the first attempt. Submission is the last step and is not to be started before Stage C is finished.
+Stages A–C are complete. The final statement passed the official checker and an independent formulation review; the follow-up proof passed isolated and official rehearsal checks. Stage D remains pending Danila’s per-step confirmations. Upstream human review has not yet occurred.
 
 ## Stage A — Polish the statement file
 
@@ -80,12 +80,12 @@ These change `statements/oeis-a283508.lean`. After each one, update `scripts/Cer
   - Someone who has not worked on it reads the final file against the two OEIS entries only. **Danila, or a fresh reviewer.**
   - Done when: the reviewer signs off or their comments are resolved.
 
-- [ ] **C3 — Put the repo on a remote.**
-  - The repo has no git remote, so the work exists only on this machine. **Needs a remote URL from Danila.**
+- [x] **C3 — Put the repo on a remote.**
+  - Danila authorized a public repository under ddanila. Created https://github.com/ddanila/lefttosolve and pushed main (implementation commit f81bd08). Official submissions use a separate upstream fork.
   - Done when: `main` is pushed.
 
-- [ ] **C4 — Bring the docs up to date.**
-  - Update the README for A1–A5 and B2–B3, and remove statements that are no longer true.
+- [x] **C4 — Bring the docs up to date.**
+  - Updated README for the inline proposition, standard Rule 187 orientation, official acceptance, public remote, and follow-up proof format. `python3 scripts/check.py` passed from clean detached checkout f81bd08, reusing only the dependency cache; tracked files remained unchanged.
   - Done when: `check.py` passes on a clean checkout and the README matches the files.
 
 ## Stage D — Submit (last)

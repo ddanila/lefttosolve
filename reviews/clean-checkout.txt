@@ -1,0 +1,6 @@
+Commit: f81bd08
+Command: python3 scripts/check.py
+Checkout: separate detached worktree, clean before and after validation
+Cache: reused pinned external dependencies only; project modules rebuilt
+Result: PASS; official_checker=accepted; isolated follow-up proof passed
+Tracked file changes after check: none
