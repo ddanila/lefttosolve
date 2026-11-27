@@ -7,10 +7,24 @@ import Mathlib
 Source: https://oeis.org/A267622
 Credit: @ddanila
 
-Rule 187 turns a cell ON iff it is OFF or its right neighbour is ON. After
-one step, the only OFF cell is at 0; thereafter it moves left by one per step.
-The crop [-n,n] therefore has digits 1,0,1,...,1 for n >= 1. Each new row
-appends two ones, giving a(n+1) = 100*a(n)+11 for n >= 1.
+## Outline
+
+Rule 187 turns a cell ON iff it is OFF or its right neighbour is ON.
+Starting from the single ON origin, the first row is ON everywhere except at 0.
+Each subsequent step moves that one OFF cell left by one position, so at time
+n+1 the hole is at -n (`state187_succ`).
+
+The source reads the crop [-(n+1),n+1] from left to right as decimal digits.
+The hole is therefore always the second digit. `encode_hole` identifies any
+prefix of this crop with `digits`, the encoding of 1,0,1,1,...; `a_digits`
+specializes this to the whole row. The initial values are 1, 101, and 10111.
+
+For n >= 1, the next crop appends two ones, giving a(n+1) = 100*a(n)+11.
+Subtracting two adjacent instances yields the conjectured recurrence for n > 2.
+Finally, multiplying the generating series by (1-X)*(1-100*X) shifts its
+coefficients: degrees 0, 1, and 2 give 1, 0, and 10, while the recurrence
+makes every higher coefficient vanish. This proves the second conjecture.
+
 The moving-hole proof is adapted from our earlier A283508 implementation:
 https://github.com/ddanila/lefttosolve/commit/9b86320 .
 -/
@@ -57,6 +71,7 @@ private def digits : ℕ → ℕ
   | 0 => 0
   | m+1 => 10 * digits m + bit (decide (m ≠ 1))
 
+/-- Reading from one position left of the hole gives a prefix of 1,0,1,1,... . -/
 private lemma encode_hole (n m : ℕ) :
     encode (hole (-(n : ℤ))) (-((n+1 : ℕ) : ℤ)) m = digits m := by
   induction m with
@@ -69,6 +84,7 @@ private lemma encode_hole (n m : ℕ) :
       omega
     simp only [h]
 
+/-- At time n+1, the full crop has 2n+3 digits with its only zero second. -/
 private lemma a_digits (n : ℕ) : a (n+1) = digits (2*n+3) := by
   unfold a
   rw [state187_succ, encode_hole]
@@ -98,6 +114,7 @@ private lemma recurrence (n : ℕ) (hn : 2 < n) :
 
 /-! ## Generating function -/
 
+/-- Multiplication by X^k shifts coefficients by k, filling earlier positions with zero. -/
 private lemma coeff_series_mul_X (k n : ℕ) :
     PowerSeries.coeff n (series * PowerSeries.X^k) =
       if k ≤ n then (a (n-k) : ℤ) else 0 := by
