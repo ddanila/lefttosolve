@@ -34,3 +34,5 @@ Statement CI run 46025852168 completed successfully; downloaded verdict accepted
 Refreshed CI run 46048365522 completed successfully; downloaded verdict accepted (`reviews/statement-refreshed-ci-verdict.json`). Merge remains pending.
 
 Statement merged 2026-11-27 19:49 UTC. Exact merged file matches the independently reviewed statement; official proof check against platform main c21e0a7f accepted. Proof submission is waiting for the desk lease endpoint to recover from HTTP 500 errors.
+
+Automatic follow-through: `scripts/watch_rule243_submission.py --run` retries leases and submits checked proofs in an isolated checkout for up to 24 hours. Current state and resulting PR URLs are in `.oma/rule243-watch/status.json`; unexpected changes or uncertain submission outcomes stop for review. See the root README for operation and limitations.

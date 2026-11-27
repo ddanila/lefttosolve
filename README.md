@@ -7,10 +7,18 @@ Status checked on 2026-11-27 ([saved GitHub observations](reviews/submission-sta
 | A283508 — Rule 643 | Statement #5506 and our proof [#6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231) merged; competing #6200 closed | Proof merged at 13:00:05 UTC |
 | A267622 — Rule 187 row | Statement #6406 merged; proof [#7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) CI accepted, still open; competing #7360 merged and credited | [Workspace](problems/a267622/README.md) |
 | A267623 — Rule 187 centre column | Statement [#7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472) merged; proof [#7656](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7656) CI accepted; merge pending | [Workspace](problems/a267623/README.md) |
-| A267920 — Rule 243 decimal digits | Statement #8024 CI accepted; merge pending | [Workspace](problems/a267920/README.md) |
-| A267921 — Rule 243 binary value | Statement #7966 CI accepted; merge pending | [Workspace](problems/a267921/README.md) |
+| A267920 — Rule 243 decimal digits | Statement #8024 merged; exact-target proof check accepted; proof submission waiting for desk recovery | [Workspace](problems/a267920/README.md) |
+| A267921 — Rule 243 binary value | Statement #7966 merged; exact-target proof check accepted; proof submission waiting for desk recovery | [Workspace](problems/a267921/README.md) |
 
 The root checker covers all five problems, including the Rule 243 pair. Publication and submission of A267920 and A267921 are authorized. Full publication and submission of A267623 are now authorized.
+
+## Rule 243 submission watch
+
+Both statements merged at 19:49 UTC on 2026-11-27. Both proofs passed the official checker against the exact merged statements. The desk's lease endpoint is returning HTTP 500; proof PRs are not yet created.
+
+`scripts/watch_rule243_submission.py --run` retries for up to 24 hours in an isolated checkout under `.oma/rule243-watch/`. It uses the normal lease, note, check, and submit client, verifies reviewed hashes and the dependency pin, and verifies the one-file PR against the checked proof. It stops for unexpected changes, teammate coordination, another proof on main, or an ambiguous submission result. It never retries an uncertain submission blindly. Read `.oma/rule243-watch/status.json` for current state and proof PR URLs; the PID is in `.oma/rule243-watch/pid`. Private client logs and lease credentials remain under the ignored `.oma/` directory. The watcher exits after both proof submissions; CI/verdict monitoring is a separate next step. It does not edit the research checkout or commit submission records automatically; copy its verified records into the problem reviews afterward.
+
+Read-only preflight: `python3 scripts/watch_rule243_submission.py --check-only`. Boundary tests: `python3 scripts/test_watch_rule243_submission.py`. The watcher needs this machine running with network access and the current GitHub login. Stop it with `kill "$(cat .oma/rule243-watch/pid)"`.
 
 ## A283508: Rule 643
 
