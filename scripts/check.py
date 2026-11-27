@@ -113,7 +113,8 @@ def main():
     print(proof_output)
     print(bridge_output)
     print(run([sys.executable, str(ROOT/'problems/a267622/check.py')]))
-    print('PASS: A283508 and A267622 builds, isolated proofs, simulations, and axiom audits.')
+    print(run([sys.executable, str(ROOT/'problems/a267623/check.py')]))
+    print('PASS: A283508, A267622, and A267623 builds, isolated proofs, simulations, and axiom audits.')
 
 
 if __name__ == '__main__':
