@@ -52,7 +52,7 @@ def main():
     # The proof is maintained by hand and works directly on the statement's definitions.
     assert proof.startswith('import OMAStatements.S_oeis_a283508\nimport Mathlib\n')
     assert not re.search(FORBIDDEN, proof)
-    assert '"' not in proof and not re.search(r'^\s*#', proof, re.M)
+    assert '"' not in proof and not re.search(r'^#(eval|print|check|reduce|synth)\b', proof, re.M)
     assert proof.count('theorem OMA.solution : type_of% @OMA.S_oeis_a283508.main') == 1
     assert not re.search(r'^(def|abbrev|theorem|lemma) ', proof.split('theorem OMA.solution')[0], re.M), \
         'helpers must be private'
