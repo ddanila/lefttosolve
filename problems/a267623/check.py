@@ -53,7 +53,7 @@ def main():
     (HERE/'reviews/lean-check.txt').write_text(log.replace(tmp, '<isolated-check>'))
 
     # Direct truth-table evolution, with a shrinking valid window. Starting with
-    # margin 2N leaves the entire crop [-n,n] valid through time N. No conjectured
+    # margin 2N keeps the observed centre cell valid through time N. No conjectured
     # pattern or recurrence is used to produce the simulated observations.
     terms = {}
     for line in (HERE/'sources/b267623.txt').read_text().splitlines():

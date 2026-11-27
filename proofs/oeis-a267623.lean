@@ -1,5 +1,4 @@
 import OMAStatements.S_oeis_a267623
-import Mathlib
 
 /-!
 # A267623: proof of the Rule 187 middle-column conjectures

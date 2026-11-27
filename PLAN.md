@@ -1,18 +1,29 @@
 # Plan
 
-Per-problem plans live with each problem. This file tracks only what is open at the repository level.
+Per-problem plans live with each problem. Status checked on 2026-11-27 against GitHub; saved observations are in `reviews/submission-status.json`.
 
-## A283508 — submitted, awaiting verdict
+## A283508 — proof merged
 
-All our work is done; the history is in git and the process notes are in `LESSONS.md`.
+- Statement merged in [PR #5506](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506).
+- Our proof [PR #6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231) merged at **13:00:05 UTC** on 2026-11-27.
+- Competing proof [PR #6200](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6200) closed at 13:04:40 UTC that day.
+- [x] Record the merged proof outcome and update the README.
 
-- **Statement:** merged upstream in [PR #5506](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506) on 2026-11-27.
-- **Proof:** submitted as [PR #6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231). As of 2026-11-27 it is open with no CI verdict. A competing proof, [PR #6200](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6200), is also open.
+Process notes are in `LESSONS.md`. Merge status does not itself certify a separate human semantic review.
 
-One item remains, and it only needs action when the platform responds:
+## A267622 — statement merged, proof CI running
 
-- [ ] **Record the verdict.** When #6231 is accepted, rejected or closed, save the outcome in `reviews/` and update the README. If it is rejected for a fixable reason, push the fix to the same pull request.
+- Statement [PR #6406](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6406) merged at 14:14:02 UTC on 2026-11-27.
+- Proof [PR #7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) is open; CI is in progress as of this observation.
+- [ ] Monitor the proof verdict, merge, and site credit; record the final outcome.
 
-## A267622 — local work
+Publication and automatic monitoring are authorized. See [`problems/a267622/PLAN.md`](problems/a267622/PLAN.md).
 
-See [`problems/a267622/PLAN.md`](problems/a267622/PLAN.md).
+## A267623 — complete locally, unpublished
+
+Statement, proof, archived sources, simulation, isolated axiom audit, and official local checker rehearsals are complete. All 1,001 source terms match. No lease, public note, push, or submission is authorized for this problem.
+
+- [ ] Obtain a fresh independent statement review before publication.
+- [ ] When publication is authorized, recheck live activity and current upstream/toolchain pins before submitting.
+
+See [`problems/a267623/PLAN.md`](problems/a267623/PLAN.md). Keep commits containing this problem local until publication is authorized.

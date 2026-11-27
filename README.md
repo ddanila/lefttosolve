@@ -1,4 +1,16 @@
-# OEIS A283508: Rule 643 in Lean
+# OEIS cellular automata in Lean
+
+Status checked on 2026-11-27 ([saved GitHub observations](reviews/submission-status.json)):
+
+| Problem | Status | Details |
+| --- | --- | --- |
+| A283508 — Rule 643 | Statement #5506 and our proof [#6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231) merged; competing #6200 closed | Proof merged at 13:00:05 UTC |
+| A267622 — Rule 187 row | Statement #6406 merged; proof [#7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) open, CI running | [Workspace](problems/a267622/README.md) |
+| A267623 — Rule 187 centre column | Complete and checked locally; unpublished | [Workspace](problems/a267623/README.md) |
+
+The root checker covers all three problems. A267623 and commits containing it remain local until publication is authorized.
+
+## A283508: Rule 643
 
 All four source conjectures (generating function, closed form, integer recurrence, and equality with A267623) are proved for the infinite-grid interpretation of the OEIS reference program. The project builds with **Lean 4.33.1** and the exact Mathlib revision used by formal-conjectures commit `9097e2f90e66d2f6244209cb1c07f7120d17ec53`.
 
@@ -14,7 +26,7 @@ The stronger exact identity `90*a(n)+10 = 91*10^n` also holds, so natural-number
 a(n) = 11*a(n-1) - 10*a(n-2)
 ```
 
-The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). The statement was submitted under @ddanila in [PR #5506](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506) on 2026-11-27, and the submission client released the lease. The PR merged at 13:46 Tallinn time on 2026-11-27 after the GitHub check passed. The proof has not been submitted. This is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved directly by `proofs/oeis-a283508.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; upstream human review is pending.
+The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). The statement was submitted under @ddanila in [PR #5506](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506) on 2026-11-27, and the submission client released the lease. The PR merged at 13:46 Tallinn time on 2026-11-27 after the GitHub check passed. Our proof PR #6231 merged at 13:00:05 UTC on 2026-11-27; competing PR #6200 closed at 13:04:40 UTC. This is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved directly by `proofs/oeis-a283508.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; a separate upstream human semantic review has not been verified.
 
 ## Why the proof is short
 
@@ -32,7 +44,7 @@ lake exe cache get
 python3 scripts/check.py
 ```
 
-The pinned toolchain and dependencies download when needed. A fresh setup needs several GB; this checkout already has the toolchain and cache. `scripts/check.py` runs the build, sparse/padded/cyclic Rule 643 simulations, an independent Rule 187 simulation, Lean computation samples, source hash checks, and axiom audits. It also compiles the standalone statement in an empty directory with only Mathlib dependencies available, and checks the reference-model bridge to its definitions. It also compiles the single-file follow-up proof with only the proposed upstream statement and Mathlib available, and audits `OMA.solution`. It writes the latest validation results into `reviews/`.
+The pinned toolchain and dependencies download when needed. A fresh setup needs several GB; this checkout already has the toolchain and cache. `scripts/check.py` runs the build, sparse/padded/cyclic Rule 643 simulations, an independent Rule 187 simulation, Lean computation samples, source hash checks, and axiom audits. It also compiles the standalone statement in an empty directory with only Mathlib dependencies available, and checks the reference-model bridge to its definitions. It also compiles the single-file follow-up proof with only the proposed upstream statement and Mathlib available, and audits `OMA.solution`. It also runs the A267622 and A267623 isolated checkers, each comparing all 1,001 archived terms. It writes results into `reviews/` and the corresponding per-problem `reviews/` directories.
 
 The completed run checks all 32 neighbourhoods and all 127 supplied OEIS terms, indexed 0 through 126. Lean additionally checks direct computations at indices 0–3 and evaluates indices 0–6. The proof file and reference-model lemmas have no `sorry`, added axioms, `native_decide`, or unsafe implementation. The statement has exactly one intentional `sorry` in `main`, as the problem brief requests; the proof never invokes it. Its only axioms are `propext`, `Classical.choice`, and `Quot.sound`.
 
@@ -65,7 +77,7 @@ The translation decisions are:
 7. **Cyclic reference grid.** The source's `ListConvolve[...,a,2]` uses a 257×257 cyclic grid. This differs from the padded validator. `lift_step` and `lift_evolve` identify cyclic evolution with the infinite periodic lift, whose initial ON cells lie in `(257ℤ)²`. `evolve_local` proves that only the initial Manhattan ball of radius `n` matters. For an observation `(m,0)`, `m ≤ n ≤ 126`, every other seed is at distance at least `257-m ≥ 257-n > n`. `periodic_agrees` checks this using coordinate bounds and divisibility; `observed_torus_correct` then proves equality of every observed digit, including the endpoint `n=m=126`. The cyclic simulator compares all 127 encodings with the table and sparse infinite model.
 8. **Source inconsistency.** The linked diagrams explicitly say Rule 641 and show an OFF origin at odd steps. The entry, program and sequence table specify Rule 643. We follow the latter three and do not use those diagrams as validation evidence.
 
-The remaining trust boundary is the human translation of the OEIS definitions and Mathematica program. Lean proves the defined cyclic model's correspondence; it does not formally verify Mathematica syntax or its evaluator. The official local checker passed; upstream human review is pending.
+The remaining trust boundary is the human translation of the OEIS definitions and Mathematica program. Lean proves the defined cyclic model's correspondence; it does not formally verify Mathematica syntax or its evaluator. The official local checker passed; a separate upstream human semantic review has not been verified.
 
 ## Independent A267623 audit
 
@@ -108,12 +120,11 @@ review changes the statement, adapt and revalidate the proof before submitting i
 The official proof checker also accepted a local rehearsal against this proposed statement
 (`reviews/proof-preflight.json`). The statement has since merged unchanged; F1 also passed with the current checker and merged definitions (`reviews/merged-proof-check.json`).
 
-The pre-submission snapshots in `sources/` are historical. Current submission status
-is recorded in `reviews/statement-status.json`, with an observation timestamp; the
+The pre-submission snapshots in `sources/` and `reviews/statement-status.json` are historical. Latest observed PR status
+is recorded in `reviews/submission-status.json`, with an observation timestamp; the
 one-file PR and its approved statement hash are recorded in `reviews/statement-submission.json`.
 The submission checkout is stored locally under `.oma/platform/`, excluded from git.
-The statement has merged. The proof passed the current official checker and was submitted in [PR #6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231); GitHub CI was queued when recorded. The submission client released the proof lease. The PR links our earlier public proof history and acknowledges alternative proof PR #6200.
-The submission stages in `PLAN.md` require Danila's separate confirmation before each step.
+The statement and proof have merged. Our [proof PR #6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231) merged at 13:00:05 UTC on 2026-11-27; alternative proof #6200 closed at 13:04:40 UTC. The submission client released the proof lease. The PR links our earlier public proof history. Current repository-level work and authorization boundaries are recorded in `PLAN.md`.
 
 ## Proof maintenance
 
@@ -128,6 +139,8 @@ its four coefficient cases. This reduces dependence on the global simp set; it d
 not guarantee compatibility with every future Mathlib version. Recheck against the
 platform's actual pin before submitting.
 
-## Other local work
+## Other problems
 
-[A267622 — Rule 187 row encoding](problems/a267622/README.md): standalone statement, proof, source snapshots, and local validation. Its [plan](problems/a267622/PLAN.md) is separate from the A283508 submission plan.
+[A267622 — Rule 187 row encoding](problems/a267622/README.md): statement merged in #6406; proof #7242 is open with CI running. Follow-up is tracked in its [plan](problems/a267622/PLAN.md).
+
+[A267623 — Rule 187 centre column](problems/a267623/README.md): standalone statement and proof, archived sources, and reproducible validation are complete locally. Both official checker rehearsals accepted, and simulation matches all 1,001 terms. No publication or submission has occurred; its [plan](problems/a267623/PLAN.md) records independent review and pre-submission rechecks.

@@ -1,4 +1,4 @@
-# A267622 — local implementation plan
+# A267622 — implementation and submission plan
 
 Scope updated 2026-11-27: Danila authorized publication, leases, notes, statement and proof submissions, and automatic monitoring/waits without further per-step approval.
 
@@ -41,3 +41,5 @@ Statement submitted: https://github.com/GuillaumeBAUD-coder/open-math-agents/pul
 Statement merged unchanged at 14:14:02 UTC (f103df62bbea7a03460e7938aba8b2adfbdf12ef). Official proof recheck accepted against main 790c424f. Catalog remains stale, but the official client and checker recognize the tracked merged statement and exact proof target; proof submission can proceed. Monitor site credit separately if catalog deployment lags. Proof PLAN note #36216 posted under a new lease.
 
 Proof submitted: https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242. One added proof file, exact approved hash verified from GitHub. Client released lease; CI queued at 14:16 UTC.
+
+Latest GitHub observation on 2026-11-27: proof PR #7242 remains open; CI started at 14:33:09 UTC and is in progress. See the root `reviews/submission-status.json` for the timestamped snapshot.
