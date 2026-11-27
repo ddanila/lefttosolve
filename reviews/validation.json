@@ -1,0 +1,8 @@
+{
+  "neighborhoods": 32,
+  "table_terms": 127,
+  "max_step": 126,
+  "dense_radius": 253,
+  "independent_simulators_agree": true,
+  "fixed_configuration_from_step": 2
+}

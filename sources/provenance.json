@@ -1,0 +1,32 @@
+[
+  {
+    "file": "A283508.html",
+    "url": "https://oeis.org/A283508/internal",
+    "retrieved_at_utc": "2026-11-27T09:44:39.631235+00:00",
+    "sha256": "e524b9ce81c3efe1bbfeff42c528b6607ec9fe68c450d072d4d971acc6f68373"
+  },
+  {
+    "file": "b283508.txt",
+    "url": "https://oeis.org/A283508/b283508.txt",
+    "retrieved_at_utc": "2026-11-27T09:44:39.809853+00:00",
+    "sha256": "49e9920bea80d438218305e0794b7c813eee0044bb955e7b83ec672dc3a82206"
+  },
+  {
+    "file": "diagrams.txt",
+    "url": "https://oeis.org/A283508/a283508.tmp.txt",
+    "retrieved_at_utc": "2026-11-27T09:44:39.965185+00:00",
+    "sha256": "0be75e9f2bd9314ccd155b38295efca773759cce130fd8190c27f57424fe0db3"
+  },
+  {
+    "file": "agent.txt",
+    "url": "https://lefttosolve.com/p/oeis-a283508/agent.txt",
+    "retrieved_at_utc": "2026-11-27T09:44:40.131260+00:00",
+    "sha256": "4a6829cdc806c5cb7944499f567f559e7b7076524d158d10e97c0f24bb2244fa"
+  },
+  {
+    "file": "upstream-manifest.json",
+    "url": "https://raw.githubusercontent.com/google-deepmind/formal-conjectures/9097e2f90e66d2f6244209cb1c07f7120d17ec53/lake-manifest.json",
+    "retrieved_at_utc": "2026-11-27T09:44:40.185363+00:00",
+    "sha256": "c8ffc0d59f492007162fe54c68396e4b9f2f305fcf69210a7fbaf0b18fcd8cd9"
+  }
+]

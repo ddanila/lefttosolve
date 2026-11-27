@@ -1,0 +1,484 @@
+First stages of CA for rule 641
+Stage 0
+ x
+
+Stage 1
+ x . x
+ . . .
+ x . x
+
+Stage 2
+ x x x x x
+ x . . . x
+ x . x . x
+ x . . . x
+ x x x x x
+
+Stage 3
+ x x x x x x x
+ x x x x x x x
+ x x . . . x x
+ x x . . . x x
+ x x . . . x x
+ x x x x x x x
+ x x x x x x x
+
+Stage 4
+ x x x x x x x x x
+ x x x x x x x x x
+ x x x x x x x x x
+ x x x . . . x x x
+ x x x . x . x x x
+ x x x . . . x x x
+ x x x x x x x x x
+ x x x x x x x x x
+ x x x x x x x x x
+
+Stage 5
+ x x x x x x x x x x x
+ x x x x x x x x x x x
+ x x x x x x x x x x x
+ x x x x x x x x x x x
+ x x x x . . . x x x x
+ x x x x . . . x x x x
+ x x x x . . . x x x x
+ x x x x x x x x x x x
+ x x x x x x x x x x x
+ x x x x x x x x x x x
+ x x x x x x x x x x x
+
+Stage 6
+ x x x x x x x x x x x x x
+ x x x x x x x x x x x x x
+ x x x x x x x x x x x x x
+ x x x x x x x x x x x x x
+ x x x x x x x x x x x x x
+ x x x x x . . . x x x x x
+ x x x x x . x . x x x x x
+ x x x x x . . . x x x x x
+ x x x x x x x x x x x x x
+ x x x x x x x x x x x x x
+ x x x x x x x x x x x x x
+ x x x x x x x x x x x x x
+ x x x x x x x x x x x x x
+
+Stage 7
+ x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x
+ x x x x x x . . . x x x x x x
+ x x x x x x . . . x x x x x x
+ x x x x x x . . . x x x x x x
+ x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x
+
+Stage 8
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x . . . x x x x x x x
+ x x x x x x x . x . x x x x x x x
+ x x x x x x x . . . x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x
+
+Stage 9
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x . . . x x x x x x x x
+ x x x x x x x x . . . x x x x x x x x
+ x x x x x x x x . . . x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x
+
+Stage 10
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x . . . x x x x x x x x x
+ x x x x x x x x x . x . x x x x x x x x x
+ x x x x x x x x x . . . x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x
+
+Stage 11
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x . . . x x x x x x x x x x
+ x x x x x x x x x x . . . x x x x x x x x x x
+ x x x x x x x x x x . . . x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x
+
+Stage 12
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x . . . x x x x x x x x x x x
+ x x x x x x x x x x x . x . x x x x x x x x x x x
+ x x x x x x x x x x x . . . x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x
+
+Stage 13
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x . . . x x x x x x x x x x x x
+ x x x x x x x x x x x x . . . x x x x x x x x x x x x
+ x x x x x x x x x x x x . . . x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x
+
+Stage 14
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x . . . x x x x x x x x x x x x x
+ x x x x x x x x x x x x x . x . x x x x x x x x x x x x x
+ x x x x x x x x x x x x x . . . x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+
+Stage 15
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+
+Stage 16
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x . x . x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+
+Stage 17
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+
+Stage 18
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x . x . x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+
+Stage 19
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+
+Stage 20
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x . x . x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x . . . x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x
+

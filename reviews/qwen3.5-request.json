@@ -1,0 +1,12 @@
+{
+  "model": "qwen3.5:9b",
+  "prompt": "We are formalizing OEIS A283508, not assuming its conjecture.\nInfinite integer grid, initially only origin ON. Each simultaneous update uses\nbit (c+2*k) of 643, where c is center 0/1 and k counts four orthogonal ON neighbors.\nEquivalent rule: k=0 OR (c=1 AND k>=3). All-OFF background becomes ON at step 1.\nSimulation suggests step 2 is all ON except the 8 cells max(abs(x),abs(y))=1,\nand this whole configuration is fixed. Read x=0..n,y=0 at step n, encode as\nDECIMAL digits (not base 2). Conjecture: a(n)=(91*10^n-10)/90 for n>0.\nOEIS program uses a large finite grid; locality must justify the infinite version.\nLinked diagrams say Rule 641, whereas entry and program specify 643.\nSuggest a concise Lean proof decomposition for the fixed configuration and formula. Identify possible mistakes. Do not claim code compiles.",
+  "stream": false,
+  "keep_alive": 0,
+  "options": {
+    "num_predict": 1800,
+    "num_ctx": 4096,
+    "temperature": 0.2
+  },
+  "think": false
+}
