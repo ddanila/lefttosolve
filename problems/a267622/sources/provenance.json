@@ -1,0 +1,16 @@
+[
+  {
+    "file": "oeis-internal.html",
+    "url": "https://oeis.org/A267622/internal",
+    "retrieved_date": "2026-11-27",
+    "sha256": "cb84b3222ecc241d6b1a931da55379c584437db383615e4582fccd8ff7219cd8",
+    "license": "OEIS Foundation and contributors, CC BY-SA 4.0"
+  },
+  {
+    "file": "b267622.txt",
+    "url": "https://oeis.org/A267622/b267622.txt",
+    "retrieved_date": "2026-11-27",
+    "sha256": "cc99fb2eb4b89fe68a05e9a1aacbcb0722e0696db40466f4ae966d6ef59f0a07",
+    "license": "OEIS Foundation and contributors, CC BY-SA 4.0"
+  }
+]

@@ -127,3 +127,7 @@ function proof separates coefficient shifting and the recurrence coefficient fro
 its four coefficient cases. This reduces dependence on the global simp set; it does
 not guarantee compatibility with every future Mathlib version. Recheck against the
 platform's actual pin before submitting.
+
+## Other local work
+
+[A267622 — Rule 187 row encoding](problems/a267622/README.md): standalone statement, proof, source snapshots, and local validation. Its [plan](problems/a267622/PLAN.md) is separate from the A283508 submission plan.
