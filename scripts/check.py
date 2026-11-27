@@ -8,7 +8,6 @@ import subprocess
 import tempfile
 from pathlib import Path
 from validate import validate
-from package_proof import render
 
 ROOT = Path(__file__).resolve().parent.parent
 ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
@@ -50,8 +49,13 @@ def main():
     assert statement.count('def bit ') == 1
     assert len(re.findall(r'^theorem ', statement, re.M)) == 1
     proof = Path('proofs/oeis-a283508.lean').read_text()
-    assert proof == render(), 'Regenerate the proof with python3 scripts/package_proof.py'
+    # The proof is maintained by hand and works directly on the statement's definitions.
+    assert proof.startswith('import OMAStatements.S_oeis_a283508\nimport Mathlib\n')
     assert not re.search(FORBIDDEN, proof)
+    assert '"' not in proof and not re.search(r'^\s*#', proof, re.M)
+    assert proof.count('theorem OMA.solution : type_of% @OMA.S_oeis_a283508.main') == 1
+    assert not re.search(r'^(def|abbrev|theorem|lemma) ', proof.split('theorem OMA.solution')[0], re.M), \
+        'helpers must be private'
     full_path = run([lake, 'env', 'printenv', 'LEAN_PATH']).strip()
     lean = run([lake, 'env', 'which', 'lean']).strip()
     isolated_path = os.pathsep.join(p for p in full_path.split(os.pathsep)

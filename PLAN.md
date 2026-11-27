@@ -71,7 +71,7 @@ These change `statements/oeis-a283508.lean`. After each one, update `scripts/Cer
 ## Stage C — Final review and housekeeping
 
 - [x] **C1 — Prepare the proof for the follow-up.**
-  - **Evidence (2026-11-27):** proofs/oeis-a283508.lean is assembled by scripts/package_proof.py in the required import/type_of% format. It compiles in isolation against only Mathlib and the proposed statement; OMA.solution uses only the three allowed axioms.
+  - **Evidence (2026-11-27):** proofs/oeis-a283508.lean is in the required import/type_of% format. It was first assembled mechanically from the local modules (372 lines), then rewritten by hand to work directly on the statement's definitions (241 lines, private helpers in namespace A283508Solution, proof outline at the top); the platform's tools/check.sh accepted the rewritten file in a fresh rehearsal. It compiles in isolation against only Mathlib and the proposed statement; OMA.solution uses only the three allowed axioms.
   - Once the statement is merged it becomes provable by everyone, and we already have the proof. Assemble it into the form B1 says proofs must take (most likely one file importing only Mathlib that proves `main`).
   - Done when: that file compiles in isolation and its axioms are only `propext`, `Classical.choice`, `Quot.sound`.
 

@@ -46,8 +46,7 @@ The completed run checks all 32 neighbourhoods and all 127 supplied OEIS terms, 
 - `A283508/Torus.lean`: general Manhattan locality, periodic lift, and cyclic observation equivalence.
 - `statements/oeis-a283508.lean`: self-contained statement with the brief's single intentional placeholder.
 - `scripts/Certificate.lean`: definition-equivalence proofs and the complete target certificate, appended to the statement by the checker.
-- `proofs/oeis-a283508.lean`: generated follow-up proof in the platform format, importing the proposed merged statement.
-- `scripts/package_proof.py`: regenerate that file after local proof changes.
+- `proofs/oeis-a283508.lean`: the follow-up proof in the platform format (241 lines). It is written by hand, imports the proposed merged statement, and proves the four conjectures directly on the statement's definitions, with private helpers in namespace `A283508Solution`. The `A283508/` modules are the original development and also hold the locality and cyclic-grid results, which the submitted proof does not need.
 - `scripts/platform_check.py`: run the official statement checker in separate upstream checkouts, without a lease.
 - `scripts/validate.py`: independent sparse, padded, cyclic, and Rule 187 simulations.
 - `scripts/check.py` and `scripts/Checks.lean`: reproducible checks and axiom audit.
@@ -108,7 +107,7 @@ untracked statements from already tracked ones. No lease is needed for checking.
 The follow-up proof begins with `import OMAStatements.S_oeis_a283508` and proves
 `OMA.solution : type_of% @OMA.S_oeis_a283508.main`. It contains its helper proofs in
 one file and is checked against an isolated copy of the proposed statement. If upstream
-review changes the statement, regenerate and revalidate before submitting the proof.
+review changes the statement, adapt and revalidate the proof before submitting it.
 The official proof checker also accepted a local rehearsal against this proposed statement
 (`reviews/proof-preflight.json`). This preparation does not imply that the statement has merged.
 

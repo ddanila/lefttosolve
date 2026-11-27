@@ -29,8 +29,8 @@
     "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
     "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
   },
-  "command": "tools/check.sh proofs/oeis-a283508.lean /tmp/lefttosolve-proof-preflight.json",
+  "command": "tools/check.sh proofs/oeis-a283508.lean <verdict.json>",
   "lease_required": false,
-  "proof_sha256": "fbd95afd26b5c917ccefd2b2fc06708f772fe8142671188b56acd4e855499b66",
+  "proof_sha256": "e6c27b9355d354b13d42d7d0b47d4a0d8195a928c83dea02844d9ae9aa8252e4",
   "scope": "Local rehearsal against the proposed statement copied into the platform checkout; the statement is not merged upstream."
 }
