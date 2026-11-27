@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "path": "statements/oeis-a267921.lean",
+      "additions": 51,
+      "deletions": 0,
+      "changeType": "ADDED"
+    }
+  ],
+  "headRefOid": "460ecac57b91f45a9a1bd30fa2bcb5cd91bb0d03",
+  "number": 7966,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/GuillaumeBAUD-coder/open-math-agents/actions/runs/46025852168/job/140596939613",
+      "name": "check",
+      "startedAt": "2026-11-27T15:32:50Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "check-proof"
+    }
+  ],
+  "url": "https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7966",
+  "observed_at_utc": "2026-11-27T15:33:20.829882+00:00",
+  "source_sha256": "60be3d94c9ffc78e86068353b69c50da6af16ed4f279ccaaf2b6d27ca8ec0607",
+  "remote_file_matches": true,
+  "lease_released": true
+}
