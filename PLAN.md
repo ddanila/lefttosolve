@@ -6,14 +6,15 @@ All preparation is done; the history is in git. Only submission remains.
 
 - **Statement:** `statements/oeis-a283508.lean`, SHA-256 `41b9b5dd…9285`. Accepted by the official `tools/oma.sh check`; independently reviewed against both OEIS entries.
 - **Proof:** `proofs/oeis-a283508.lean` (257 lines), SHA-256 `94f8bcdc…e0fa`. Accepted by the platform's `tools/check.sh` in a local rehearsal, on `propext`, `Classical.choice`, `Quot.sound` only.
-- **Lease:** taken under @ddanila at 10:31 UTC, role lead, with no beat recorded since. Nothing has been submitted.
+- **Lease:** the previous lease expired; reacquired under @ddanila at 2026-11-27T10:56:12.739629+00:00, role lead. Nothing has been submitted.
 - **Repo:** https://github.com/ddanila/lefttosolve; `python3 scripts/check.py` passes.
 
 Every step below is visible to others, so Danila confirms each one before it runs.
 
 ## Stage 1 — Submit the statement
 
-- [ ] **S1 — Confirm the lease is alive.**
+- [x] **S1 — Confirm the lease is alive.**
+  - **Result:** previous lease expired; reacquired under @ddanila at 2026-11-27T10:56:12.739629+00:00. Role lead, zero other agents. Final statement recopied and its approved hash verified.
   - Run `tools/oma.sh beat oeis-a283508`; the platform expects one every 7 minutes, and a 410 response means the lease expired.
   - If it expired, take it again with `tools/oma.sh next --problem oeis-a283508` and re-copy the statement.
 
