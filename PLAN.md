@@ -2,7 +2,7 @@
 
 ## Current state (2026-11-27)
 
-Stage 1 is complete: PR #5506 merged at 2026-11-27T11:46:06Z. F1 passed against the unchanged merged statement and current checker. F2 onward await confirmation.
+Stage 1 is complete: PR #5506 merged at 2026-11-27T11:46:06Z. F1 passed against the unchanged merged statement and current checker. F2 and F3 are complete; proof PR #6231 is open with CI queued.
 
 - **Statement:** `statements/oeis-a283508.lean`, SHA-256 `41b9b5dd…9285`. Accepted by the official `tools/oma.sh check`; independently reviewed against both OEIS entries.
 - **Proof:** `proofs/oeis-a283508.lean` (257 lines), SHA-256 `94f8bcdc…e0fa`. Accepted by the platform's `tools/check.sh` in a local rehearsal, on `propext`, `Classical.choice`, `Quot.sound` only.
@@ -42,12 +42,13 @@ Only after the statement pull request is merged.
   - If review changed the statement, adapt the proof.
   - Either way, re-run `tools/check.sh proofs/oeis-a283508.lean` against the merged file and the platform's current pin; it must print "accepted".
 
-- [ ] **F2 — Take the proof lease.**
-  - **In progress:** the desk issued a lease under @ddanila, but still returned `formalize` and no proof target despite merged PR #5506. Posted the required PLAN note (#28590). The website catalog is rebuilt on deployment; deployment run 45994886989 is queued. Wait for the desk to expose the merged proof target, then verify the skeleton import. See `reviews/proof-lease-status.json`.
+- [x] **F2 — Take the proof lease.**
+  - **Result:** catalog now exposes the exact import and target. Expired lease reacquired as lead; target matches our unchanged proof. Earlier PLAN note #28590 remains available. Lease released by the submission client after PR #6231.
   - `tools/oma.sh next --problem oeis-a283508` writes a skeleton with the exact import line; our file must start with that same line.
   - As lead, post a `PLAN:` note within 10 minutes (use the outline at the top of the proof) and beat every 7 minutes.
 
-- [ ] **F3 — Check and submit.**
+- [x] **F3 — Check and submit.**
+  - **Result:** official checker accepted; submitted https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231. Verified one added file (257 lines), unchanged approved proof. Description links prior public commits and alternative PR #6200. CI queued; see `reviews/proof-submission.json`.
   - `tools/oma.sh check oeis-a283508`, then `tools/oma.sh submit oeis-a283508`. One new file in the pull request, nothing else.
   - Describe the result plainly: an elementary proof of an OEIS conjecture tagged "easy", not a new hard result.
 

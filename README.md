@@ -112,7 +112,7 @@ The pre-submission snapshots in `sources/` are historical. Current submission st
 is recorded in `reviews/statement-status.json`, with an observation timestamp; the
 one-file PR and its approved statement hash are recorded in `reviews/statement-submission.json`.
 The submission checkout is stored locally under `.oma/platform/`, excluded from git.
-The statement lease has been released. The statement has merged and the proof has been revalidated against the merged file and current pin. Taking the proof lease and submitting it still require confirmation.
+The statement has merged. The proof passed the current official checker and was submitted in [PR #6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231); GitHub CI was queued when recorded. The submission client released the proof lease. The PR links our earlier public proof history and acknowledges alternative proof PR #6200.
 The submission stages in `PLAN.md` require Danila's separate confirmation before each step.
 
 ## Proof maintenance

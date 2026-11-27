@@ -1,0 +1,25 @@
+{
+  "recorded_at_utc": "2026-11-27T12:26:15.210588+00:00",
+  "url": "https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231",
+  "head": "0a0b199e5b897a07bf368c19d567a83b39f8cdb2",
+  "files": [
+    "proofs/oeis-a283508.lean"
+  ],
+  "sha256": "94f8bcdcf0afde79daa4281f459da276b231475160dcbdad37e567f8c1b8e0fa",
+  "local_check": {
+    "file": "proofs/oeis-a283508.lean",
+    "type": "proof",
+    "problem": "oeis-a283508",
+    "ok": true,
+    "kind": "open",
+    "polarity": "proof",
+    "theorem": "OMA.solution",
+    "imports": "OMAStatements.S_oeis_a283508",
+    "errors": [],
+    "decl": "OMA.S_oeis_a283508.main",
+    "verdict": "accepted",
+    "reason": "kernel accepted; axioms within propext, Classical.choice, Quot.sound"
+  },
+  "ci_status": "queued",
+  "lease_released": true
+}
