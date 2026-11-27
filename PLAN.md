@@ -37,6 +37,7 @@ See [`problems/a267623/PLAN.md`](problems/a267623/PLAN.md). Follow the authorize
 Develop both Rule 243 encodings together. Each has a standalone statement/proof and source archive. Full publication, leases, coordination notes, statement/proof submissions and monitoring are authorized without further approvals.
 
 - [x] Complete local validation and official checker rehearsals.
-- [ ] Obtain independent statement review before any future publication.
+- [x] Obtain independent statement reviews; both passed without corrections.
+- [ ] Submit both statements, then recheck and submit proofs after merge.
 
 See [A267920 plan](problems/a267920/PLAN.md) and [A267921 plan](problems/a267921/PLAN.md). Proceed with the authorized per-problem submission sequences.

@@ -12,13 +12,15 @@ Scope updated 2026-11-27: full publication, coordination notes, leases, statemen
 
 Before submission: complete independent statement review and recheck current platform pins/activity. Publication is authorized.
 
-Validation complete: both official local checker modes accepted; isolated proof uses only propext, Classical.choice, Quot.sound. Direct simulation matches all 1,001 terms. Joint Lean state equality and all paired base conversions pass. The root checker passes for all five problems, and standalone reruns produce byte-identical reports. Fresh independent semantic review remains before publication.
+Validation complete: both official local checker modes accepted; isolated proof uses only propext, Classical.choice, Quot.sound. Direct simulation matches all 1,001 terms. Joint Lean state equality and all paired base conversions pass. The root checker passes for all five problems, and standalone reruns produce byte-identical reports. Fresh independent semantic review passed without corrections.
 
 ## Authorized submission sequence
 
-- [ ] Complete fresh independent statement review.
-- [ ] Publish checked work and verify platform pins.
+- [x] Complete fresh independent statement review.
+- [x] Publish checked work and verify platform pins.
 - [ ] Take lease, post PLAN note, and submit statement.
 - [ ] Monitor statement verdict and merge.
 - [ ] Recheck exact merged target and submit proof.
 - [ ] Monitor proof verdict, merge, and site credit.
+
+Publication commit 5611381 contains both complete checked proofs. Refreshed platform main f9464184 has unchanged checker/dependency pin. Independent reviews are in `reviews/independent-statement-review.md`. Lease acquisition currently receives HTTP 500 from the desk; retrying without bypassing coordination.

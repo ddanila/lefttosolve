@@ -29,7 +29,7 @@ The denominator has constant coefficient 1 and is therefore a unit, so the produ
 
 Run `python3 problems/a267921/check.py`, or the root `python3 scripts/check.py`. The isolated checker compiles the statement/proof, audits allowed axioms, checks initial Lean samples, and directly simulates Rule 243 against all 1,001 b-file terms. Reports normalize temporary paths. The joint checker verifies that every decimal-digit row encodes its companion binary value and checks Lean's two state definitions agree.
 
-This mapping is an author source review. A fresh independent statement review remains a pre-publication step. Sources and immutable hashes are under `sources/`; local evidence is under `reviews/`. The original source title is preserved apart from line wrapping. The platform title truncates the final word to cel; the header follows the full authoritative OEIS title, cell. The additional empirical closed form in OEIS is outside the platform’s two-conjecture target.
+This mapping is an author source review. A fresh independent statement review passed without corrections; see `reviews/independent-statement-review.md`. Sources and immutable hashes are under `sources/`; local evidence is under `reviews/`. The original source title is preserved apart from line wrapping. The platform title truncates the final word to cel; the header follows the full authoritative OEIS title, cell. The additional empirical closed form in OEIS is outside the platform’s two-conjecture target.
 
 ## Validation result
 
