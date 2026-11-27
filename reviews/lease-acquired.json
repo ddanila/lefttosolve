@@ -8,9 +8,13 @@
   "checkout": ".oma/platform",
   "statement_copied": true,
   "post_lease_check_run": true,
-  "submitted": false,
+  "submitted": true,
   "reacquired_at_utc": "2026-11-27T10:56:12.739629+00:00",
   "previous_beat_result": "expired",
   "post_lease_check_at_utc": "2026-11-27T10:57:46.872949+00:00",
-  "post_lease_check_verdict": "accepted"
+  "post_lease_check_verdict": "accepted",
+  "submission_url": "https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506",
+  "lease_status": "released_after_submission",
+  "local_lease_removed": true,
+  "status_updated_at_utc": "2026-11-27T11:00:16.163266+00:00"
 }

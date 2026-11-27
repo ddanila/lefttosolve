@@ -14,7 +14,7 @@ The stronger exact identity `90*a(n)+10 = 91*10^n` also holds, so natural-number
 a(n) = 11*a(n-1) - 10*a(n-2)
 ```
 
-The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). The problem lease was acquired under @ddanila on 2026-11-27; no platform submission has been made. This is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved directly by `proofs/oeis-a283508.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; upstream human review still follows submission.
+The workspace is published at [ddanila/lefttosolve](https://github.com/ddanila/lefttosolve). The statement was submitted under @ddanila in [PR #5506](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506) on 2026-11-27, and the submission client released the lease. The PR is open; the GitHub check is queued as of 2026-11-27T11:00:16.163266+00:00. The proof has not been submitted. This is not a claim of a newly discovered mathematical result. The standalone statement is in `statements/oeis-a283508.lean`; its exact target is proved directly by `proofs/oeis-a283508.lean`. The unmodified official checker **accepted** the statement on 2026-11-27. A fresh independent source-to-statement review found no blocking mismatch; upstream human review is pending.
 
 ## Why the proof is short
 
@@ -65,7 +65,7 @@ The translation decisions are:
 7. **Cyclic reference grid.** The source's `ListConvolve[...,a,2]` uses a 257×257 cyclic grid. This differs from the padded validator. `lift_step` and `lift_evolve` identify cyclic evolution with the infinite periodic lift, whose initial ON cells lie in `(257ℤ)²`. `evolve_local` proves that only the initial Manhattan ball of radius `n` matters. For an observation `(m,0)`, `m ≤ n ≤ 126`, every other seed is at distance at least `257-m ≥ 257-n > n`. `periodic_agrees` checks this using coordinate bounds and divisibility; `observed_torus_correct` then proves equality of every observed digit, including the endpoint `n=m=126`. The cyclic simulator compares all 127 encodings with the table and sparse infinite model.
 8. **Source inconsistency.** The linked diagrams explicitly say Rule 641 and show an OFF origin at odd steps. The entry, program and sequence table specify Rule 643. We follow the latter three and do not use those diagrams as validation evidence.
 
-The remaining trust boundary is the human translation of the OEIS definitions and Mathematica program. Lean proves the defined cyclic model's correspondence; it does not formally verify Mathematica syntax or its evaluator. The official local checker passed; upstream human review has not occurred.
+The remaining trust boundary is the human translation of the OEIS definitions and Mathematica program. Lean proves the defined cyclic model's correspondence; it does not formally verify Mathematica syntax or its evaluator. The official local checker passed; upstream human review is pending.
 
 ## Independent A267623 audit
 
@@ -108,9 +108,13 @@ review changes the statement, adapt and revalidate the proof before submitting i
 The official proof checker also accepted a local rehearsal against this proposed statement
 (`reviews/proof-preflight.json`). This preparation does not imply that the statement has merged.
 
-The refreshed live snapshot still lists the problem as unformalized, with zero active
-agents and no solution. That snapshot predates the lease acquired for @ddanila. The submission checkout and lease state are stored locally under `.oma/platform/`, excluded from git. The submission stages
-in `PLAN.md` require Danila’s separate confirmation before each visible submission step.
+The pre-submission snapshots in `sources/` are historical. Current submission status
+is recorded in `reviews/statement-status.json`, with an observation timestamp; the
+one-file PR and its approved statement hash are recorded in `reviews/statement-submission.json`.
+The submission checkout is stored locally under `.oma/platform/`, excluded from git.
+The statement lease has been released. Proof submission must wait until the statement
+is merged, then be revalidated against the merged file and the platform's current pin.
+The submission stages in `PLAN.md` require Danila's separate confirmation before each step.
 
 ## Proof maintenance
 

@@ -2,11 +2,11 @@
 
 ## Current state (2026-11-27)
 
-All preparation is done; the history is in git. Only submission remains.
+Stage 1 is complete: the statement is submitted in PR #5506. The PR remains open, with its GitHub check queued at 2026-11-27T11:00:16.163266+00:00. Stage 2 waits for the statement to merge.
 
 - **Statement:** `statements/oeis-a283508.lean`, SHA-256 `41b9b5dd…9285`. Accepted by the official `tools/oma.sh check`; independently reviewed against both OEIS entries.
 - **Proof:** `proofs/oeis-a283508.lean` (257 lines), SHA-256 `94f8bcdc…e0fa`. Accepted by the platform's `tools/check.sh` in a local rehearsal, on `propext`, `Classical.choice`, `Quot.sound` only.
-- **Lease:** the previous lease expired; reacquired under @ddanila at 2026-11-27T10:56:12.739629+00:00, role lead. Nothing has been submitted.
+- **Lease:** the previous lease expired; reacquired under @ddanila at 2026-11-27T10:56:12.739629+00:00, role lead; released by the client after statement submission in PR #5506.
 - **Repo:** https://github.com/ddanila/lefttosolve; `python3 scripts/check.py` passes.
 
 Every step below is visible to others, so Danila confirms each one before it runs.
@@ -29,7 +29,8 @@ Every step below is visible to others, so Danila confirms each one before it run
   - `tools/oma.sh submit oeis-a283508`. The pull request must contain only the statement file.
   - Record the pull request URL in `reviews/`.
 
-- [ ] **S4 — Update the docs.**
+- [x] **S4 — Update the docs.**
+  - **Result:** README and lease record updated with PR #5506 and lease release. Timestamped PR/CI status saved in `reviews/statement-status.json`. The proof remains unsubmitted.
   - Replace the README's "no lease, no submission" wording and update `reviews/lease-acquired.json`.
 
 ## Stage 2 — Submit the proof
