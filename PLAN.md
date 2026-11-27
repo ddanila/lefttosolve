@@ -19,7 +19,7 @@ Process notes are in `LESSONS.md`. Merge status does not itself certify a separa
 
 Publication and automatic monitoring are authorized. See [`problems/a267622/PLAN.md`](problems/a267622/PLAN.md).
 
-## A267623 — statement submitted
+## A267623 — statement CI accepted, merge pending
 
 Statement, proof, archived sources, simulation, isolated axiom audit, and official local checker rehearsals are complete. All 1,001 source terms match. Full publication and submission are now authorized, including coordination notes and automatic follow-through without further approvals.
 

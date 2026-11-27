@@ -23,3 +23,5 @@ Completed: both official checker rehearsals accepted; the root checker passes fo
 - [ ] Monitor proof verdict, merge, and site credit; record final outcome.
 
 Statement submitted as https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472 . Exactly one added statement file, remotely verified against the reviewed hash. PLAN note #37424 links the public proof; lease released by client. CI pending.
+
+Statement CI run 46017748192 completed successfully; downloaded verdict accepted. Merge is pending. Evidence: `reviews/statement-ci-verdict.json`.

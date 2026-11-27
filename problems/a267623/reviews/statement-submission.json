@@ -27,5 +27,8 @@
   "statement_sha256": "8f7def736759b55839dbb3a684d4eb7056c76fef4ed867b8215bfe64ea0b7dc3",
   "remote_file_matches": true,
   "lease_released": true,
-  "plan_note_id": 37424
+  "plan_note_id": 37424,
+  "ci_verdict": "accepted",
+  "ci_run": 46017748192,
+  "ci_observed_at_utc": "2026-11-27T14:50:33.976528+00:00"
 }

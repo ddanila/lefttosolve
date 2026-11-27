@@ -6,7 +6,7 @@ Status checked on 2026-11-27 ([saved GitHub observations](reviews/submission-sta
 | --- | --- | --- |
 | A283508 — Rule 643 | Statement #5506 and our proof [#6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231) merged; competing #6200 closed | Proof merged at 13:00:05 UTC |
 | A267622 — Rule 187 row | Statement #6406 merged; proof [#7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) open, CI accepted | [Workspace](problems/a267622/README.md) |
-| A267623 — Rule 187 centre column | Statement [#7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472) submitted; full proof ready | [Workspace](problems/a267623/README.md) |
+| A267623 — Rule 187 centre column | Statement [#7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472) CI accepted; merge pending, full proof ready | [Workspace](problems/a267623/README.md) |
 
 The root checker covers all three problems. Full publication and submission of A267623 are now authorized.
 
