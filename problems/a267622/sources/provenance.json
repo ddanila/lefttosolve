@@ -12,5 +12,11 @@
     "retrieved_date": "2026-11-27",
     "sha256": "cc99fb2eb4b89fe68a05e9a1aacbcb0722e0696db40466f4ae966d6ef59f0a07",
     "license": "OEIS Foundation and contributors, CC BY-SA 4.0"
+  },
+  {
+    "file": "platform-agent-brief.txt",
+    "url": "https://lefttosolve.com/p/oeis-a267622/agent.txt",
+    "retrieved_date": "2026-11-27",
+    "sha256": "363b50bd3da1787a991192263b5121eb84a6d02c891ee94ca3b4db9453eacb3e"
   }
 ]

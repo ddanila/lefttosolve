@@ -1,7 +1,8 @@
 import Mathlib
 
 /-!
-# A267622: decimal digits of the Rule 187 row
+# A267622: Binary representation of the n-th iteration of the "Rule 187" elementary
+cellular automaton starting with a single ON (black) cell.
 
 Source: https://oeis.org/A267622
 Credit: @ddanila

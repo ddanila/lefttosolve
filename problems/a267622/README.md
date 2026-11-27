@@ -5,7 +5,8 @@ Local implementation of both OEIS conjectures: the recurrence and generating fun
 - Statement: `../../statements/oeis-a267622.lean`
 - Proof: `../../proofs/oeis-a267622.lean`
 - Reproduce isolated compilation, axiom audit, and independent simulation: `python3 problems/a267622/check.py` from the repository root.
-- Source snapshot and all 1,001 published terms: `sources/` (OEIS Foundation and contributors, CC BY-SA 4.0).
+- The root `python3 scripts/check.py` also runs the A267622 check.
+- Source snapshot, platform agent brief, and all 1,001 published terms: `sources/` (OEIS Foundation and contributors, CC BY-SA 4.0).
 - Validation evidence: `reviews/`.
 
 ## Mathematical argument
@@ -31,6 +32,12 @@ The moving-hole argument and power-series coefficient technique are adapted from
 The statement has one intentional placeholder in `main`, as the platform requires. The solution proves its exact type and does not invoke the placeholder theorem; the axiom audit excludes `sorryAx`.
 
 The independent Python simulation starts on [−2N,2N] and shrinks its valid window at every step. At time n ≤ N, its valid interval still contains [−n,n], so no boundary condition can affect any compared bit. It matches the full b-file through n=1000. These finite comparisons check the interpretation; the Lean proof establishes the two claims for all indices.
+
+## Review and reproducibility
+
+A fresh statement review is recorded in `reviews/independent-statement-review.md`. The reviewer was asked to compare only the statement and original OEIS evidence, without relying on this explanation or the proof.
+
+The check normalizes temporary paths to `<isolated-check>` before writing its Lean log. Repeated runs should produce identical `lean-check.txt` and `local-check.json` files. Archived source hashes include the platform brief as retrieved, whose generated timestamp describes that snapshot only.
 
 ## Publication boundary
 

@@ -50,7 +50,7 @@ def main():
         samples.write_text('import OMAStatements.S_oeis_a267622\nopen OMA.S_oeis_a267622\n'
                           'example : (List.range 5).map a = [1,101,10111,1011111,101111111] := by decide\n')
         log += run([lean, str(samples)], cwd=tmp, env=env)
-    (HERE/'reviews/lean-check.txt').write_text(log)
+    (HERE/'reviews/lean-check.txt').write_text(log.replace(tmp, '<isolated-check>'))
 
     # Direct truth-table evolution, with a shrinking valid window. Starting with
     # margin 2N leaves the entire crop [-n,n] valid through time N. No conjectured

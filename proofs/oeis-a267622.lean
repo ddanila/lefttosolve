@@ -2,6 +2,11 @@ import OMAStatements.S_oeis_a267622
 import Mathlib
 
 /-!
+# A267622: proof of the Rule 187 row conjectures
+
+Source: https://oeis.org/A267622
+Credit: @ddanila
+
 Rule 187 turns a cell ON iff it is OFF or its right neighbour is ON. After
 one step, the only OFF cell is at 0; thereafter it moves left by one per step.
 The crop [-n,n] therefore has digits 1,0,1,...,1 for n >= 1. Each new row
@@ -11,6 +16,8 @@ https://github.com/ddanila/lefttosolve/commit/9b86320 .
 -/
 namespace A267622Solution
 open OMA.S_oeis_a267622
+
+/-! ## Rule 187 evolution -/
 
 private lemma rule187 (l c r : Bool) : rule l c r = (!c || r) := by
   cases l <;> cases c <;> cases r <;> decide
@@ -43,7 +50,9 @@ private lemma state187_succ (n : ℕ) : state (n+1) = hole (-(n : ℤ)) := by
     push_cast
     ring
 
+/-! ## Decimal encoding and recurrence -/
 
+/-- Decimal encoding of the first m bits of 1,0,1,1,...; zero bits encode as 0. -/
 private def digits : ℕ → ℕ
   | 0 => 0
   | m+1 => 10 * digits m + bit (decide (m ≠ 1))
@@ -74,7 +83,9 @@ private lemma a_succ (n : ℕ) (hn : 0 < n) : a (n+1) = 100 * a n + 11 := by
   rw [a_digits (k+1), a_digits k]
   have e : 2*(k+1)+3 = (2*k+3)+1+1 := by omega
   rw [e, digits, digits]
-  simp [bit, show 2*k+3+1 ≠ 1 by omega, show 2*k+3 ≠ 1 by omega]
+  have digit_one (m : ℕ) (hm : m ≠ 1) : bit (decide (m ≠ 1)) = 1 := by
+    simp [bit, hm]
+  rw [digit_one (2*k+3) (by omega), digit_one (2*k+3+1) (by omega)]
   ring
 
 private lemma recurrence (n : ℕ) (hn : 2 < n) :
@@ -84,6 +95,8 @@ private lemma recurrence (n : ℕ) (hn : 2 < n) :
   rw [show n-1+1=n by omega] at h1
   rw [show n-2+1=n-1 by omega] at h2
   omega
+
+/-! ## Generating function -/
 
 private lemma coeff_series_mul_X (k n : ℕ) :
     PowerSeries.coeff n (series * PowerSeries.X^k) =

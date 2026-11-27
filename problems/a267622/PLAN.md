@@ -15,3 +15,15 @@ The source recurrence is stated only for n > 2. The generating function is expre
 Both official checker rehearsals accepted. The isolated proof audit permits only `propext`, `Classical.choice`, and `Quot.sound`. Independent simulation matches all 1,001 source terms. The semantic review is in README.md; evidence and immutable source hashes are in `reviews/` and `sources/provenance.json`.
 
 Future publication is a separate, unapproved phase: check current activity and PRs, obtain authorization, and revalidate current platform state before any lease, note, push, or submission.
+
+## Follow-up polish and independent review
+
+- [x] Harden the non-terminal simplification, restore the source title, and polish proof documentation.
+- [x] Archive the platform brief with provenance.
+- [x] Obtain a fresh statement review against the OEIS source alone.
+- [x] Normalize temporary paths; verify repeated check output is stable and include A267622 in the root check.
+- [x] Refresh local official-check evidence for the final hashes.
+
+Publication decision: retain the explicit local-only boundary. LESSONS.md recommends public provenance when publication is authorized; it does not override that boundary. The source is committed locally, with no claim that the local commit establishes an independent public timestamp.
+
+Follow-up validation: root `python3 scripts/check.py` passes for both problems. A standalone A267622 run followed by the root run produced byte-identical `lean-check.txt` and `local-check.json`. Both official checks accepted the final source hashes. Fresh independent review found no semantic corrections and preserves its separate simulator.

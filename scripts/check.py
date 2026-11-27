@@ -5,6 +5,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 from validate import validate
@@ -111,7 +112,8 @@ def main():
     Path('reviews/reference-bridge-checks.txt').write_text(bridge_output.replace(tmp, '<isolated-check>'))
     print(proof_output)
     print(bridge_output)
-    print('PASS: build, isolated statement, isolated proof, reference bridge, simulations, and axiom audit.')
+    print(run([sys.executable, str(ROOT/'problems/a267622/check.py')]))
+    print('PASS: A283508 and A267622 builds, isolated proofs, simulations, and axiom audits.')
 
 
 if __name__ == '__main__':
