@@ -40,7 +40,7 @@ The statement and proof remained separate, the proof was checked against the exa
 
 # A267622 proof race
 
-Recorded 2026-11-27 from the upstream merger's source (`tools/merger_loop.sh`, `tools/verdict_one.sh`, `tools/prooflen.py` at `f9464184`) and the public log of merger run 45998943330.
+Recorded 2026-11-27 from the upstream merger's source (`tools/merger_loop.sh`, `tools/verdict_one.sh`, `tools/prooflen.py` at `f9464184`) and the public log of merger run 45998943330. The merger was rewritten twice that afternoon (v3 at 15:33 UTC, a merge fix at 16:23), so re-read its scripts before relying on the details below.
 
 ## What happened
 
@@ -70,7 +70,12 @@ The rival proof is a different argument from ours (a closed-form identity for th
 
 1. **Check merger health before starting a statement-then-proof sequence.** Look at the newest `backlog` workflow run and at how recently `main` received merges. If nothing has merged for ten minutes or the log shows `rate budget low`, the outcome is a lottery; wait for a healthy merger when there is no other pressure.
 2. **Watch for the verdict comment, not only CI success.** An accepted check with no merger comment after 15 minutes, while newer pull requests are getting verdicts, means ours was passed over.
-3. **Re-trigger before the check is two hours old.** The upstream scripts say that pushing any new commit re-runs the check. Use this when ours was passed over, and always before the two-hour window closes. It costs one CI queue wait (5 to 19 minutes on 2026-11-27), so do not use it while the merger is still working towards our run.
+3. **Read the merger's comment before re-triggering.** Pushing any new commit re-runs the check, but it also discards the current accepted check and any re-run the merger queued itself. Decide from what the pull request shows:
+   - **No merger comment, and the check is nearing two hours old:** push a commit. The merger rescans only the last two hours, so an older check is never looked at again.
+   - **No merger comment, but the merger just restarted:** wait. A fresh merger scans the last three hours and finishes that scan before it looks at new checks, so a commit would not jump the queue.
+   - **Comment says the merge was refused and it is "retrying automatically":** do nothing. The merger has re-run the check itself and tracks it outside the two-hour window. On 2026-11-27 our A267623 proof #7656 got this at 16:03 UTC, from an upstream bug that refused about two in three merges (fixed upstream at 16:23).
+   - **Comment says the file is "already on main":** a re-trigger is pointless; only the shortest-proof route in rule 6 remains.
+   - **The automatic re-run finished green 20 minutes ago with no new comment, or was cancelled:** push a commit.
 4. **Keep the proof pull request ready before the statement merges.** We did this; keep doing it. With a healthy merger it is what decides the race.
 5. **Measure proof length before submitting.** A later proof replaces the one on `main` if it is at least 5% and 20 characters shorter, counted by `tools/prooflen.py` (comments and whitespace excluded). The first solve stays with the first prover, but the shortest-proof credit moves. Remove slack such as a redundant `import Mathlib` and duplicated helper lemmas before submission.
 6. **A lost first solve can still earn the shortest-proof credit.** The pull request must modify the existing proof file. For A267622 the target is 2,451 counted characters or fewer. The old #7242 cannot merge as it stands, because it adds a file that now exists.
