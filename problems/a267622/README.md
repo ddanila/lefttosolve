@@ -44,3 +44,7 @@ The check normalizes temporary paths to `<isolated-check>` before writing its Le
 The user authorized publication and the full statement/proof submission sequence on 2026-11-27, including automatic monitoring and routine follow-up without additional approvals. See PLAN.md for progress. Local official-check evidence remains a rehearsal until CI and the platform verdict confirm a submission.
 
 Recheck current agents/notes/PRs and platform pins before submission. Follow `../../LESSONS.md`; a lease does not reserve the problem exclusively. This problem's plan remains separate from the A283508 submission.
+
+## Submission status
+
+Statement [#6406](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6406) merged unchanged at 14:14 UTC on 2026-11-27. Proof [#7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) was submitted after passing the official checker against the merged statement. Its CI is queued; final acceptance and site credit remain pending.

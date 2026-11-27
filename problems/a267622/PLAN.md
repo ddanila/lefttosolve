@@ -32,8 +32,12 @@ Follow-up validation: root `python3 scripts/check.py` passes for both problems. 
 
 - [x] Publish completed research and verify current platform pins.
 - [x] Take lease, post PLAN note, check and submit statement.
-- [ ] Monitor statement CI/merge and catalog readiness automatically.
-- [ ] Verify merged statement, recheck and submit proof.
+- [x] Monitor statement CI/merge; catalog readiness tracked alongside proof submission.
+- [x] Verify merged statement, recheck and submit proof.
 - [ ] Monitor proof verdict and record final outcome.
 
 Statement submitted: https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6406. Local checker accepted; one added statement file verified. PLAN note #30583 links the already-published complete proof. Submission client released the statement lease. CI queued at 12:44 UTC.
+
+Statement merged unchanged at 14:14:02 UTC (f103df62bbea7a03460e7938aba8b2adfbdf12ef). Official proof recheck accepted against main 790c424f. Catalog remains stale, but the official client and checker recognize the tracked merged statement and exact proof target; proof submission can proceed. Monitor site credit separately if catalog deployment lags. Proof PLAN note #36216 posted under a new lease.
+
+Proof submitted: https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242. One added proof file, exact approved hash verified from GitHub. Client released lease; CI queued at 14:16 UTC.
