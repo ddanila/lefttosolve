@@ -1,6 +1,6 @@
 # A267622 — local implementation plan
 
-Scope: local planning, formalization, proof, and validation only. No lease, platform notes, submission, or remote push is authorized for this task.
+Scope updated 2026-11-27: Danila authorized publication, leases, notes, statement and proof submissions, and automatic monitoring/waits without further per-step approval.
 
 - [x] Archive the original OEIS definition/program and b-file; document offset, rule orientation, crop, and decimal encoding.
 - [x] Write a standalone Mathlib-only statement of both source conjectures, based on the cellular automaton rather than the conjectured recurrence.
@@ -14,7 +14,7 @@ The source recurrence is stated only for n > 2. The generating function is expre
 
 Both official checker rehearsals accepted. The isolated proof audit permits only `propext`, `Classical.choice`, and `Quot.sound`. Independent simulation matches all 1,001 source terms. The semantic review is in README.md; evidence and immutable source hashes are in `reviews/` and `sources/provenance.json`.
 
-Future publication is a separate, unapproved phase: check current activity and PRs, obtain authorization, and revalidate current platform state before any lease, note, push, or submission.
+Publication is now authorized. Recheck live activity and platform state before each submission.
 
 ## Follow-up polish and independent review
 
@@ -24,6 +24,14 @@ Future publication is a separate, unapproved phase: check current activity and P
 - [x] Normalize temporary paths; verify repeated check output is stable and include A267622 in the root check.
 - [x] Refresh local official-check evidence for the final hashes.
 
-Publication decision: retain the explicit local-only boundary. LESSONS.md recommends public provenance when publication is authorized; it does not override that boundary. The source is committed locally, with no claim that the local commit establishes an independent public timestamp.
+The earlier local-only boundary was honored; the user has now authorized publishing the completed work for public provenance.
 
 Follow-up validation: root `python3 scripts/check.py` passes for both problems. A standalone A267622 run followed by the root run produced byte-identical `lean-check.txt` and `local-check.json`. Both official checks accepted the final source hashes. Fresh independent review found no semantic corrections and preserves its separate simulator.
+
+## Authorized submission sequence
+
+- [ ] Publish completed research and verify current platform pins.
+- [ ] Take lease, post PLAN note, check and submit statement.
+- [ ] Monitor statement CI/merge and catalog readiness automatically.
+- [ ] Verify merged statement, recheck and submit proof.
+- [ ] Monitor proof verdict and record final outcome.

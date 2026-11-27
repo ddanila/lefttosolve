@@ -41,6 +41,6 @@ The check normalizes temporary paths to `<isolated-check>` before writing its Le
 
 ## Publication boundary
 
-This task is local only: no lease, public note, remote push, or PR. Source downloads are read-only. Official checker acceptance is a local rehearsal, not platform acceptance or an external review of statement faithfulness.
+The user authorized publication and the full statement/proof submission sequence on 2026-11-27, including automatic monitoring and routine follow-up without additional approvals. See PLAN.md for progress. Local official-check evidence remains a rehearsal until CI and the platform verdict confirm a submission.
 
-Before publication, recheck current agents/notes/PRs, agree on attribution and submission authorization, and verify current platform pins. Follow `../../LESSONS.md`; do not assume a future lease reserves the problem exclusively. Keep this problem's plan separate from the pending A283508 submission.
+Recheck current agents/notes/PRs and platform pins before submission. Follow `../../LESSONS.md`; a lease does not reserve the problem exclusively. This problem's plan remains separate from the A283508 submission.
