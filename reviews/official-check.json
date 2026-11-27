@@ -12,7 +12,7 @@
     "errors": [],
     "verdict": "accepted",
     "reason": "the statement compiles; it now needs a human review of the translation",
-    "log": "OMASubmission_43021.lean:81:8: warning: declaration uses `sorry`\n'OMA.S_oeis_a283508.main' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]"
+    "log": "OMASubmission_68010.lean:81:8: warning: declaration uses `sorry`\n'OMA.S_oeis_a283508.main' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]"
   },
   "statement_sha256": "41b9b5ddced91483eff7ffd2faa972326e0b71f5086d138eea3f91b59b699285",
   "platform_commit": "6ee271b036afac3309989bc1a33e3207717cfd17",
@@ -30,5 +30,9 @@
     "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
   },
   "command": "tools/oma.sh check oeis-a283508",
-  "lease_required": false
+  "lease_required": false,
+  "checked_at_utc": "2026-11-27T10:57:46.872949+00:00",
+  "stage": "S2",
+  "lease_state_present": true,
+  "live_status_snapshot": "sources/problem-preflight.json"
 }

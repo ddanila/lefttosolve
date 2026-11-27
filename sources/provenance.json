@@ -82,5 +82,17 @@
     "url": "https://lefttosolve.com/p/oeis-a283508",
     "retrieved_at_utc": "2026-11-27T10:28:27.692831+00:00",
     "sha256": "48fa5a5b3fad7157985004f63aaa7ac758a77355ae4df9b7c1ae29dbae96961a"
+  },
+  {
+    "file": "problem-preflight.json",
+    "url": "https://lefttosolve.com/api/problems/oeis-a283508",
+    "retrieved_at_utc": "2026-11-27T10:57:36.859376+00:00",
+    "sha256": "0775d46162bed846eeddcd9c4cb1f1456c97ebac95658245181b94e34491d215"
+  },
+  {
+    "file": "problem-preflight.html",
+    "url": "https://lefttosolve.com/p/oeis-a283508",
+    "retrieved_at_utc": "2026-11-27T10:57:36.859779+00:00",
+    "sha256": "3bcc3c1c99647c8903d610aa5783eebe5c00d58b483c864bf7cad993e11561fb"
   }
 ]

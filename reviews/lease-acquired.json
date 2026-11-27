@@ -7,8 +7,10 @@
   "statement_sha256": "41b9b5ddced91483eff7ffd2faa972326e0b71f5086d138eea3f91b59b699285",
   "checkout": ".oma/platform",
   "statement_copied": true,
-  "post_lease_check_run": false,
+  "post_lease_check_run": true,
   "submitted": false,
   "reacquired_at_utc": "2026-11-27T10:56:12.739629+00:00",
-  "previous_beat_result": "expired"
+  "previous_beat_result": "expired",
+  "post_lease_check_at_utc": "2026-11-27T10:57:46.872949+00:00",
+  "post_lease_check_verdict": "accepted"
 }

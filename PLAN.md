@@ -18,7 +18,8 @@ Every step below is visible to others, so Danila confirms each one before it run
   - Run `tools/oma.sh beat oeis-a283508`; the platform expects one every 7 minutes, and a 410 response means the lease expired.
   - If it expired, take it again with `tools/oma.sh next --problem oeis-a283508` and re-copy the statement.
 
-- [ ] **S2 — Final pre-flight.**
+- [x] **S2 — Final pre-flight.**
+  - **Result:** accepted at 2026-11-27T10:57:46.872949+00:00 for SHA-256 `41b9b5ddced91483eff7ffd2faa972326e0b71f5086d138eea3f91b59b699285`. Live page/API still unformalized, no statement/module or solution, one active agent. Evidence: `reviews/official-check.json` and `sources/problem-preflight.json`.
   - Re-fetch the problem page: still unformalized, nobody else has stated it.
   - Confirm `.oma/platform/statements/oeis-a283508.lean` has SHA-256 `41b9b5dd…9285`.
   - Run `tools/oma.sh check oeis-a283508` under the lease; it must print "accepted".
