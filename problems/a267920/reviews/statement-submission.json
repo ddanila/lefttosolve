@@ -26,5 +26,7 @@
   "observed_at_utc": "2026-11-27T15:38:50.222222+00:00",
   "source_sha256": "bd414fdb4120fff7da2dcf0423627b5620cb121348a553d187c5868d2ad4da62",
   "remote_file_matches": true,
-  "lease_released": true
+  "lease_released": true,
+  "ci_verdict": "accepted",
+  "ci_run": 46026708697
 }

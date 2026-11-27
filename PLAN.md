@@ -38,7 +38,7 @@ Develop both Rule 243 encodings together. Each has a standalone statement/proof 
 
 - [x] Complete local validation and official checker rehearsals.
 - [x] Obtain independent statement reviews; both passed without corrections.
-- [x] Submit statements: A267920 #8024 (CI queued), A267921 #7966 (CI accepted).
+- [x] Submit statements: A267920 #8024 (CI accepted), A267921 #7966 (CI accepted).
 - [ ] Recheck and submit each proof after its statement merges; monitor verdicts.
 
 See [A267920 plan](problems/a267920/PLAN.md) and [A267921 plan](problems/a267921/PLAN.md). Proceed with the authorized per-problem submission sequences.
