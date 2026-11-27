@@ -1,0 +1,12 @@
+{
+  "headRefOid": "30bc79d992ed7985e248b342294ed0b05eb4fb17",
+  "mergeCommit": {
+    "oid": "807e42af550337a89ae0761d36468631893ef904"
+  },
+  "mergedAt": "2026-11-27T19:49:39Z",
+  "number": 7966,
+  "state": "MERGED",
+  "url": "https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7966",
+  "statement_matches_reviewed": true,
+  "statement_sha256": "60be3d94c9ffc78e86068353b69c50da6af16ed4f279ccaaf2b6d27ca8ec0607"
+}

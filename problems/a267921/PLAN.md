@@ -19,7 +19,7 @@ Validation complete: both official local checker modes accepted; isolated proof 
 - [x] Complete fresh independent statement review.
 - [x] Publish checked work and verify platform pins.
 - [x] Take lease, post PLAN note, and submit statement.
-- [ ] Monitor statement verdict and merge.
+- [x] Monitor statement verdict and merge.
 - [ ] Recheck exact merged target and submit proof.
 - [ ] Monitor proof verdict, merge, and site credit.
 
@@ -32,3 +32,5 @@ Statement CI run 46025852168 completed successfully; downloaded verdict accepted
 2026-11-27 18:17 UTC: after accepted checks waited without verdict while newer submissions merged, added one empty commit to the existing PR branch to request fresh CI. Statement bytes are unchanged; old/new heads are recorded in `reviews/statement-ci-refresh.json`. Direct workflow rerun was unavailable to non-admins. Fresh CI queued; continue watching for merge.
 
 Refreshed CI run 46048365522 completed successfully; downloaded verdict accepted (`reviews/statement-refreshed-ci-verdict.json`). Merge remains pending.
+
+Statement merged 2026-11-27 19:49 UTC. Exact merged file matches the independently reviewed statement; official proof check against platform main c21e0a7f accepted. Proof submission is waiting for the desk lease endpoint to recover from HTTP 500 errors.
