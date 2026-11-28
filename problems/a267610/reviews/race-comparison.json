@@ -1,10 +1,13 @@
 {
-  "checked_utc": "2026-11-28T19:18:00.866214+00:00",
+  "checked_utc": "2026-11-28T19:29:38.711018+00:00",
   "competing_pr": 38793,
   "competing_head": "8bf35bd8fdd5c8b1e7831215ff2be36680e21bbe",
   "competing_counted_characters": 6137,
-  "ours_counted_characters": 8267,
-  "qualifies_as_shorter_replacement": false,
+  "ours_counted_characters": 5553,
+  "qualifies_as_shorter_replacement": true,
   "method": "tools/prooflen.py from current platform",
-  "status_at_check": "competing PR open; CI success"
+  "status_at_check": "competing PR open; CI success",
+  "previous_ours_counted_characters": 8267,
+  "reduction_percent": 9.516050187387975,
+  "proof_sha256": "c81ad07a26e6205a244b5a1c4892415d2e89c4396d255771e78e611988b0dd26"
 }

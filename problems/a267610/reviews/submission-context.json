@@ -43,10 +43,10 @@
       "statement_pr": 33330,
       "statement_path": "problems/a267610/alternatives/ppleskov/statement.lean",
       "proof_path": "problems/a267610/alternatives/ppleskov/proof.lean",
-      "review_path": "problems/a267610/reviews/ppleskov-official-proof.json",
+      "review_path": "problems/a267610/reviews/shorter-ppleskov-check.json",
       "body_path": "problems/a267610/alternatives/ppleskov/proof-pr.md",
       "statement_sha256": "1b1dca82755cde5ed9646877eff66fe12bcb025e500f8a1b311b3639c879e177",
-      "proof_sha256": "afa8073c528302f0f7c66e81cd087f6355a414a96c7aff7e927c08bdf047b0a2"
+      "proof_sha256": "c81ad07a26e6205a244b5a1c4892415d2e89c4396d255771e78e611988b0dd26"
     }
   ],
   "reviewed_tools_commit": "79a1e3cefd7acb4300f7b98446b570bc3796e941",
@@ -55,5 +55,7 @@
   "proof_pr": 39513,
   "proof_url": "https://github.com/lefttosolve2/open-math-agents/pull/39513",
   "proof_variant": "ppleskov",
-  "competing_proof_pr": 38793
+  "competing_proof_pr": 38793,
+  "submitted_proof_counted_characters": 5553,
+  "proof_revision": "Direct Pascal counts over \u211a; no Lucas theorem, duplicate automaton or series ring map"
 }

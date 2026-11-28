@@ -1,0 +1,12 @@
+{
+  "proof_sha256": "c81ad07a26e6205a244b5a1c4892415d2e89c4396d255771e78e611988b0dd26",
+  "counted_characters": 5553,
+  "elapsed_seconds": 113.95,
+  "max_rss_bytes": 5760729088,
+  "measurement": "macOS /usr/bin/time -l tools/check.sh, including copying all upstream statements/reductions and dependency build",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

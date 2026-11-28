@@ -284,3 +284,15 @@ A safe stop is not continued monitoring: inspect its reason, record the review,
 rerun the official check and explicitly resume. The direct GitHub submission path
 need not pin oma.sh, which it never executes; actual checker and target changes
 still require review. Compare counted characters before claiming replacement eligibility.
+
+
+## Shorten against the accepted definitions, not an earlier target
+
+A267610's GF-only statement defines A006046 by counting odd Pascal entries.
+Our first adapter carried a Lucas/binary-weight theorem and the unrelated
+A267700 relation from the original target, plus a duplicate automaton and an
+integer-to-rational series map. Removing those layers cut 8,267 counted characters
+to 5,553 while proving the exact merged target. Re-read the accepted definitions
+before optimizing tactics; the strongest intermediate theorem may be unnecessary.
+Merger rejection detection must include the `lefttosolve-merger` account as well
+as github-actions, and distinguish a superseded statement PR from its proof PR.

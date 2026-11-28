@@ -167,7 +167,7 @@ platform's actual pin before submitting.
 
 A273676 is skipped following its [local prior-work audit](problems/a273676/README.md): existing Lean proofs were found in a November 20 artifact. No new proof or submission is prepared.
 
-A267610 has a [locally checked positive proof](problems/a267610/README.md) of the explicitly corrected A267700 relation and unchanged generating function. The original typo-disproof is archived. The GF-only statement #33330 merged; our adapted proof [#39513](https://github.com/lefttosolve2/open-math-agents/pull/39513) is submitted and monitored. Competing green proof #38793 is older and shorter.
+A267610 has a [locally checked positive proof](problems/a267610/README.md) of the explicitly corrected A267700 relation and unchanged generating function. The original typo-disproof is archived. The GF-only statement #33330 merged; our adapted proof [#39513](https://github.com/lefttosolve2/open-math-agents/pull/39513) is submitted and monitored. Our revised 5,553-character proof is 9.52% shorter than competing #38793.
 
 [A267445](problems/a267445/README.md), [A267447](problems/a267447/README.md),
 and [A267442](problems/a267442/README.md) are skipped after verifying prior

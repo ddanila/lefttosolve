@@ -108,7 +108,7 @@ def merger_rejection(info):
     if info.get('mergedAt'):
         return None
     for comment in reversed(info.get('comments', [])):
-        if comment.get('author', {}).get('login') in ('github-actions', 'github-actions[bot]'):
+        if comment.get('author', {}).get('login') in ('github-actions', 'github-actions[bot]', 'lefttosolve-merger'):
             body = comment.get('body', '')
             if 'Not merged:' in body:
                 return body

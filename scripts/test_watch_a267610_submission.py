@@ -53,6 +53,11 @@ class MergerVerdict(unittest.TestCase):
         info['comments'][0]['author']['login'] = 'someone'
         self.assertIsNone(merger_rejection(info))
 
+    def test_current_merger_account_rejection(self):
+        info = dict(mergedAt=None, comments=[dict(author={'login':'lefttosolve-merger'}, body='Not merged: not shorter')])
+        self.assertIsNotNone(merger_rejection(info))
+        self.assertIsNone(merger_rejection({**info, 'mergedAt':'2026-11-28'}))
+
 
 class AlternativeTargets(unittest.TestCase):
     def setUp(self):

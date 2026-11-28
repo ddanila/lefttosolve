@@ -60,9 +60,11 @@ stopped on an unrelated checker/client update; that delta was reviewed and the
 current official checker accepted the exact merged target before submission.
 The uploaded bytes were verified, and CI/verdict monitoring is active.
 
-Competing proof #38793 is older and has green CI. Its 6,137 counted characters are
-fewer than our adapter's 8,267, so ours does not qualify as a shorter replacement
-if theirs merges first. Our proposed corrected-relation statement #35416 is separate.
+The proof in #39513 is now shortened to 5,553 counted characters: 32.8% below
+our original 8,267 and 9.52% below the 6,137 in competing #38793. It qualifies
+as a shorter replacement against that version. Current official and isolated
+checks pass. Our superseded statement #35416 was rejected because #33330 merged;
+that rejection is separate from the proof PR.
 
 Runtime status: `.oma/a267610-watch/status.json`; latest log:
 `resumed-current-checker.log` beside it. Watcher: `scripts/watch_a267610_submission.py`.

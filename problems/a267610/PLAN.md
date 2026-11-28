@@ -40,7 +40,9 @@ the exact-target check passes.
 - [x] #33330 merged; reviewed the checker/client delta and resumed the stopped watcher.
 - [x] Verify exact merged statement bytes and rerun the current official checker.
 - [x] Submit adapted proof #39513 and verify its bytes.
-- [ ] Monitor #39513 CI/verdict; watcher active. Competitor #38793 is green and older.
+- [x] Shorten GF-only proof to 5,553 characters by counting Pascal entries directly.
+- [x] Pass official/isolated checks and update #39513 to commit 157ca9299.
+- [ ] Monitor refreshed #39513 CI/verdict; watcher active. Competitor #38793 is older.
 
 The original typo-disproof is an audit artifact, not the proposed submission.
 Watcher: scripts/watch_a267610_submission.py, with runtime status under
@@ -57,6 +59,6 @@ bot rejections even when CI is green.
 - [x] Use a dedicated proof branch; an open statement PR cannot block it.
 
 The adapter in alternatives/ppleskov/ is submitted as #39513 against merged #33330.
-It has 8,267 counted characters versus 6,137 for #38793, so it would not qualify
-as a shorter replacement if that competing proof merges first. Changed checker
-or target hashes still stop safely; unused client changes no longer block this path.
+It now has 5,553 counted characters versus 6,137 for #38793, qualifying as a
+shorter replacement against that version. Changed checker/target hashes still
+stop safely; unused client changes no longer block this path.

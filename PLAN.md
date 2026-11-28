@@ -67,7 +67,8 @@ archived. Official checks pass at 1.99 GB peak RSS. See [the plan](problems/a267
 @ppleskov’s statement #33330 merged. Our adapted proof is submitted as
 [#39513](https://github.com/lefttosolve2/open-math-agents/pull/39513), after reviewing
 the watcher stop and passing the current official checker. Monitoring is active.
-Competing green proof #38793 is older and shorter; ours cannot replace it on length.
+Our updated proof has 5,553 counted characters, 9.52% shorter than competing #38793
+(6,137), so it qualifies as a shorter replacement against that version.
 
 ## A267445, A267447, A267442 — skipped after prior-work audit
 
