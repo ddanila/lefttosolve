@@ -1,0 +1,36 @@
+%I #14 Nov 05 2025 15:22:34
+%S 1,5,37,197,901,3845,15877,64517,260101,1044485,4186117,16760837,
+%T 67076101,268369925,1073610757,4294705157
+%N Number of active (ON, black) cells at stage 2^n-1 of the two-dimensional cellular automaton defined by "Rule 779", based on the 5-celled von Neumann neighborhood.
+%C Initialized with a single black (ON) cell at stage zero.
+%C Conjecture: Rules 795, 843 and 859 also generate this sequence. - _Lars Blomberg_, Jul 20 2016
+%D S. Wolfram, A New Kind of Science, Wolfram Media, 2002; p. 170.
+%H N. J. A. Sloane, <a href="https://arxiv.org/abs/1503.01168">On the Number of ON Cells in Cellular Automata</a>, arXiv:1503.01168 [math.CO], 2015
+%H Eric Weisstein's World of Mathematics, <a href="https://mathworld.wolfram.com/ElementaryCellularAutomaton.html">Elementary Cellular Automaton</a>
+%H S. Wolfram, <a href="http://wolframscience.com/">A New Kind of Science</a>
+%H <a href="/index/Ce#cell">Index entries for sequences related to cellular automata</a>
+%H <a href="https://oeis.org/wiki/Index_to_2D_5-Neighbor_Cellular_Automata">Index to 2D 5-Neighbor Cellular Automata</a>
+%H <a href="https://oeis.org/wiki/Index_to_Elementary_Cellular_Automata">Index to Elementary Cellular Automata</a>
+%F Conjectures from _Colin Barker_, May 25 2016: (Start)
+%F a(n) = 5-2^(3+n)+4^(1+n).
+%F a(n) = 7*a(n-1)-14*a(n-2)+8*a(n-3) for n>2.
+%F G.f.: (1-2*x+16*x^2) / ((1-x)*(1-2*x)*(1-4*x)).
+%F (End)
+%t CAStep[rule_,a_]:=Map[rule[[10-#]]&,ListConvolve[{{0,2,0},{2,1,2},{0,2,0}},a,2],{2}];
+%t code=779; stages=128;
+%t rule=IntegerDigits[code,2,10];
+%t g=2*stages+1; (* Maximum size of grid *)
+%t a=PadLeft[{{1}},{g,g},0,Floor[{g,g}/2]]; (* Initial ON cell on grid *)
+%t ca=a;
+%t ca=Table[ca=CAStep[rule,ca],{n,1,stages+1}];
+%t PrependTo[ca,a];
+%t (* Trim full grid to reflect growth by one cell at each stage *)
+%t k=(Length[ca[[1]]]+1)/2;
+%t ca=Table[Table[Part[ca[[n]][[j]],Range[k+1-n,k-1+n]],{j,k+1-n,k-1+n}],{n,1,k}];
+%t on=Map[Function[Apply[Plus,Flatten[#1]]],ca] (* Count ON cells at each stage *)
+%t Part[on,2^Range[0,Log[2,stages]]] (* Extract relevant terms *)
+%Y Cf. A273538.
+%K nonn,more
+%O 0,2
+%A _Robert Price_, May 24 2016
+%E a(8)-a(15) from _Lars Blomberg_, Jul 20 2016

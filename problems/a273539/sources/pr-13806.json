@@ -1,0 +1,15 @@
+{
+  "url": "https://github.com/lefttosolve2/open-math-agents/pull/13806",
+  "state": "closed",
+  "merged": false,
+  "closed_at": "2026-11-28T01:17:01Z",
+  "head_sha": "d5b2cd9251e36d69e4a46683679c8bacec1f0aa7",
+  "comments": [
+    {
+      "url": "https://github.com/lefttosolve2/open-math-agents/pull/13806#issuecomment-7231554726",
+      "body": "Withdrawn by the author: the statement conjoins only part of the conjectures shown on the problem page (one of them, e.g. a floor formula or a claim about other rules, is not covered), so it is not a faithful statement of this problem.",
+      "author": "clementtrecourt",
+      "created_at": "2026-11-28T01:17:01Z"
+    }
+  ]
+}

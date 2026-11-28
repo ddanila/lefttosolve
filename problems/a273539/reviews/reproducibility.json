@@ -1,0 +1,15 @@
+{
+  "command": "python3 scripts/check.py",
+  "exit_code": 0,
+  "summary": "PASS: all seven problems, isolated proofs, simulations, and axiom audits.",
+  "per_problem_reports_unchanged_on_rerun": true,
+  "report_sha256": {
+    "lean-check.txt": "d08c5bb0b606f053ac8a8f26c19fba0447e9f92ddecf69e02061baf210c284af",
+    "local-check.json": "a9cc0b1b115e4c25325394b70e1a8f8c4dc03feed11e063a874c386546d11756"
+  },
+  "heuristic_discovery_reproduced_exactly": true,
+  "discovered_states": 87,
+  "proof_sha256": "c7940eb2962cbf5bef4e824479d271a76820b613bb4135c351e2dfefa1f95e51",
+  "raw_source_whitespace_preserved": true,
+  "publication_scope": "local only"
+}

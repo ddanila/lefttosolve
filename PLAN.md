@@ -16,7 +16,7 @@ Nothing is left to do on these five. All five statements are ours and merged; on
 
 Our proof pull requests #7242 (A267622) and #7656 (A267623) are still open upstream and can no longer merge. Closing them is optional housekeeping and needs Danila's confirmation.
 
-## Next candidates
+## Current work and next candidates
 
 The one-dimensional family we worked in is taken: every remaining problem from the 2026-11-27 shortlist has an open statement pull request. Of 451 cellular-automaton problems, 24 have neither a statement nor an open pull request. Two of those use the A283508 automaton (five-cell von Neumann neighbourhood, single ON seed) and count ON cells at stage 2^n − 1.
 
@@ -27,7 +27,7 @@ The one-dimensional family we worked in is taken: every remaining problem from t
   - eleven other rules (667, 723, 731, 931, 939, 947, 955, 995, 1003, 1011, 1019) generate the same sequence.
 
   This is the closest to A283508 and simpler: no exceptional cells. The multi-rule conjecture is the extra work.
-- [ ] **A273539 — Rule 779.** The pattern does not stabilise; it is regular only at stages 2^n − 1, so this needs a new self-similarity argument. Conjectures:
+- [x] **A273539 — Rule 779: proved locally; publication not authorized.** See [proof and checks](problems/a273539/README.md) and [submission preflight](problems/a273539/PLAN.md). A kernel-checked finite machine and a coordinate bridge prove that OFF cells at stages 2^n − 1 are exactly a diamond boundary. All four conjectures are covered:
   - a(n) = 5 − 2^(n+3) + 4^(n+1);
   - a(n) = 7a(n−1) − 14a(n−2) + 8a(n−3) for n > 2;
   - g.f. (1 − 2x + 16x²) / ((1−x)(1−2x)(1−4x));
@@ -35,4 +35,4 @@ The one-dimensional family we worked in is taken: every remaining problem from t
 
 A third free problem of the same kind, A272706 (Rule 515), is a fallback. The sibling A273313 (Rule 643 itself) is already claimed by an open pull request.
 
-Before starting either: read the platform brief to see which conjectures it asks for, confirm the counting window against the OEIS program, and recheck that no pull request has appeared. Platform-visible steps need Danila's confirmation.
+Before publishing A273539, recheck the live brief and upstream queue. Its preparation is local only. A273385 publication and automatic submission remain separately authorized.

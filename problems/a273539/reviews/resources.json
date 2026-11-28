@@ -1,0 +1,36 @@
+{
+  "host_system": "Darwin",
+  "host_machine": "arm64",
+  "capped_memory_test": false,
+  "method": "Same /usr/bin/time -l invocation on each isolated Lean proof; statement compilation excluded.",
+  "proofs": {
+    "a273385": {
+      "peak_rss_bytes": 6600163328,
+      "elapsed_seconds": 8.84,
+      "proof_bytes": 9646,
+      "proof_sha256": "a74c0ed1059eb7c1b006b4e44f5dae18a594633c721b8030a1aa9631f124fa8d",
+      "statement_sha256": "e6c5e39e38bbe88719ef15a6a7cc4ec1cff3ebc812bf14e71ff47f2162c2c462",
+      "axiom_report": "'OMA.solution' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    "a273539": {
+      "peak_rss_bytes": 3818438656,
+      "elapsed_seconds": 31.2,
+      "proof_bytes": 244830,
+      "proof_sha256": "c7940eb2962cbf5bef4e824479d271a76820b613bb4135c351e2dfefa1f95e51",
+      "statement_sha256": "b291359de9a8dabdf108254e4cd9eae117a2135d7bc3e694521d39b5aefea548",
+      "axiom_report": "'OMA.solution' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    }
+  },
+  "earlier_a273539_full_mathlib_imports": {
+    "peak_rss_bytes": 7679475712,
+    "elapsed_seconds": 43.12,
+    "measurement": "unmodified official checker on macOS; entire checker command"
+  },
+  "interpretation": "A273385 baseline is 6.60 GB. Narrow imports reduce A273539 to 3.82 GB peak RSS on this host; no claim of a memory-capped GitHub Linux test.",
+  "final_official_checker": {
+    "peak_rss_bytes": 3833511936,
+    "elapsed_seconds": 34.07,
+    "verdict": "accepted",
+    "proof_sha256": "c7940eb2962cbf5bef4e824479d271a76820b613bb4135c351e2dfefa1f95e51"
+  }
+}

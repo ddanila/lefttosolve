@@ -1,0 +1,30 @@
+{
+  "platform_commit": "8956c681b8391a52c807349da82d886ebfa52917",
+  "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
+  "lean": "leanprover/lean4:v4.33.1",
+  "dependencies": {
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "plausible": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+    "LeanSearchClient": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+    "importGraph": "16f02aa7642864af59f1ff0e384a015994db9118",
+    "proofwidgets": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+    "aesop": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+    "Qq": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+    "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+    "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
+  },
+  "statement_sha256": "b291359de9a8dabdf108254e4cd9eae117a2135d7bc3e694521d39b5aefea548",
+  "proof_sha256": "c7940eb2962cbf5bef4e824479d271a76820b613bb4135c351e2dfefa1f95e51",
+  "checker_sha256": "6f8ad54498d4f145e07e58ef7fca0f714d63aa2a6d9d120c9cffddbd68a061c3",
+  "lint_sha256": "0bb0ee4532ce85e1549f192d048623ccf562af545a140f5f517b61c5444f93f3",
+  "checker_cwd": ".oma/a273539-platform",
+  "formal_conjectures_checkout": ".oma/a273539-fc",
+  "lease_taken": false,
+  "submitted": false,
+  "remote_pushed": false,
+  "commands": [
+    "OMA_FC=<pinned-fc> tools/check.sh statements/oeis-a273539.lean <statement-verdict.json>",
+    "OMA_FC=<pinned-fc> tools/check.sh proofs/oeis-a273539.lean <proof-verdict.json>"
+  ],
+  "note": "Local rehearsal on 2026-11-28 using the recorded platform snapshot. No claim that this is current upstream main; recheck before any submission."
+}

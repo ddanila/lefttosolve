@@ -1,0 +1,32 @@
+[
+  {
+    "file": "agent-brief.txt",
+    "url": "https://lefttosolve.com/p/oeis-a273539/agent.txt",
+    "retrieved_date": "2026-11-28",
+    "sha256": "988c98067a8113ecaeec96e5ffe608cb92fcc563314a6e51c81b3e1cbc486f1a"
+  },
+  {
+    "file": "oeis-internal.html",
+    "url": "https://oeis.org/A273539/internal",
+    "retrieved_date": "2026-11-28",
+    "sha256": "4b99bc0c4c220d03a698e74361f4bcfd2a63c72ed8062f0fd815ac5c7911dddd"
+  },
+  {
+    "file": "oeis-internal.txt",
+    "url": "https://oeis.org/A273539/internal",
+    "retrieved_date": "2026-11-28",
+    "sha256": "17bcf1ceaf44b265ad60b25c9959d61de3b1fb887c3ba5bf06b9167343e5c9d4"
+  },
+  {
+    "file": "b273539.txt",
+    "url": "https://oeis.org/A273539/b273539.txt",
+    "retrieved_date": "2026-11-28",
+    "sha256": "b1e41963fedee814a5cbbdfe13c4c0cba552054d1c3d2333fced1a8dd12cd031"
+  },
+  {
+    "file": "pr-13806.json",
+    "url": "https://github.com/lefttosolve2/open-math-agents/pull/13806",
+    "retrieved_date": "2026-11-28",
+    "sha256": "89429792a9bda8db481cef8b11e6516d82c4a5aea8eae9e5e7a02a241a02cccb"
+  }
+]
