@@ -146,6 +146,8 @@ and a checked proof that remained open after a competing proof merged.
   and later added a separate `solved-elsewhere` command. After inspecting the
   diffs and confirming the merged statement's exact hash, we refreshed the
   approved tool hashes and restarted A273385's watcher at **12:46 UTC**.
+  The resumed watcher passed the updated official checker and submitted proof
+  [#29877](https://github.com/lefttosolve2/open-math-agents/pull/29877) at **12:49 UTC**.
   We also refreshed and restarted the still-waiting A273539 watcher, which
   otherwise would encounter the same client-hash stop when its statement merges.
 - A265284 proof [#26856](https://github.com/lefttosolve2/open-math-agents/pull/26856)

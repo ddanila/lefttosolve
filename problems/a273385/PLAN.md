@@ -1,6 +1,6 @@
 # A273385 local preparation
 
-Publication authorized on 2026-11-28. Statement PR #22075 by @yooeonwoo merged at 10:48:29 UTC. The watcher stopped on changed checker/client hashes at 10:49; those changes were reviewed and the watcher restarted at 12:46. Exact merged statement bytes match; official rechecking and submission are in progress.
+Publication authorized on 2026-11-28. Statement PR #22075 by @yooeonwoo merged at 10:48:29 UTC. The watcher stopped on changed checker/client hashes at 10:49; those changes were reviewed and the watcher restarted at 12:46. Exact merged statement bytes match. Official rechecking passed and proof PR [#29877](https://github.com/lefttosolve2/open-math-agents/pull/29877) was submitted at 12:49 UTC.
 
 - [x] Archive the platform brief and full authoritative OEIS entries, with hashes and attribution.
 - [x] Model the actual Rule 659 dynamics, changing background, and finite square crop.
@@ -18,7 +18,8 @@ Publication and submission:
 - [x] Refresh upstream status, existing PRs, catalog target, checker and dependency pins.
 - [x] Publish the complete proof with its statement for provenance (c7bf665, pushed 2026-11-28).
 - [x] Adapt to existing statement PR #22075; official exact-target check accepted.
-- [ ] After merge, compare exact merged bytes, recheck the proof against that statement, and submit it promptly.
-- [ ] Record PRs and monitor verdicts; distinguish CI success, merger acceptance, and catalog deployment.
+- [x] Compare exact merged bytes, recheck, and submit proof PR #29877.
+- [x] Record statement #22075 and proof #29877.
+- [ ] Monitor proof CI/verdict/merge; automatic monitoring remains active.
 
 Automatic submission and CI monitoring are enabled with `scripts/watch_a273385_submission.py`; status lives in `.oma/a273385-watch/status.json`.

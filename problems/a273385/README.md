@@ -1,6 +1,6 @@
 # A273385 — Rule 659 ON-cell counts
 
-**Proved and authorized for publication; proof PR pending.** The standalone statement covers every conjecture in the current [OEIS entry](https://oeis.org/A273385), including the 2025 comparison with A270007. Credit: @ddanila.
+**Proof submitted: [#29877](https://github.com/lefttosolve2/open-math-agents/pull/29877).** Statement #22075 merged; the adapted proof passed the current checker, and CI monitoring is running. The standalone statement covers every conjecture in the current [OEIS entry](https://oeis.org/A273385), including the 2025 comparison with A270007. Credit: @ddanila.
 
 - [Statement](../../statements/oeis-a273385.lean)
 - [Proof](../../proofs/oeis-a273385.lean)
