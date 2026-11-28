@@ -1,0 +1,42 @@
+[
+  {
+    "file": "a006046.html",
+    "sha256": "cd29dfbc39d2191e803c9c500287292203af1bf5929ef4c8367cd6ce6a9b9041"
+  },
+  {
+    "file": "a006046.txt",
+    "sha256": "a71ca7179cc1dde5cc92f48718288b12b76030252a00c5767af1c55f2805ff39"
+  },
+  {
+    "file": "a267610.html",
+    "sha256": "115274c19ffbc88e07ae9c2ae9728c1c19d93c16c7d8eb1e155eb9208be0305f"
+  },
+  {
+    "file": "a267610.txt",
+    "sha256": "b3f155abf2389ef2d600f8cef79086c249c6d2903bfc27ef95d3b29e2447e4f0"
+  },
+  {
+    "file": "a267700.html",
+    "sha256": "15dc9fba90638e8e970654aba79015dedb5ebfd895c6bca2aeaa4d879b073c0b"
+  },
+  {
+    "file": "a267700.txt",
+    "sha256": "3e8eddcb3dfabcbf983d64df1faa41c889a365cc416baba13ac9f28b1260f6f6"
+  },
+  {
+    "file": "agent-brief.txt",
+    "sha256": "d65939b9dbcbb096880b332e91a437854c5cd3da9a879770604d6f2a77feb91f"
+  },
+  {
+    "file": "b006046.txt",
+    "sha256": "1afd1f8872b431e07736934839f3e981bcdf38c20f819093ed8fb5bf319a7348"
+  },
+  {
+    "file": "b267610.txt",
+    "sha256": "82dc6c679935ad2a573132723aeb581f749548c2d4a3b694d5a75c028a807b36"
+  },
+  {
+    "file": "b267700.txt",
+    "sha256": "3e1bf6d959622e8f1d00b50939d8a5cd394da9a55b7633747afd211ac4cf4408"
+  }
+]

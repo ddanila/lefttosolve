@@ -1,0 +1,2 @@
+PASS: all ten problems, isolated proofs, simulations, and axiom audits.
+Command: python3 scripts/check.py

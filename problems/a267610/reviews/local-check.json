@@ -1,0 +1,26 @@
+{
+  "ca_terms_checked": 1001,
+  "tree_terms_checked": 70,
+  "pascal_terms_checked": 16384,
+  "first_crops": [
+    "1",
+    "111",
+    "10101"
+  ],
+  "counterexample": {
+    "n": 2,
+    "lhs": 2,
+    "rhs": 0
+  },
+  "gf_coefficients_checked": 1001,
+  "shifted_relation_tested_through": 1000,
+  "shifted_relation_proved": false,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "exact_target_guard": true,
+  "statement_sha256": "061708c7ecd63223d7e648cb8cb525650228b9b8dcf090c0a8c5fefa5b52bcbb",
+  "proof_sha256": "02cb280bb961513459a5d07fd449dfeb5b78f0a03e33b9d2bcd797c8bf33919a"
+}

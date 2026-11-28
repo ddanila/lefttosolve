@@ -25,3 +25,5 @@ this as an untouched problem. An attributed adaptation would require:
 - [ ] Recheck prior-proof policy and current main before proposed submission.
 
 No OMA.solution file has been created. Do not mark this proof-ready.
+
+Decision: user explicitly chose to skip A273676 on 2026-11-28. No adaptation planned.

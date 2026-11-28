@@ -165,4 +165,6 @@ platform's actual pin before submitting.
 
 [A267920](problems/a267920/README.md) and [A267921](problems/a267921/README.md) — the Rule 243 pair, developed locally together. They share the automaton and crop, differing only in decimal-digit encoding versus binary evaluation. Publication and submission are authorized for this pair.
 
-A273676 has a [local prior-work audit](problems/a273676/README.md): existing Lean proofs were found in a November 20 artifact. No new proof or submission is prepared.
+A273676 is skipped following its [local prior-work audit](problems/a273676/README.md): existing Lean proofs were found in a November 20 artifact. No new proof or submission is prepared.
+
+A267610 has a [locally checked statement and disproof](problems/a267610/README.md): the printed A267700 relation fails at n=2. Nothing submitted.

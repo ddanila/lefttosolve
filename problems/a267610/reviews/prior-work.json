@@ -1,0 +1,14 @@
+{
+  "search_date": "2026-11-28",
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/2210.10968",
+      "finding": "Section 4 lists A267610 among divide-and-conquer applications. This is relevant prior mathematics; no explicit refutation of the printed unshifted A267700 relation was found in the inspected passage."
+    },
+    {
+      "url": "https://www.openwitness.net/p/10906",
+      "finding": "The certificate survey explicitly excludes A267610; it does not supply the current counterexample."
+    }
+  ],
+  "claim": "No first-discovery claim. Search was limited, not exhaustive."
+}

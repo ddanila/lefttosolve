@@ -53,8 +53,14 @@ statement. See [validation and comparison](problems/a071052/README.md).
 Submitted from current upstream main: [#30173](https://github.com/lefttosolve2/open-math-agents/pull/30173). Local checker and
 exact submitted-byte audit pass; CI and platform verdict remain pending.
 
-## A273676 — local prior-work audit
+## A273676 — skipped (prior work)
 
 Existing Lean sources cover the main claims; no new proof is prepared.
-See [the local plan](problems/a273676/PLAN.md) for an attributed adaptation route.
+The user chose to skip it; no adaptation is planned.
 All A273676 work remains local.
+
+## A267610 — local statement and disproof ready
+
+The printed unshifted A267700 relation fails at n=2. Both local official checks
+pass. The separate GF is not refuted. See [the plan](problems/a267610/PLAN.md).
+Submission remains unauthorized; no push or external coordination.

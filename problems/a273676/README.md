@@ -42,3 +42,5 @@ It accounts for the evolving infinite background.
 See [source review](reviews/source-review.md), [results](reviews/local-check.json),
 and [remaining work](PLAN.md). The root nine-problem checker does not include
 this research-only task.
+
+Decision: user explicitly chose to skip A273676 on 2026-11-28. No adaptation planned.
