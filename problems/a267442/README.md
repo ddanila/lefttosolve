@@ -31,8 +31,9 @@ Earlier platform statement PRs were withdrawn by their authors for prior work:
 ## Evidence and limits
 
 OEIS entries, b-files and PR records are archived in sources/ with SHA-256
-hashes in provenance.json. The shared paper and four Lean modules are archived
-under ../a267442/sources/. This audit inspected source and matched definitions;
+hashes in provenance.json. The shared paper and four Lean modules are referenced by pinned upstream links
+and recorded hashes only; copies were removed because no redistribution license
+was identified. This audit inspected source and matched definitions;
 it did not rebuild the external Lean project or certify its full dependency
 closure. No platform-ready proof is claimed. The authors' withdrawals are not
 an independent platform ruling that formalization submissions are prohibited.

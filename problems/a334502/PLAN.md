@@ -20,6 +20,7 @@ Scope: finish A334502 locally; A334503 is a separate, later port. No publication
 - [ ] Confirm R1 is available, or rename the reduction and all step imports together.
 - [ ] Recheck any changed artifacts against the current platform toolchain.
 - [ ] Submit reduction; submit all four prepared steps as soon as the reduction is merged.
-- [ ] Monitor CI and merger verdicts.
+- [ ] Monitor CI and merger verdicts, especially H2 memory: its 5.68 GB peak
+  is measured on macOS only; CI memory use remains unverified.
 
 A334503 remains queued; its proof has not been ported yet.

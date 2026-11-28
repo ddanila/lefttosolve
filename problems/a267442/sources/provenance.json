@@ -1,19 +1,31 @@
 [
   {
     "file": "Rule129ClosedForm.lean",
-    "sha256": "ef4b6cab224e46f9deb3d9a85ea95db0a4934833930a35088e869b8f5ad03cf1"
+    "sha256": "ef4b6cab224e46f9deb3d9a85ea95db0a4934833930a35088e869b8f5ad03cf1",
+    "retained_locally": false,
+    "note": "Inspected upstream artifact; copy omitted because no redistribution license was identified.",
+    "url": "https://github.com/derekblair/math-proofs/blob/f0817a0d34d89555cc7270126b93627fc0394340/lean/Mathproofs/Dynamics/Rule129ClosedForm.lean"
   },
   {
     "file": "Rule129Digits.lean",
-    "sha256": "42e88fd0ed5fa12f0b5d2243e4a8ea02af1b5c64a461125d1b975565df201bdc"
+    "sha256": "42e88fd0ed5fa12f0b5d2243e4a8ea02af1b5c64a461125d1b975565df201bdc",
+    "retained_locally": false,
+    "note": "Inspected upstream artifact; copy omitted because no redistribution license was identified.",
+    "url": "https://github.com/derekblair/math-proofs/blob/f0817a0d34d89555cc7270126b93627fc0394340/lean/Mathproofs/Dynamics/Rule129Digits.lean"
   },
   {
     "file": "Rule129Lucas.lean",
-    "sha256": "35794099206fb69b16866e97d5ae51faadf93635dc467408121a5af36631f9ee"
+    "sha256": "35794099206fb69b16866e97d5ae51faadf93635dc467408121a5af36631f9ee",
+    "retained_locally": false,
+    "note": "Inspected upstream artifact; copy omitted because no redistribution license was identified.",
+    "url": "https://github.com/derekblair/math-proofs/blob/f0817a0d34d89555cc7270126b93627fc0394340/lean/Mathproofs/Dynamics/Rule129Lucas.lean"
   },
   {
     "file": "Rule129MiddleColumn.lean",
-    "sha256": "4abf70e1459e858e90f521a0ce187b6fc44e8e8673146a8c834361a75e7119fa"
+    "sha256": "4abf70e1459e858e90f521a0ce187b6fc44e8e8673146a8c834361a75e7119fa",
+    "retained_locally": false,
+    "note": "Inspected upstream artifact; copy omitted because no redistribution license was identified.",
+    "url": "https://github.com/derekblair/math-proofs/blob/f0817a0d34d89555cc7270126b93627fc0394340/lean/Mathproofs/Dynamics/Rule129MiddleColumn.lean"
   },
   {
     "file": "a043545.html",
@@ -33,7 +45,10 @@
   },
   {
     "file": "paper.tex",
-    "sha256": "8c8c08384d511805506a1e9b76242acabacab25f68785bd4542e77e723d7c1b1"
+    "sha256": "8c8c08384d511805506a1e9b76242acabacab25f68785bd4542e77e723d7c1b1",
+    "retained_locally": false,
+    "note": "Inspected upstream artifact; copy omitted because no redistribution license was identified.",
+    "url": "https://github.com/derekblair/math-proofs/blob/f0817a0d34d89555cc7270126b93627fc0394340/papers/rule129/paper.tex"
   },
   {
     "file": "pr-18449.json",

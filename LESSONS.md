@@ -265,3 +265,11 @@ Lean independently proves its seed, recurrence and final certificate. Large matc
 tables can make simp build expensive splitters; use controlled lookup equations or
 explicit unfolding. Profile both memory and time, preserve the exact formerly
 failing case, and keep a reproducible generator rather than hand-editing output.
+
+
+## Keep unlicensed prior-work audits as references
+
+When no redistribution license is identified, retain pinned source links, hashes
+and our own audit conclusions instead of committing third-party source or papers.
+Before publishing accumulated local commits, inspect their history as well as
+the final tree: deleting a copied file only at HEAD still publishes earlier copies.
