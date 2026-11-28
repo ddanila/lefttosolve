@@ -1,46 +1,38 @@
 # Plan
 
-Per-problem plans live with each problem. Status checked on 2026-11-27 against GitHub; saved observations are in `reviews/submission-status.json`.
+Status checked against GitHub on 2026-11-28, 06:45 UTC. Process notes are in `LESSONS.md`.
 
-## A283508 — proof merged
+## Finished problems
 
-- Statement merged in [PR #5506](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506).
-- Our proof [PR #6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231) merged at **13:00:05 UTC** on 2026-11-27.
-- Competing proof [PR #6200](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6200) closed at 13:04:40 UTC that day.
-- [x] Record the merged proof outcome and update the README.
+Nothing is left to do on these five. All five statements are ours and merged; one proof is ours.
 
-Process notes are in `LESSONS.md`. Merge status does not itself certify a separate human semantic review.
+| Problem | Statement (ours) | Proof on `main` |
+| --- | --- | --- |
+| A283508 — Rule 643 | [#5506](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/5506) | Ours, [#6231](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6231) |
+| A267622 — Rule 187 row | [#6406](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6406) | @caa1982, #7360 |
+| A267623 — Rule 187 centre column | [#7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472) | @carl2sheriff, #8776 |
+| A267920 — Rule 243, decimal digits | [#8024](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/8024) | @rpinho, #11172 |
+| A267921 — Rule 243, binary value | [#7966](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7966) | @treybeathard-jpg, #11159, then shortened by @DavidHallgren, #12167 |
 
-## A267622 — proof CI accepted, competing proof merged
+Our proof pull requests #7242 (A267622) and #7656 (A267623) are still open upstream and can no longer merge. Closing them is optional housekeeping and needs Danila's confirmation.
 
-- Statement [PR #6406](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/6406) merged at 14:14:02 UTC on 2026-11-27.
-- Proof [PR #7242](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242) is open; CI completed successfully and its downloaded verdict is accepted. Competing proof #7360 merged at 15:07:44 UTC and the site credits caa1982; ours remains open despite earlier submission and CI completion.
-- [ ] Monitor the proof verdict, merge, and site credit; record the final outcome.
+## Next candidates
 
-Publication and automatic monitoring are authorized. See [`problems/a267622/PLAN.md`](problems/a267622/PLAN.md).
+The one-dimensional family we worked in is taken: every remaining problem from the 2026-11-27 shortlist has an open statement pull request. Of 451 cellular-automaton problems, 24 have neither a statement nor an open pull request. Two of those use the A283508 automaton (five-cell von Neumann neighbourhood, single ON seed) and count ON cells at stage 2^n − 1.
 
-## A267623 — statement merged, proof CI accepted
+- [ ] **A273385 — Rule 659.** Simulation shows the whole (2t+1)² window is ON from stage 3, so the count is (2^(n+1) − 1)². Conjectures:
+  - a(n) = 4·4^n − 4·2^n + 1 for n > 1;
+  - a(n) = 7a(n−1) − 14a(n−2) + 8a(n−3) for n > 4;
+  - g.f. (1 − 2x + 28x² − 56x³ + 32x⁴) / ((1−x)(1−2x)(1−4x));
+  - eleven other rules (667, 723, 731, 931, 939, 947, 955, 995, 1003, 1011, 1019) generate the same sequence.
 
-Statement, proof, archived sources, simulation, isolated axiom audit, and official local checker rehearsals are complete. All 1,001 source terms match. Full publication and submission are now authorized, including coordination notes and automatic follow-through without further approvals.
+  This is the closest to A283508 and simpler: no exceptional cells. The multi-rule conjecture is the extra work.
+- [ ] **A273539 — Rule 779.** The pattern does not stabilise; it is regular only at stages 2^n − 1, so this needs a new self-similarity argument. Conjectures:
+  - a(n) = 5 − 2^(n+3) + 4^(n+1);
+  - a(n) = 7a(n−1) − 14a(n−2) + 8a(n−3) for n > 2;
+  - g.f. (1 − 2x + 16x²) / ((1−x)(1−2x)(1−4x));
+  - rules 795, 843 and 859 generate the same sequence.
 
-- [x] Obtain a fresh independent statement review before publication.
-- [x] Recheck live activity and current upstream/toolchain pins before submitting.
-- [x] Submit statement: [PR #7472](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7472).
-- [x] Statement #7472 merged at 14:58:01 UTC; exact-target proof check passed.
-- [x] Submit proof: [PR #7656](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7656).
-- [ ] Monitor proof verdict, merge, and site credit.
+A third free problem of the same kind, A272706 (Rule 515), is a fallback. The sibling A273313 (Rule 643 itself) is already claimed by an open pull request.
 
-See [`problems/a267623/PLAN.md`](problems/a267623/PLAN.md). Follow the authorized sequence in the per-problem plan.
-
-## A267920 and A267921 — statements merged, proofs checked
-
-Develop both Rule 243 encodings together. Each has a standalone statement/proof and source archive. Full publication, leases, coordination notes, statement/proof submissions and monitoring are authorized without further approvals.
-
-- [x] Complete local validation and official checker rehearsals.
-- [x] Obtain independent statement reviews; both passed without corrections.
-- [x] Submit statements: A267920 #8024 (CI accepted), A267921 #7966 (CI accepted).
-- [x] Both statements merged at 19:49 UTC; both exact merged-target proof checks accepted.
-- [ ] Submit both proofs when desk leases recover; the isolated local watcher is prepared in `scripts/watch_rule243_submission.py`.
-- [ ] Record watcher submission results and monitor proof CI/verdicts.
-
-See [A267920 plan](problems/a267920/PLAN.md) and [A267921 plan](problems/a267921/PLAN.md). Proceed with the authorized per-problem submission sequences.
+Before starting either: read the platform brief to see which conjectures it asks for, confirm the counting window against the OEIS program, and recheck that no pull request has appeared. Platform-visible steps need Danila's confirmation.
