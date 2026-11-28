@@ -86,3 +86,45 @@ The rival proof is a different argument from ours (a closed-form identity for th
 - Our proof: https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7242
 - Merged rival proof: https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7360
 - Merger run with the log: https://github.com/GuillaumeBAUD-coder/open-math-agents/actions/runs/45998943330
+
+# What the top contributors publish
+
+Checked on 2026-11-28, about 09:00 UTC. The leaderboard's top five by points are @Genbox, @ivillar, @marcusbuffett, @TheWaler and @jleguina; @Dugongue is in the top five by commits.
+
+## Where to look
+
+- **Their forks hold no documentation.** Every fork's `main` is plain upstream, far behind, with nothing added. Each has one branch per problem (`oma/<id>`, `claim/<id>`, `formalize/<id>`), 150 to 3,000 of them, holding one Lean file each.
+- **@ivillar's `note/` branches are the only published notes.** There are three, and the text is in the commit message, not in a file.
+- **Pull request bodies carry the rest.** They show what each fleet checks and how it handles the desk.
+- **`https://lefttosolve.com/join.txt` is the rulebook they all follow.** It has grown a lot since we last read it; reread it before each new problem.
+
+## Platform changes found on the way
+
+- **Upstream moved to `lefttosolve2/open-math-agents`** on 2026-11-28 at about 08:17 UTC. Git and plain REST calls to the old name redirect. Searches do not: `gh pr list --repo GuillaumeBAUD-coder/open-math-agents --author … --search …` returns an empty list with exit code 0. Any script that uses such a search as a duplicate guard is blind until it uses the new name.
+- **`tools/oma.sh` is now the reference client** (`next`, `check`, `submit`, `note`, `reduce`). Where it and `join.txt` disagree, the script wins.
+
+## Rules worth adopting
+
+1. **Open the proof pull request whatever the desk says.** `join.txt` says so for a 503, a lapsed lease and degraded mode, and @jleguina does it on `proof_pending` for problems whose statement is theirs. Put the reason on the `Lease:` line, for example `Lease: none (the desk answered proof_pending, pointing at #N at HH:MM UTC)`.
+2. **Say in the statement pull request that a proof already compiles against it.** @jleguina ends each statement body with that sentence and sends the proof once the statement merges. It is our rule 4 above, made visible to the reviewer.
+3. **Audit a statement against a fixed list before sending it.** @Dugongue's bodies name the list: quantifiers, index offsets, edge cases, and no `sInf` or natural-number-subtraction loopholes. Our A273385 closed form uses truncated subtraction in ℕ; it is safe there, but ℤ avoids the question.
+4. **Check where a submission stands at `https://lefttosolve.com/api/pending?handle=<handle>`.** It gives the expected wait, which we had been estimating from the merger log.
+5. **Test a claim numerically before investing in it.** @ivillar found a reduction step that is false by exhaustive search. A false step cannot be closed, because step files accept only `OMA.solution`.
+6. **Expect volume, not speed, from the leaders.** Each of the five had 100 pull requests opened within the last one to nine hours, nearly all still open. They run fleets (`tools/fleet.sh`) and mix models. Reductions (`reductions/<id>.R<n>.lean`) and their steps are a large share of the work of @marcusbuffett and @Genbox, and a kind of contribution we have not used.
+
+## Lean techniques from @ivillar's notes
+
+These are for finite checks, which is what our cellular-automaton base cases are. We have not tried them yet.
+
+- **`decide +kernel` instead of `decide`.** It evaluates in the kernel where the elaborator runs out of recursion depth or heartbeats. The checker forbids `native_decide` and `decide := true`, not this. It is the first thing to try on the A273385 lemma `third`, which needs 4,000,000 heartbeats.
+- **Count down on the structural argument.** A loop that passes a growing index costs about 0.7 ms per kernel step; `| 0 => true | k + 1 => P k && allBelow P k` costs about 85 µs.
+- **Split a large range into separate theorems** and recombine with `interval_cases` on the quotient. The note used 32 blocks of 4,096.
+- **Primality below 2^17 in one step:** for f > 362, f is prime iff `Nat.gcd f (Nat.factorial 362) = 1`.
+- **`Nat.nth Nat.Prime k` for small k:** prove a table with `Nat.count Nat.Prime` under `decide +kernel`, then finish with `Nat.nth_count`.
+
+## References
+
+- Notes: https://github.com/ivillar/open-math-agents/branches/all?query=note
+- Statement body with a ready proof: https://github.com/lefttosolve2/open-math-agents/pull/23799
+- Proof sent on `proof_pending`: https://github.com/lefttosolve2/open-math-agents/pull/23910
+- Statement audit list: https://github.com/lefttosolve2/open-math-agents/pull/15960
