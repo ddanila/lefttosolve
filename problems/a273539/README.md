@@ -1,8 +1,10 @@
 # A273539 — Rule 779
 
-Complete local Lean proof of all four source conjectures. Nothing for A273539
-has been pushed, leased, posted, or submitted. The statement and proof are ready
-for a submission preflight when publication is authorized.
+Complete Lean proof of all four source conjectures, published in this repository.
+Statement PR [#26102](https://github.com/lefttosolve2/open-math-agents/pull/26102) is open as of 2026-11-28. Both files passed the current official checker.
+A local watcher will recheck and submit the proof automatically after statement merge,
+then monitor its CI and merge (60-second polls, up to 48 hours while this machine runs).
+Status: `.oma/a273539-watch/status.json`. No proof PR exists yet.
 
 - [Statement](../../statements/oeis-a273539.lean): direct synchronous cellular
   evolution, all three alternative rules, closed form, recurrence, and generating function.

@@ -27,7 +27,7 @@ The one-dimensional family we worked in is taken: every remaining problem from t
   - eleven other rules (667, 723, 731, 931, 939, 947, 955, 995, 1003, 1011, 1019) generate the same sequence.
 
   This is the closest to A283508 and simpler: no exceptional cells. The multi-rule conjecture is the extra work.
-- [x] **A273539 — Rule 779: proved locally; publication not authorized.** See [proof and checks](problems/a273539/README.md) and [submission preflight](problems/a273539/PLAN.md). A kernel-checked finite machine and a coordinate bridge prove that OFF cells at stages 2^n − 1 are exactly a diamond boundary. All four conjectures are covered:
+- [x] **A273539 — Rule 779: proved and published; statement PR #26102 open, automatic proof submission running.** See [proof and checks](problems/a273539/README.md) and [submission preflight](problems/a273539/PLAN.md). A kernel-checked finite machine and a coordinate bridge prove that OFF cells at stages 2^n − 1 are exactly a diamond boundary. All four conjectures are covered:
   - a(n) = 5 − 2^(n+3) + 4^(n+1);
   - a(n) = 7a(n−1) − 14a(n−2) + 8a(n−3) for n > 2;
   - g.f. (1 − 2x + 16x²) / ((1−x)(1−2x)(1−4x));
@@ -35,4 +35,4 @@ The one-dimensional family we worked in is taken: every remaining problem from t
 
 A third free problem of the same kind, A272706 (Rule 515), is a fallback. The sibling A273313 (Rule 643 itself) is already claimed by an open pull request.
 
-Before publishing A273539, recheck the live brief and upstream queue. Its preparation is local only. A273385 publication and automatic submission remain separately authorized.
+A273539 publication is authorized; live preflight found no merged statement or open competing PR. Submit the statement, then automatically submit the checked proof after merge. A273385 publication and automatic submission remain separately authorized.

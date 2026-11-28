@@ -8,7 +8,9 @@ program agrees with this infinite-grid crop throughout its horizon.
 
 The local official checker accepts the statement. Independent padded and cyclic
 simulations, Lean samples, and all 16 archived terms support the source mapping.
-The full matching proof is prepared locally. This includes the alternative-rule
+The complete matching proof is public at
+https://github.com/ddanila/lefttosolve/blob/21508ae/proofs/oeis-a273539.lean
+and passes the current official checker, including its root-namespace statement guard. This includes the alternative-rule
 claim omitted from the withdrawn #13806.
 
 The statement imports `Mathlib.RingTheory.PowerSeries.Basic` to keep transitive

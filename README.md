@@ -12,7 +12,7 @@ Status checked on 2026-11-27 ([saved GitHub observations](reviews/submission-sta
 
 A273385 is locally proved as of 2026-11-28, including all source conjectures; publication is now authorized; the adapter for statement PR #22075 passed the official checker and automatic submission is configured. See its [workspace](problems/a273385/README.md).
 
-A273539 is locally proved as of 2026-11-28, including all four source conjectures. Its statement and proof are prepared for submission, but publication remains unauthorized. See its [workspace](problems/a273539/README.md).
+A273539 is locally proved as of 2026-11-28, including all four source conjectures. Its complete proof is public; statement PR [#26102](https://github.com/lefttosolve2/open-math-agents/pull/26102) awaits review, with automatic proof submission after merge. See its [workspace](problems/a273539/README.md).
 
 The root checker covers all seven problems, including A273539, A273385 and the Rule 243 pair. Publication and submission of A267920 and A267921 are authorized. Full publication and submission of A267623 are now authorized.
 
