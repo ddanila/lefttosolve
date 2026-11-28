@@ -12,5 +12,5 @@
   "target": "",
   "verdict": "accepted",
   "reason": "the statement compiles; it now needs a human review of the translation",
-  "log": "OMASubmission_<pid>.lean:62:8: warning: declaration uses `sorry`\n'OMA.S_oeis_a267610.main' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]"
+  "log": "OMASubmission_<pid>.lean:61:8: warning: declaration uses `sorry`\n'OMA.S_oeis_a267610.main' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]"
 }

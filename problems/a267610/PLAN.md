@@ -19,6 +19,16 @@ Scope: local only. No lease, public note, push or submission authorized.
 - [x] Full ten-problem suite passes; reports reproduce exactly.
 - [x] Commit the complete local package without pushing.
 
+## Pre-submission review follow-up
+
+- [x] Remove proof readiness and method from the statement PR draft.
+- [x] Read section 4.3, Example 4.9; archive and hash the inspected paper.
+- [x] Disclose known mathematics explicitly in both PR drafts and source audit.
+- [x] Remove the unnecessary Bitwise import; statement and proof still compile.
+- [x] Make the two tactic sequences tolerate simplification closing a goal.
+- [x] Rerun official and isolated checks: accepted, standard axioms only, no proof warnings.
+- Optional proof shortening deferred; current length is 6,102 counted characters.
+
 ## When submission is authorized
 
 - Recheck canonical upstream, matching PRs, dependency and checker pins.

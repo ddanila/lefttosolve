@@ -29,8 +29,11 @@ and checker evidence remain in the archive. The submission proposal now concerns
 the positive result, not refuting a conjunction through this typo.
 
 The informal containment interpretation is not a separate conjunct; the header
-states this scope. No first-discovery claim is made; relevant prior mathematics
-appears in Hwang, Janson and Tsai, arXiv:2210.10968, section 4.
+states this scope. Hwang, Janson and Tsai, arXiv:2210.10968, section 4.3,
+Example 4.9, explicitly give the cumulative identity in terms of A006046
+and the corresponding A267700 identity, allowing index shifts. This is a
+formalization of known mathematics; the GF follows algebraically from their
+identity. See the source review for the exact index translation.
 
 ## Validation
 
@@ -38,10 +41,10 @@ appears in Hwang, Janson and Tsai, arXiv:2210.10968, section 4.
   local proposed statement. This is not upstream acceptance.
 - Isolated compilation verifies the exact root-qualified target and permits
   only propext, Classical.choice and Quot.sound.
-- Narrow imports; final proof check **5.33 s**, **1,992,916,992 bytes peak macOS RSS**,
+- Narrow imports; final proof check **4.02 s**, **1,992,949,760 bytes peak macOS RSS**,
   versus 5,855,084,544 bytes for the earlier broad-import disproof check.
   These are complete local checker invocations, not capped Linux benchmarks.
-- 6,090 counted proof characters; no large tables, extra axioms or native evaluator.
+- 6,102 counted proof characters; no large tables, extra axioms or native evaluator.
 - Simulation matches 1,001 A267610 terms and checks the row formula through 1000.
   Binary-subset enumeration checks 70 A267700 terms; digit sums check 16,384
   A006046 terms. GF checks match 1,001 coefficients.

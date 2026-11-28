@@ -3,7 +3,9 @@
   "sources": [
     {
       "url": "https://arxiv.org/html/2210.10968",
-      "finding": "Section 4 lists A267610 among divide-and-conquer applications. This is relevant prior mathematics; no explicit refutation of the printed unshifted A267700 relation was found in the inspected passage."
+      "finding": "Section 4.3, Example 4.9 explicitly gives S(m)=A006046(m), shifted A267610=S(m)-2m+1, and shifted A267700=S(m)-m. With m=n+2 and m=n+1 respectively these imply the corrected relation and GF. Known mathematics; our contribution is formalization, not discovery.",
+      "archive": "sources/hwang-janson-tsai-2210.10968.html",
+      "verified_date": "2026-11-28"
     },
     {
       "url": "https://www.openwitness.net/p/10906",

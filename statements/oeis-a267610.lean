@@ -1,6 +1,5 @@
 import Mathlib.RingTheory.PowerSeries.Basic
 import Mathlib.Data.Nat.Digits.Defs
-import Mathlib.Data.Nat.Bitwise
 
 /-!
 # A267610: Total number of OFF (white) cells after n iterations of the "Rule 182" elementary cellular automaton starting with a single ON (black) cell.

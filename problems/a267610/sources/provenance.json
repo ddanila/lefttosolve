@@ -38,5 +38,12 @@
   {
     "file": "b267700.txt",
     "sha256": "3e1bf6d959622e8f1d00b50939d8a5cd394da9a55b7633747afd211ac4cf4408"
+  },
+  {
+    "file": "hwang-janson-tsai-2210.10968.html",
+    "sha256": "ea8750665eea3bdc82cc759388a24e0ffd31474703b8484ce2edd15b2bdc4857",
+    "url": "https://arxiv.org/html/2210.10968",
+    "retrieved": "2026-11-28",
+    "section": "4.3, Example 4.9"
   }
 ]

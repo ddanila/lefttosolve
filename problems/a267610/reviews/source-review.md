@@ -59,10 +59,21 @@ Narrow statement and proof imports reduce measured peak RSS from 5.86 GB to
 
 ## Prior work and verification limits
 
-Hwang, Janson and Tsai, arXiv:2210.10968, section 4, discuss A267610 among
-applications of divide-and-conquer recurrences. We cite this prior mathematics
-and make no first-discovery claim. The inspected passage did not explicitly
-refute the unshifted cross-sequence relation.
+Hwang, Janson and Tsai, arXiv:2210.10968, section 4.3, Example 4.9,
+explicitly identify S_{2,1}(m) with A006046(m). They then give the shifted
+A267610 sequence as S_{2,1}(m)-2m+1 and A267700 as S_{2,1}(m)-m.
+The surrounding text explicitly allows shifts. In our zero-based definitions,
+the first uses m=n+2 and the second m=n+1. Thus their A267610 formula is
+exactly a(n)=A006046(n+2)-2n-3. Combining these formulas gives the corrected
+relation; the GF follows algebraically. This is known mathematics, not merely
+a related discussion. The passage states these identities but does not supply
+our detailed Rule 182-to-binomial-parity proof or explicitly diagnose the OEIS
+typo. Our contribution is a checked formalization from the cellular-automaton
+definition, not mathematical discovery. Platform eligibility remains for review.
+
+Read on 2026-11-28 at https://arxiv.org/html/2210.10968#S4.SS3.
+The retrieved HTML is archived and hashed in sources/provenance.json; this
+pins the inspected content rather than inferring its date from the arXiv ID.
 
 The openwitness.net link was reopened and verified on 2026-11-28. Its November 1
 post explicitly lists A267610 as not handled (GF defined through A006046).

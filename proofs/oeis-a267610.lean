@@ -104,7 +104,7 @@ lemma choose_pair (n k : ℕ) :
   change _ % 2 = _ % 2 at h₀ h₁
   have hn := Nat.mod_lt n (by decide : 0<2)
   interval_cases n%2 <;> simp_all [Nat.add_div, Nat.add_mod]
-  omega
+  all_goals omega
 
 /-- The number of odd binomial coefficients is 2 to the binary weight. -/
 lemma odd_count (n : ℕ) :
@@ -221,8 +221,7 @@ lemma linear_gf : linearSeries * (1-PowerSeries.X)^2 = 1+PowerSeries.X := by
   rcases n with _ | _ | n
   · simp
   · simp
-  · simp [PowerSeries.coeff_one, PowerSeries.coeff_X, Nat.cast_add]
-    ring
+  · (simp [PowerSeries.coeff_one, PowerSeries.coeff_X, Nat.cast_add]; ring)
 
 lemma generating_function :
     PowerSeries.X^2 * series * (1-PowerSeries.X)^2 =
