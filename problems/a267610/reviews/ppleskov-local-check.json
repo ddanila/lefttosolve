@@ -1,0 +1,10 @@
+{
+  "statement_sha256": "1b1dca82755cde5ed9646877eff66fe12bcb025e500f8a1b311b3639c879e177",
+  "proof_sha256": "afa8073c528302f0f7c66e81cd087f6355a414a96c7aff7e927c08bdf047b0a2",
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "exact_target_guard": true
+}

@@ -2,8 +2,8 @@
 """Submit the authorized, checked A267610 proof when its statement reaches main.
 
 Use --check-only for validation or --run to watch for up to 48 hours. No statement
-PR is created. A changed target, existing proof, or uncertain submission stops
-work; the standard client's documented missing-lease path handles desk outages.
+PR is created. Either pinned statement is accepted; unknown targets and existing proofs stop
+work. A dedicated proof branch preserves both statement PRs.
 """
 import argparse
 import base64
@@ -55,6 +55,21 @@ def candidate_state(statement, proof_exists, expected):
     return 'ready'
 
 
+def select_variant(statement, proof_exists, variants):
+    if proof_exists:
+        return 'already_proved', None
+    if statement is None:
+        return 'waiting_for_statement', None
+    matches = [v for v in variants if v['statement_sha256'] == sha(statement)]
+    if len(matches) != 1:
+        return 'statement_changed', None
+    return 'ready', matches[0]
+
+
+def own_proof_prs(prs):
+    return [p for p in prs if any(f['path'] == PROOF for f in p.get('files', []))]
+
+
 def reusable_statement_branch(pr, remote_head, expected_head):
     """Only our unchanged, merged one-file statement branch may be removed."""
     return bool(pr.get('mergedAt') and pr.get('author', {}).get('login') == 'ddanila'
@@ -80,9 +95,10 @@ def save(phase, **fields):
 def preflight(context):
     repo = json.loads(run(['gh','api',f'repos/{UPSTREAM}'],cwd=ROOT).stdout)
     assert repo['full_name'] == UPSTREAM, 'Upstream moved again; update search scope before submitting'
-    assert sha((ROOT/STATEMENT).read_bytes()) == context['statement_sha256']
-    assert sha((ROOT/PROOF).read_bytes()) == context['proof_sha256']
-    assert json.loads((PROBLEM/'reviews/submission-proof.json').read_text())['verdict'] == 'accepted'
+    for variant in context['variants']:
+        assert sha((ROOT/variant['statement_path']).read_bytes()) == variant['statement_sha256']
+        assert sha((ROOT/variant['proof_path']).read_bytes()) == variant['proof_sha256']
+        assert json.loads((ROOT/variant['review_path']).read_text())['verdict'] == 'accepted'
     assert run(['git','rev-parse','HEAD'],cwd=Path(ENV['OMA_FC'])).stdout.strip() == context['formal_conjectures_commit']
     assert run(['gh','api','user','--jq','.login'],cwd=ROOT).stdout.strip() == 'ddanila'
 
@@ -164,22 +180,20 @@ def main():
             continue
         statement = run(['git','show',f'upstream/main:{STATEMENT}'],required=False)
         exists = run(['git','cat-file','-e',f'upstream/main:{PROOF}'],required=False).returncode == 0
-        phase = candidate_state(statement.stdout.encode() if statement.returncode == 0 else None,
-                                exists,context['statement_sha256'])
+        phase, variant = select_variant(statement.stdout.encode() if statement.returncode == 0 else None,
+                                        exists,context['variants'])
         save(phase)
         if phase == 'waiting_for_statement':
-            statement_pr = json.loads(run(['gh','pr','view',str(context['statement_pr']),
+            statuses = [json.loads(run(['gh','pr','view',str(v['statement_pr']),
                 '--repo',UPSTREAM,'--json','state,mergedAt,comments,statusCheckRollup']).stdout)
-            rejection = merger_rejection(statement_pr)
-            if rejection:
-                save('needs_review',reason=rejection)
-                return
-            if any(c.get('conclusion') in ('FAILURE','CANCELLED','TIMED_OUT')
-                   for c in statement_pr.get('statusCheckRollup', [])):
-                save('needs_review',reason='Statement CI requires attention')
-                return
-            if statement_pr['state'] == 'CLOSED' and not statement_pr['mergedAt']:
-                save('needs_review',reason='Statement PR closed without merging')
+                for v in context['variants']]
+            # One statement may be declined while the alternative is still viable.
+            viable = [pr for pr in statuses if pr['mergedAt'] or
+                (pr['state'] == 'OPEN' and not merger_rejection(pr) and not any(
+                    c.get('conclusion') in ('FAILURE','CANCELLED','TIMED_OUT')
+                    for c in pr.get('statusCheckRollup', [])))]
+            if not viable:
+                save('needs_review',reason='Neither prepared statement remains viable')
                 return
             time.sleep(60)
             continue
@@ -192,55 +206,46 @@ def main():
         for name in ('check.sh','lint.py','oma.sh'):
             assert sha((PLATFORM/'tools'/name).read_bytes()) == context['tools_sha256'][name], 'Checker/client changed'
         pending = json.loads(run(['gh','pr','list','--repo',UPSTREAM,'--state','open','--author','ddanila',
-                                  '--search',ID,'--json','number,url']).stdout)
-        assert not pending, 'An own PR already exists; inspect before submitting'
-        branch = f'refs/heads/oma/{ID}'
-        remote_branch = run(['git','ls-remote','--heads','origin',branch]).stdout.strip()
-        if remote_branch:
-            merged = json.loads(run(['gh','pr','view',str(context['statement_pr']),
-                '--repo',UPSTREAM,'--json','mergedAt,headRefOid,author,files']).stdout)
-            assert reusable_statement_branch(merged, remote_branch.split()[0], context['statement_head'])
-            # Delete only the unchanged branch of our verified merged statement PR.
-            run(['git','push','origin','--force-with-lease='+branch+':'+context['statement_head'], ':'+branch])
-        shutil.copyfile(ROOT/PROOF,PLATFORM/PROOF)
+                                  '--search',ID,'--json','number,url,files']).stdout)
+        assert not own_proof_prs(pending), 'An own proof PR already exists; inspect before submitting'
+        branch = f'oma/{ID}-proof'
+        assert not run(['git','ls-remote','--heads','origin',f'refs/heads/{branch}']).stdout.strip(), 'Proof branch exists; inspect before submitting'
+        shutil.copyfile(ROOT/variant['proof_path'],PLATFORM/PROOF)
+        save('checking_merged_target',variant=variant['name'])
         run(['tools/check.sh',PROOF,str(STATE/'merged-proof-check.json')],timeout=2400)
         assert json.loads((STATE/'merged-proof-check.json').read_text())['verdict'] == 'accepted'
         # Recheck after compilation in case another proof merged meanwhile.
         run(['git','fetch','upstream','main'])
         latest = run(['git','show',f'upstream/main:{STATEMENT}'])
         exists = run(['git','cat-file','-e',f'upstream/main:{PROOF}'],required=False).returncode == 0
-        phase = candidate_state(latest.stdout.encode(),exists,context['statement_sha256'])
+        phase = candidate_state(latest.stdout.encode(),exists,variant['statement_sha256'])
         if phase != 'ready':
             save(phase)
             return
-        # Fast-forward the fork so the standard client bases the one-file PR on
-        # the merged statement. Never force a divergent fork or existing branch.
-        run(['git','push','origin','HEAD:main'])
-        run(['git','fetch','origin','main'])
-        run(['git','remote','set-head','origin','main'])
-        claim = run(['tools/oma.sh','next','--problem',ID,'--exact'],required=False)
-        (STATE/'claim-private.log').write_text(claim.stdout+claim.stderr)
-        # Missing/expired leases and desk errors are explicitly supported by
-        # the unmodified client; a 410 settled response still stops submission.
-        save('submitting')
-        result = run(['tools/oma.sh','submit',ID],required=False,timeout=2400)
+        # Use a separate proof branch so an open competing statement PR does not
+        # block submission or get overwritten. This follows the documented direct
+        # GitHub submission route, with the official checker unchanged.
+        details = (ROOT/variant['body_path']).read_text().replace(
+            'Before submission, recheck the exact merged statement and current checker pins.',
+            'Rechecked against the exact merged statement with the current official checker.')
+        body_path = STATE/'proof-pr-body.txt'
+        body_path.write_text('Lease: none\nAgent: codex\nModel: gpt-6\n\nProblem: https://lefttosolve.com/p/'+ID+'\n\n'+details)
+        run(['git','add','--',PROOF])
+        run(['git','commit','-m',f'proof: {ID}', '--',PROOF])
+        save('submitting',variant=variant['name'])
+        run(['git','push','origin',f'HEAD:refs/heads/{branch}'])
+        result = run(['gh','pr','create','--repo',UPSTREAM,'--head','ddanila:'+branch,
+                      '--title',ID,'--body-file',str(body_path)],required=False)
         (STATE/'submit-private.log').write_text(result.stdout+result.stderr)
         urls = submission_urls(result.stdout)
         assert result.returncode == 0 and urls, 'Submission outcome uncertain; do not retry blindly'
         url = urls[-1]
-        body = run(['gh','pr','view',url,'--json','body','--jq','.body']).stdout
-        details = (PROBLEM/'proof-pr.md').read_text().replace(
-            'Before submission, recheck the exact merged statement and current checker pins.',
-            'Rechecked against the exact merged statement with the current official checker.')
-        body_path = STATE/'proof-pr-body.txt'
-        body_path.write_text(body+'\n\n'+details)
-        run(['gh','pr','edit',url,'--body-file',str(body_path)])
         pr = json.loads(run(['gh','pr','view',url,'--json','number,url,files,author,headRefOid']).stdout)
         assert pr['author']['login'] == 'ddanila' and [f['path'] for f in pr['files']] == [PROOF]
         blob = json.loads(run(['gh','api',f'repos/{UPSTREAM}/contents/{PROOF}?ref={pr["headRefOid"]}']).stdout)
-        assert sha(base64.b64decode(blob['content'])) == context['proof_sha256']
+        assert sha(base64.b64decode(blob['content'])) == variant['proof_sha256']
         (STATE/'proof-submission.json').write_text(json.dumps(pr,indent=2)+'\n')
-        save('proof_submitted',url=url)
+        save('proof_submitted',url=url,variant=variant['name'])
         monitor(url,deadline)
         return
     save('waiting_expired')

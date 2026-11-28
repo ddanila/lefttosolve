@@ -52,7 +52,13 @@ Official checker evidence is recorded in `reviews/official-statement.json`, `rev
 
 Publication authorized on 2026-11-28. Existing statement [PR #22075](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/22075) uses equivalent but different definitions; the adapted proof has passed the official checker against its exact pending target. See [submission proof](submission/oeis-a273385.lean) and [checker evidence](reviews/pr-22075-proof-check.json).
 
-## Automatic submission
+## Replacement submission and monitoring
+
+The original proof PR #29877 lost the first-proof race to #29790 and is closed.
+Replacement [#35981](https://github.com/lefttosolve2/open-math-agents/pull/35981)
+modifies the merged file and is 15.65% shorter (7,271 vs 8,620 counted characters).
+The current official checker accepts the exact target and standard axioms.
+Prior-work attribution remains in the PR body. The watcher now monitors #35981.
 
 Publication and submission are authorized without further approval. `scripts/watch_a273385_submission.py --run` watches upstream main for up to 48 hours in an isolated clone. It checks that the merged statement is byte-identical to PR #22075's reviewed target, that no proof exists on main, and that the proof, dependencies, and checker/client still match their recorded hashes. It reruns the official checker, submits a one-file proof PR with the normal client, verifies remote contents, and monitors CI and merge status. Desk outages do not block the client's documented missing-lease submission path.
 

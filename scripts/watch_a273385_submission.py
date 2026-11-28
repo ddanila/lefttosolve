@@ -80,6 +80,19 @@ def preflight(context):
     assert run(['gh','api','user','--jq','.login'],cwd=ROOT).stdout.strip() == 'ddanila'
 
 
+def merger_rejection(info):
+    """Merged state wins over duplicate bot messages posted after a merge."""
+    if info.get('mergedAt'):
+        return None
+    for comment in reversed(info.get('comments', [])):
+        if comment.get('author', {}).get('login') in ('github-actions', 'github-actions[bot]'):
+            body = comment.get('body', '')
+            if 'Not merged:' in body:
+                return body
+    return None
+
+
+
 def monitor(url, deadline):
     while time.time() < deadline:
         result = run(['gh','pr','view',url,'--json','state,mergedAt,statusCheckRollup,comments'],required=False)
@@ -90,6 +103,10 @@ def monitor(url, deadline):
         checks = [{k:c.get(k) for k in ('name','status','conclusion','detailsUrl')} for c in info['statusCheckRollup']]
         if info['mergedAt']:
             save('merged',url=url,merged_at=info['mergedAt'],checks=checks)
+            return
+        rejection = merger_rejection(info)
+        if rejection:
+            save('needs_review',url=url,reason=rejection,checks=checks)
             return
         if info['state'] == 'CLOSED':
             save('closed',url=url,checks=checks)
@@ -117,6 +134,7 @@ def main():
     if args.check_only:
         print('PASS: checked proof, exact pending statement, dependency pin, and GitHub account')
         return
+    (STATE/'pid').write_text(str(os.getpid())+'\n')
     if (STATE/'status.json').exists():
         old = json.loads((STATE/'status.json').read_text())
         if old['phase'] in ('submitting','needs_review','statement_changed','already_proved','merged','closed'):

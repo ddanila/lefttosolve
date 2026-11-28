@@ -20,7 +20,7 @@ Our proof pull requests #7242 (A267622) and #7656 (A267623) are still open upstr
 
 The one-dimensional family we worked in is taken: every remaining problem from the 2026-11-27 shortlist has an open statement pull request. Of 451 cellular-automaton problems, 24 have neither a statement nor an open pull request. Two of those use the A283508 automaton (five-cell von Neumann neighbourhood, single ON seed) and count ON cells at stage 2^n − 1.
 
-- [x] **A273385 — Rule 659: proof PR [#29877](https://github.com/lefttosolve2/open-math-agents/pull/29877) submitted.** See [local proof and validation](problems/a273385/README.md) and [future submission checklist](problems/a273385/PLAN.md). The statement includes the newer A270007 comparison as well. Lean proves the whole (2t+1)² window is ON from stage 3, so the count is (2^(n+1) − 1)². Conjectures:
+- [x] **A273385 — Rule 659: shorter replacement [#35981](https://github.com/lefttosolve2/open-math-agents/pull/35981) submitted; #29877 closed.** See [local proof and validation](problems/a273385/README.md) and [future submission checklist](problems/a273385/PLAN.md). The statement includes the newer A270007 comparison as well. Lean proves the whole (2t+1)² window is ON from stage 3, so the count is (2^(n+1) − 1)². Conjectures:
   - a(n) = 4·4^n − 4·2^n + 1 for n > 1;
   - a(n) = 7a(n−1) − 14a(n−2) + 8a(n−3) for n > 4;
   - g.f. (1 − 2x + 28x² − 56x³ + 32x⁴) / ((1−x)(1−2x)(1−4x));
@@ -66,7 +66,8 @@ relation and unchanged generating function. The original typo-disproof is
 archived. Official checks pass at 1.99 GB peak RSS. See [the plan](problems/a267610/PLAN.md).
 Statement [#35416](https://github.com/lefttosolve2/open-math-agents/pull/35416) awaits review of the correction
 and prior-work eligibility. The watcher polls every minute for up to 48 hours
-and will submit the proof after the exact statement merges and checks pass.
+and will submit the matching proof after either our #35416 statement or
+@ppleskov’s #33330 merges and exact-target checks pass. Both proofs are checked.
 
 ## A267445, A267447, A267442 — skipped after prior-work audit
 

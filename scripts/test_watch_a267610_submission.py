@@ -1,6 +1,6 @@
 """No-network tests of the automatic submission's target guard."""
 import unittest
-from watch_a267610_submission import candidate_state, sha, submission_urls, reusable_statement_branch, STATEMENT, merger_rejection
+from watch_a267610_submission import candidate_state, sha, submission_urls, reusable_statement_branch, STATEMENT, merger_rejection, select_variant, own_proof_prs, PROOF
 
 
 class TargetGuard(unittest.TestCase):
@@ -52,6 +52,32 @@ class MergerVerdict(unittest.TestCase):
         self.assertIsNone(merger_rejection({**info, 'mergedAt':'2026-11-28'}))
         info['comments'][0]['author']['login'] = 'someone'
         self.assertIsNone(merger_rejection(info))
+
+
+class AlternativeTargets(unittest.TestCase):
+    def setUp(self):
+        self.variants = [dict(name='ours', statement_sha256=sha(b'ours')),
+                         dict(name='rival', statement_sha256=sha(b'rival'))]
+
+    def test_selects_each_exact_target(self):
+        for value in (b'ours', b'rival'):
+            phase, variant = select_variant(value, False, self.variants)
+            self.assertEqual(phase, 'ready')
+            self.assertEqual(variant['name'], value.decode())
+
+    def test_unknown_and_duplicate_targets_stop(self):
+        self.assertEqual(select_variant(b'unknown', False, self.variants), ('statement_changed', None))
+        self.assertEqual(select_variant(b'ours', False, self.variants*2), ('statement_changed', None))
+
+    def test_existing_proof_takes_precedence(self):
+        self.assertEqual(select_variant(b'rival', True, self.variants), ('already_proved', None))
+        self.assertEqual(select_variant(None, False, self.variants), ('waiting_for_statement', None))
+
+    def test_own_statement_does_not_block_proof(self):
+        statement = dict(files=[dict(path=STATEMENT)])
+        proof = dict(files=[dict(path=PROOF)])
+        self.assertEqual(own_proof_prs([statement]), [])
+        self.assertEqual(own_proof_prs([statement,proof]), [proof])
 
 
 if __name__ == '__main__':

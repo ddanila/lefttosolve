@@ -43,5 +43,16 @@ the exact-target check passes.
 The original typo-disproof is an audit artifact, not the proposed submission.
 Watcher: scripts/watch_a267610_submission.py, with runtime status under
 .oma/a267610-watch/status.json. It polls every 60 seconds for up to 48 hours,
-stops on target/checker changes or competing proofs, and recognizes merger
+accepts either checked target, stops on unknown target/checker changes or competing proofs, and recognizes merger
 bot rejections even when CI is green.
+
+## Alternative statement coverage
+
+- [x] Archive @ppleskov's exact GF-only statement from #33330.
+- [x] Bridge cell states, counts and A006046; cast the GF to ℚ.
+- [x] Exact-target and official checker acceptance; standard axioms only.
+- [x] Test and restart the watcher with both target hashes and proof files.
+- [x] Use a dedicated proof branch; an open statement PR cannot block it.
+
+The adapter is in alternatives/ppleskov/. Neither proof is published until
+a supported statement merges. Changed checker/target hashes still stop safely.

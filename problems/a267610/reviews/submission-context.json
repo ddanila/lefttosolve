@@ -5,7 +5,7 @@
   "proof_sha256": "fd32821e5824ad89299ea757a5bcabedf93351b972aefd5304d325140275a8fe",
   "tools_sha256": {
     "check.sh": "59190c1af6dd215a2acda93bec1732693dc0507057e278567b3bcf773eded453",
-    "lint.py": "40a31bf459f26c87760b7a46bb585feb952ac487e9aa832bb9233a9a4c84777c",
+    "lint.py": "2b263f62b8b7cb3a4c9e9bcb887ced92f9e8c0a8e917325dd0c43897bb2f7cfc",
     "oma.sh": "035b1708108371017003065923c9f2ffe2687fd555a7f541062c6c989bbc0961"
   },
   "proof_counted_characters": 6102,
@@ -20,11 +20,35 @@
   "proposed_correction": true,
   "polarity": "proof",
   "authorized": "2026-11-28: submit statement and automatically submit proof after merge, without further approvals.",
-  "checker_update_review": "Only client change since previous check rejects self-references for solved-elsewhere reports; checker and dependency pin unchanged.",
+  "checker_update_review": "2026-11-28: latest lint adds a human-review gate for three Erdos142 placeholder problems only; no effect on these OEIS proofs. Official checker unchanged.",
   "statement_competitor_pr": 33330,
   "lease_result": "proof_pending; standard client missing-lease path used",
   "proof_publication": "Deferred until exact statement merges",
   "statement_pr": 35416,
   "statement_head": "020caa8b3a2731b60afa7e1aee95c2b41cb66bb8",
-  "statement_url": "https://github.com/lefttosolve2/open-math-agents/pull/35416"
+  "statement_url": "https://github.com/lefttosolve2/open-math-agents/pull/35416",
+  "variants": [
+    {
+      "name": "corrected",
+      "statement_pr": 35416,
+      "statement_path": "statements/oeis-a267610.lean",
+      "proof_path": "proofs/oeis-a267610.lean",
+      "review_path": "problems/a267610/reviews/submission-proof.json",
+      "body_path": "problems/a267610/proof-pr.md",
+      "statement_sha256": "06415558a1684353adf31cd97c10df9b17b713894992696ff4134b3a79f0aef3",
+      "proof_sha256": "fd32821e5824ad89299ea757a5bcabedf93351b972aefd5304d325140275a8fe"
+    },
+    {
+      "name": "ppleskov",
+      "statement_pr": 33330,
+      "statement_path": "problems/a267610/alternatives/ppleskov/statement.lean",
+      "proof_path": "problems/a267610/alternatives/ppleskov/proof.lean",
+      "review_path": "problems/a267610/reviews/ppleskov-official-proof.json",
+      "body_path": "problems/a267610/alternatives/ppleskov/proof-pr.md",
+      "statement_sha256": "1b1dca82755cde5ed9646877eff66fe12bcb025e500f8a1b311b3639c879e177",
+      "proof_sha256": "afa8073c528302f0f7c66e81cd087f6355a414a96c7aff7e927c08bdf047b0a2"
+    }
+  ],
+  "reviewed_tools_commit": "5f916445008d7c9a7d6bf572d2778ae33f19679f",
+  "proof_branch": "oma/oeis-a267610-proof"
 }

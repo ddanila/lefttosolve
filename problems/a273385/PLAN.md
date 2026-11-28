@@ -20,6 +20,12 @@ Publication and submission:
 - [x] Adapt to existing statement PR #22075; official exact-target check accepted.
 - [x] Compare exact merged bytes, recheck, and submit proof PR #29877.
 - [x] Record statement #22075 and proof #29877.
-- [ ] Monitor proof CI/verdict/merge; automatic monitoring remains active.
+- [x] First-proof attempt declined after #29790 merged; superseded #29877 is closed.
+- [x] Rebase unchanged proof onto main as a replacement: 7,271 vs 8,620 characters.
+- [x] Official exact-target checker accepts; submit shorter-proof PR #35981.
+- [ ] Monitor replacement #35981; monitoring is active and detects bot rejection.
 
 Automatic submission and CI monitoring are enabled with `scripts/watch_a273385_submission.py`; status lives in `.oma/a273385-watch/status.json`.
+
+Current proof PR: https://github.com/lefttosolve2/open-math-agents/pull/35981
+The prior-work disclosure remains in the replacement body.

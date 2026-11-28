@@ -237,3 +237,16 @@ platform proof does not establish novelty. Distinguish an exact named theorem
 from a direct consequence (here, counting a pointwise complement). Pin the
 proof-completion commit, not just the date printed on a preprint or the later
 commit that moved its files. This audit avoided repeating three solved targets.
+
+
+## Prepare for competing translations and shorter-proof replacements
+
+For A267610, an older GF-only statement used different counts and ℚ coefficients.
+A checked definition bridge and coefficient-ring map let the same mathematics
+cover either target. Watchers should select from explicit checked statement
+hashes, and use a separate proof branch so an open statement PR cannot block
+the proof. Unknown target changes still require inspection.
+
+For A273385, a declined first-proof attempt remained useful: its unchanged proof
+was 15.65% shorter than main. Recheck against current main and submit a modification
+of the merged file, preserving prior-work disclosure and first-solver credit.

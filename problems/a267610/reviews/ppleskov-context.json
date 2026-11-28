@@ -1,0 +1,26 @@
+{
+  "variant": {
+    "name": "ppleskov",
+    "statement_pr": 33330,
+    "statement_path": "problems/a267610/alternatives/ppleskov/statement.lean",
+    "proof_path": "problems/a267610/alternatives/ppleskov/proof.lean",
+    "review_path": "problems/a267610/reviews/ppleskov-official-proof.json",
+    "body_path": "problems/a267610/alternatives/ppleskov/proof-pr.md",
+    "statement_sha256": "1b1dca82755cde5ed9646877eff66fe12bcb025e500f8a1b311b3639c879e177",
+    "proof_sha256": "afa8073c528302f0f7c66e81cd087f6355a414a96c7aff7e927c08bdf047b0a2"
+  },
+  "statement_head": "e3866c4c5065a31da8119cf1759d1e1f36f046b3",
+  "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
+  "tools_sha256": {
+    "check.sh": "59190c1af6dd215a2acda93bec1732693dc0507057e278567b3bcf773eded453",
+    "lint.py": "2b263f62b8b7cb3a4c9e9bcb887ced92f9e8c0a8e917325dd0c43897bb2f7cfc",
+    "oma.sh": "035b1708108371017003065923c9f2ffe2687fd555a7f541062c6c989bbc0961"
+  },
+  "lint_source_commit": "5f916445008d7c9a7d6bf572d2778ae33f19679f",
+  "catalogue_commit": "4e7a355e6ed335db4288a2544c879499d8a0c0fd",
+  "proof_counted_characters": 8267,
+  "local_only": true,
+  "elapsed_seconds": 9.29,
+  "max_rss_bytes": 5775458304,
+  "resource_measurement": "macOS /usr/bin/time -l, complete official proof checker invocation"
+}
