@@ -120,7 +120,8 @@ def main():
     print(run([sys.executable, str(ROOT/'problems/a273385/check.py')]))
     print(run([sys.executable, str(ROOT/'problems/a273539/check.py')]))
     print(run([sys.executable, str(ROOT/'problems/a265284/check.py')]))
-    print('PASS: all eight problems, isolated proofs, simulations, and axiom audits.')
+    print(run([sys.executable, str(ROOT/'problems/a071052/check.py')]))
+    print('PASS: all nine problems, isolated proofs, simulations, and axiom audits.')
 
 
 if __name__ == '__main__':

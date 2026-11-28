@@ -1,0 +1,19 @@
+{
+  "platform_commit": "5dec242354a84e0c040babb44224212394f16f89",
+  "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
+  "statement_sha256": "ccc08c946b23adffa76c59c497c3ff5f115f9dea051168c7bf71ec49610654f9",
+  "proof_sha256": "feb6fa5debeb9d4aaacad29b2f16e8b18e84739ed6dcfba3d560a651d333987d",
+  "proof_bytes": 2809,
+  "tools_sha256": {
+    "check.sh": "59190c1af6dd215a2acda93bec1732693dc0507057e278567b3bcf773eded453",
+    "lint.py": "40a31bf459f26c87760b7a46bb585feb952ac487e9aa832bb9233a9a4c84777c",
+    "prooflen.py": "29e3ce5940a6dc6727973e3d1be6cd1f669db8dc3b7095059afb165da8158ba4"
+  },
+  "elapsed_seconds": 3.2,
+  "max_rss_bytes": 1381072896,
+  "resource_measurement": "macOS /usr/bin/time -l, complete official checker invocation; not a capped Linux-runner test",
+  "local_only": false,
+  "published": false,
+  "leased": false,
+  "submitted": false
+}

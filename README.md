@@ -16,7 +16,9 @@ A273539 is locally proved as of 2026-11-28, including all four source conjecture
 
 A265284 has a complete [proof and validation](problems/a265284/README.md) against its existing upstream statement, submitted as proof PR [#26856](https://github.com/lefttosolve2/open-math-agents/pull/26856), now updated as a 34.5% shorter replacement after a competing proof merged.
 
-The root checker covers all eight problems, including A273539, A273385 and the Rule 243 pair. Publication and submission of A267920 and A267921 are authorized. Full publication and submission of A267623 are now authorized.
+A071052 has a complete [local proof and comparison](problems/a071052/README.md), prepared for submission. Publication and proof submission are authorized and underway.
+
+The root checker covers all nine problems, including A273539, A273385 and the Rule 243 pair. Publication and submission of A267920 and A267921 are authorized. Full publication and submission of A267623 are now authorized.
 
 ## Rule 243 submission watch
 

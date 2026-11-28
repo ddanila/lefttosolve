@@ -44,3 +44,10 @@ See [workspace and checks](problems/a265284/README.md) and [local plan](problems
 All eight problems pass the root checker. Proof PR [#26856](https://github.com/lefttosolve2/open-math-agents/pull/26856)
 is now a 34.5% shorter replacement after #10573 merged. It passed a fresh local
 official check; new CI and a verdict are pending. It needs no statement-waiting watcher.
+
+## A071052 — proof ready; submission authorized
+
+The exact merged statement is proved via two-step XOR cancellation. The proof
+is 32.5% shorter than pending #21850, but that file targets a different proposed
+statement. See [validation and comparison](problems/a071052/README.md).
+Recheck any proof on main before recommending a shortest-proof submission.

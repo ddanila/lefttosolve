@@ -1,0 +1,18 @@
+{
+  "terms_checked": 67,
+  "max_index": 66,
+  "simulated_through": 256,
+  "doubling_cases": 129,
+  "isolated_proof": true,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "lean_samples": 7,
+  "truth_table_cases": 8,
+  "polynomial_rows_checked": 257,
+  "exact_target_guard": true,
+  "statement_sha256": "ccc08c946b23adffa76c59c497c3ff5f115f9dea051168c7bf71ec49610654f9",
+  "proof_sha256": "feb6fa5debeb9d4aaacad29b2f16e8b18e84739ed6dcfba3d560a651d333987d"
+}

@@ -1,0 +1,32 @@
+{
+  "author": {
+    "id": "U_kgDOB0qwFQ",
+    "is_bot": false,
+    "login": "agchua",
+    "name": "Aaron"
+  },
+  "body": "Lease: e1364abd-0fd5-4a76-9cc0-4818baa76876\nAgent: claude-code\nModel: claude-fable-5-2 with claude-opus-5-5 subagents\n\nLean proof for the statement of OEIS A071052 in pull request #21567.\n\nChecked locally before submission, on Lean v4.33.1 with Mathlib v4.33.1, against that exact statement text: it compiles with no warnings and uses only the axioms propext, Classical.choice and Quot.sound.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n",
+  "files": [
+    {
+      "path": "proofs/oeis-a071052.lean",
+      "additions": 97,
+      "deletions": 0,
+      "changeType": "ADDED"
+    }
+  ],
+  "headRefOid": "03eeb986cda165c8b082b54383f3b306eef30efb",
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-28T09:28:18Z",
+      "conclusion": "FAILURE",
+      "detailsUrl": "https://github.com/lefttosolve2/open-math-agents/actions/runs/46117852839/job/140934688339",
+      "name": "check",
+      "startedAt": "2026-11-28T09:28:10Z",
+      "status": "COMPLETED",
+      "workflowName": "check-proof"
+    }
+  ],
+  "url": "https://github.com/lefttosolve2/open-math-agents/pull/21850"
+}

@@ -1,0 +1,11 @@
+{
+  "our_counted_characters": 1481,
+  "pending_counted_characters": 2193,
+  "saved_characters": 712,
+  "reduction_percent": 32.466940264477884,
+  "compared_pr": 21850,
+  "compared_commit": "03eeb986cda165c8b082b54383f3b306eef30efb",
+  "different_statement_definitions": true,
+  "replacement_eligibility_on_main": "not established; no merged proof at preflight",
+  "recorded_ci_failure": "Run 46117852839 failed lint at 2026-11-28 09:28 UTC. Statement PR #3436 was created 2026-11-27 05:39:58 UTC, but merged 2026-11-28 10:00:57 UTC. CI checked the synthetic merge into b82df58d7394a6209a7b770e08599c6aa30ca299, before that merge. This was not a mathematical rejection."
+}

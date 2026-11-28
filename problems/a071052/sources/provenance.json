@@ -1,0 +1,42 @@
+[
+  {
+    "file": "a071036-internal.html",
+    "sha256": "b5cb5408320f1222182e3d768b349aea20f9930d449475927eaea9d1fd9d92ce"
+  },
+  {
+    "file": "a071036-internal.txt",
+    "sha256": "2c2ed72e8979c5c1553faa269d190b2c5a009f6c39056ed4978547e59efb815a"
+  },
+  {
+    "file": "agent-brief.txt",
+    "sha256": "3deab60ad94323f3179d45c940a4a567e9eb70c50ae49c7de819ec3377a7cfb2"
+  },
+  {
+    "file": "b071052.txt",
+    "sha256": "2161c137a68e005e8bc051a644d3b7fda6ebff18d0d0d59fc0e0613c5229bf0b"
+  },
+  {
+    "file": "oeis-internal.html",
+    "sha256": "db92ff2770a7ca3c978acb1188ca5525d6e62c742f156a21fb121571752cb5f7"
+  },
+  {
+    "file": "oeis-internal.txt",
+    "sha256": "46ee20c5ce67f7f01388048ce15443a37bf0e52dfb63463da514e6c7479cf833"
+  },
+  {
+    "file": "pr-21850-proof.lean",
+    "sha256": "28e11acbad704be946ac5465af87cfbc2bbf8036d265bc7d8b974b6e17799a3e"
+  },
+  {
+    "file": "pr-21850.json",
+    "sha256": "faffa1da979ebe944cb0cb7f5b27c646e4b40f982863a2449ac400e5b59dd1ac"
+  },
+  {
+    "file": "upstream-statement.lean",
+    "sha256": "ccc08c946b23adffa76c59c497c3ff5f115f9dea051168c7bf71ec49610654f9"
+  },
+  {
+    "file": "upstream.json",
+    "sha256": "6cc676d003ed1762c08e01034297a4e7a753057ac3ecb3fa9ed1c39fb1085287"
+  }
+]
