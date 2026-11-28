@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-11-28T19:18:00.866214+00:00",
+  "competing_pr": 38793,
+  "competing_head": "8bf35bd8fdd5c8b1e7831215ff2be36680e21bbe",
+  "competing_counted_characters": 6137,
+  "ours_counted_characters": 8267,
+  "qualifies_as_shorter_replacement": false,
+  "method": "tools/prooflen.py from current platform",
+  "status_at_check": "competing PR open; CI success"
+}

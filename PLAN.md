@@ -59,15 +59,15 @@ Existing Lean sources cover the main claims; no new proof is prepared.
 The user chose to skip it; no adaptation is planned.
 All A273676 work remains local.
 
-## A267610 — statement submitted; automatic proof submission enabled
+## A267610 — adapted proof submitted and monitored
 
 The positive proof establishes the binary-weight row count, corrected n+1
 relation and unchanged generating function. The original typo-disproof is
 archived. Official checks pass at 1.99 GB peak RSS. See [the plan](problems/a267610/PLAN.md).
-Statement [#35416](https://github.com/lefttosolve2/open-math-agents/pull/35416) awaits review of the correction
-and prior-work eligibility. The watcher polls every minute for up to 48 hours
-and will submit the matching proof after either our #35416 statement or
-@ppleskov’s #33330 merges and exact-target checks pass. Both proofs are checked.
+@ppleskov’s statement #33330 merged. Our adapted proof is submitted as
+[#39513](https://github.com/lefttosolve2/open-math-agents/pull/39513), after reviewing
+the watcher stop and passing the current official checker. Monitoring is active.
+Competing green proof #38793 is older and shorter; ours cannot replace it on length.
 
 ## A267445, A267447, A267442 — skipped after prior-work audit
 
@@ -76,11 +76,11 @@ The centre-column identity is an explicit theorem; both count identities
 follow from its pointwise complement theorem. Evidence and pinned source
 are recorded in the three problem directories. All audit work remains local.
 
-## A334502 submission; A334503 queued locally
+## A334502 submission; A334503 port dropped
 
 The user requested both locally, with A334502 finished before porting to A334503.
 [A334502](problems/a334502/PLAN.md) has a complete reduction and four step proofs.
 Reduction PR #38651 is open; its watcher will submit the steps after merge and
 monitor CI/verdicts. Competing full proof #38140 has green CI.
-[A334503](problems/a334503/PLAN.md) has archived sources and is queued behind it.
-A334502 publication is authorized. A334503 remains local, without a lease or watcher.
+[A334503](problems/a334503/PLAN.md) is dropped following the competing green proof #38245.
+A334502 publication and monitoring remain authorized. A334503 has no lease or watcher.

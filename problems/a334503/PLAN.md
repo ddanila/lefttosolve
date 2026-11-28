@@ -1,11 +1,11 @@
-# A334503 local plan
+# A334503 — port dropped
+
+The user dropped the planned port on 2026-11-28 after @rothsa submitted a direct
+proof in [#38245](https://github.com/lefttosolve2/open-math-agents/pull/38245).
+At the latest check it is open with green CI; acceptance is not yet confirmed.
 
 - [x] Archive the existing platform statement and source data.
-- [ ] Wait for completion of the A334502 proof, per user sequencing.
-- [ ] Complete the prior-work and statement audit for A334503.
-- [ ] Formalize complement conjugacy and handle the different seed.
-- [ ] Prove the small exceptional widths and eventual period three for widths ≥17.
-- [ ] Assemble a standalone proof of both conjuncts of the exact merged target.
-- [ ] Run isolated and official checks, including memory measurement.
+- [x] Record the competing proof and cancel the queued port.
 
-Keep separate from A334502 on the platform; local-only authorization for now.
+No local proof was prepared, and no lease, PR or watcher was created for A334503.
+The archived sources and initial observations remain for reference.

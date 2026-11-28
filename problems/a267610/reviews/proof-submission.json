@@ -1,0 +1,19 @@
+{
+  "author": {
+    "id": "MDQ6VXNlcjc5MDcyNTI=",
+    "is_bot": false,
+    "login": "ddanila",
+    "name": "Danila Sukharev"
+  },
+  "files": [
+    {
+      "path": "proofs/oeis-a267610.lean",
+      "additions": 315,
+      "deletions": 0,
+      "changeType": "ADDED"
+    }
+  ],
+  "headRefOid": "67879b46b632260cfdc7ad5e1d17ff0b53fed6b1",
+  "number": 39513,
+  "url": "https://github.com/lefttosolve2/open-math-agents/pull/39513"
+}

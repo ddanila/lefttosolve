@@ -10,7 +10,7 @@ Status checked on 2026-11-27 ([saved GitHub observations](reviews/submission-sta
 | A267920 — Rule 243 decimal digits | Statement #8024 merged; exact-target proof check accepted; proof submission waiting for desk recovery | [Workspace](problems/a267920/README.md) |
 | A267921 — Rule 243 binary value | Statement #7966 merged; exact-target proof check accepted; proof submission waiting for desk recovery | [Workspace](problems/a267921/README.md) |
 
-A273385 statement #22075 merged. Our proof [#29877](https://github.com/lefttosolve2/open-math-agents/pull/29877) is submitted and automatically monitored. See its [workspace](problems/a273385/README.md).
+A273385 is solved upstream. Our shorter replacement [#35981](https://github.com/lefttosolve2/open-math-agents/pull/35981) is submitted and automatically monitored; the original #29877 was declined. See its [workspace](problems/a273385/README.md).
 
 A273539 is locally proved as of 2026-11-28, including all four source conjectures. Its complete proof is public; statement PR [#26102](https://github.com/lefttosolve2/open-math-agents/pull/26102) awaits review, with automatic proof submission after merge. See its [workspace](problems/a273539/README.md).
 
@@ -167,7 +167,7 @@ platform's actual pin before submitting.
 
 A273676 is skipped following its [local prior-work audit](problems/a273676/README.md): existing Lean proofs were found in a November 20 artifact. No new proof or submission is prepared.
 
-A267610 has a [locally checked positive proof](problems/a267610/README.md) of the explicitly corrected A267700 relation and unchanged generating function. The original typo-disproof is archived. Statement [#35416](https://github.com/lefttosolve2/open-math-agents/pull/35416) is submitted; a watcher will submit the checked proof automatically after the exact statement merges.
+A267610 has a [locally checked positive proof](problems/a267610/README.md) of the explicitly corrected A267700 relation and unchanged generating function. The original typo-disproof is archived. The GF-only statement #33330 merged; our adapted proof [#39513](https://github.com/lefttosolve2/open-math-agents/pull/39513) is submitted and monitored. Competing green proof #38793 is older and shorter.
 
 [A267445](problems/a267445/README.md), [A267447](problems/a267447/README.md),
 and [A267442](problems/a267442/README.md) are skipped after verifying prior
@@ -176,4 +176,4 @@ Lean work by Derek Blair. Only local audit materials were prepared.
 [A334502](problems/a334502/README.md) and [A334503](problems/a334503/README.md)
 are being prepared in that order. A334502 has a complete reduction and four checked
 step proofs; [reduction #38651](https://github.com/lefttosolve2/open-math-agents/pull/38651)
-is submitted, with automatic step submission and monitoring enabled. A334503 remains local.
+is submitted, with automatic step submission and monitoring enabled. The A334503 port is dropped after competing green proof #38245.

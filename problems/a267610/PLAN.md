@@ -37,8 +37,10 @@ the exact-target check passes.
 - [x] Submit statement [#35416](https://github.com/lefttosolve2/open-math-agents/pull/35416), disclosing the correction,
   prior mathematics and competing GF-only statement #33330.
 - Do not silently replace a source formula or claim the brief is unchanged.
-- [ ] After review/merge, watcher verifies exact statement bytes and reruns the checker.
-- [ ] Watcher submits one positive proof file, verifies its bytes and monitors CI/verdict.
+- [x] #33330 merged; reviewed the checker/client delta and resumed the stopped watcher.
+- [x] Verify exact merged statement bytes and rerun the current official checker.
+- [x] Submit adapted proof #39513 and verify its bytes.
+- [ ] Monitor #39513 CI/verdict; watcher active. Competitor #38793 is green and older.
 
 The original typo-disproof is an audit artifact, not the proposed submission.
 Watcher: scripts/watch_a267610_submission.py, with runtime status under
@@ -54,5 +56,7 @@ bot rejections even when CI is green.
 - [x] Test and restart the watcher with both target hashes and proof files.
 - [x] Use a dedicated proof branch; an open statement PR cannot block it.
 
-The adapter is in alternatives/ppleskov/. Neither proof is published until
-a supported statement merges. Changed checker/target hashes still stop safely.
+The adapter in alternatives/ppleskov/ is submitted as #39513 against merged #33330.
+It has 8,267 counted characters versus 6,137 for #38793, so it would not qualify
+as a shorter replacement if that competing proof merges first. Changed checker
+or target hashes still stop safely; unused client changes no longer block this path.

@@ -4,7 +4,7 @@ The proof is complete: a reduction and four step proofs establish the exact merg
 statement. [Reduction PR #38651](https://github.com/lefttosolve2/open-math-agents/pull/38651)
 is open. The four step PRs wait for its merge; an authorized watcher will submit
 them automatically. Competing full-proof PR #38140 already has green CI, so this
-submission may be superseded. A334503 remains queued separately.
+submission may be superseded. The A334503 port is dropped following competing green proof #38245.
 
 ## Checked artifacts
 
@@ -77,6 +77,6 @@ novelty guarantee. Relevant results inspected:
   section does not establish this single-seed, all-ring-width conjecture.
 
 Publication and automatic follow-up for A334502 were authorized on 2026-11-28.
-A334503 remains local and has no submission or watcher. The desk issued an
+The A334503 port is dropped and has no submission or watcher. The desk issued an
 A334502 lease, but note/release POSTs returned HTTP 403; the PR body includes
 the lease and competing-proof disclosure.

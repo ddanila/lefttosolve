@@ -53,16 +53,17 @@ Run `python3 problems/a267610/check.py` or `python3 scripts/check.py`.
 Reports normalize temporary paths. See [source review](reviews/source-review.md),
 [official result](reviews/official-proof.json), and [plan](PLAN.md).
 
-Statement [PR #35416](https://github.com/lefttosolve2/open-math-agents/pull/35416) is submitted with the index correction and
-known-prior-mathematics disclosure. The proof remains unpublished until the
-statement merges. An authorized watcher polls every minute for up to 48 hours,
-selects either our target or @ppleskov’s exact #33330 target, rechecks it with
-the official checker, then submits the
-proof automatically. It stops if an unknown statement or changed checker appears, another proof
-lands, CI fails, or the merger declines the PR.
+@ppleskov’s GF-only statement [#33330](https://github.com/lefttosolve2/open-math-agents/pull/33330)
+merged. Our checked [adapted proof](alternatives/ppleskov/proof.lean) is submitted as
+[#39513](https://github.com/lefttosolve2/open-math-agents/pull/39513). The watcher
+stopped on an unrelated checker/client update; that delta was reviewed and the
+current official checker accepted the exact merged target before submission.
+The uploaded bytes were verified, and CI/verdict monitoring is active.
 
-Runtime status: `.oma/a267610-watch/status.json`; log: `watcher.log` beside it.
-Watcher source: `scripts/watch_a267610_submission.py`. Related statement #33330
-covers only the GF; our PR links it for the reviewer's comparison.
+Competing proof #38793 is older and has green CI. Its 6,137 counted characters are
+fewer than our adapter's 8,267, so ours does not qualify as a shorter replacement
+if theirs merges first. Our proposed corrected-relation statement #35416 is separate.
 
-The [GF-only adapter](alternatives/ppleskov/README.md) is checked and ready if #33330 merges first.
+Runtime status: `.oma/a267610-watch/status.json`; latest log:
+`resumed-current-checker.log` beside it. Watcher: `scripts/watch_a267610_submission.py`.
+It polls every minute for up to 48 hours and detects failed CI and merger rejection.

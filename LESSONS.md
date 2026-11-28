@@ -273,3 +273,14 @@ When no redistribution license is identified, retain pinned source links, hashes
 and our own audit conclusions instead of committing third-party source or papers.
 Before publishing accumulated local commits, inspect their history as well as
 the final tree: deleting a copied file only at HEAD still publishes earlier copies.
+
+
+## Resolve watcher stops promptly and pin only executed tools
+
+A267610's checker-change stop delayed submission after the alternative statement
+merged. The reviewed changes affected only reduction lint and client status text;
+the proof checker was unchanged. A competing shorter proof arrived during the gap.
+A safe stop is not continued monitoring: inspect its reason, record the review,
+rerun the official check and explicitly resume. The direct GitHub submission path
+need not pin oma.sh, which it never executes; actual checker and target changes
+still require review. Compare counted characters before claiming replacement eligibility.

@@ -1,7 +1,7 @@
 # A334502 local plan
 
 Scope: A334502 publication and automatic step submission authorized on 2026-11-28.
-A334503 is a separate, later local port.
+The A334503 port was subsequently dropped after competing green proof #38245.
 
 - [x] Archive the merged statement, agent brief, OEIS entry and b-file.
 - [x] Initial prior-work and statement audit, with limits recorded.
@@ -28,4 +28,4 @@ A334503 is a separate, later local port.
 - [ ] Monitor CI and merger verdicts, especially H2 memory: its 5.68 GB peak
   is measured on macOS only; CI memory use remains unverified.
 
-A334503 remains queued; its proof has not been ported yet.
+A334503 is dropped; its proof was not ported.

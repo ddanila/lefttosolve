@@ -23,6 +23,8 @@ Publication and submission:
 - [x] First-proof attempt declined after #29790 merged; superseded #29877 is closed.
 - [x] Rebase unchanged proof onto main as a replacement: 7,271 vs 8,620 characters.
 - [x] Official exact-target checker accepts; submit shorter-proof PR #35981.
+- [x] Refresh #35981 with an empty commit on 2026-11-28 at 19:17 UTC;
+  tree unchanged, new CI run 46180410540. Direct rerun requires upstream admin rights.
 - [ ] Monitor replacement #35981; monitoring is active and detects bot rejection.
 
 Automatic submission and CI monitoring are enabled with `scripts/watch_a273385_submission.py`; status lives in `.oma/a273385-watch/status.json`.

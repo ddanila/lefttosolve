@@ -203,7 +203,8 @@ def main():
         run(['git','checkout','--detach','upstream/main'])
         pin = json.loads((PLATFORM/'data/catalog.json').read_text())['meta']['upstreamCommit']
         assert pin == context['formal_conjectures_commit'], 'Upstream dependency pin changed'
-        for name in ('check.sh','lint.py','oma.sh'):
+        # The direct GitHub submission path does not execute oma.sh.
+        for name in ('check.sh','lint.py'):
             assert sha((PLATFORM/'tools'/name).read_bytes()) == context['tools_sha256'][name], 'Checker/client changed'
         pending = json.loads(run(['gh','pr','list','--repo',UPSTREAM,'--state','open','--author','ddanila',
                                   '--search',ID,'--json','number,url,files']).stdout)

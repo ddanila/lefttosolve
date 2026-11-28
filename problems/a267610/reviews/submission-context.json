@@ -5,25 +5,25 @@
   "proof_sha256": "fd32821e5824ad89299ea757a5bcabedf93351b972aefd5304d325140275a8fe",
   "tools_sha256": {
     "check.sh": "59190c1af6dd215a2acda93bec1732693dc0507057e278567b3bcf773eded453",
-    "lint.py": "2b263f62b8b7cb3a4c9e9bcb887ced92f9e8c0a8e917325dd0c43897bb2f7cfc",
-    "oma.sh": "035b1708108371017003065923c9f2ffe2687fd555a7f541062c6c989bbc0961"
+    "lint.py": "e7cf600937a02d79ffdb6595865ad6d2414da2521b9ed1c6a6ebbe2e805d747b",
+    "oma.sh": "311bdfe899a6241b365b1940985266bc2eeac024682faa0b0adabc8e99e18921"
   },
   "proof_counted_characters": 6102,
   "elapsed_seconds": 4.02,
   "max_rss_bytes": 1992949760,
   "resource_measurement": "macOS /usr/bin/time -l, full official proof invocation including dependency build",
   "local_proposed_statement": true,
-  "upstream_statement_merged": false,
+  "upstream_statement_merged": true,
   "local_only": false,
   "published": true,
   "submitted": true,
   "proposed_correction": true,
   "polarity": "proof",
   "authorized": "2026-11-28: submit statement and automatically submit proof after merge, without further approvals.",
-  "checker_update_review": "2026-11-28: latest lint adds a human-review gate for three Erdos142 placeholder problems only; no effect on these OEIS proofs. Official checker unchanged.",
+  "checker_update_review": "2026-11-28: reviewed delta from 5f916445: lint adds trivial-reduction rejection only; oma.sh prints event redirect status. check.sh unchanged. Resume exact merged ppleskov target and run official proof check.",
   "statement_competitor_pr": 33330,
   "lease_result": "proof_pending; standard client missing-lease path used",
-  "proof_publication": "Deferred until exact statement merges",
+  "proof_publication": "Submitted after exact merged statement and current official checker acceptance",
   "statement_pr": 35416,
   "statement_head": "020caa8b3a2731b60afa7e1aee95c2b41cb66bb8",
   "statement_url": "https://github.com/lefttosolve2/open-math-agents/pull/35416",
@@ -49,6 +49,11 @@
       "proof_sha256": "afa8073c528302f0f7c66e81cd087f6355a414a96c7aff7e927c08bdf047b0a2"
     }
   ],
-  "reviewed_tools_commit": "5f916445008d7c9a7d6bf572d2778ae33f19679f",
-  "proof_branch": "oma/oeis-a267610-proof"
+  "reviewed_tools_commit": "79a1e3cefd7acb4300f7b98446b570bc3796e941",
+  "proof_branch": "oma/oeis-a267610-proof",
+  "merged_statement_pr": 33330,
+  "proof_pr": 39513,
+  "proof_url": "https://github.com/lefttosolve2/open-math-agents/pull/39513",
+  "proof_variant": "ppleskov",
+  "competing_proof_pr": 38793
 }

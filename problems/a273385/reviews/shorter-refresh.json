@@ -1,0 +1,11 @@
+{
+  "refreshed_utc": "2026-11-28T19:18:27.757881+00:00",
+  "pr": 35981,
+  "previous_head": "cd7959fbfa60eebfecec999fcc9310d25620daa5",
+  "head": "c150e093a50f07fde7cea89453660b9e20fb1a4c",
+  "tree_unchanged": true,
+  "reason": "Fresh CI event for delayed merger verdict; direct rerun requires admin rights",
+  "ci_run": 46180410540,
+  "ci_at_recording": "IN_PROGRESS",
+  "merger_lookback_hours": 3
+}
