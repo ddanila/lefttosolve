@@ -1,6 +1,8 @@
 # A267610 local preparation — positive proof of the corrected target
 
-Scope: local only. No lease, public note, push or submission authorized.
+Scope: statement submission and automatic proof submission authorized on
+2026-11-28. Publish the proof only after the accepted statement merges and
+the exact-target check passes.
 
 ## Completed
 
@@ -29,14 +31,17 @@ Scope: local only. No lease, public note, push or submission authorized.
 - [x] Rerun official and isolated checks: accepted, standard axioms only, no proof warnings.
 - Optional proof shortening deferred; current length is 6,102 counted characters.
 
-## When submission is authorized
+## Submission workflow
 
-- Recheck canonical upstream, matching PRs, dependency and checker pins.
-- Submit the proposed statement first, prominently disclosing the correction
-  and asking the platform's human reviewer to approve that interpretation.
+- [x] Recheck canonical upstream, matching PRs, dependency and checker pins.
+- [x] Submit statement [#35416](https://github.com/lefttosolve2/open-math-agents/pull/35416), disclosing the correction,
+  prior mathematics and competing GF-only statement #33330.
 - Do not silently replace a source formula or claim the brief is unchanged.
-- After review/merge, verify exact statement bytes and rerun the checker.
-- Submit one positive proof file; verify submitted bytes and monitor CI/verdict.
+- [ ] After review/merge, watcher verifies exact statement bytes and reruns the checker.
+- [ ] Watcher submits one positive proof file, verifies its bytes and monitors CI/verdict.
 
 The original typo-disproof is an audit artifact, not the proposed submission.
-No A267610 background watcher is running.
+Watcher: scripts/watch_a267610_submission.py, with runtime status under
+.oma/a267610-watch/status.json. It polls every 60 seconds for up to 48 hours,
+stops on target/checker changes or competing proofs, and recognizes merger
+bot rejections even when CI is green.

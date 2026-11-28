@@ -21,3 +21,8 @@ already known; this proposal concerns its formalization and index correction,
 not a new mathematical discovery.
 Sources: https://oeis.org/A267610, https://oeis.org/A267700,
 https://oeis.org/A006046.
+
+Related pending statement: https://github.com/lefttosolve2/open-math-agents/pull/33330
+covers only the GF. This proposal additionally includes the explicitly corrected
+cross-sequence relation. Please review the correction and prior-work eligibility
+before choosing a statement to merge.

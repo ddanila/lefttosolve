@@ -10,7 +10,7 @@ Summing rows yields a(n)+2(n+1)+1=A006046(n+2), from which both the corrected
 tree relation and the generating-function identity follow.
 
 The official checker accepts the exact target with only propext,
-Classical.choice and Quot.sound. Local check: 4.02 s, 1.99 GB peak macOS RSS;
+Classical.choice and Quot.sound. Earlier measured local check: 4.02 s, 1.99 GB peak macOS RSS;
 6,102 counted characters. No large tables or native evaluation. Simulations
 match all 1,001 archived A267610 terms, 70 A267700 terms and 16,384 A006046 terms.
 

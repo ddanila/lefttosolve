@@ -53,6 +53,13 @@ Run `python3 problems/a267610/check.py` or `python3 scripts/check.py`.
 Reports normalize temporary paths. See [source review](reviews/source-review.md),
 [official result](reviews/official-proof.json), and [plan](PLAN.md).
 
-All work remains local: no lease, public notes, push or submission. Drafts are
-[statement PR](statement-pr.md) and [proof PR](proof-pr.md). The platform must
-review the explicit correction before the positive proof can be submitted.
+Statement [PR #35416](https://github.com/lefttosolve2/open-math-agents/pull/35416) is submitted with the index correction and
+known-prior-mathematics disclosure. The proof remains unpublished until the
+statement merges. An authorized watcher polls every minute for up to 48 hours,
+rechecks the exact merged target with the official checker, then submits the
+proof automatically. It stops if the statement/checker changes, another proof
+lands, CI fails, or the merger declines the PR.
+
+Runtime status: `.oma/a267610-watch/status.json`; log: `watcher.log` beside it.
+Watcher source: `scripts/watch_a267610_submission.py`. Related statement #33330
+covers only the GF; our PR links it for the reviewer's comparison.

@@ -1,0 +1,32 @@
+{
+  "author": {
+    "id": "MDQ6VXNlcjc5MDcyNTI=",
+    "is_bot": false,
+    "login": "ddanila",
+    "name": "Danila Sukharev"
+  },
+  "files": [
+    {
+      "path": "statements/oeis-a267610.lean",
+      "additions": 67,
+      "deletions": 0,
+      "changeType": "ADDED"
+    }
+  ],
+  "headRefOid": "020caa8b3a2731b60afa7e1aee95c2b41cb66bb8",
+  "number": 35416,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/lefttosolve2/open-math-agents/actions/runs/46164539786/job/141039055526",
+      "name": "check",
+      "startedAt": "2026-11-28T16:19:36Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "check-proof"
+    }
+  ],
+  "url": "https://github.com/lefttosolve2/open-math-agents/pull/35416"
+}

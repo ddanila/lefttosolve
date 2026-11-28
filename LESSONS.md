@@ -216,3 +216,13 @@ The original statement/disproof remains archived as evidence of the correction.
   and PR body, and leave acceptance of the corrected interpretation to reviewers.
 - Use narrow imports early. The complete positive proof checked at 1.99 GB peak
   macOS RSS versus 5.86 GB for the broad-import counterexample, in the same setup.
+
+
+## Merger verdicts can disagree with green CI
+
+For A273385, the bot declined our proof after a competing proof merged, while
+CI stayed green and the PR remained open. A watcher that only checks CI and
+open/closed state waits indefinitely. Conversely, A273539 and A071052 received
+stale rejection comments after our PRs had already merged. Inspect merger-bot
+comments, but give GitHub's non-null mergedAt precedence. The A267610 watcher
+covers both cases with tests and records a terminal needs_review on rejection.

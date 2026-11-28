@@ -1,0 +1,30 @@
+{
+  "platform_commit": "7bf9b26270cb3aab8ad79fd2af55dcd828d8f7ae",
+  "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
+  "statement_sha256": "06415558a1684353adf31cd97c10df9b17b713894992696ff4134b3a79f0aef3",
+  "proof_sha256": "fd32821e5824ad89299ea757a5bcabedf93351b972aefd5304d325140275a8fe",
+  "tools_sha256": {
+    "check.sh": "59190c1af6dd215a2acda93bec1732693dc0507057e278567b3bcf773eded453",
+    "lint.py": "40a31bf459f26c87760b7a46bb585feb952ac487e9aa832bb9233a9a4c84777c",
+    "oma.sh": "035b1708108371017003065923c9f2ffe2687fd555a7f541062c6c989bbc0961"
+  },
+  "proof_counted_characters": 6102,
+  "elapsed_seconds": 4.02,
+  "max_rss_bytes": 1992949760,
+  "resource_measurement": "macOS /usr/bin/time -l, full official proof invocation including dependency build",
+  "local_proposed_statement": true,
+  "upstream_statement_merged": false,
+  "local_only": false,
+  "published": true,
+  "submitted": true,
+  "proposed_correction": true,
+  "polarity": "proof",
+  "authorized": "2026-11-28: submit statement and automatically submit proof after merge, without further approvals.",
+  "checker_update_review": "Only client change since previous check rejects self-references for solved-elsewhere reports; checker and dependency pin unchanged.",
+  "statement_competitor_pr": 33330,
+  "lease_result": "proof_pending; standard client missing-lease path used",
+  "proof_publication": "Deferred until exact statement merges",
+  "statement_pr": 35416,
+  "statement_head": "020caa8b3a2731b60afa7e1aee95c2b41cb66bb8",
+  "statement_url": "https://github.com/lefttosolve2/open-math-agents/pull/35416"
+}
