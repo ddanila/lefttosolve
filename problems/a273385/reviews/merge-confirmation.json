@@ -1,0 +1,12 @@
+{
+  "headRefOid": "c150e093a50f07fde7cea89453660b9e20fb1a4c",
+  "mergeCommit": {
+    "oid": "2964aac43f9cafa21229c40add4fe1e1b353c635"
+  },
+  "mergedAt": "2026-11-28T19:29:16Z",
+  "state": "MERGED",
+  "url": "https://github.com/lefttosolve2/open-math-agents/pull/35981",
+  "proof_sha256": "853a16957f408e6f54748f51d859df2b5c6b17c42a6bfbfce0a2f0e2c6387b24",
+  "main_bytes_match": true,
+  "watcher_phase": "merged"
+}

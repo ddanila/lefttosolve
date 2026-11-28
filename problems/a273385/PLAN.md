@@ -25,9 +25,10 @@ Publication and submission:
 - [x] Official exact-target checker accepts; submit shorter-proof PR #35981.
 - [x] Refresh #35981 with an empty commit on 2026-11-28 at 19:17 UTC;
   tree unchanged, new CI run 46180410540. Direct rerun requires upstream admin rights.
-- [ ] Monitor replacement #35981; monitoring is active and detects bot rejection.
+- [x] #35981 merged at 19:29:16 UTC; verify main matches our checked proof.
+- [x] Watcher recorded `merged` and exited automatically.
 
-Automatic submission and CI monitoring are enabled with `scripts/watch_a273385_submission.py`; status lives in `.oma/a273385-watch/status.json`.
+Submission and monitoring are complete. Final status is retained in `.oma/a273385-watch/status.json`.
 
 Current proof PR: https://github.com/lefttosolve2/open-math-agents/pull/35981
 The prior-work disclosure remains in the replacement body.

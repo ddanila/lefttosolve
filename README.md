@@ -10,7 +10,7 @@ Status checked on 2026-11-27 ([saved GitHub observations](reviews/submission-sta
 | A267920 — Rule 243 decimal digits | Statement #8024 merged; exact-target proof check accepted; proof submission waiting for desk recovery | [Workspace](problems/a267920/README.md) |
 | A267921 — Rule 243 binary value | Statement #7966 merged; exact-target proof check accepted; proof submission waiting for desk recovery | [Workspace](problems/a267921/README.md) |
 
-A273385 is solved upstream. Our shorter replacement [#35981](https://github.com/lefttosolve2/open-math-agents/pull/35981) is submitted and automatically monitored; the original #29877 was declined. See its [workspace](problems/a273385/README.md).
+A273385 is solved upstream. Our shorter replacement [#35981](https://github.com/lefttosolve2/open-math-agents/pull/35981) merged at 19:29:16 UTC on 2026-11-28; monitoring is complete. The original #29877 was declined. See its [workspace](problems/a273385/README.md).
 
 A273539 is locally proved as of 2026-11-28, including all four source conjectures. Its complete proof is public; statement PR [#26102](https://github.com/lefttosolve2/open-math-agents/pull/26102) awaits review, with automatic proof submission after merge. See its [workspace](problems/a273539/README.md).
 

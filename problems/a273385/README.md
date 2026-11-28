@@ -1,6 +1,6 @@
 # A273385 — Rule 659 ON-cell counts
 
-**Proof submitted: [#29877](https://github.com/lefttosolve2/open-math-agents/pull/29877).** Statement #22075 merged; the adapted proof passed the current checker, and CI monitoring is running. The standalone statement covers every conjecture in the current [OEIS entry](https://oeis.org/A273385), including the 2025 comparison with A270007. Credit: @ddanila.
+**Shorter proof merged: [#35981](https://github.com/lefttosolve2/open-math-agents/pull/35981), 2026-11-28 at 19:29:16 UTC.** The file on main matches our checked proof byte-for-byte. Monitoring finished automatically; no further submission work remains. The standalone statement covers every conjecture in the current [OEIS entry](https://oeis.org/A273385), including the 2025 comparison with A270007. Credit: @ddanila.
 
 - [Statement](../../statements/oeis-a273385.lean)
 - [Proof](../../proofs/oeis-a273385.lean)
@@ -52,16 +52,16 @@ Official checker evidence is recorded in `reviews/official-statement.json`, `rev
 
 Publication authorized on 2026-11-28. Existing statement [PR #22075](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/22075) uses equivalent but different definitions; the adapted proof has passed the official checker against its exact pending target. See [submission proof](submission/oeis-a273385.lean) and [checker evidence](reviews/pr-22075-proof-check.json).
 
-## Replacement submission and monitoring
+## Merged shorter replacement
 
 The original proof PR #29877 lost the first-proof race to #29790 and is closed.
 Replacement [#35981](https://github.com/lefttosolve2/open-math-agents/pull/35981)
 modifies the merged file and is 15.65% shorter (7,271 vs 8,620 counted characters).
 The current official checker accepts the exact target and standard axioms.
-Prior-work attribution remains in the PR body. The watcher now monitors #35981.
+Prior-work attribution remains in the PR body. #35981 merged at 19:29:16 UTC;
+the watcher recorded success and exited. See [merge confirmation](reviews/merge-confirmation.json).
 
-Publication and submission are authorized without further approval. `scripts/watch_a273385_submission.py --run` watches upstream main for up to 48 hours in an isolated clone. It checks that the merged statement is byte-identical to PR #22075's reviewed target, that no proof exists on main, and that the proof, dependencies, and checker/client still match their recorded hashes. It reruns the official checker, submits a one-file proof PR with the normal client, verifies remote contents, and monitors CI and merge status. Desk outages do not block the client's documented missing-lease submission path.
-
-Current state: `.oma/a273385-watch/status.json`; process ID: `.oma/a273385-watch/pid`. Private operational logs stay ignored. The machine must remain awake and online. A changed target/toolchain, existing merged proof, uncertain submission, or failed CI stops automation for inspection; it never blindly retries an uncertain submission. The watcher does not update committed documentation automatically.
+The completed watcher status is retained in `.oma/a273385-watch/status.json`.
+No active watcher or further proof changes are needed for this problem.
 
 The original proof remains in `proofs/` with its independently developed statement. The submission proof instead imports the other contributor's statement and proves its exact target directly: `Nat.testBit` dynamics, cardinality of a filtered integer-square crop, and integer closed forms. The source and mathematical argument agree; no statement placeholder is used.
