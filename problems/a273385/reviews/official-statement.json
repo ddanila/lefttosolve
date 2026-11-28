@@ -1,0 +1,15 @@
+{
+  "file": "statements/oeis-a273385.lean",
+  "type": "statement",
+  "problem": "oeis-a273385",
+  "module": "OMAStatements.S_oeis_a273385",
+  "ok": true,
+  "kind": "statement",
+  "polarity": "proof",
+  "theorem": "OMA.S_oeis_a273385.main",
+  "imports": "Mathlib",
+  "errors": [],
+  "verdict": "accepted",
+  "reason": "the statement compiles; it now needs a human review of the translation",
+  "log": "OMASubmission_<pid>.lean:47:8: warning: declaration uses `sorry`\n'OMA.S_oeis_a273385.main' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]"
+}

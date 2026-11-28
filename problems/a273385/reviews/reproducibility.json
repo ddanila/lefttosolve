@@ -1,0 +1,12 @@
+{
+  "commands": [
+    "python3 problems/a273385/check.py",
+    "python3 scripts/check.py"
+  ],
+  "reports_byte_identical": true,
+  "report_sha256": {
+    "lean-check.txt": "100feff120bd9bd370f637d2c80ec4e608d0c3ffce5de1d2dcd06be6fd94ef41",
+    "local-check.json": "a0ac4fa3ca697daf4a7304a748aa5906298b6adf601ce04a861436564f7a9b30"
+  },
+  "root_check": "PASS: all six problems, isolated proofs, simulations, and axiom audits."
+}

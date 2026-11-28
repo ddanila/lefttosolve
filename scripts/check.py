@@ -117,7 +117,8 @@ def main():
     print(run([sys.executable, str(ROOT/'problems/a267920/check.py')]))
     print(run([sys.executable, str(ROOT/'problems/a267921/check.py')]))
     print(run([sys.executable, str(ROOT/'scripts/check_rule243_pair.py')]))
-    print('PASS: all five problems, isolated proofs, simulations, and axiom audits.')
+    print(run([sys.executable, str(ROOT/'problems/a273385/check.py')]))
+    print('PASS: all six problems, isolated proofs, simulations, and axiom audits.')
 
 
 if __name__ == '__main__':

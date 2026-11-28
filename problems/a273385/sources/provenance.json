@@ -1,0 +1,50 @@
+[
+  {
+    "file": "agent-brief.txt",
+    "url": "https://lefttosolve.com/p/oeis-a273385/agent.txt",
+    "retrieved_utc": "2026-11-28T06:53:48.110410+00:00",
+    "sha256": "ed1273caccedd15c4a455af1c9ec699df10e742831ffcbd266b91535648dc4b5"
+  },
+  {
+    "file": "oeis-internal.html",
+    "url": "https://oeis.org/A273385/internal",
+    "retrieved_utc": "2026-11-28T06:53:48.110717+00:00",
+    "sha256": "c5da69b97153dec269ad831334b7b102b7b9893022fb8bec6430edf9ff72117a"
+  },
+  {
+    "file": "a270007-internal.html",
+    "url": "https://oeis.org/A270007/internal",
+    "retrieved_utc": "2026-11-28T06:53:48.110877+00:00",
+    "sha256": "5e61e9233ecad47f701209cf6287b40e63eb8e286da756502f385e1e9ba76099"
+  },
+  {
+    "file": "a060867-internal.html",
+    "url": "https://oeis.org/A060867/internal",
+    "retrieved_utc": "2026-11-28T06:53:48.111033+00:00",
+    "sha256": "ee39c8baaccb2c14f11f4c60e3bb45baf0fefd8390cfd45f60359f36712580f4"
+  },
+  {
+    "file": "b273385.txt",
+    "url": "https://oeis.org/A273385/b273385.txt",
+    "retrieved_utc": "2026-11-28T06:53:48.111195+00:00",
+    "sha256": "5902924b4b7d901af9538918c7aad7e9a27ef88cee6ee4a8a9dc5b28c80243b6"
+  },
+  {
+    "file": "oeis-internal.txt",
+    "derived_from": "oeis-internal.html",
+    "transformation": "Strip HTML tags from OEIS percent-record lines and decode HTML entities.",
+    "sha256": "c76ceee869a5dd4319e48c632384de068a3b65045fdee1b192b121dce071e2fc"
+  },
+  {
+    "file": "a270007-internal.txt",
+    "derived_from": "a270007-internal.html",
+    "transformation": "Strip HTML tags from OEIS percent-record lines and decode HTML entities.",
+    "sha256": "525ba4932427717e4108e7ef4b7f60a9073e922a03ea722270db03711b86822d"
+  },
+  {
+    "file": "a060867-internal.txt",
+    "derived_from": "a060867-internal.html",
+    "transformation": "Strip HTML tags from OEIS percent-record lines and decode HTML entities.",
+    "sha256": "cfe8e182d7ed1e1ae2366710672c8794ce022fb2fa6c1ef542605403e1774119"
+  }
+]

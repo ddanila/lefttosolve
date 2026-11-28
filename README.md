@@ -10,7 +10,9 @@ Status checked on 2026-11-27 ([saved GitHub observations](reviews/submission-sta
 | A267920 — Rule 243 decimal digits | Statement #8024 merged; exact-target proof check accepted; proof submission waiting for desk recovery | [Workspace](problems/a267920/README.md) |
 | A267921 — Rule 243 binary value | Statement #7966 merged; exact-target proof check accepted; proof submission waiting for desk recovery | [Workspace](problems/a267921/README.md) |
 
-The root checker covers all five problems, including the Rule 243 pair. Publication and submission of A267920 and A267921 are authorized. Full publication and submission of A267623 are now authorized.
+A273385 is locally proved as of 2026-11-28, including all source conjectures; publication is not authorized. See its [workspace](problems/a273385/README.md).
+
+The root checker covers all six problems, including A273385 and the Rule 243 pair. Publication and submission of A267920 and A267921 are authorized. Full publication and submission of A267623 are now authorized.
 
 ## Rule 243 submission watch
 
