@@ -1,0 +1,27 @@
+{
+  "recorded_date": "2026-11-28",
+  "statement_git_blob": "90dac9036c37252a84e0532412ee8dcccf7fd48f",
+  "sources": [
+    {
+      "file": "statement.lean",
+      "url": "https://github.com/lefttosolve2/open-math-agents/blob/main/statements/oeis-a334502.lean",
+      "sha256": "ced8e1ba5d46a92c9f7890fc8510cd9287da56c592703a0936d8d2ab4b999979"
+    },
+    {
+      "file": "agent-brief.txt",
+      "url": "https://lefttosolve.com/p/oeis-a334502",
+      "sha256": "2816a924a15d760af3dce3fd3e3a1e32cd7794c86d6b714aee2a1a7ce272207a",
+      "note": "Problem page named by the archived agent brief."
+    },
+    {
+      "file": "entry.html",
+      "url": "https://oeis.org/A334502/internal",
+      "sha256": "29a8f6d01846553a3820c50209091b528a428201c96228317d60b78dbe590e8c"
+    },
+    {
+      "file": "b334502.txt",
+      "url": "https://oeis.org/A334502/b334502.txt",
+      "sha256": "b0a2a8b327df95c27a4e63514d6f8092bfe8eab77af704b0f02f1a6d3d2eba6a"
+    }
+  ]
+}

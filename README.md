@@ -172,3 +172,7 @@ A267610 has a [locally checked positive proof](problems/a267610/README.md) of th
 [A267445](problems/a267445/README.md), [A267447](problems/a267447/README.md),
 and [A267442](problems/a267442/README.md) are skipped after verifying prior
 Lean work by Derek Blair. Only local audit materials were prepared.
+
+[A334502](problems/a334502/README.md) and [A334503](problems/a334503/README.md)
+are being prepared locally, in that order. A334502 has checked partial lemmas;
+the all-width period-three argument remains open. A334503's port waits for that proof.

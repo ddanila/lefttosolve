@@ -1,0 +1,17 @@
+{
+  "status": "partial_reduction_only",
+  "unconditional_target_proved": false,
+  "conditional_exact_target_guard": true,
+  "missing_lemma": "A334502Local.LargeCycles",
+  "kernel_checked_widths": [
+    0,
+    14
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "statement_sha256": "ced8e1ba5d46a92c9f7890fc8510cd9287da56c592703a0936d8d2ab4b999979",
+  "lemmas_sha256": "6d5adf9f29b6b08005063596230514a640417660b31b06b8be7b8af21210582f"
+}

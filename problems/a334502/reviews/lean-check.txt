@@ -1,0 +1,6 @@
+<isolated-check>/OMAStatements/S_oeis_a334502.lean:32:8: warning: declaration uses `sorry`
+'A334502Local.return_at_cycle' depends on axioms: [propext, Quot.sound]
+'A334502Local.period_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'A334502Local.small_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'A334502Local.expected_gf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'A334502Local.target_of_largeCycles' depends on axioms: [propext, Classical.choice, Quot.sound]
