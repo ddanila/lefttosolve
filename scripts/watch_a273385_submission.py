@@ -22,7 +22,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PROBLEM = ROOT/'problems/a273385'
 STATE = ROOT/'.oma/a273385-watch'
 PLATFORM = STATE/'platform'
-UPSTREAM = 'GuillaumeBAUD-coder/open-math-agents'
+UPSTREAM = 'lefttosolve2/open-math-agents'
+LEGACY_UPSTREAM = 'GuillaumeBAUD-coder/open-math-agents'
 FORK = 'ddanila/open-math-agents'
 ID = 'oeis-a273385'
 STATEMENT = f'statements/{ID}.lean'
@@ -35,6 +36,13 @@ ENV.pop('OMA_CHECK', None)
 
 def sha(data):
     return hashlib.sha256(data).hexdigest()
+
+
+def submission_urls(output):
+    # The pinned client may print the former name; normalize redirected PR URLs.
+    repos = '|'.join(map(re.escape, (UPSTREAM, LEGACY_UPSTREAM)))
+    numbers = re.findall(r'https://github.com/(?:'+repos+r')/pull/(\d+)\b', output)
+    return [f'https://github.com/{UPSTREAM}/pull/{n}' for n in numbers]
 
 
 def candidate_state(statement, proof_exists, expected):
@@ -63,6 +71,8 @@ def save(phase, **fields):
 
 
 def preflight(context):
+    repo = json.loads(run(['gh','api',f'repos/{UPSTREAM}'],cwd=ROOT).stdout)
+    assert repo['full_name'] == UPSTREAM, 'Upstream moved again; update search scope before submitting'
     assert sha((PROBLEM/'sources/pr-22075-statement.lean').read_bytes()) == context['statement_sha256']
     assert sha((PROBLEM/'submission/oeis-a273385.lean').read_bytes()) == context['proof_sha256']
     assert json.loads((PROBLEM/'reviews/pr-22075-proof-check.json').read_text())['verdict'] == 'accepted'
@@ -119,6 +129,8 @@ def main():
         run(['git','clone','--no-hardlinks',str(ROOT/'.oma/a273385-platform'),str(PLATFORM)],cwd=ROOT)
         run(['git','remote','set-url','origin',f'https://github.com/{FORK}.git'])
         run(['git','remote','add','upstream',f'https://github.com/{UPSTREAM}.git'])
+    # Existing clones need the new canonical remote too.
+    run(['git','remote','set-url','upstream',f'https://github.com/{UPSTREAM}.git'])
     deadline = time.time()+48*3600
     while time.time() < deadline:
         fetched = run(['git','fetch','upstream','main'],required=False)
@@ -170,7 +182,7 @@ def main():
         save('submitting')
         result = run(['tools/oma.sh','submit',ID],required=False,timeout=2400)
         (STATE/'submit-private.log').write_text(result.stdout+result.stderr)
-        urls = re.findall(r'https://github.com/'+re.escape(UPSTREAM)+r'/pull/\d+',result.stdout)
+        urls = submission_urls(result.stdout)
         assert result.returncode == 0 and urls, 'Submission outcome uncertain; do not retry blindly'
         url = urls[-1]
         pr = json.loads(run(['gh','pr','view',url,'--json','number,url,files,author,headRefOid']).stdout)
