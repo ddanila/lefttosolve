@@ -36,3 +36,10 @@ The one-dimensional family we worked in is taken: every remaining problem from t
 A third free problem of the same kind, A272706 (Rule 515), is a fallback. The sibling A273313 (Rule 643 itself) is already claimed by an open pull request.
 
 A273539 publication is authorized; live preflight found no merged statement or open competing PR. Submit the statement, then automatically submit the checked proof after merge. A273385 publication and automatic submission remain separately authorized.
+
+## A265284 — proof ready, submission authorized
+
+All five conjectures are proved against the existing statement by @ecirak42.
+See [workspace and checks](problems/a265284/README.md) and [local plan](problems/a265284/PLAN.md).
+Other contributors already have open proof PRs #10573 and #22508. Publication
+and submission are now authorized without further questions, after validation.

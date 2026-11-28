@@ -1,0 +1,7 @@
+{
+  "reports_stable": true,
+  "reports_sha256": {
+    "local-check.json": "27010cf7dee361f3ae45dcef708c7b3352ff8b8fdc7152a51989bce1b7ce35d5",
+    "lean-check.txt": "4b71aaf038d87ae4e3c78c3c796f5186f119c91be2d1225f1ae37a13bca808f4"
+  }
+}

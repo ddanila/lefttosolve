@@ -1,0 +1,16 @@
+{
+  "terms_checked": 1000,
+  "max_index": 999,
+  "isolated_proof": true,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "lean_samples": 16,
+  "truth_table_cases": 8,
+  "row_patterns_checked": 998,
+  "exact_target_guard": true,
+  "statement_sha256": "de310e972756fe423646a09b22952a706c1ce0a4925915f127a4013824a33e1e",
+  "proof_sha256": "4740168c1a4538cd0d38492d673ba49060d4440b62e4d7ebee2026aea8aa5ba9"
+}

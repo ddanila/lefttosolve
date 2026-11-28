@@ -1,0 +1,21 @@
+{
+  "platform_commit": "924349e4d149f5d5db97a5484ee5da48920e4fdf",
+  "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
+  "statement_sha256": "de310e972756fe423646a09b22952a706c1ce0a4925915f127a4013824a33e1e",
+  "proof_sha256": "4740168c1a4538cd0d38492d673ba49060d4440b62e4d7ebee2026aea8aa5ba9",
+  "tools_sha256": {
+    "check.sh": "59190c1af6dd215a2acda93bec1732693dc0507057e278567b3bcf773eded453",
+    "lint.py": "40a31bf459f26c87760b7a46bb585feb952ac487e9aa832bb9233a9a4c84777c",
+    "oma.sh": "b23c6d29700af48fe2785be35543d0064fefc08b808606aa25fae0eae4e87c63"
+  },
+  "local_only": false,
+  "leased": false,
+  "submitted": false,
+  "proof_bytes": 7406,
+  "max_rss_bytes": 1498726400,
+  "elapsed_seconds": 4.51,
+  "resource_measurement": "macOS /usr/bin/time -l, complete official checker invocation; not a capped Linux-runner test",
+  "publication_authorized": true,
+  "submission_preflight_commit": "2bc4348e14a974c3fd3ef067cac0c73b52cbd03c",
+  "claim_result": "proof_pending; normal client submission without a lease is authorized"
+}

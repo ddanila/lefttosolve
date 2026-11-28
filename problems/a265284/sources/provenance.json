@@ -1,0 +1,26 @@
+[
+  {
+    "file": "agent-brief.txt",
+    "sha256": "ae15f0a1f0e1fd86a5b1e6f8ac82c69028f813026a7b4ce8e3c33fabb1c2cfc5"
+  },
+  {
+    "file": "b265284.txt",
+    "sha256": "10d9e87fbebd696d37b97c540c70d36fef7eff5a8b366024081ddbb2c1393ad5"
+  },
+  {
+    "file": "oeis-internal.html",
+    "sha256": "2c15189ba5d5bc7261a82373d8110e4b5364b00dccc088b88a4581ce92ff45b6"
+  },
+  {
+    "file": "oeis-internal.txt",
+    "sha256": "e6ea8d0e5ba79087309aa6e3e28718d20145e6c02446d32a9afb4d1c20921ba2"
+  },
+  {
+    "file": "upstream-statement.lean",
+    "sha256": "de310e972756fe423646a09b22952a706c1ce0a4925915f127a4013824a33e1e"
+  },
+  {
+    "file": "upstream.json",
+    "sha256": "f3d0f4b53508f2a83cd6a78c65090dcd2b41162f1b9d7b52b279445f676212c3"
+  }
+]

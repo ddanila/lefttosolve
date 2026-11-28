@@ -1,0 +1,10 @@
+{
+  "repository": "lefttosolve2/open-math-agents",
+  "commit": "924349e4d149f5d5db97a5484ee5da48920e4fdf",
+  "statement_sha256": "de310e972756fe423646a09b22952a706c1ce0a4925915f127a4013824a33e1e",
+  "statement_author": "ecirak42",
+  "open_proof_prs": [
+    10573,
+    22508
+  ]
+}

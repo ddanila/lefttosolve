@@ -1,0 +1,2 @@
+<isolated-check>/OMAStatements/S_oeis_a265284.lean:54:8: warning: declaration uses `sorry`
+'OMA.solution' depends on axioms: [propext, Classical.choice, Quot.sound]
