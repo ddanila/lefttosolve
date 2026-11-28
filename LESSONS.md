@@ -196,3 +196,23 @@ Evidence: `problems/a265284/reviews/shorter-proof.json`,
 `problems/a265284/reviews/shorter-proof-check.json`, the recorded watcher contexts,
 and the linked PRs. The original watcher stop remains in the ignored local
 `.oma/a273385-watch/checker-change-stop.json` for operational diagnosis.
+
+# A267610: check whether a counterexample only exposes an index typo
+
+Recorded 2026-11-28 during local preparation; nothing submitted.
+
+The literal A267700 relation failed at n=2, and a short Lean disproof passed.
+But the second conjunct (the GF) implies the corrected n+1 relation, also
+suggested by the entry's prose. Refuting the conjunction through the typo
+would leave the substantive GF result unproved. We instead proved the row
+formula offCount(t)+2=2^weight(t+1), then both the corrected relation and GF.
+The original statement/disproof remains archived as evidence of the correction.
+
+- Check relationships among conjuncts and compare formula indices with the
+  entry's prose before recommending a counterexample submission.
+- A source typo can be real without being the most useful contribution. Preserve
+  its witness, but pursue the meaningful result when practical.
+- Never silently repair the source: identify the change in the statement header
+  and PR body, and leave acceptance of the corrected interpretation to reviewers.
+- Use narrow imports early. The complete positive proof checked at 1.99 GB peak
+  macOS RSS versus 5.86 GB for the broad-import counterexample, in the same setup.

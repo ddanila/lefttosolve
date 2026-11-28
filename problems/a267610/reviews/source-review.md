@@ -1,9 +1,9 @@
-# A267610 translation and counterexample audit
+# A267610 translation, correction and proof audit
 
 Sources retrieved 2026-11-28: A267610, A267700 and A006046 full internal entries
-and their b-files. SHA-256 hashes are in sources/provenance.json.
+and b-files. Source hashes are in sources/provenance.json.
 
-| Issue | Source and Lean interpretation |
+| Issue | Source and proposed Lean interpretation |
 | --- | --- |
 | Initial state | One ON origin; every other integer position OFF |
 | Rule orientation | Wolfram index 4*left+2*centre+right; bit from rule 182 |
@@ -11,44 +11,68 @@ and their b-files. SHA-256 hashes are in sources/provenance.json.
 | Meaning of total | Sum row OFF counts for stages 0 through n, as in the program |
 | A267700 | Its explicit digit-sum program, partial sums through index n |
 | A006046 | Sum of 2^binary-weight(k) over 0≤k<n, as in its title |
-| Indices | All three sequences have offset zero; no shift inserted |
-| First conjecture | Integer equality a(n)=tree(n)-n for every natural n |
-| Second conjecture | X²*F*(1-X)²=A*(1-X)²-X*(X+1) over PowerSeries integers |
+| Offsets | All three sequences have offset zero |
+| First claim | Explicit correction: a(n)=tree(n+1)-(n+1), in integers |
+| Second claim | Unchanged GF: X²*F*(1-X)²=A*(1-X)²-X*(X+1) |
+| Containment comment | Not a separate formal conjunct; omission documented in header |
 
-The first formula's integer subtraction avoids truncation. At the witness,
-both natural and integer subtraction give 2−2=0, so this choice cannot create
-the counterexample. In the tree definition each term 2^weight(k)−1 is nonnegative.
-The binary weight is the sum of base-2 digits, not their list length.
+## The printed claim and its correction
 
-The GF rearrangement comes from F=(1/X)*(A/X-(X+1)/(1-X)^2).
-Multiplying by X²(1-X)² gives the stated identity. Interpret division by X
-through the formal Laurent series embedding; multiplication by this nonzero
-factor is injective, and (1-X)² is a unit. No analytical convergence is assumed.
+At n=2, the first three crops 1,111,10101 give cumulative OFF count 2.
+The tree program, its independent binary-subset interpretation, DATA and b-file
+all give tree(2)=2. Thus a(2)=tree(2)-2 is false in both integer and natural
+arithmetic. The original statement/disproof pair and official checks are archived.
+
+However, tree(n+1)+(n+2)=A006046(n+2) follows from the reference definitions.
+The GF implies a(n)=A006046(n+2)-(2n+3), hence exactly the corrected relation.
+The old conjunction therefore joined incompatible assertions. Refuting it did
+not establish the meaningful GF result. The active proposal instead proves the
+corrected relation and unchanged GF, with the change prominently disclosed.
+The platform must approve this corrected target; it is not a literal translation
+of the erroneous first formula line.
 
 The tree entry's 2016 Sloane confirmation concerns its partial-sum/tree
-interpretations. It does not certify the later 2019 cross-sequence conjecture.
-The definition follows the entry's explicit Mathematica program; independent
-binary-subset pair counting and all archived terms agree with it.
+interpretations, not the later 2019 cross-sequence conjecture. The explicit
+program is the basis for tree, with no hardcoded sequence values. Binary weight
+is the sum of base-2 digits. The subtraction 2^weight(k)-1 is nonnegative.
 
-The informal binary-containment comment on A267610 suggests the corrected
-index n+1. We preserve the two formula claims selected by the platform brief,
-not an amended claim. A267610(2)=2 and A267700(2)=2 are confirmed by Lean,
-direct simulation, both entries' DATA, and their b-files. No sequence values
-are hardcoded into the Lean definitions.
+For the GF, multiplying F=(1/X)*(A/X-(X+1)/(1-X)^2) by X²(1-X)² gives the
+formal-power-series identity. Formal Laurent series justify the divisions;
+no analytical convergence or division by the nonunit X inside PowerSeries is used.
 
-## Prior work and limits
+## Positive proof chain
 
-Searches for A267610 and A267700 found no matching platform PR. Hwang, Janson
-and Tsai, arXiv:2210.10968, section 4, discuss A267610 among divide-and-conquer
-applications. That is relevant prior mathematics, not a proof of the false
-unshifted relation. The inspected passage did not explicitly refute that
-relation. A November 1 certificate survey explicitly leaves A267610 unhandled.
-This was a limited search, not an exhaustive novelty audit. Do not claim first
-discovery. The original GF may follow from known results; it is not refuted here.
+1. Outside the radius-t interval, cells remain OFF.
+2. Even cropped positions are ON. Odd positions are complements of the parity
+   of choose(t+1,k+1), by the actual Rule 182 transition and Pascal recurrence.
+3. Lucas modulo 2 reduces pairs of binomial entries to a smaller row. Strong
+   induction and the base-2 digit recursion give 2^weight(n) odd entries.
+4. Removing the two boundary entries proves offCount(t)+2=2^weight(t+1).
+5. Summing rows proves the cumulative identity and corrected tree relation.
+6. Decomposing the Pascal series into X²*series plus the linear-coefficient
+   series proves the original generating function.
 
-This audit was performed in the same session as the implementation; it is not
-an independent-agent review. The statement still requires the platform's human
-translation review. Official local acceptance checks compilation, not meaning.
+All six steps compile in the standalone proof. The official exact-target guard
+and axiom audit pass. Numerics supplement, rather than replace, the all-n proof.
+Narrow statement and proof imports reduce measured peak RSS from 5.86 GB to
+1.99 GB despite replacing the tiny counterexample with the full positive proof.
+
+## Prior work and verification limits
+
+Hwang, Janson and Tsai, arXiv:2210.10968, section 4, discuss A267610 among
+applications of divide-and-conquer recurrences. We cite this prior mathematics
+and make no first-discovery claim. The inspected passage did not explicitly
+refute the unshifted cross-sequence relation.
+
+The openwitness.net link was reopened and verified on 2026-11-28. Its November 1
+post explicitly lists A267610 as not handled (GF defined through A006046).
+It also says its certificates are Python-checked, not proof-assistant proofs.
+We use it only as evidence of that survey's scope, not as mathematical evidence.
+
+The source audit and proof implementation were performed in the same session,
+not by an independent reviewer. Human translation review remains required.
+Official acceptance establishes compilation and allowed axioms, not that the
+platform accepts an explicitly corrected statement in place of its brief.
 
 References:
 - https://oeis.org/A267610

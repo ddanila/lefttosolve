@@ -59,8 +59,9 @@ Existing Lean sources cover the main claims; no new proof is prepared.
 The user chose to skip it; no adaptation is planned.
 All A273676 work remains local.
 
-## A267610 — local statement and disproof ready
+## A267610 — corrected relation and GF proved locally
 
-The printed unshifted A267700 relation fails at n=2. Both local official checks
-pass. The separate GF is not refuted. See [the plan](problems/a267610/PLAN.md).
-Submission remains unauthorized; no push or external coordination.
+The positive proof establishes the binary-weight row count, corrected n+1
+relation and unchanged generating function. The original typo-disproof is
+archived. Official checks pass at 1.99 GB peak RSS. See [the plan](problems/a267610/PLAN.md).
+The proposed correction needs human statement review; all work remains local.

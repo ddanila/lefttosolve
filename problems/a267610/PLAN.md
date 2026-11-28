@@ -1,31 +1,32 @@
-# A267610 local preparation
+# A267610 local preparation — positive proof of the corrected target
 
 Scope: local only. No lease, public note, push or submission authorized.
 
 ## Completed
 
-- [x] Archive source entries, b-files and platform brief.
-- [x] Search matching PRs and relevant prior literature.
-- [x] Audit cumulative counting, offsets and referenced sequence definitions.
-- [x] Formalize both printed formula claims without correcting their indices.
-- [x] Kernel-check the n=2 counterexample and exact negated target.
-- [x] Run independent simulations and source-hash verification.
-- [x] Run unmodified official statement and proof checkers in a local checkout.
-- [x] Prepare transparent statement and disproof PR bodies.
-- [x] Verify reproducible reports.
-- [x] Full root checker: all ten problems pass.
-- [x] Commit locally; do not push.
+- [x] Archive entries, b-files and brief; inspect prior literature.
+- [x] Audit cumulative counts, offsets and reference definitions.
+- [x] Preserve the literal statement/disproof and checks in archive/.
+- [x] Explicitly propose the n+1 correction; leave the GF unchanged.
+- [x] Explain the omission of the separate containment interpretation.
+- [x] Prove Rule 182's Pascal-parity row invariant.
+- [x] Use Lucas to prove the binary-weight row count.
+- [x] Prove the corrected relation and GF for every n.
+- [x] Narrow imports; official peak memory falls from 5.86 GB to 1.99 GB.
+- [x] Official statement/proof checkers and exact target/axiom audit pass.
+- [x] Verify the openwitness reference and document its limited role.
+- [x] Rewrite both PR drafts around the positive result and explicit correction.
+- [x] Full ten-problem suite passes; reports reproduce exactly.
+- [x] Commit the complete local package without pushing.
 
 ## When submission is authorized
 
-- Recheck canonical upstream main, matching PRs, checker and dependency pins.
-- Submit only the statement first, explicitly disclosing that it has a checked
-  counterexample and preserving the original formula for review.
-- Wait for human translation review; adapt only if changes remain faithful to
-  the source. If the platform prefers an OEIS correction over a false-statement
-  submission, respect that disposition.
-- Revalidate the exact merged statement with the official checker.
-- Submit the one-file disproof; verify exact bytes and watch CI/verdict.
-- Do not characterize the GF or corrected n+1 relation as disproved.
+- Recheck canonical upstream, matching PRs, dependency and checker pins.
+- Submit the proposed statement first, prominently disclosing the correction
+  and asking the platform's human reviewer to approve that interpretation.
+- Do not silently replace a source formula or claim the brief is unchanged.
+- After review/merge, verify exact statement bytes and rerun the checker.
+- Submit one positive proof file; verify submitted bytes and monitor CI/verdict.
 
-There is no A267610 background watcher.
+The original typo-disproof is an audit artifact, not the proposed submission.
+No A267610 background watcher is running.

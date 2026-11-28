@@ -7,7 +7,8 @@
     },
     {
       "url": "https://www.openwitness.net/p/10906",
-      "finding": "The certificate survey explicitly excludes A267610; it does not supply the current counterexample."
+      "finding": "Reopened successfully. Results table explicitly says A267610 is not handled; limitations say these are Python certificates, not proof-assistant proofs. Used only to describe survey scope.",
+      "verified_date": "2026-11-28"
     }
   ],
   "claim": "No first-discovery claim. Search was limited, not exhaustive."

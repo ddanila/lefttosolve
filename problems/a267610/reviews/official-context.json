@@ -1,20 +1,22 @@
 {
   "platform_commit": "4e7a355e6ed335db4288a2544c879499d8a0c0fd",
   "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
-  "statement_sha256": "061708c7ecd63223d7e648cb8cb525650228b9b8dcf090c0a8c5fefa5b52bcbb",
-  "proof_sha256": "02cb280bb961513459a5d07fd449dfeb5b78f0a03e33b9d2bcd797c8bf33919a",
+  "statement_sha256": "87cb1d777560b21b0e2d05e096e908e4bfbaa59658c45d8dacea4fe3d8f31daf",
+  "proof_sha256": "63486873350b576f991361e161ed7dcecb668c592dd668f4b8742af4c7e6376e",
   "tools_sha256": {
     "check.sh": "59190c1af6dd215a2acda93bec1732693dc0507057e278567b3bcf773eded453",
     "lint.py": "40a31bf459f26c87760b7a46bb585feb952ac487e9aa832bb9233a9a4c84777c",
     "prooflen.py": "29e3ce5940a6dc6727973e3d1be6cd1f669db8dc3b7095059afb165da8158ba4"
   },
-  "proof_counted_characters": 276,
-  "elapsed_seconds": 11.18,
-  "max_rss_bytes": 5855084544,
+  "proof_counted_characters": 6090,
+  "elapsed_seconds": 5.33,
+  "max_rss_bytes": 1992916992,
   "resource_measurement": "macOS /usr/bin/time -l, full official proof invocation including dependency build",
   "local_proposed_statement": true,
   "upstream_statement_merged": false,
   "local_only": true,
   "published": false,
-  "submitted": false
+  "submitted": false,
+  "proposed_correction": true,
+  "polarity": "proof"
 }

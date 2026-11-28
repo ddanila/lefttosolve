@@ -40,9 +40,9 @@ def main():
         log = run([lean, str(module), '-o', str(module.with_suffix('.olean'))], cwd=tmp, env=env)
         env['LEAN_PATH'] = tmp + os.pathsep + paths
         p = base/'Proof.lean'
-        p.write_text(proof + '\nexample : ¬ (type_of% @_root_.OMA.S_oeis_a267610.main) := _root_.OMA.disproof\n#print axioms OMA.disproof\n')
+        p.write_text(proof + '\nexample : type_of% @_root_.OMA.S_oeis_a267610.main := _root_.OMA.solution\n#print axioms OMA.solution\n')
         log += run([lean, str(p)], cwd=tmp, env=env)
-        found = re.search(r"'OMA.disproof' depends on axioms: \[([^\]]*)\]", log)
+        found = re.search(r"'OMA.solution' depends on axioms: \[([^\]]*)\]", log)
         assert found, log
         axioms = set(map(str.strip, found[1].split(',')))
         assert axioms <= {'propext', 'Classical.choice', 'Quot.sound'}, axioms
@@ -56,6 +56,7 @@ def main():
     row, total, values = [1], 0, []
     crops = []
     for n in range(limit+1):
+        assert row.count(0)+2 == 2**bin(n+1).count('1')
         total += row.count(0)
         values.append(total)
         if n<3: crops.append(''.join(map(str,row)))
@@ -82,9 +83,9 @@ def main():
     assert values[2]==2 and tree_terms[2]-2==0
     report=dict(ca_terms_checked=len(ca_terms),tree_terms_checked=len(tree_terms),
                 pascal_terms_checked=len(pascal_terms),first_crops=crops,
-                counterexample=dict(n=2,lhs=values[2],rhs=tree_terms[2]-2),
+                printed_relation_counterexample=dict(n=2,lhs=values[2],rhs=tree_terms[2]-2),
                 gf_coefficients_checked=limit+1,shifted_relation_tested_through=limit,
-                shifted_relation_proved=False,axioms=sorted(axioms),exact_target_guard=True,
+                shifted_relation_proved=True, row_count_proved=True, generating_function_proved=True,axioms=sorted(axioms),exact_target_guard=True,
                 statement_sha256=hashlib.sha256(statement.encode()).hexdigest(),
                 proof_sha256=hashlib.sha256(proof.encode()).hexdigest())
     (HERE/'reviews/local-check.json').write_text(json.dumps(report,indent=2)+'\n')

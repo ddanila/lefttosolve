@@ -1,18 +1,20 @@
-Refute the printed relation a(n)=A267700(n)-n at n=2. The direct Rule 182 crops
-1,111,10101 contain a cumulative total of two OFF cells; A267700(2)=2,
-so the proposed right side is zero. Both sequences have offset zero.
+Prove the explicitly corrected A267610 relation and unchanged generating
+function against the reviewed statement. The printed unshifted relation has
+an off-by-one error at n=2, disclosed in the statement header.
 
-Two kernel-evaluated lemmas establish those values from the definitions, and
-OMA.disproof contradicts the first conjunct. It does not refute the separate
-generating-function claim or prove an amended all-n formula.
+Even positions in every cropped Rule 182 row are ON. At odd position 2k+1,
+the OFF indicator is choose(t+1,k+1) modulo 2. Pascal recurrence establishes
+this directly from the cellular automaton. Lucas's theorem and binary digit
+recursion count odd entries, giving offCount(t)+2=2^weight(t+1).
+Summing rows yields a(n)+2(n+1)+1=A006046(n+2), from which both the corrected
+tree relation and the generating-function identity follow.
 
-The exact negated target passes isolated compilation and the official local
-checker with only propext, Classical.choice and Quot.sound. Proof length is
-276 counted characters. Independent checks match 1,001 A267610 terms and
-70 A267700 terms. The GF and shifted relation also pass numerical tests;
-these are not presented as Lean proofs.
+The official checker accepts the exact target with only propext,
+Classical.choice and Quot.sound. Local check: 5.33 s, 1.99 GB peak macOS RSS;
+6,090 counted characters. No large tables or native evaluation. Simulations
+match all 1,001 archived A267610 terms, 70 A267700 terms and 16,384 A006046 terms.
 
-Relevant prior mathematics: Hwang, Janson and Tsai,
+Prior mathematics: Hwang, Janson and Tsai,
 https://arxiv.org/html/2210.10968, section 4. No first-discovery claim.
 
-Before submission, recheck the merged statement and current platform policy.
+Before submission, recheck the exact merged statement and current checker pins.

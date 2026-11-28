@@ -1,4 +1,6 @@
-import Mathlib
+import Mathlib.RingTheory.PowerSeries.Basic
+import Mathlib.Data.Nat.Digits.Defs
+import Mathlib.Data.Nat.Bitwise
 
 /-!
 # A267610: Total number of OFF (white) cells after n iterations of the "Rule 182" elementary cellular automaton starting with a single ON (black) cell.
@@ -15,10 +17,17 @@ background initialized with a single ON origin.
 A267700 is defined by its published digit-sum program, using the partial sums
 of A038573, which its entry records as confirmed by N. J. A. Sloane (2016).
 A006046 is defined by the binary-weight sum in its title. Their offsets are 0.
-Subtraction in the first conjecture is in integers; no index is silently shifted.
+The printed relation a(n)=A267700(n)-n fails at n=2 (2 is not 2-2).
+This proposed corrected statement explicitly uses A267700(n+1)-(n+1),
+consistent with the same entry’s containment comment (up to n+1) and GF.
+The original statement and checked counterexample are retained in the local
+audit archive. This proposed correction requires the platform’s human translation review.
+Subtraction in the corrected relation is in integers.
 The generating-function claim is cleared of x and (1-x)^2 denominators:
 x^2*F(x)*(1-x)^2 = A(x)*(1-x)^2 - x*(x+1).
-This preserves the printed claim without dividing by the nonunit x.
+The GF is unchanged; clearing denominators avoids dividing by the nonunit x.
+The informal binary-containment comment is not a separate conjunct here;
+the corrected cross-sequence relation and unchanged GF are the stated scope.
 -/
 namespace OMA.S_oeis_a267610
 
@@ -49,9 +58,9 @@ def pascalTotal (n : ℕ) : ℕ := ∑ k ∈ Finset.range n, 2^weight k
 def series : PowerSeries ℤ := PowerSeries.mk (fun n => (a n : ℤ))
 def pascalSeries : PowerSeries ℤ := PowerSeries.mk (fun n => (pascalTotal n : ℤ))
 
-/-- The two formula claims printed in A267610, with their original indices. -/
+/-- The explicitly corrected cross-sequence relation and the unchanged GF. -/
 theorem main :
-    (∀ n : ℕ, (a n : ℤ) = (tree n : ℤ) - n) ∧
+    (∀ n : ℕ, (a n : ℤ) = (tree (n+1) : ℤ) - (n+1)) ∧
     (PowerSeries.X^2 * series * (1-PowerSeries.X)^2 =
       pascalSeries * (1-PowerSeries.X)^2 - PowerSeries.X * (PowerSeries.X+1)) := by
   sorry

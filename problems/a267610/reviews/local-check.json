@@ -7,20 +7,22 @@
     "111",
     "10101"
   ],
-  "counterexample": {
+  "printed_relation_counterexample": {
     "n": 2,
     "lhs": 2,
     "rhs": 0
   },
   "gf_coefficients_checked": 1001,
   "shifted_relation_tested_through": 1000,
-  "shifted_relation_proved": false,
+  "shifted_relation_proved": true,
+  "row_count_proved": true,
+  "generating_function_proved": true,
   "axioms": [
     "Classical.choice",
     "Quot.sound",
     "propext"
   ],
   "exact_target_guard": true,
-  "statement_sha256": "061708c7ecd63223d7e648cb8cb525650228b9b8dcf090c0a8c5fefa5b52bcbb",
-  "proof_sha256": "02cb280bb961513459a5d07fd449dfeb5b78f0a03e33b9d2bcd797c8bf33919a"
+  "statement_sha256": "87cb1d777560b21b0e2d05e096e908e4bfbaa59658c45d8dacea4fe3d8f31daf",
+  "proof_sha256": "63486873350b576f991361e161ed7dcecb668c592dd668f4b8742af4c7e6376e"
 }
