@@ -1,0 +1,16 @@
+{
+  "checked_date": "2026-11-28",
+  "status": "skipped_by_user",
+  "target": "A267442(n) = A043545(n), n > 0",
+  "repository": "derekblair/math-proofs",
+  "snapshot": "f0817a0d34d89555cc7270126b93627fc0394340",
+  "proof_completion_commit": "8f3c0b393e491a2d26e4ed7d73978cb5b3576976",
+  "proof_completion_date": "2026-10-29T12:17:46Z",
+  "theorem": "a267442_eq_a043545",
+  "relationship": "exact theorem",
+  "rebuilt": false,
+  "submitted": false,
+  "withdrawn_prs": [
+    18449
+  ]
+}

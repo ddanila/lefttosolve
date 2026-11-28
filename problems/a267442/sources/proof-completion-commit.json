@@ -1,0 +1,87 @@
+{
+  "sha": "8f3c0b393e491a2d26e4ed7d73978cb5b3576976",
+  "node_id": "C_kwDOU9Z_2toAKDhmM2MwYjM5M2U0OTFhMmQyNmU0ZWQ3ZDczOTc4Y2I1YjM1NzY5NzY",
+  "commit": {
+    "author": {
+      "name": "Derek Blair",
+      "email": "derekblair@protonmail.com",
+      "date": "2026-10-29T12:17:46Z"
+    },
+    "committer": {
+      "name": "Derek Blair",
+      "email": "derekblair@protonmail.com",
+      "date": "2026-10-29T12:17:46Z"
+    },
+    "message": "Complete pinned Rule 129 middle-column proofs and refresh preprint",
+    "tree": {
+      "sha": "ba3401c090276bf3a3adec6f69f72a78af9d2778",
+      "url": "https://api.github.com/repos/derekblair/math-proofs/git/trees/ba3401c090276bf3a3adec6f69f72a78af9d2778"
+    },
+    "url": "https://api.github.com/repos/derekblair/math-proofs/git/commits/8f3c0b393e491a2d26e4ed7d73978cb5b3576976",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/derekblair/math-proofs/commits/8f3c0b393e491a2d26e4ed7d73978cb5b3576976",
+  "html_url": "https://github.com/derekblair/math-proofs/commit/8f3c0b393e491a2d26e4ed7d73978cb5b3576976",
+  "comments_url": "https://api.github.com/repos/derekblair/math-proofs/commits/8f3c0b393e491a2d26e4ed7d73978cb5b3576976/comments",
+  "author": {
+    "login": "derekblair",
+    "id": 1388041,
+    "node_id": "MDQ6VXNlcjEzODgwNDE=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1388041?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/derekblair",
+    "html_url": "https://github.com/derekblair",
+    "followers_url": "https://api.github.com/users/derekblair/followers",
+    "following_url": "https://api.github.com/users/derekblair/following{/other_user}",
+    "gists_url": "https://api.github.com/users/derekblair/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/derekblair/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/derekblair/subscriptions",
+    "organizations_url": "https://api.github.com/users/derekblair/orgs",
+    "repos_url": "https://api.github.com/users/derekblair/repos",
+    "events_url": "https://api.github.com/users/derekblair/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/derekblair/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "derekblair",
+    "id": 1388041,
+    "node_id": "MDQ6VXNlcjEzODgwNDE=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/1388041?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/derekblair",
+    "html_url": "https://github.com/derekblair",
+    "followers_url": "https://api.github.com/users/derekblair/followers",
+    "following_url": "https://api.github.com/users/derekblair/following{/other_user}",
+    "gists_url": "https://api.github.com/users/derekblair/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/derekblair/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/derekblair/subscriptions",
+    "organizations_url": "https://api.github.com/users/derekblair/orgs",
+    "repos_url": "https://api.github.com/users/derekblair/repos",
+    "events_url": "https://api.github.com/users/derekblair/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/derekblair/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "437b890a32ede43ad1dfbc6ef0839e8d9ea16a7d",
+      "url": "https://api.github.com/repos/derekblair/math-proofs/commits/437b890a32ede43ad1dfbc6ef0839e8d9ea16a7d",
+      "html_url": "https://github.com/derekblair/math-proofs/commit/437b890a32ede43ad1dfbc6ef0839e8d9ea16a7d"
+    }
+  ],
+  "stats": {
+    "total": 1227,
+    "additions": 1224,
+    "deletions": 3
+  }
+}

@@ -226,3 +226,14 @@ open/closed state waits indefinitely. Conversely, A273539 and A071052 received
 stale rejection comments after our PRs had already merged. Inspect merger-bot
 comments, but give GitHub's non-null mergedAt precedence. The A267610 watcher
 covers both cases with tests and records a terminal needs_review on rejection.
+
+
+## Check closed PRs before starting a related family
+
+A267445, A267447 and A267442 had no merged platform statement, but earlier
+statement PRs had already been withdrawn because of Derek Blair's prior Lean
+proofs. Read closure comments and then verify the primary artifact: a missing
+platform proof does not establish novelty. Distinguish an exact named theorem
+from a direct consequence (here, counting a pointwise complement). Pin the
+proof-completion commit, not just the date printed on a preprint or the later
+commit that moved its files. This audit avoided repeating three solved targets.

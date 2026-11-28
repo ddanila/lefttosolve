@@ -1,0 +1,243 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+  
+  <head>
+  
+  <link rel="stylesheet" href="/styles.css?v=20260927">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="OEIS,integer sequences,Sloane" />
+  
+  
+  
+  <title>A267445 - OEIS</title>
+  <link rel="search" type="application/opensearchdescription+xml" title="OEIS" href="/oeis.xml">
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260826">
+  <link rel="icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=20260826">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260826">
+  <script>
+  var myURL = "\/A267445\/internal"
+  function redir() {
+      var host = document.location.hostname;
+      if(host != "oeis.org" && host != "edit.oeis.org" && host != "127.0.0.1" && !/^([0-9.]+)$/.test(host) && host != "localhost" && host != "edit.localhost" && host != "localhost.localdomain") {
+          document.location = "https"+":"+"//"+"oeis"+".org/" + myURL;
+      }
+  }
+  function sf() {
+      if(document.location.pathname == "/" && document.f) document.f.q.focus();
+  }
+  </script>
+  </head>
+  <body bgcolor=#ffffff onload="redir();sf()"><a href="https://oeis.org/cdn-cgi/content?id=SnJ1zjgmBzB6Yfo6KPZDdlVIIsh.2qfKKuDzXtF6Emo-1795883739.9977412-1.2.1.1-4WQle.rYibtA2efkuK9yUoJZn3tFWAwwprLJrNlxdQZJGh4QVowhmEWXWvvYAxfy" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+    <div class=loginbar>
+      <div class=login>
+      
+        <a href="/login?redirect=%2FA267445%2Finternal" rel="nofollow">login</a>
+      
+      </div>
+    </div>
+
+    <div class=center><div class=top>
+    <center>
+    <div class=donors>
+    The OEIS is supported by <a href="http://oeisf.org/#DONATE">the many generous donors to the OEIS Foundation</a>.
+    </div>
+
+    <div class=banner>
+    <a href="/"><picture>
+    <source media="(min-width: 830px)" srcset="/oeis-banner-wide.png 1x, /oeis-banner-wide@2x.png 2x" width="918" height="129">
+    <img class=banner border="0" width="540" height="129" src="/oeis-banner.png" srcset="/oeis-banner.png 1x, /oeis-banner@2x.png 2x" alt="A267445 - OEIS">
+    </picture></a>
+    </div>
+
+    
+    
+    
+    <div class="motdbox" style="justify-content: center;">
+        
+        <div class="motd">
+            <p>Year-end appeal: Please make a donation to the OEIS Foundation
+            to support ongoing development and maintenance of the OEIS.
+            We are now in our 62nd year, we have over 400,000 sequences,
+            and we’ve reached 13,400 citations (which often say “discovered thanks to the OEIS”).</p>
+        </div>
+        <div class="donate">
+            <div id="donate-button-container">
+                <div id="donate-button"></div>
+                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                <script>
+                PayPal.Donation.Button({
+                env:'production',
+                hosted_button_id:'SVPGSDDCJ734A',
+                image: {
+                src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+                alt:'Donate with PayPal button',
+                title:'PayPal - The safer, easier way to pay online!',
+                }
+                }).render('#donate-button');
+                </script>
+            </div>
+            <a href="https://oeisf.org/donate/"> <strong>Other ways to Give</strong> </a>
+        </div>
+        
+    </div>
+    
+    </center>
+    </div></div>
+
+    <div class=center><div class=pagebody>
+      
+    
+    <div class=searchbarcenter>
+        <form name=f action="/search" method="GET">
+            <div class=searchbargreet>
+                <div class=searchbar>
+                    <div class=searchq>
+                        <input class=searchbox maxLength=1024 name=q value="" title="Search Query">
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class=searchsubmit>
+                        <input type=submit value="Search" name=go>
+                    </div>
+                    <div class=hints>
+                        <span class=hints><a href="/hints.html">Hints</a></span>
+                    </div>
+                </div>
+                <div class=searchgreet>
+                    (Greetings from <a href="/welcome">The On-Line Encyclopedia of Integer Sequences</a>!)
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class=sequence>
+        <div class=space1></div>
+        <div class=line></div>
+        
+        <div class=seqhead>
+            <div class=seqnumname>
+                <div class=seqnum>
+                    
+                        <a href="/A267445">A267445</a>
+                    
+                </div>
+                <div class=seqname>
+                    Number of ON (black) cells in the n-th iteration of the &quot;Rule 129&quot; elementary cellular automaton starting with a single ON (black) cell.
+                    
+                </div>
+            </div>
+            <div class=scorerefs>
+                        
+                        1
+            </div>
+        </div>
+        
+            <div>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%I #12 Feb 16 2025 08:33:29
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%S 1,0,1,0,5,3,5,0,13,11,13,7,17,11,13,0,29,27,29,23,33,27,29,15,41,35,
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%T 37,23,41,27,29,0,61,59,61,55,65,59,61,47,73,67,69,55,73,59,61,31,89,
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%U 83,85,71,89,75,77,47,97,83,85,55,89,59,61,0,125,123,125
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%N Number of ON (black) cells in the n-th iteration of the &#34;Rule 129&#34; elementary cellular automaton starting with a single ON (black) cell.
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%D S. Wolfram, A New Kind of Science, Wolfram Media, 2002; p. 55.
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Robert Price, &lt;a href=&#34;/A267445/b267445.txt&#34;&gt;Table of n, a(n) for n = 0..1000&lt;/a&gt;
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H Eric Weisstein&#39;s World of Mathematics, &lt;a href=&#34;https://mathworld.wolfram.com/ElementaryCellularAutomaton.html&#34;&gt;Elementary Cellular Automaton&lt;/a&gt;
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H S. Wolfram, &lt;a href=&#34;http://wolframscience.com/&#34;&gt;A New Kind of Science&lt;/a&gt;
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;/index/Ce#cell&#34;&gt;Index entries for sequences related to cellular automata&lt;/a&gt;
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%H &lt;a href=&#34;https://oeis.org/wiki/Index_to_Elementary_Cellular_Automata&#34;&gt;Index to Elementary Cellular Automata&lt;/a&gt;
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%F Conjecture: a(n) = A071050(n), n&gt;0. - _R. J. Mathar_, Jan 17 2016
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%t rule=129; rows=20; ca=CellularAutomaton[rule,{{1},0},rows-1,{All,All}]; (* Start with single black cell *) catri=Table[Take[ca[[k]],{rows-k&#43;1,rows&#43;k-1}],{k,1,rows}]; (* Truncated list of each row *) Table[Total[catri[[k]]],{k,1,rows}] (* Number of Black cells in stage n *)
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%Y Cf. A267417.
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%K nonn,easy
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%O 0,5
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt>%A _Robert Price_, Jan 15 2016
+</tt></p>
+            
+            <p style="text-indent: -2em; margin-left: 2em; margin-top: 0; margin-bottom: 0;"><tt></tt></p>
+            
+            </div>
+        
+        <div class=space10></div>
+    </div>
+
+    </div></div>
+
+    <p>
+
+    <div class=footerpad></div>
+    <div class=footer>
+    <center>
+    <div class=bottom>
+    <div class=linksbar>
+      <a href="/">Lookup</a>
+      <a href="/wiki/Welcome"><font color="red">Welcome</font></a>
+      <a href="/wiki/Main_Page"><font color="red">Wiki</font></a>
+      <a href="/account">Register</a>
+      
+      <a href="/play.html">Music</a>
+      <a href="/plot2.html">Plot 2</a>
+      <a href="/demo1.html">Demos</a>
+      <a href="/wiki/Index_to_OEIS">Index</a>
+      <a href="/webcam">WebCam</a>
+      <a href="/Submit.html">Contribute</a>
+      <a href="/eishelp2.html">Format</a>
+      <a href="/wiki/Style_Sheet">Style Sheet</a>
+      <a href="/transforms.html">Transforms</a>
+      <a href="/ol.html">Superseeker</a>
+      <a href="/recent">Recents</a>
+    </div>
+    <div class=linksbar>
+      <a href="/community.html">The OEIS Community</a>
+    </div>
+    <div class=linksbar>
+      Maintained by <a href="http://oeisf.org">The OEIS Foundation Inc.</a>
+    </div>
+
+    <div class=dbinfo>Last modified November 28 11:33 EST 2026.  Contains 402103 sequences.</div>
+    <div class=legal>
+    <a href="/wiki/Legal_Documents">License Agreements, Terms of Use, Privacy Policy</a>
+    </div>
+
+    </div>
+    </center>
+    </div>
+  <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a61ac97ef9d49e92',t:'MTc5NTg4MzczOQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61ac97ef9d49e92',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

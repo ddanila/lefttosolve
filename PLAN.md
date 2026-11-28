@@ -67,3 +67,10 @@ archived. Official checks pass at 1.99 GB peak RSS. See [the plan](problems/a267
 Statement [#35416](https://github.com/lefttosolve2/open-math-agents/pull/35416) awaits review of the correction
 and prior-work eligibility. The watcher polls every minute for up to 48 hours
 and will submit the proof after the exact statement merges and checks pass.
+
+## A267445, A267447, A267442 — skipped after prior-work audit
+
+User chose to stop after verifying Derek Blair's existing Lean results.
+The centre-column identity is an explicit theorem; both count identities
+follow from its pointwise complement theorem. Evidence and pinned source
+are recorded in the three problem directories. All audit work remains local.

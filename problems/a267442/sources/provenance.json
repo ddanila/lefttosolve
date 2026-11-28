@@ -1,0 +1,46 @@
+[
+  {
+    "file": "Rule129ClosedForm.lean",
+    "sha256": "ef4b6cab224e46f9deb3d9a85ea95db0a4934833930a35088e869b8f5ad03cf1"
+  },
+  {
+    "file": "Rule129Digits.lean",
+    "sha256": "42e88fd0ed5fa12f0b5d2243e4a8ea02af1b5c64a461125d1b975565df201bdc"
+  },
+  {
+    "file": "Rule129Lucas.lean",
+    "sha256": "35794099206fb69b16866e97d5ae51faadf93635dc467408121a5af36631f9ee"
+  },
+  {
+    "file": "Rule129MiddleColumn.lean",
+    "sha256": "4abf70e1459e858e90f521a0ce187b6fc44e8e8673146a8c834361a75e7119fa"
+  },
+  {
+    "file": "a043545.html",
+    "sha256": "ff0c8b1b08c7d33b46a252f285cfd8b990f410b3176b48a3fec24d1c1287d5f4"
+  },
+  {
+    "file": "b043545.txt",
+    "sha256": "6867d24bccedd9d7dbcf64f2218352e46c71eecb6bf4865b4972ec36136d5b26"
+  },
+  {
+    "file": "b267442.txt",
+    "sha256": "13b8a701e0370ab514317056bba46ba38e09e4ed4779565804292e05eae0a9af"
+  },
+  {
+    "file": "entry.html",
+    "sha256": "4c960732e09e2c289ba9b180f93f555fa6352f1995df7d9595412aa7de4afb13"
+  },
+  {
+    "file": "paper.tex",
+    "sha256": "8c8c08384d511805506a1e9b76242acabacab25f68785bd4542e77e723d7c1b1"
+  },
+  {
+    "file": "pr-18449.json",
+    "sha256": "9737ce83f041ee36643bab6371b57165f9d0b7612721383cfa59bda1c889749c"
+  },
+  {
+    "file": "proof-completion-commit.json",
+    "sha256": "5daefb34067b52f19f3019df8f8ca2d0faef57752650dd474c4ce75136fe3a07"
+  }
+]
