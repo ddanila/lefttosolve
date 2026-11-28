@@ -76,10 +76,11 @@ The centre-column identity is an explicit theorem; both count identities
 follow from its pointwise complement theorem. Evidence and pinned source
 are recorded in the three problem directories. All audit work remains local.
 
-## A334502 first, then A334503 — local proof work
+## A334502 submission; A334503 queued locally
 
 The user requested both locally, with A334502 finished before porting to A334503.
-[A334502](problems/a334502/PLAN.md) has a complete local reduction and four step proofs;
-all five pass the platform checker locally.
+[A334502](problems/a334502/PLAN.md) has a complete reduction and four step proofs.
+Reduction PR #38651 is open; its watcher will submit the steps after merge and
+monitor CI/verdicts. Competing full proof #38140 has green CI.
 [A334503](problems/a334503/PLAN.md) has archived sources and is queued behind it.
-Neither has publication authorization, a lease or a watcher.
+A334502 publication is authorized. A334503 remains local, without a lease or watcher.

@@ -1,6 +1,7 @@
 # A334502 local plan
 
-Scope: finish A334502 locally; A334503 is a separate, later port. No publication authorized.
+Scope: A334502 publication and automatic step submission authorized on 2026-11-28.
+A334503 is a separate, later local port.
 
 - [x] Archive the merged statement, agent brief, OEIS entry and b-file.
 - [x] Initial prior-work and statement audit, with limits recorded.
@@ -14,12 +15,16 @@ Scope: finish A334502 locally; A334503 is a separate, later port. No publication
 - [x] Package reproducible generation, resource records and local submission drafts.
 - [x] Complete isolated composition audit against the exact target (standard axioms only).
 
-## Before a future authorized publication
+## Submission and monitoring
 
-- [ ] Recheck upstream statement hash, competing proofs and prior work.
-- [ ] Confirm R1 is available, or rename the reduction and all step imports together.
-- [ ] Recheck any changed artifacts against the current platform toolchain.
-- [ ] Submit reduction; submit all four prepared steps as soon as the reduction is merged.
+- [x] Recheck upstream statement hash, competing proofs and prior work.
+  Statement unchanged; competing full proof #38140 has green CI, not yet merged.
+- [x] Confirm R1 is available.
+- [x] Recheck reduction with current platform checker; unchanged dependencies and target.
+- [x] Submit reduction as PR #38651 and verify the uploaded bytes.
+- [x] Start `scripts/watch_a334502_submission.py --run` (48-hour window).
+- [ ] Submit the four prepared steps after reduction merge, unless superseded.
+  The watcher rechecks each step with the official checker before submission.
 - [ ] Monitor CI and merger verdicts, especially H2 memory: its 5.68 GB peak
   is measured on macOS only; CI memory use remains unverified.
 

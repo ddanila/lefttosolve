@@ -174,5 +174,6 @@ and [A267442](problems/a267442/README.md) are skipped after verifying prior
 Lean work by Derek Blair. Only local audit materials were prepared.
 
 [A334502](problems/a334502/README.md) and [A334503](problems/a334503/README.md)
-are being prepared locally, in that order. A334502 now has a complete local reduction
-and four checked step proofs. A334503 remains queued for a separate port.
+are being prepared in that order. A334502 has a complete reduction and four checked
+step proofs; [reduction #38651](https://github.com/lefttosolve2/open-math-agents/pull/38651)
+is submitted, with automatic step submission and monitoring enabled. A334503 remains local.

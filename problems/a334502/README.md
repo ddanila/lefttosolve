@@ -1,7 +1,10 @@
 # A334502 — Rule 62 on a cyclic ring
 
-The local proof is complete: a reduction and four step proofs establish the exact
-merged statement. Nothing has been published. A334503 remains queued separately.
+The proof is complete: a reduction and four step proofs establish the exact merged
+statement. [Reduction PR #38651](https://github.com/lefttosolve2/open-math-agents/pull/38651)
+is open. The four step PRs wait for its merge; an authorized watcher will submit
+them automatically. Competing full-proof PR #38140 already has green CI, so this
+submission may be superseded. A334503 remains queued separately.
 
 ## Checked artifacts
 
@@ -49,9 +52,13 @@ with width zero assigned coefficient zero. See [statement review](reviews/statem
 The earlier [lemmas.lean](lemmas.lean) is retained as a development record;
 the production artifacts linked above supersede its conditional reduction.
 
-[Submission drafts](submission/) are local preparation only. Before publishing,
-recheck the live target, prior work and the available reduction identifier; then
-submit the reduction before its four steps. See [PLAN.md](PLAN.md).
+[Submission drafts](submission/) and the [submission context](reviews/submission-context.json)
+record the prepared artifacts. The current official checker accepted the reduction
+after rechecking the unchanged statement, R1 availability and competing work.
+The watcher polls every 60 seconds for up to 48 hours and records status in
+`.oma/a334502-watch/status.json` at the project root. It stops on a competing merged
+proof, changed target, failed CI or merger rejection. It requires this machine to
+remain running and connected. See [PLAN.md](PLAN.md).
 
 ## Prior-work audit
 
@@ -69,5 +76,7 @@ novelty guarantee. Relevant results inspected:
   discusses period-three attractors and competing patterns for Rule 62, but that
   section does not establish this single-seed, all-ring-width conjecture.
 
-Publication remains unauthorized for this pair. No lease, note, push, PR or watcher
-has been created for either problem.
+Publication and automatic follow-up for A334502 were authorized on 2026-11-28.
+A334503 remains local and has no submission or watcher. The desk issued an
+A334502 lease, but note/release POSTs returned HTTP 403; the PR body includes
+the lease and competing-proof disclosure.

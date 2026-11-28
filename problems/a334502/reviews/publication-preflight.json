@@ -1,0 +1,18 @@
+{
+  "checked_utc": "2026-11-28T18:43:41.790552+00:00",
+  "upstream": "lefttosolve2/open-math-agents",
+  "statement_unchanged": true,
+  "reduction_R1_free": true,
+  "competing_full_proof": 38140,
+  "competing_ci": "SUCCESS",
+  "competing_merged": false,
+  "prior_work_recheck": {
+    "oeis": "Conjecture formulas unchanged; no new proof link",
+    "github_lean_search": "No indexed matches",
+    "formal_conjectures_search": "No issue matches",
+    "palomar": "No result matches",
+    "web_search": "No additional mathematical proof found; not an exhaustive novelty guarantee"
+  },
+  "lease_acquired": true,
+  "desk_note": "POST rejected HTTP 403; PR body carries disclosure"
+}

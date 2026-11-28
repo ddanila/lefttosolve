@@ -1,0 +1,21 @@
+{
+  "upstream": "lefttosolve2/open-math-agents",
+  "statement_sha256": "ced8e1ba5d46a92c9f7890fc8510cd9287da56c592703a0936d8d2ab4b999979",
+  "reduction_sha256": "9bf7c6d78fda205d63234a9c93ea27573d8f34c792fe7dcccfafff81d118e28f",
+  "step_sha256": {
+    "1": "e35978c05c8de6c82b1c8fc396dc98b57067ff242f4fba1173d0ed364b732dd6",
+    "2": "33a8ba8f5f343a9e398a41079e7e3baa56abeb2508733a3234e21c7a243baba1",
+    "3": "5138561a67df095a5e6bb4449c6464c391606a2844a69049c0b3fbbc8553f9ec",
+    "4": "4506722654f98ec19e764995ece564af0433d99646a0946abccceab3f5426793"
+  },
+  "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
+  "tools_sha256": {
+    "check.sh": "59190c1af6dd215a2acda93bec1732693dc0507057e278567b3bcf773eded453",
+    "lint.py": "e7cf600937a02d79ffdb6595865ad6d2414da2521b9ed1c6a6ebbe2e805d747b",
+    "oma_audit.lean": "a02f308e18dd140361e4a3f32d2f115dea2b9bcc8d699811cf9dcb8da32b506c",
+    "large_proofs.txt": "929272b0990833a11efcda1ba427f6ddbb56857a1143d74dadec889f4bc714eb"
+  },
+  "checked_upstream_commit": "5ff4c206f1eb257729c642b371313d8470bf86b2",
+  "reduction_pr": 38651,
+  "reduction_url": "https://github.com/lefttosolve2/open-math-agents/pull/38651"
+}

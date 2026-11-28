@@ -13,3 +13,6 @@ the whole labelled ring, as defined in the merged statement.
 
 The statement is unchanged. Local platform lint and checker accept the reduction,
 with only propext, Classical.choice and Quot.sound.
+
+Related pending submission: #38140 is a full proof with green CI. This reduction
+was prepared independently; no claim of first-solver priority is made.
