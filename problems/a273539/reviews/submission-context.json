@@ -2,14 +2,15 @@
   "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
   "statement_sha256": "b291359de9a8dabdf108254e4cd9eae117a2135d7bc3e694521d39b5aefea548",
   "proof_sha256": "c7940eb2962cbf5bef4e824479d271a76820b613bb4135c351e2dfefa1f95e51",
-  "platform_commit": "1d8515ba79ec386a129760bba3d9d90e7fef8e42",
+  "platform_commit": "e89cbb148fad585f4a58160b914004c14f2b21e4",
   "tools_sha256": {
     "check.sh": "59190c1af6dd215a2acda93bec1732693dc0507057e278567b3bcf773eded453",
     "lint.py": "40a31bf459f26c87760b7a46bb585feb952ac487e9aa832bb9233a9a4c84777c",
-    "oma.sh": "b23c6d29700af48fe2785be35543d0064fefc08b808606aa25fae0eae4e87c63"
+    "oma.sh": "a847dd45e644142f93326966ab0e9a105dbf882d15a04d72277e44ce22161760"
   },
   "authorized": "Full publication and submission authorized 2026-11-28 without further approvals.",
   "statement_pr": 26102,
   "statement_head": "2acf7b606a8deab93cd54898791846bef9d5f5f8",
-  "statement_url": "https://github.com/lefttosolve2/open-math-agents/pull/26102"
+  "statement_url": "https://github.com/lefttosolve2/open-math-agents/pull/26102",
+  "checker_update_review": "2026-11-28: exact-target guard and size allowlist reviewed; client changes are canonical repo, event display, and unused solved-elsewhere command. Recheck before submitting remains enabled."
 }

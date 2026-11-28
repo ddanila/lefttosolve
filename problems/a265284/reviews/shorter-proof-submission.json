@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "path": "proofs/oeis-a265284.lean",
+      "additions": 166,
+      "deletions": 228,
+      "changeType": "MODIFIED"
+    }
+  ],
+  "headRefOid": "d369962a34589f8719b14fa12a369a4f8fd04e67",
+  "number": 26856,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/lefttosolve2/open-math-agents/actions/runs/46146432163/job/140983404613",
+      "name": "check",
+      "startedAt": "2026-11-28T12:48:00Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "check-proof"
+    }
+  ],
+  "url": "https://github.com/lefttosolve2/open-math-agents/pull/26856"
+}

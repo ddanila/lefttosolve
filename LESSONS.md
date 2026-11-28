@@ -128,3 +128,69 @@ These are for finite checks, which is what our cellular-automaton base cases are
 - Statement body with a ready proof: https://github.com/lefttosolve2/open-math-agents/pull/23799
 - Proof sent on `proof_pending`: https://github.com/lefttosolve2/open-math-agents/pull/23910
 - Statement audit list: https://github.com/lefttosolve2/open-math-agents/pull/15960
+
+# A273385 watcher stop and A265284 shorter-proof follow-up
+
+Recorded 2026-11-28. These are separate outcomes: a stopped submission watcher,
+and a checked proof that remained open after a competing proof merged.
+
+## What happened
+
+- A273385 statement [#22075](https://github.com/lefttosolve2/open-math-agents/pull/22075)
+  merged at **10:48:29 UTC**. Our watcher noticed it, but stopped at **10:49:31**
+  with `needs_review: Checker/client changed`. No proof PR was created then.
+- The stop was discovered during the user's status request around **12:45 UTC**.
+  Merely having launched a watcher was not enough to ensure submission happened.
+- The checker had added a root-qualified exact-target guard and a proof-size
+  allowlist. The client also changed its canonical repository, event display,
+  and later added a separate `solved-elsewhere` command. After inspecting the
+  diffs and confirming the merged statement's exact hash, we refreshed the
+  approved tool hashes and restarted A273385's watcher at **12:46 UTC**.
+  We also refreshed and restarted the still-waiting A273539 watcher, which
+  otherwise would encounter the same client-hash stop when its statement merges.
+- A265284 proof [#26856](https://github.com/lefttosolve2/open-math-agents/pull/26856)
+  passed CI at **10:50:08 UTC**, but @treybeathard-jpg's
+  [#10573](https://github.com/lefttosolve2/open-math-agents/pull/10573) merged first
+  at **11:28:38 UTC**. Our PR remained open without a verdict comment.
+- The official length tool counted **4,199** characters in our proof versus
+  **6,412** in the merged proof: **2,213 characters / 34.5% shorter**. We merged
+  current upstream main into our existing submission branch, resolved the
+  add/add conflict with our unchanged checked proof, and reran the official
+  checker successfully. The same PR now modifies the existing proof file;
+  its title and description explain the shorter-proof replacement. This update
+  triggers fresh CI. First-solve credit belongs to the original solver.
+
+## Changes to our workflow
+
+1. **Treat watcher health as part of monitoring.** Check the process, status
+   timestamp, phase, and terminal reason—not just the PR or the fact that a
+   watcher was started. `needs_review`, `statement_changed`, network stalls,
+   and expiry require attention. The present local watchers write status files;
+   they do not proactively notify the owner. A future monitoring setup should
+   surface terminal stops through an explicitly authorized notification path.
+2. **Keep the checker-change guard, but service it promptly.** Inspect exact
+   diffs, verify the statement/dependency pins, and rerun the official checker.
+   Do not remove the guard or blindly bless new hashes. Once a harmless shared
+   client/checker update has been reviewed, check every active watcher for the
+   same stale pin. This prevents repeating the same stop on the next problem.
+3. **CI green is only compilation evidence.** Also check whether the statement
+   merged, whether our proof PR actually exists, whether another proof is now
+   on main, and whether our own submission received a verdict. An open green
+   PR can already have lost the first-solve race.
+4. **Measure before declaring a lost proof obsolete.** Run the current
+   `tools/prooflen.py` on both files. The replacement requires at least 5% and
+   20 characters saved; compare counted characters, not bytes or line counts.
+   Preserve the base commit, file hashes, both lengths, and checker result.
+5. **Update the existing PR to the new reality.** Integrate current upstream,
+   resolve only the intended proof conflict, verify the exact target, rerun the
+   official checker, and confirm the PR has exactly one `MODIFIED` proof file.
+   Rewrite its title/body around the replacement; do not open a duplicate PR
+   or imply that shorter-proof credit transfers first-solve credit.
+6. **A repaired watcher is not yet a submitted proof.** Report rechecking,
+   submitting, proof URL, CI result, and merge as distinct observed states.
+   Keep status documentation current after the repair completes.
+
+Evidence: `problems/a265284/reviews/shorter-proof.json`,
+`problems/a265284/reviews/shorter-proof-check.json`, the recorded watcher contexts,
+and the linked PRs. The original watcher stop remains in the ignored local
+`.oma/a273385-watch/checker-change-stop.json` for operational diagnosis.

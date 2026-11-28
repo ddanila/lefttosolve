@@ -27,7 +27,10 @@ identical saved reports. The official checker accepts the final proof.
 - [x] Submit through the standard client's no-lease path; official recheck accepted.
 - [x] Verify proof PR [#26856](https://github.com/lefttosolve2/open-math-agents/pull/26856) contains
       exactly our checked proof file, with its matching hash and original target.
-- [ ] Await upstream CI and verdict. CI was running at 2026-11-28 10:47 UTC.
+- [x] Initial CI passed at 10:50 UTC; competing #10573 merged at 11:28 UTC.
+- [x] Measure our proof: 4,199 versus 6,412 counted characters (34.5% shorter).
+- [x] Update the same PR against main as a one-file replacement; official recheck passed.
+- [ ] Await fresh CI and the shorter-proof verdict.
 
 Other contributors' #10573/#22508 remain competing submissions. A proof merging
 first can make the remaining PRs ineligible; do not promise first-solve credit.

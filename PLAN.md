@@ -42,5 +42,5 @@ A273539 publication is authorized; live preflight found no merged statement or o
 All five conjectures are proved against the existing statement by @ecirak42.
 See [workspace and checks](problems/a265284/README.md) and [local plan](problems/a265284/PLAN.md).
 All eight problems pass the root checker. Proof PR [#26856](https://github.com/lefttosolve2/open-math-agents/pull/26856)
-is open with CI running. Other contributors have competing proof PRs #10573
-and #22508. Our proof is already submitted and needs no statement-waiting watcher.
+is now a 34.5% shorter replacement after #10573 merged. It passed a fresh local
+official check; new CI and a verdict are pending. It needs no statement-waiting watcher.

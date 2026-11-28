@@ -14,8 +14,13 @@ truth-table evolution agrees with the statement scanner and all 1,000 archived
 OEIS terms (0..999), including 998 whole-row pattern comparisons. The 7,406-byte
 proof checked locally in 4.51 seconds at about 1.50 GB peak macOS RSS.
 
-Related work: proof PRs #10573 and #22508 were already open. Their descriptions
-and the live brief describe the same alternating-row approach; this Lean file
-was implemented locally without importing their proof files. No first-discovery
-claim is made. The normal desk client returned `proof_pending`, so this uses the
-standard client's documented submission path without a lease.
+The first proof, by @treybeathard-jpg in #10573, merged at 11:28:38 UTC.
+This PR now replaces that proof under the platform's shorter-proof rule.
+The unmodified `tools/prooflen.py` counts 4,199 characters here versus 6,412
+on main: 2,213 characters (34.5%) shorter. The unchanged proof was rechecked
+against current main and the exact statement; the official checker accepted it.
+First-solve credit remains with the original solver.
+
+The live brief and prior PR descriptions described the same alternating-row
+approach. This Lean file was implemented locally without importing their proof
+files; no first-discovery claim is made.

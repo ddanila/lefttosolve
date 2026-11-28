@@ -1,6 +1,6 @@
 # A273385 local preparation
 
-Publication authorized on 2026-11-28. Existing statement PR #22075 by @yooeonwoo is open; adapt the proof to its exact target and submit after merge.
+Publication authorized on 2026-11-28. Statement PR #22075 by @yooeonwoo merged at 10:48:29 UTC. The watcher stopped on changed checker/client hashes at 10:49; those changes were reviewed and the watcher restarted at 12:46. Exact merged statement bytes match; official rechecking and submission are in progress.
 
 - [x] Archive the platform brief and full authoritative OEIS entries, with hashes and attribution.
 - [x] Model the actual Rule 659 dynamics, changing background, and finite square crop.

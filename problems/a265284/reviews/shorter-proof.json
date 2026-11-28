@@ -1,0 +1,9 @@
+{
+  "base_commit": "bc9a43d55ac887589c51a71d47dbd54ffe96ca3d",
+  "merged_proof_pr": 10573,
+  "merged_proof_sha256": "2b2288dba10f50a702959c05c3665cae18a1dadd9a87d7419012f6dc2ecdc633",
+  "merged_proof_length": 6412,
+  "our_length": 4199,
+  "reduction_percent": 34.5134123518403,
+  "qualifies": true
+}
