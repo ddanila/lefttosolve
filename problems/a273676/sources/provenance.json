@@ -1,0 +1,46 @@
+[
+  {
+    "file": "agent-brief.txt",
+    "sha256": "d35798c0cbf4c5460431006a4cf428b943a3ad0c491ed5a8a6b812d531976b14"
+  },
+  {
+    "file": "b273676.txt",
+    "sha256": "702338afcf8e2f26faa84b98d31309699b30a73d9779e98e4eaa81fac4b57b6a"
+  },
+  {
+    "file": "oeis-internal.html",
+    "sha256": "f93f6d71071d87ef99b78c207bd9864a52df4a9b6cf868ed38e2bf73b7462840"
+  },
+  {
+    "file": "oeis-internal.txt",
+    "sha256": "e582369fbde1296e59ad934e8fb933d2ab635cbcfca8679d1e31215ec7bb19cb"
+  },
+  {
+    "file": "prior-art/A273676_eq_A270222.lean",
+    "sha256": "74199e6306eaec86ce8f68d03bce7026f54427133dc2a4edc66e47d38e6811ff"
+  },
+  {
+    "file": "prior-art/C.lean",
+    "sha256": "63ab68919da478d436d6c3fe18113086300cc5ab0c4172eb38720ab302ce602e"
+  },
+  {
+    "file": "prior-art/Defs.lean",
+    "sha256": "ce0afb232b3821cec4cacabe9c0e4473444ebba5b3ab0eeb8ca09e21f75782cc"
+  },
+  {
+    "file": "prior-art/M.lean",
+    "sha256": "d0b34cf88142af5ab5270a5d40eb54c2d095a7badc2785ba39c4393609720fa0"
+  },
+  {
+    "file": "prior-art/commit.json",
+    "sha256": "31286ea5fb91e169a9373fbf2d3608a11e6d62fbb7458dd83ca28cf4c6eaf452"
+  },
+  {
+    "file": "statement-pr.json",
+    "sha256": "10ffa5efd34ac4bc1090d3ef9ced5574ce77947c24f5d64d6c55ad4e41ec8a10"
+  },
+  {
+    "file": "upstream-statement.lean",
+    "sha256": "caac93f533eb7d5840588b9590c74e67483b441a794fc9c0a79208a37e4bb342"
+  }
+]

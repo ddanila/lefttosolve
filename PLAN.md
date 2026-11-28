@@ -52,3 +52,9 @@ is 32.5% shorter than pending #21850, but that file targets a different proposed
 statement. See [validation and comparison](problems/a071052/README.md).
 Submitted from current upstream main: [#30173](https://github.com/lefttosolve2/open-math-agents/pull/30173). Local checker and
 exact submitted-byte audit pass; CI and platform verdict remain pending.
+
+## A273676 — local prior-work audit
+
+Existing Lean sources cover the main claims; no new proof is prepared.
+See [the local plan](problems/a273676/PLAN.md) for an attributed adaptation route.
+All A273676 work remains local.

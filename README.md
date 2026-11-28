@@ -164,3 +164,5 @@ platform's actual pin before submitting.
 [A267623 — Rule 187 centre column](problems/a267623/README.md): standalone statement and proof, archived sources, and reproducible validation are complete locally. Both official checker rehearsals accepted, and simulation matches all 1,001 terms. Statement PR #7472 merged unchanged; the exact-target proof check passed and proof PR #7656 is submitted. Its [plan](problems/a267623/PLAN.md) records independent review and pre-submission rechecks.
 
 [A267920](problems/a267920/README.md) and [A267921](problems/a267921/README.md) — the Rule 243 pair, developed locally together. They share the automaton and crop, differing only in decimal-digit encoding versus binary evaluation. Publication and submission are authorized for this pair.
+
+A273676 has a [local prior-work audit](problems/a273676/README.md): existing Lean proofs were found in a November 20 artifact. No new proof or submission is prepared.
