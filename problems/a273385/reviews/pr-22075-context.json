@@ -1,0 +1,15 @@
+{
+  "statement_pr": "https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/22075",
+  "statement_pr_head": "f48430a94e27455e483645fe57113d339d4fa747",
+  "statement_sha256": "b856795952e889f86634b67fe1a36a3df228b70bd01dc70bfd0ceeef22fcb9f6",
+  "proof_sha256": "853a16957f408e6f54748f51d859df2b5c6b17c42a6bfbfce0a2f0e2c6387b24",
+  "platform_commit": "8956c681b8391a52c807349da82d886ebfa52917",
+  "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
+  "tools_sha256": {
+    "check.sh": "6f8ad54498d4f145e07e58ef7fca0f714d63aa2a6d9d120c9cffddbd68a061c3",
+    "lint.py": "0bb0ee4532ce85e1549f192d048623ccf562af545a140f5f517b61c5444f93f3",
+    "oma.sh": "3d22a8b0b90f4f09113b9952a2329aeb1ee7e33ba4b06920746f7547116df7a6"
+  },
+  "checked_utc": "2026-11-28T07:09:50.345080+00:00",
+  "note": "Accepted local rehearsal against exact pending statement. Original independently developed proof remains in root proofs/. No proof PR yet."
+}

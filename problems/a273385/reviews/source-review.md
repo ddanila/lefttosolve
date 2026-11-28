@@ -24,3 +24,7 @@ Reviewed locally on 2026-11-28 against the archived full OEIS internal pages, in
 The proof does not use the conjectured formula to define any source sequence. Finite propagation handles every cell outside the time-three square. Kernel `decide` checks all 49 interior cells for each of the 12 rules; fixed-point induction covers every later generation. Rule 5 has a separate time-two check and two-step induction. The final theorem uses the type of `main` but not its proof. The isolated axiom audit excludes `sorryAx`; no native evaluation, extra axiom, unsafe code, or external oracle is used.
 
 Result: no blocking source/translation mismatch found. An independent semantic review remains desirable before publication; none is claimed here.
+
+## Adaptation to PR #22075
+
+The existing @yooeonwoo statement covers the same five conjecture groups and source conventions. It uses `Nat.testBit` instead of division/modulus, `.toNat` for Boolean bits, a filtered `Icc × Icc` cardinality instead of two coordinate-range sums, and integer closed forms. The submission proof now operates directly on those definitions. The initial cases enumerate the small integer interval, the all-ON count uses `Int.card_Icc`, and the final theorem supplies the integer closed form with the natural subtraction cast justified. All claims, including A270007, remain proved. The original checked development is preserved separately. The adapted exact-target proof passed the unmodified official checker; hashes and PR head are recorded in `pr-22075-context.json`.

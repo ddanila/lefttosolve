@@ -46,5 +46,11 @@
     "derived_from": "a060867-internal.html",
     "transformation": "Strip HTML tags from OEIS percent-record lines and decode HTML entities.",
     "sha256": "cfe8e182d7ed1e1ae2366710672c8794ce022fb2fa6c1ef542605403e1774119"
+  },
+  {
+    "file": "pr-22075-statement.lean",
+    "url": "https://github.com/yooeonwoo/open-math-agents/blob/f48430a94e27455e483645fe57113d339d4fa747/statements/oeis-a273385.lean",
+    "sha256": "b856795952e889f86634b67fe1a36a3df228b70bd01dc70bfd0ceeef22fcb9f6",
+    "author": "yooeonwoo"
   }
 ]

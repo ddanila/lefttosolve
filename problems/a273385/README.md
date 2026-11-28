@@ -50,4 +50,12 @@ Official checker evidence is recorded in `reviews/official-statement.json`, `rev
 
 `sources/` contains the platform agent brief, the full A273385/A270007/A060867 internal pages and readable extracts, and the published A273385 b-file. `provenance.json` records retrieval URLs, timestamps, and SHA-256 hashes. OEIS text is © OEIS Foundation and contributors, CC BY-SA 4.0. The b-file identifies itself as synthesized from the entry; it is not an independent experimental source.
 
-Publication authorized on 2026-11-28. Existing statement [PR #22075](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/22075) uses equivalent but different definitions; an adapter is needed before proof submission.
+Publication authorized on 2026-11-28. Existing statement [PR #22075](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/22075) uses equivalent but different definitions; the adapted proof has passed the official checker against its exact pending target. See [submission proof](submission/oeis-a273385.lean) and [checker evidence](reviews/pr-22075-proof-check.json).
+
+## Automatic submission
+
+Publication and submission are authorized without further approval. `scripts/watch_a273385_submission.py --run` watches upstream main for up to 48 hours in an isolated clone. It checks that the merged statement is byte-identical to PR #22075's reviewed target, that no proof exists on main, and that the proof, dependencies, and checker/client still match their recorded hashes. It reruns the official checker, submits a one-file proof PR with the normal client, verifies remote contents, and monitors CI and merge status. Desk outages do not block the client's documented missing-lease submission path.
+
+Current state: `.oma/a273385-watch/status.json`; process ID: `.oma/a273385-watch/pid`. Private operational logs stay ignored. The machine must remain awake and online. A changed target/toolchain, existing merged proof, uncertain submission, or failed CI stops automation for inspection; it never blindly retries an uncertain submission. The watcher does not update committed documentation automatically.
+
+The original proof remains in `proofs/` with its independently developed statement. The submission proof instead imports the other contributor's statement and proves its exact target directly: `Nat.testBit` dynamics, cardinality of a filtered integer-square crop, and integer closed forms. The source and mathematical argument agree; no statement placeholder is used.

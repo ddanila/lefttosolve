@@ -15,8 +15,10 @@ Publication authorized on 2026-11-28. Existing statement PR #22075 by @yooeonwoo
 Publication and submission:
 
 - [x] Get publication authorization.
-- [ ] Refresh upstream status, existing PRs, catalog target, checker and dependency pins.
-- [ ] Publish the complete proof with its statement for provenance, following the race lessons.
-- [ ] Use existing statement PR #22075 rather than submit a duplicate statement.
+- [x] Refresh upstream status, existing PRs, catalog target, checker and dependency pins.
+- [x] Publish the complete proof with its statement for provenance (c7bf665, pushed 2026-11-28).
+- [x] Adapt to existing statement PR #22075; official exact-target check accepted.
 - [ ] After merge, compare exact merged bytes, recheck the proof against that statement, and submit it promptly.
 - [ ] Record PRs and monitor verdicts; distinguish CI success, merger acceptance, and catalog deployment.
+
+Automatic submission and CI monitoring are enabled with `scripts/watch_a273385_submission.py`; status lives in `.oma/a273385-watch/status.json`.
