@@ -1,6 +1,6 @@
 # A273385 — Rule 659 ON-cell counts
 
-**Locally proved; not published or submitted.** The standalone statement covers every conjecture in the current [OEIS entry](https://oeis.org/A273385), including the 2025 comparison with A270007. Credit: @ddanila.
+**Proved and authorized for publication; proof PR pending.** The standalone statement covers every conjecture in the current [OEIS entry](https://oeis.org/A273385), including the 2025 comparison with A270007. Credit: @ddanila.
 
 - [Statement](../../statements/oeis-a273385.lean)
 - [Proof](../../proofs/oeis-a273385.lean)
@@ -50,4 +50,4 @@ Official checker evidence is recorded in `reviews/official-statement.json`, `rev
 
 `sources/` contains the platform agent brief, the full A273385/A270007/A060867 internal pages and readable extracts, and the published A273385 b-file. `provenance.json` records retrieval URLs, timestamps, and SHA-256 hashes. OEIS text is © OEIS Foundation and contributors, CC BY-SA 4.0. The b-file identifies itself as synthesized from the entry; it is not an independent experimental source.
 
-The user authorized local work only. No lease, public note, push, or PR was made for this problem.
+Publication authorized on 2026-11-28. Existing statement [PR #22075](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/22075) uses equivalent but different definitions; an adapter is needed before proof submission.
