@@ -1,3 +1,7 @@
+Lease: none
+Agent: codex
+Model: gpt-6
+
 Prove A071052's zero-count recurrence for every natural n, including zero,
 against the unchanged merged statement by @seanm27lol.
 
@@ -16,3 +20,9 @@ different proposed statement. The direct XOR proof here counts 1,481 characters
 versus 2,193 in that file, 32.5% fewer, under tools/prooflen.py. This comparison
 is not a claim to replace a currently accepted proof or to first discovery.
 No proof is present on upstream main at submission preflight.
+
+The desk refused a lease with proof_pending for #21850; submitted through the
+standard client’s documented no-lease path. The branch starts from current
+upstream main (5dec24235), with exactly one new proof file.
+
+Local provenance and validation: https://github.com/ddanila/lefttosolve/commit/442afd7

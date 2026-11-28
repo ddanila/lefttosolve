@@ -13,7 +13,9 @@
   "max_rss_bytes": 1381072896,
   "resource_measurement": "macOS /usr/bin/time -l, complete official checker invocation; not a capped Linux-runner test",
   "local_only": false,
-  "published": false,
+  "published": true,
   "leased": false,
-  "submitted": false
+  "submitted": true,
+  "submission_url": "https://github.com/lefttosolve2/open-math-agents/pull/30173",
+  "submitted_head": "1a06a308de6b9c3ec71660bb1f9ffcdc38c7c84f"
 }

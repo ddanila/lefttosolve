@@ -1,7 +1,7 @@
 # A071052 — Rule 150 zero-count recurrence
 
 Complete local Lean proof against the exact merged statement by @seanm27lol.
-Publication and submission authorized; exact current-main validation passed.
+Submitted as [proof PR #30173](https://github.com/lefttosolve2/open-math-agents/pull/30173); exact current-main validation passed.
 
 - [Unchanged upstream statement](../../statements/oeis-a071052.lean).
 - [Standalone proof](../../proofs/oeis-a071052.lean).

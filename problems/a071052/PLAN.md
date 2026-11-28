@@ -14,16 +14,14 @@ Scope: user authorized publication and proof submission without further approval
 - [x] Prepare PR text with candid attribution and comparison limitations.
 - [x] Integrate the root checker, verify reproducible reports, and commit locally.
 
-## Authorized submission
+## Submission
 
-- Recheck canonical upstream `lefttosolve2/open-math-agents`, its exact statement,
-  any proof on main, and PR #21850 (including potential competing submissions).
-- Verify dependency/checker pins and rerun the official checker if anything changed.
-- If a proof has merged, compare against that file using current `tools/prooflen.py`;
-  the 5% plus 20-character replacement threshold applies to main, not a pending PR.
-- Publish local provenance promptly, then use the normal client to submit exactly
-  one proof file. Use the documented no-lease path if a pending-proof desk refusal
-  occurs, explaining it honestly in the PR.
-- Verify exact submitted bytes and one-file diff, then monitor CI, verdict and merge.
+- [x] Recheck current canonical upstream, unchanged statement and no merged proof.
+- [x] Verify checker/dependency pins and rerun the official checker.
+- [x] Publish provenance in root commit 442afd7.
+- [x] Submit [proof PR #30173](https://github.com/lefttosolve2/open-math-agents/pull/30173) through the standard client.
+- [x] Verify exact submitted bytes and the one-file diff.
+- [ ] Await CI, platform verdict and merge.
 
-No A071052 watcher is running. The pre-existing watchers are unaffected.
+The desk returned proof_pending; the client used its documented no-lease path.
+The branch is based on upstream 5dec24235. No A071052 background watcher is running.
