@@ -10,12 +10,16 @@
   },
   "local_only": false,
   "leased": false,
-  "submitted": false,
+  "submitted": true,
   "proof_bytes": 7406,
   "max_rss_bytes": 1498726400,
   "elapsed_seconds": 4.51,
   "resource_measurement": "macOS /usr/bin/time -l, complete official checker invocation; not a capped Linux-runner test",
   "publication_authorized": true,
   "submission_preflight_commit": "2bc4348e14a974c3fd3ef067cac0c73b52cbd03c",
-  "claim_result": "proof_pending; normal client submission without a lease is authorized"
+  "claim_result": "proof_pending; normal client submission without a lease is authorized",
+  "submission_pr": "https://github.com/lefttosolve2/open-math-agents/pull/26856",
+  "submission_head": "bf35ef20d589836f82afaaa66bae34f7e931ac99",
+  "submission_base_checked": "8ed965b450d812a5f2b9fe9118631636314b6023",
+  "provenance_commit": "cba711cb4be81b84b8c75c200991515ecf612431"
 }

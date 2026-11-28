@@ -1,8 +1,8 @@
 # A265284 — cumulative Rule 94 cell counts
 
 Complete local proof of all five conjectures against @ecirak42's exact merged
-statement. Publication and submission were authorized on 2026-11-28 after the
-initial local preparation; final preflight is in progress.
+statement. Submitted as proof PR [#26856](https://github.com/lefttosolve2/open-math-agents/pull/26856) on 2026-11-28; CI is running.
+The public proof and validation history starts at commit `cba711c`.
 
 - [Upstream statement, unchanged](../../statements/oeis-a265284.lean).
 - [Standalone proof](../../proofs/oeis-a265284.lean).

@@ -37,9 +37,10 @@ A third free problem of the same kind, A272706 (Rule 515), is a fallback. The si
 
 A273539 publication is authorized; live preflight found no merged statement or open competing PR. Submit the statement, then automatically submit the checked proof after merge. A273385 publication and automatic submission remain separately authorized.
 
-## A265284 — proof ready, submission authorized
+## A265284 — proof PR #26856 submitted
 
 All five conjectures are proved against the existing statement by @ecirak42.
 See [workspace and checks](problems/a265284/README.md) and [local plan](problems/a265284/PLAN.md).
-Other contributors already have open proof PRs #10573 and #22508. Publication
-and submission are now authorized without further questions, after validation.
+All eight problems pass the root checker. Proof PR [#26856](https://github.com/lefttosolve2/open-math-agents/pull/26856)
+is open with CI running. Other contributors have competing proof PRs #10573
+and #22508. Our proof is already submitted and needs no statement-waiting watcher.

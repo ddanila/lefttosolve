@@ -19,13 +19,17 @@ separately authorized and unaffected.
 All eight problems pass the root checker. Repeated A265284 checks produce
 identical saved reports. The official checker accepts the final proof.
 
-## Authorized publication
+## Publication and submission
 
-- Recheck upstream main and proof PRs #10573/#22508. A local proof is already
-  available from other contributors; avoid implying this is an untouched task.
-- Compare the unchanged statement and dependency/checker pins. Recheck the exact
-  target if any changes occurred.
-- If a proof has merged, measure the current minimum and our proof using the
-  current official length tool; evaluate eligibility for the shorter-proof route.
-- Publish provenance, acquire a normal lease if available, and submit the checked
-  proof. Record and monitor the one-file PR.
+- [x] Recheck upstream: statement and checker unchanged; no proof on main.
+- [x] Publish complete provenance at `ddanila/lefttosolve`, commit `cba711c`.
+- [x] Attempt normal lease: desk returned `proof_pending` for the two prior PRs.
+- [x] Submit through the standard client's no-lease path; official recheck accepted.
+- [x] Verify proof PR [#26856](https://github.com/lefttosolve2/open-math-agents/pull/26856) contains
+      exactly our checked proof file, with its matching hash and original target.
+- [ ] Await upstream CI and verdict. CI was running at 2026-11-28 10:47 UTC.
+
+Other contributors' #10573/#22508 remain competing submissions. A proof merging
+first can make the remaining PRs ineligible; do not promise first-solve credit.
+The two pre-existing statement-follow-up watchers remain unaffected. This proof
+is already submitted, so it does not need a statement-waiting watcher.

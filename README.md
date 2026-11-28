@@ -14,7 +14,7 @@ A273385 is locally proved as of 2026-11-28, including all source conjectures; pu
 
 A273539 is locally proved as of 2026-11-28, including all four source conjectures. Its complete proof is public; statement PR [#26102](https://github.com/lefttosolve2/open-math-agents/pull/26102) awaits review, with automatic proof submission after merge. See its [workspace](problems/a273539/README.md).
 
-A265284 now has a complete [local proof](problems/a265284/README.md) against its existing upstream statement. Publication and submission are now authorized.
+A265284 has a complete [proof and validation](problems/a265284/README.md) against its existing upstream statement, submitted as proof PR [#26856](https://github.com/lefttosolve2/open-math-agents/pull/26856); CI is running.
 
 The root checker covers all eight problems, including A273539, A273385 and the Rule 243 pair. Publication and submission of A267920 and A267921 are authorized. Full publication and submission of A267623 are now authorized.
 
