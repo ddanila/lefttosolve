@@ -1,20 +1,25 @@
 # A334502 local plan
 
-User scope: prepare locally, finish A334502 before porting to A334503; separate platform submissions later.
+Scope: finish A334502 locally; A334503 is a separate, later port. No publication authorized.
 
 - [x] Archive the merged statement, agent brief, OEIS entry and b-file.
-- [x] Initial prior-work and statement audit; record its limits.
-- [x] Reproduce terms and investigate exceptional widths.
-- [x] Prove the connection between finite cycle certificates and the statement's infimum.
-- [x] Kernel-check widths 0–14.
-- [x] Prove generating-function algebra and an exact conditional target reduction.
-- [ ] Prove `LargeCycles` for all widths ≥14. This is the main mathematical gap.
-  - Derive the pre-collision configuration from the single seed.
-  - Classify the collision by n modulo 8; the empirical T(n) table is in README.
-  - Prove a return in three steps and rule out periods one and two.
-- [ ] Build a standalone unconditional proof, with no dependence on the statement theorem.
-- [ ] Run the official linter/checker and measure runtime and memory.
-- [ ] Recheck source interpretation and upstream target independently before publication.
-- [ ] Only after A334502 is complete, port the argument to A334503.
+- [x] Initial prior-work and statement audit, with limits recorded.
+- [x] Reproduce terms and prove the exceptional widths and generating function.
+- [x] Prove BitVec neighbour bridge, cellwise induction and minimality.
+- [x] Discover and symbolically validate a cell model; rerun the formerly failing residue.
+- [x] Measure compact models; reject the oversized single-file route and inexact segment learner.
+- [x] Split into four platform hypotheses by width modulo four.
+- [x] Prove seed, recurrence, wraparound, return and inequality for every width ≥14.
+- [x] Pass platform lint and official checker locally for reduction and all four steps.
+- [x] Package reproducible generation, resource records and local submission drafts.
+- [x] Complete isolated composition audit against the exact target (standard axioms only).
 
-No submission or publication is authorized for this pair yet.
+## Before a future authorized publication
+
+- [ ] Recheck upstream statement hash, competing proofs and prior work.
+- [ ] Confirm R1 is available, or rename the reduction and all step imports together.
+- [ ] Recheck any changed artifacts against the current platform toolchain.
+- [ ] Submit reduction; submit all four prepared steps as soon as the reduction is merged.
+- [ ] Monitor CI and merger verdicts.
+
+A334503 remains queued; its proof has not been ported yet.

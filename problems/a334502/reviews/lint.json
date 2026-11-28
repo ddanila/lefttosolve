@@ -1,0 +1,69 @@
+[
+  {
+    "file": "reductions/oeis-a334502.R1.lean",
+    "type": "reduction",
+    "problem": "oeis-a334502.R1",
+    "hypotheses": [
+      "\u2200 n : \u2115, 14 \u2264 n \u2192 n % 4 = 0 \u2192\n  \u2203 T, row n (T+3) = row n T \u2227 row n (T+1) \u2260 row n T",
+      "\u2200 n : \u2115, 14 \u2264 n \u2192 n % 4 = 1 \u2192\n  \u2203 T, row n (T+3) = row n T \u2227 row n (T+1) \u2260 row n T",
+      "\u2200 n : \u2115, 14 \u2264 n \u2192 n % 4 = 2 \u2192\n  \u2203 T, row n (T+3) = row n T \u2227 row n (T+1) \u2260 row n T",
+      "\u2200 n : \u2115, 14 \u2264 n \u2192 n % 4 = 3 \u2192\n  \u2203 T, row n (T+3) = row n T \u2227 row n (T+1) \u2260 row n T"
+    ],
+    "module": "OMAReductions.R_oeis_a334502_R1",
+    "ok": true,
+    "kind": "open",
+    "polarity": "proof",
+    "theorem": "OMA.R_oeis_a334502_R1.main",
+    "imports": "OMAStatements.S_oeis_a334502",
+    "errors": [],
+    "decl": "OMA.S_oeis_a334502.main"
+  },
+  {
+    "file": "proofs/oeis-a334502.R1.H1.lean",
+    "type": "step",
+    "problem": "oeis-a334502.R1.H1",
+    "ok": true,
+    "kind": "open",
+    "polarity": "proof",
+    "theorem": "OMA.solution",
+    "imports": "OMAReductions.R_oeis_a334502_R1",
+    "errors": [],
+    "needsReduction": "oeis-a334502.R1"
+  },
+  {
+    "file": "proofs/oeis-a334502.R1.H2.lean",
+    "type": "step",
+    "problem": "oeis-a334502.R1.H2",
+    "ok": true,
+    "kind": "open",
+    "polarity": "proof",
+    "theorem": "OMA.solution",
+    "imports": "OMAReductions.R_oeis_a334502_R1",
+    "errors": [],
+    "needsReduction": "oeis-a334502.R1"
+  },
+  {
+    "file": "proofs/oeis-a334502.R1.H3.lean",
+    "type": "step",
+    "problem": "oeis-a334502.R1.H3",
+    "ok": true,
+    "kind": "open",
+    "polarity": "proof",
+    "theorem": "OMA.solution",
+    "imports": "OMAReductions.R_oeis_a334502_R1",
+    "errors": [],
+    "needsReduction": "oeis-a334502.R1"
+  },
+  {
+    "file": "proofs/oeis-a334502.R1.H4.lean",
+    "type": "step",
+    "problem": "oeis-a334502.R1.H4",
+    "ok": true,
+    "kind": "open",
+    "polarity": "proof",
+    "theorem": "OMA.solution",
+    "imports": "OMAReductions.R_oeis_a334502_R1",
+    "errors": [],
+    "needsReduction": "oeis-a334502.R1"
+  }
+]

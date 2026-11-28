@@ -1,67 +1,57 @@
 # A334502 — Rule 62 on a cyclic ring
 
-Local proof work is **incomplete**. The exceptional widths and the generating-function
-algebra are proved in Lean; the all-width dynamical argument is still missing.
-No unconditional `OMA.solution` is present and nothing has been submitted.
+The local proof is complete: a reduction and four step proofs establish the exact
+merged statement. Nothing has been published. A334503 remains queued separately.
 
-This is the first problem in the A334502/A334503 pair. Finish it before porting
-its argument to A334503. They will remain separate platform problems.
+## Checked artifacts
 
-## Exact target and checked progress
+The [reduction](../../reductions/oeis-a334502.R1.lean) splits widths ≥14 by residue
+modulo four. It also proves the exceptional values and generating-function identity.
+Each step proves a return after three steps and a one-step inequality:
 
-The archived [statement](sources/statement.lean) is byte-identical to the merged
-statement from [#30882](https://github.com/lefttosolve2/open-math-agents/pull/30882).
-It measures the minimal eventual period of whole labelled configurations, with
-width zero assigned coefficient zero. The rule truth table and finite sequence
-values agree with the OEIS entry.
+| Step | n mod 4 | Bytes | Official local check | Peak RSS (decimal GB) |
+| --- | --- | ---: | ---: | ---: |
+| [H1](../../proofs/oeis-a334502.R1.H1.lean) | 0 | 99,508 | 52.0 s | 4.43 |
+| [H2](../../proofs/oeis-a334502.R1.H2.lean) | 1 | 139,659 | 75.7 s | 5.68 |
+| [H3](../../proofs/oeis-a334502.R1.H3.lean) | 2 | 82,106 | 46.6 s | 4.06 |
+| [H4](../../proofs/oeis-a334502.R1.H4.lean) | 3 | 113,577 | 71.6 s | 4.94 |
 
-[lemmas.lean](lemmas.lean) contains:
+All five files pass the platform lint and checker locally, using only `propext`,
+`Classical.choice` and `Quot.sound`. Measurements are macOS results, not CI timings.
+The largest file is below 512 KiB; each check is well below 30 minutes.
+See [resource records](reviews/resources.json) and `reviews/official-*.json`.
 
-- A generic proof that a return anywhere on an orbit also returns its periodic points.
-- `period_eq`: finite cycle certificates imply the exact `sInf` value used by the statement.
-- Kernel-checked exceptional values for widths 0–14.
-- The generating function for the proposed coefficient sequence.
-- `target_of_largeCycles`: the **exact target, conditional** on `LargeCycles`.
+Each step gives an explicit Boolean cell model, proves its seed and recurrence
+including cyclic boundaries, and identifies it with the BitVec orbit by induction.
+At time `12*n` it returns after three steps and differs after one step at cell 2.
+The reduction excludes a two-step period and identifies the statement's infimum.
+No solver output is trusted by Lean; the discovery tree and SMT checks are research
+artifacts, not assumptions of the proof.
 
-The sole remaining hypothesis in that reduction is
-`∀ n ≥ 14, ∃ T, Certificate n T 3`: a return after three steps at time T,
-with neither one nor two steps returning the same configuration. Naming this
-hypothesis does not prove it.
-
-Run:
+## Reproduce
 
 ```sh
+python3 problems/a334502/generate.py --check
 python3 problems/a334502/check.py
-python3 problems/a334502/explore.py
 ```
 
-The isolated Lean checker audits the conditional target and standard axioms; its
-success message explicitly reports an incomplete proof. The simulation independently
-checks the truth table for widths 1–64, all archived b-file values, and the conjectured
-periods through width 1,500. Those experiments are not a substitute for an induction.
+The generator uses only Python's standard library. The isolated checker compiles
+the archived statement, reduction and all steps from scratch, audits their axioms,
+and composes them into the exact original target. It alpha-renames step namespaces
+so the four independent platform files can be imported together. The unchanged
+files have also passed the official checker individually. Temporary paths in the
+saved log are normalized. `explore.py` is optional finite experimental evidence.
 
-## Next mathematical step
+The [archived statement](sources/statement.lean) is byte-identical to the statement
+merged in [#30882](https://github.com/lefttosolve2/open-math-agents/pull/30882).
+It measures the minimal eventual period of the labelled ring from a single ON seed,
+with width zero assigned coefficient zero. See [statement review](reviews/statement-review.md).
+The earlier [lemmas.lean](lemmas.lean) is retained as a development record;
+the production artifacts linked above supersede its conditional reduction.
 
-The first cycle-entry time appears to depend only on the width modulo eight:
-
-| n mod 8 | T(n), for n ≥ 14 |
-| --- | --- |
-| 0 | n/2 − 1 |
-| 1 | 3(n−1)/2 |
-| 2 | n/2 − 2 |
-| 3 | (n−5)/2 |
-| 4 | 3n/2 + 3 |
-| 5 | (3n+29)/2 |
-| 6 | n/2 |
-| 7 | (3n+15)/2 |
-
-This formula matches every tested width 14–1,500. It suggests an induction on
-width in residue classes, tracking the two expanding fronts and their collision.
-Before collision, the interior contains a period-three background with spatial
-blocks `100011010111` and `110`; both blocks are individually period-three when
-repeated cyclically. A proof still has to handle their boundaries and collision.
-A proof of the exact entry time is optional: any certified entry into a minimal
-three-cycle is enough for `LargeCycles`.
+[Submission drafts](submission/) are local preparation only. Before publishing,
+recheck the live target, prior work and the available reduction identifier; then
+submit the reduction before its four steps. See [PLAN.md](PLAN.md).
 
 ## Prior-work audit
 

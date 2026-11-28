@@ -250,3 +250,18 @@ the proof. Unknown target changes still require inspection.
 For A273385, a declined first-proof attempt remained useful: its unchanged proof
 was 15.65% shorter than main. Recheck against current main and submit a modification
 of the merged file, preserving prior-work disclosure and first-solver credit.
+
+
+## Budget generated proofs as complete Lean files
+
+For A334502, fast individual residue cases did not predict whole-file memory:
+a combined compact proof peaked at 9.26 GB. Four reduction steps by width modulo
+four brought the maximum measured official local check to 5.68 GB and 76 seconds.
+Check the platform's reduction arity and allowed declarations before choosing the
+partition; the reduction itself must establish the exact original target.
+
+Keep discovery separate from certification: SMT can prune a candidate model, while
+Lean independently proves its seed, recurrence and final certificate. Large match
+tables can make simp build expensive splitters; use controlled lookup equations or
+explicit unfolding. Profile both memory and time, preserve the exact formerly
+failing case, and keep a reproducible generator rather than hand-editing output.

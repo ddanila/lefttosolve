@@ -1,4 +1,4 @@
-"""Validate local reductions; success does NOT mean the open target is proved."""
+"""Isolated kernel audit of the reduction, all four steps, and their exact composition."""
 import hashlib
 import json
 import os
@@ -10,56 +10,83 @@ import tempfile
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
+ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 
 
 def run(args, **kwargs):
-    p = subprocess.run(args, text=True, capture_output=True, **kwargs)
-    if p.returncode:
-        raise RuntimeError(p.stdout + p.stderr)
-    return p.stdout
+    result = subprocess.run(args, text=True, capture_output=True, **kwargs)
+    if result.returncode:
+        raise RuntimeError(result.stdout + result.stderr)
+    return result.stdout
+
+
+def axioms(log, name):
+    found = re.search(r"'" + re.escape(name) + r"' depends on axioms: \[([^\]]*)\]", log)
+    assert found, log
+    result = set(filter(None, map(str.strip, found[1].split(','))))
+    assert result <= ALLOWED, result
+    return result
 
 
 def main():
+    run(['python3', str(HERE/'generate.py'), '--check'], cwd=ROOT)
     lake = shutil.which('lake') or str(Path.home()/'.elan/bin/lake')
     paths = run([lake, 'env', 'printenv', 'LEAN_PATH'], cwd=ROOT).strip()
     paths = os.pathsep.join(p for p in paths.split(os.pathsep)
                            if Path(p).resolve() != ROOT/'.lake/build/lib/lean')
     lean = run([lake, 'env', 'which', 'lean'], cwd=ROOT).strip()
     statement = (HERE/'sources/statement.lean').read_bytes()
-    lemmas = (HERE/'lemmas.lean').read_text()
+    reduction = (ROOT/'reductions/oeis-a334502.R1.lean').read_text()
+    proofs = [(ROOT/f'proofs/oeis-a334502.R1.H{i}.lean').read_text() for i in range(1,5)]
     assert re.findall(r'\b(sorry|admit|axiom|native_decide|unsafe)\b', statement.decode()) == ['sorry']
-    assert not re.search(r'\b(sorry|admit|axiom|native_decide|unsafe)\b', lemmas)
-    declarations = ['return_at_cycle', 'period_eq', 'small_values', 'expected_gf',
-                    'target_of_largeCycles']
+    for source in [reduction, *proofs]:
+        assert not re.search(r'\b(sorry|admit|axiom|native_decide|unsafe)\b', source)
+    logs, audited = [], {}
     with tempfile.TemporaryDirectory(prefix='a334502-check-') as tmp:
         base = Path(tmp)
+        env = dict(os.environ, LEAN_PATH=tmp+os.pathsep+paths)
         module = base/'OMAStatements/S_oeis_a334502.lean'
         module.parent.mkdir()
         module.write_bytes(statement)
-        env = dict(os.environ, LEAN_PATH=paths)
-        log = run([lean, str(module), '-o', str(module.with_suffix('.olean'))], cwd=tmp, env=env)
-        env['LEAN_PATH'] = tmp + os.pathsep + paths
-        proof = base/'Lemmas.lean'
-        proof.write_text(lemmas + '\nexample : A334502Local.LargeCycles → '
-            'type_of% @_root_.OMA.S_oeis_a334502.main := '
-            '_root_.A334502Local.target_of_largeCycles\n' +
-            '\n'.join('#print axioms A334502Local.' + name for name in declarations) + '\n')
-        log += run([lean, str(proof)], cwd=tmp, env=env)
-        all_axioms = set()
-        for name in declarations:
-            found = re.search(r"'A334502Local\." + name + r"' depends on axioms: \[([^\]]*)\]", log)
-            assert found, log
-            all_axioms.update(filter(None, map(str.strip, found[1].split(','))))
-        assert all_axioms <= {'propext', 'Classical.choice', 'Quot.sound'}, all_axioms
-        log = log.replace(tmp, '<isolated-check>')
-    (HERE/'reviews/lean-check.txt').write_text(log)
-    report = dict(status='partial_reduction_only', unconditional_target_proved=False,
-        conditional_exact_target_guard=True, missing_lemma='A334502Local.LargeCycles',
-        kernel_checked_widths=[0, 14], axioms=sorted(all_axioms),
-        statement_sha256=hashlib.sha256(statement).hexdigest(),
-        lemmas_sha256=hashlib.sha256(lemmas.encode()).hexdigest())
+        logs.append(run([lean, '-j', '2', str(module), '-o', str(module.with_suffix('.olean'))],
+                        cwd=tmp, env=env))
+        module = base/'OMAReductions/R_oeis_a334502_R1.lean'
+        module.parent.mkdir()
+        name = 'OMA.R_oeis_a334502_R1.main'
+        module.write_text(reduction+'\n#print axioms '+name+'\n')
+        log = run([lean, '-j', '2', str(module), '-o', str(module.with_suffix('.olean'))], cwd=tmp, env=env)
+        audited[name] = sorted(axioms(log, name)); logs.append(log)
+        for i, source in enumerate(proofs, 1):
+            # Namespace alpha-renaming permits importing all standalone steps together.
+            # The unchanged production files are also tested by tools/check.sh.
+            source = re.sub(r'\bCompact\b', f'A334502CompactH{i}', source)
+            source = re.sub(r'\bA334502Local\b', f'A334502LocalH{i}', source)
+            name = f'A334502Audit.step{i}'
+            source = source.replace('theorem OMA.solution', 'theorem '+name)
+            module = base/f'Step{i}.lean'
+            module.write_text(source+'\n#print axioms '+name+'\n')
+            log = run([lean, '-j', '2', str(module), '-o', str(module.with_suffix('.olean'))], cwd=tmp, env=env)
+            audited[name] = sorted(axioms(log, name)); logs.append(log)
+            print(f'H{i}: kernel accepted; standard axioms only', flush=True)
+        guard = base/'Complete.lean'
+        name = 'A334502Audit.complete'
+        guard.write_text(''.join(f'import Step{i}\n' for i in range(1,5)) +
+            f'theorem {name} : type_of% @OMA.S_oeis_a334502.main :=\n' +
+            '  OMA.R_oeis_a334502_R1.main '+
+            ' '.join(f'A334502Audit.step{i}' for i in range(1,5))+'\n'+
+            '#print axioms '+name+'\n')
+        log = run([lean, '-j', '2', str(guard)], cwd=tmp, env=env)
+        audited[name] = sorted(axioms(log, name)); logs.append(log)
+        full_log = '\n'.join(logs).replace(tmp, '<isolated-check>')
+    (HERE/'reviews/lean-check.txt').write_text(full_log)
+    files = {'statement': hashlib.sha256(statement).hexdigest(),
+             'reduction': hashlib.sha256(reduction.encode()).hexdigest()}
+    files.update({f'H{i}': hashlib.sha256(p.encode()).hexdigest() for i,p in enumerate(proofs,1)})
+    report = dict(status='complete_local_reduction_and_four_steps',
+        unconditional_target_proved=True, exact_target_guard=True,
+        namespace_renaming_for_composition=True, axioms=audited, sha256=files)
     (HERE/'reviews/local-check.json').write_text(json.dumps(report, indent=2)+'\n')
-    print('PASS: partial lemmas and exact conditional target; LargeCycles remains unproved')
+    print('PASS: all four steps compose to the exact unconditional platform target')
 
 
 if __name__ == '__main__':

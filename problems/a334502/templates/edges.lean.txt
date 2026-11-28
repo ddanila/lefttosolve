@@ -1,0 +1,23 @@
+lemma left_{r} (N T : ℤ) (s : ℕ) (hn : 14 ≤ 24*N+{r})
+    (ht : 0 ≤ 12*T+s) (hs : s < 12) :
+    reduced {r} ((s+1)%12) 0 N (T+if s=11 then 1 else 0) 0 ↔
+    (¬reduced {r} s {v} N T (2*N+({q})) ∧ (reduced {r} s 0 N T 0 ∨ reduced {r} s 1 N T 0)) ∨
+    (reduced {r} s {v} N T (2*N+({q})) ∧ ¬reduced {r} s 0 N T 0) := by
+  interval_cases s <;> (simp [reduced, b{r}] <;> ((try split_ifs) <;> omega))
+lemma right_{r} (N T : ℤ) (s : ℕ) (hn : 14 ≤ 24*N+{r})
+    (ht : 0 ≤ 12*T+s) (hs : s < 12) :
+    reduced {r} ((s+1)%12) {v} N (T+if s=11 then 1 else 0) (2*N+({q})) ↔
+    (¬reduced {r} s {v2} N T (2*N+({q2})) ∧ (reduced {r} s {v} N T (2*N+({q})) ∨ reduced {r} s 0 N T 0)) ∨
+    (reduced {r} s {v2} N T (2*N+({q2})) ∧ ¬reduced {r} s {v} N T (2*N+({q}))) := by
+  interval_cases s <;> (simp [reduced, b{r}] <;> ((try split_ifs) <;> omega))
+lemma base_{r} (N X : ℤ) (v : ℕ) (hn : 14 ≤ 24*N+{r}) (hv : v<12)
+    (hx : 0 ≤ 12*X+v) (hxn : 12*X+v < 24*N+{r}) :
+    reduced {r} 0 v N 0 X ↔ 12*X+v=0 := by
+  interval_cases v <;> (simp [reduced, b{r}] <;> ((try split_ifs) <;> omega))
+lemma periodic_{r} (N X : ℤ) (v : ℕ) (hn : 14 ≤ 24*N+{r}) (hv : v<12)
+    (hx : 0 ≤ 12*X+v) (hxn : 12*X+v < 24*N+{r}) :
+    reduced {r} 3 v N (24*N+{r}) X ↔ reduced {r} 0 v N (24*N+{r}) X := by
+  interval_cases v <;> (simp [reduced, b{r}] <;> ((try split_ifs) <;> omega))
+lemma different_{r} (N : ℤ) (hn : 14 ≤ 24*N+{r}) :
+    ¬(reduced {r} 1 2 N (24*N+{r}) 0 ↔ reduced {r} 0 2 N (24*N+{r}) 0) := by
+  simp [reduced, b{r}] <;> ((try split_ifs) <;> omega)

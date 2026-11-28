@@ -1,0 +1,21 @@
+{
+  "status": "SMT evidence only; not kernel checked",
+  "model_sha256": "0ef8c7edc88e6215045d18c7c561ce5e71c51f950d5a391d78b942f7f0eda90f",
+  "update_cases": 4032,
+  "failures": [],
+  "endpoints": [
+    {
+      "name": "initial",
+      "result": "unsat"
+    },
+    {
+      "name": "period_at_12n",
+      "result": "unsat"
+    },
+    {
+      "name": "not_fixed_at_12n",
+      "result": "unsat"
+    }
+  ],
+  "division_convention": "Euclidean integer division; all divisors positive"
+}

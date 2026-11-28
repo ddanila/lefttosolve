@@ -1,0 +1,17 @@
+[
+  {
+    "name": "initial",
+    "result": "unsat",
+    "seconds": 0.010661840438842773
+  },
+  {
+    "name": "period_at_12n",
+    "result": "unsat",
+    "seconds": 0.005488157272338867
+  },
+  {
+    "name": "not_fixed_at_12n",
+    "result": "unsat",
+    "seconds": 0.11560487747192383
+  }
+]

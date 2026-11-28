@@ -1,0 +1,48 @@
+{
+  "method": "macOS /usr/bin/time -l tools/check.sh; local measurements, not CI",
+  "formal_conjectures_commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
+  "lean": "v4.33.1",
+  "artifacts": [
+    {
+      "file": "reductions/oeis-a334502.R1.lean",
+      "bytes": 6359,
+      "sha256": "9bf7c6d78fda205d63234a9c93ea27573d8f34c792fe7dcccfafff81d118e28f",
+      "elapsed_seconds": 6.26,
+      "peak_rss_bytes": 1853243392
+    },
+    {
+      "file": "proofs/oeis-a334502.R1.H1.lean",
+      "bytes": 99508,
+      "sha256": "e35978c05c8de6c82b1c8fc396dc98b57067ff242f4fba1173d0ed364b732dd6",
+      "elapsed_seconds": 51.98,
+      "peak_rss_bytes": 4429152256
+    },
+    {
+      "file": "proofs/oeis-a334502.R1.H2.lean",
+      "bytes": 139659,
+      "sha256": "33a8ba8f5f343a9e398a41079e7e3baa56abeb2508733a3234e21c7a243baba1",
+      "elapsed_seconds": 75.67,
+      "peak_rss_bytes": 5683068928
+    },
+    {
+      "file": "proofs/oeis-a334502.R1.H3.lean",
+      "bytes": 82106,
+      "sha256": "5138561a67df095a5e6bb4449c6464c391606a2844a69049c0b3fbbc8553f9ec",
+      "elapsed_seconds": 46.55,
+      "peak_rss_bytes": 4057972736
+    },
+    {
+      "file": "proofs/oeis-a334502.R1.H4.lean",
+      "bytes": 113577,
+      "sha256": "4506722654f98ec19e764995ece564af0433d99646a0946abccceab3f5426793",
+      "elapsed_seconds": 71.58,
+      "peak_rss_bytes": 4939595776
+    }
+  ],
+  "rejected_single_file_experiment": {
+    "elapsed_seconds": 341.93,
+    "peak_rss_bytes": 9263890432
+  },
+  "platform_tools_commit": "c21e0a7ff60b406aaef3caed713910c84b5e2583",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474"
+}

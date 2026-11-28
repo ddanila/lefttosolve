@@ -174,5 +174,5 @@ and [A267442](problems/a267442/README.md) are skipped after verifying prior
 Lean work by Derek Blair. Only local audit materials were prepared.
 
 [A334502](problems/a334502/README.md) and [A334503](problems/a334503/README.md)
-are being prepared locally, in that order. A334502 has checked partial lemmas;
-the all-width period-three argument remains open. A334503's port waits for that proof.
+are being prepared locally, in that order. A334502 now has a complete local reduction
+and four checked step proofs. A334503 remains queued for a separate port.

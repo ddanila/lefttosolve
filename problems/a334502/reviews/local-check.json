@@ -1,17 +1,46 @@
 {
-  "status": "partial_reduction_only",
-  "unconditional_target_proved": false,
-  "conditional_exact_target_guard": true,
-  "missing_lemma": "A334502Local.LargeCycles",
-  "kernel_checked_widths": [
-    0,
-    14
-  ],
-  "axioms": [
-    "Classical.choice",
-    "Quot.sound",
-    "propext"
-  ],
-  "statement_sha256": "ced8e1ba5d46a92c9f7890fc8510cd9287da56c592703a0936d8d2ab4b999979",
-  "lemmas_sha256": "6d5adf9f29b6b08005063596230514a640417660b31b06b8be7b8af21210582f"
+  "status": "complete_local_reduction_and_four_steps",
+  "unconditional_target_proved": true,
+  "exact_target_guard": true,
+  "namespace_renaming_for_composition": true,
+  "axioms": {
+    "OMA.R_oeis_a334502_R1.main": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "A334502Audit.step1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "A334502Audit.step2": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "A334502Audit.step3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "A334502Audit.step4": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "A334502Audit.complete": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "sha256": {
+    "statement": "ced8e1ba5d46a92c9f7890fc8510cd9287da56c592703a0936d8d2ab4b999979",
+    "reduction": "9bf7c6d78fda205d63234a9c93ea27573d8f34c792fe7dcccfafff81d118e28f",
+    "H1": "e35978c05c8de6c82b1c8fc396dc98b57067ff242f4fba1173d0ed364b732dd6",
+    "H2": "33a8ba8f5f343a9e398a41079e7e3baa56abeb2508733a3234e21c7a243baba1",
+    "H3": "5138561a67df095a5e6bb4449c6464c391606a2844a69049c0b3fbbc8553f9ec",
+    "H4": "4506722654f98ec19e764995ece564af0433d99646a0946abccceab3f5426793"
+  }
 }
