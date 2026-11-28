@@ -1,0 +1,26 @@
+{
+  "host_system": "Darwin",
+  "host_machine": "arm64",
+  "lean": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "capped_memory_test": false,
+  "proofs": {
+    "a273539-narrow": {
+      "peak_rss_bytes": 3776593920,
+      "proof_bytes": 244830,
+      "proof_sha256": "c7940eb2962cbf5bef4e824479d271a76820b613bb4135c351e2dfefa1f95e51",
+      "statement_sha256": "b291359de9a8dabdf108254e4cd9eae117a2135d7bc3e694521d39b5aefea548",
+      "timing": "29.76 real        37.26 user         1.30 sys\n          3776593920  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n              272832  page reclaims\n                   0  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n               50334  involuntary context switches\n        410047465576  instructions retired\n        147963708722  cycles elapsed\n          2253085696  peak memory footprint",
+      "axiom_report": "'OMA.solution' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    "a273539-full-statement": {
+      "peak_rss_bytes": 7771062272,
+      "proof_bytes": 244830,
+      "proof_sha256": "c7940eb2962cbf5bef4e824479d271a76820b613bb4135c351e2dfefa1f95e51",
+      "statement_sha256": "4121b34b1909ae618558f15ca6bc687da7d9d23e220a403366f9eec44a0a45ec",
+      "timing": "31.67 real        38.11 user         2.74 sys\n          7771062272  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n              556027  page reclaims\n                   0  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                   0  voluntary context switches\n               53248  involuntary context switches\n        440977650724  instructions retired\n        157267305941  cycles elapsed\n          2904542144  peak memory footprint",
+      "axiom_report": "'OMA.solution' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    }
+  },
+  "method": "Change only the statement import; compile the identical current proof in separate empty directories. Proof retains its narrow imports in both variants.",
+  "decision": "Retain Mathlib.RingTheory.PowerSeries.Basic in the statement: restoring Mathlib raises measured peak RSS from 3.78 GB to 7.77 GB despite narrow proof imports."
+}

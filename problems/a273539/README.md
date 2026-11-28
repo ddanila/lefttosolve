@@ -77,3 +77,12 @@ Reproduce the direct comparison with `python3 problems/a273539/benchmark.py`.
 These are host measurements, not a memory-capped Linux runner test. Import
 narrowing changes no mathematical definition or theorem. The closure remains
 split into 32-row blocks, and all finite proofs still use kernel reduction.
+
+A controlled follow-up changed **only the statement import**, keeping the proof
+byte-for-byte identical. `Mathlib.RingTheory.PowerSeries.Basic` measured **3.78 GB**;
+plain `Mathlib` measured **7.77 GB**, despite the proof retaining narrow imports.
+Both proofs compiled with the same allowed axioms. Since imports are transitive,
+we retain the narrow statement import, which the platform lint explicitly allows.
+The skeleton's broad import would restore the memory risk.
+See [comparison](reviews/import-comparison.json); reproduce it with
+`python3 problems/a273539/benchmark.py --compare-statement-imports`.

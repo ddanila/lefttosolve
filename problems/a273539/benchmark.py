@@ -3,6 +3,7 @@
 Uses /usr/bin/time (Darwin -l or GNU -v). Prints JSON; no tracked report is changed.
 These are host measurements, not a GitHub-runner memory-cap test.
 """
+import argparse
 import hashlib
 import json
 import os
@@ -21,6 +22,13 @@ def run(args, **kwargs):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--compare-statement-imports', action='store_true',
+                        help='Compare narrow and full statement imports with the same A273539 proof')
+    args = parser.parse_args()
+    variants = [('a273539-narrow', 'a273539', False),
+                ('a273539-full-statement', 'a273539', True)] if args.compare_statement_imports else [
+                    ('a273385', 'a273385', False), ('a273539', 'a273539', False)]
     lake = shutil.which('lake') or str(Path.home()/'.elan/bin/lake')
     paths = run([lake, 'env', 'printenv', 'LEAN_PATH'], cwd=ROOT)
     paths = os.pathsep.join(p for p in paths.split(os.pathsep)
@@ -30,12 +38,15 @@ def main():
     report = dict(host_system=platform.system(), host_machine=platform.machine(),
                   lean=run([lean, '--version']), capped_memory_test=False, proofs={})
     with tempfile.TemporaryDirectory(prefix='a273539-resources-') as tmp:
-        for problem in ['a273385', 'a273539']:
-            folder = Path(tmp)/problem
+        for label, problem, full_statement in variants:
+            folder = Path(tmp)/label
             module = folder/'OMAStatements'/f'S_oeis_{problem}.lean'
             module.parent.mkdir(parents=True)
             statement = (ROOT/'statements'/f'oeis-{problem}.lean').read_bytes()
             proof = (ROOT/'proofs'/f'oeis-{problem}.lean').read_bytes()
+            if full_statement:
+                statement = statement.replace(b'import Mathlib.RingTheory.PowerSeries.Basic\n',
+                                              b'import Mathlib\n', 1)
             module.write_bytes(statement)
             p = folder/'Proof.lean'
             p.write_bytes(proof+b'\n#print axioms OMA.solution\n')
@@ -47,7 +58,7 @@ def main():
             assert 'sorryAx' not in result.stdout
             pattern = r'(\d+)\s+maximum resident set size' if darwin else r'Maximum resident set size \(kbytes\):\s*(\d+)'
             rss = int(re.search(pattern, result.stderr)[1]) * (1 if darwin else 1024)
-            report['proofs'][problem] = dict(peak_rss_bytes=rss, proof_bytes=len(proof),
+            report['proofs'][label] = dict(peak_rss_bytes=rss, proof_bytes=len(proof),
                 proof_sha256=hashlib.sha256(proof).hexdigest(),
                 statement_sha256=hashlib.sha256(statement).hexdigest(),
                 timing=result.stderr.strip(), axiom_report=result.stdout.strip())
